@@ -7,7 +7,10 @@ import {
   HelpCircle,
   Users,
   PlayCircle,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -25,6 +28,92 @@ import novaBorisChat from "@/assets/nova-boris-chat.png";
 import nova404 from "@/assets/nova-404.jpg";
 import novaPipeline from "@/assets/nova-pipeline.png";
 import novaDemoVideo from "@/assets/nova-demo.webm";
+
+const SLIDES = [
+  { src: novaOnboarding, label: "Онбординг · 7 шагов", tag: "Onboarding" },
+  { src: novaDashboard,  label: "Дашборд · Администратор", tag: "Dashboard" },
+  { src: novaPipeline,   label: "Пайплайн задач · Канбан", tag: "Pipeline" },
+  { src: novaWiki,       label: "База знаний · Wiki", tag: "Knowledge" },
+  { src: novaTeam,       label: "Команда · Наши герои", tag: "Team" },
+  { src: novaKassa,      label: "Касса · Смена", tag: "Kassa" },
+  { src: novaBorisChat,  label: "Командный чат", tag: "Chat" },
+  { src: nova404,        label: "404 · «Я устал… я ухожу»", tag: "404" },
+];
+
+function NovaCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent((c) => (c === 0 ? SLIDES.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === SLIDES.length - 1 ? 0 : c + 1));
+
+  return (
+    <div className="relative">
+      {/* Main slide */}
+      <div className="relative aspect-video overflow-hidden rounded-lg ring-1 ring-white/10 bg-black">
+        <img
+          key={current}
+          src={SLIDES[current].src}
+          alt={SLIDES[current].label}
+          className="w-full h-full object-contain"
+        />
+        {/* tag */}
+        <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
+          {SLIDES[current].tag}
+        </div>
+        {/* caption */}
+        <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-background/95 to-transparent">
+          <div className="font-mono text-[10px] uppercase tracking-wider text-white/80">
+            {SLIDES[current].label}
+          </div>
+        </div>
+        {/* arrows */}
+        <button
+          onClick={prev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent/80 border border-white/10 hover:border-accent transition-all"
+          aria-label="Предыдущий"
+        >
+          <ChevronLeft className="size-4" />
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent/80 border border-white/10 hover:border-accent transition-all"
+          aria-label="Следующий"
+        >
+          <ChevronRight className="size-4" />
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-1.5 mt-3">
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-1.5 rounded-full transition-all ${
+              i === current ? "w-5 bg-accent" : "w-1.5 bg-white/20 hover:bg-white/40"
+            }`}
+            aria-label={`Слайд ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Thumbnail strip */}
+      <div className="mt-3 grid grid-cols-8 gap-1.5">
+        {SLIDES.map((s, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`relative aspect-video overflow-hidden rounded ring-1 transition-all ${
+              i === current ? "ring-accent" : "ring-white/10 opacity-50 hover:opacity-80"
+            }`}
+          >
+            <img src={s.src} alt={s.label} className="w-full h-full object-cover" />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function Nova() {
   return (
@@ -102,108 +191,15 @@ export function Nova() {
           </div>
         </motion.div>
 
-        {/* Превью-скриншоты */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-          {[
-            { src: novaOnboarding, label: "Онбординг · 7 шагов", tag: "Onboarding" },
-            { src: novaTeam, label: "Команда · Наши герои", tag: "Team" },
-            { src: novaDashboard, label: "Дашборд · Администратор", tag: "Dashboard" },
-            { src: novaKassa, label: "Касса · Смена", tag: "Kassa" },
-            { src: novaBorisChat, label: "Командный чат", tag: "Chat" },
-          ].map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="relative aspect-video overflow-hidden ring-1 ring-white/10 rounded-md group cursor-pointer hover:ring-accent/50 transition-all bg-black"
-            >
-              <img
-                src={s.src}
-                alt={s.label}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute top-2 left-2 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-1.5 py-0.5 rounded">
-                {s.tag}
-              </div>
-              <div className="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-background/95 to-transparent">
-                <div className="font-mono text-[9px] uppercase tracking-wider text-white/85">
-                  {s.label}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Пайплайн задач — полная ширина */}
+        {/* Карусель скриншотов */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden ring-1 ring-white/10 rounded-lg bg-black mb-6"
+          className="mb-12"
         >
-          <img
-            src={novaPipeline}
-            alt="NOVA — пайплайн задач менеджера"
-            className="w-full h-auto object-contain"
-            loading="lazy"
-          />
-          <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-1.5 py-0.5 rounded">
-            Pipeline
-          </div>
-          <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-background/90 to-transparent">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-0.5">
-              Пайплайн задач · Канбан-доска
-            </div>
-            <div className="text-xs text-muted-foreground">
-              Статусы заказов в реальном времени — от нового лида до выдачи
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Wiki + 404 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 gap-3 mb-12"
-        >
-          <div className="relative aspect-video overflow-hidden ring-1 ring-accent/30 rounded-md bg-black">
-            <img
-              src={novaWiki}
-              alt="База знаний — Wiki"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-background/95 to-transparent">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                База знаний · Wiki
-              </div>
-              <div className="text-xs text-muted-foreground">
-                Регламенты, инструкции и база данных — всё в одном месте для команды
-              </div>
-            </div>
-          </div>
-          <div className="relative aspect-video overflow-hidden ring-1 ring-accent/30 rounded-md bg-white">
-            <img
-              src={nova404}
-              alt="Кастомная страница 404 с Борисом"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-background/95 to-transparent">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                404 · «Я устал… я ухожу»
-              </div>
-              <div className="text-xs text-muted-foreground">
-                Даже ошибки — часть характера системы. Сбой превращается в эмоцию бренда
-              </div>
-            </div>
-          </div>
+          <NovaCarousel />
         </motion.div>
 
         {/* UX Validation */}
