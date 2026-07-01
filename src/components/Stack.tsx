@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cpu, CircuitBoard, Boxes } from "lucide-react";
+import { Cpu, CircuitBoard, Boxes, Brain } from "lucide-react";
 import { fadeUp } from "./shared";
 
 import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
@@ -7,19 +7,32 @@ import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 export function Stack() {
   const cols = [
     {
-      Icon: Cpu,
-      title: "AI & Coding",
+      Icon: Brain,
+      title: "LLM · Модели",
       items: [
-        "Cursor · Lovable · Bolt · Vercel · Replit · Antigravity · Kiro · OpenCode",
-        "Gemini · Claude · DeepSeek · ChatGPT · OpenRouter",
-        "Google AI Studio · Abacus AI · NotebookLM",
-        "Постоянно тестирую новые vibe-coding инструменты",
+        "Gemini · Claude · DeepSeek",
+        "ChatGPT · OpenRouter",
+      ],
+    },
+    {
+      Icon: Cpu,
+      title: "Vibe-coding · Разработка",
+      items: [
+        "Cursor · Lovable · Bolt",
+        "Kiro · OpenCode · Replit",
+        "React · TanStack · Vercel",
+        "Постоянно тестирую новые инструменты",
       ],
     },
     {
       Icon: CircuitBoard,
-      title: "Analysis",
-      items: ["XMind (mind maps)", "RAG & OCR технологии", "Аудит бизнес-моделей"],
+      title: "Исследование · Данные",
+      items: [
+        "Google AI Studio · NotebookLM",
+        "Abacus AI",
+        "RAG & OCR технологии",
+        "Аудит бизнес-процессов",
+      ],
     },
     {
       Icon: Boxes,
@@ -77,7 +90,7 @@ export function Stack() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="grid md:grid-cols-4 gap-px bg-white/10 border border-white/10">
           {cols.map((c, i) => (
             <motion.div
               key={c.title}
@@ -113,12 +126,14 @@ export function Stack() {
                   "Claude",
                   "Vibe-coding",
                   "OCR",
-                  "Telegram Bots",
                   "PRO100",
                   "Figma",
                   "System Analysis",
-                  "Prompt Engineering",
                   "Automation",
+                  "MVP",
+                  "Vercel",
+                  "Cursor",
+                  "NotebookLM",
                 ].map((t) => (
                   <span key={t} className="text-foreground/70">
                     {t} <span className="text-accent">/</span>
