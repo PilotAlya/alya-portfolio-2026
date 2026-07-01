@@ -1,0 +1,18 @@
+# OpenCode: block heavy binaries and build noise from AI tools
+node_modules/**
+dist/**
+.vercel/**
+.tanstack/**
+.nitro/**
+.output/**
+.vinxi/**
+.wrangler/**
+
+# Large media — keep on disk for the site, but don't index/read in OpenCode
+src/assets/**/*.gif
+src/assets/**/*.webm
+src/assets/**/*.mp4
+src/assets/**/*.mov
+
+**/*.asset.json
+desktop.ini

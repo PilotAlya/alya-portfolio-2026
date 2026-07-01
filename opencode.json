@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".vercel/**",
+      ".tanstack/**",
+      "src/assets/**/*.gif",
+      "src/assets/**/*.webm",
+      "**/*.asset.json"
+    ]
+  }
+}
