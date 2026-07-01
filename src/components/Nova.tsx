@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
-  Send,
   Bot,
   Activity,
   HelpCircle,
@@ -9,6 +8,7 @@ import {
   PlayCircle,
   ChevronLeft,
   ChevronRight,
+  Rocket,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -26,18 +26,18 @@ import novaKassa from "@/assets/nova-kassa.png";
 import novaOnboarding from "@/assets/nova-onboarding.png";
 import novaBorisChat from "@/assets/nova-boris-chat.png";
 import nova404 from "@/assets/nova-404.jpg";
-import novaPipeline from "@/assets/nova-pipeline.png";
+import novaPipelineTasks from "@/assets/nova-pipeline-tasks.png";
 import novaDemoVideo from "@/assets/nova-demo.webm";
 
 const SLIDES = [
-  { src: novaOnboarding, label: "Онбординг · 7 шагов", tag: "Onboarding" },
-  { src: novaDashboard,  label: "Дашборд · Администратор", tag: "Dashboard" },
-  { src: novaPipeline,   label: "Пайплайн задач · Канбан", tag: "Pipeline" },
-  { src: novaWiki,       label: "База знаний · Wiki", tag: "Knowledge" },
-  { src: novaTeam,       label: "Команда · Наши герои", tag: "Team" },
-  { src: novaKassa,      label: "Касса · Смена", tag: "Kassa" },
-  { src: novaBorisChat,  label: "Командный чат", tag: "Chat" },
-  { src: nova404,        label: "404 · «Я устал… я ухожу»", tag: "404" },
+  { src: novaOnboarding,    label: "Онбординг · 7 шагов", tag: "Onboarding" },
+  { src: novaDashboard,     label: "Дашборд · Администратор", tag: "Dashboard" },
+  { src: novaPipelineTasks, label: "Пайплайн задач · Канбан", tag: "Pipeline" },
+  { src: novaWiki,          label: "База знаний · Wiki · элемент геймификации", tag: "Knowledge" },
+  { src: novaTeam,          label: "Команда · Наши герои", tag: "Team" },
+  { src: novaKassa,         label: "Касса · Смена", tag: "Kassa" },
+  { src: novaBorisChat,     label: "Командный чат", tag: "Chat" },
+  { src: nova404,           label: "404 · «Я устал… я ухожу»", tag: "404" },
 ];
 
 function NovaCarousel() {
@@ -48,8 +48,8 @@ function NovaCarousel() {
 
   return (
     <div className="relative">
-      {/* Main slide */}
-      <div className="relative aspect-video overflow-hidden rounded-lg ring-1 ring-white/10 bg-black">
+      {/* Main slide — с подсветкой по краям */}
+      <div className="relative aspect-video overflow-hidden rounded-lg ring-2 ring-accent/40 bg-black shadow-[0_0_32px_rgba(59,130,246,0.2)]">
         <img
           key={current}
           src={SLIDES[current].src}
@@ -69,14 +69,14 @@ function NovaCarousel() {
         {/* arrows */}
         <button
           onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent/80 border border-white/10 hover:border-accent transition-all"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
           aria-label="Предыдущий"
         >
           <ChevronLeft className="size-4" />
         </button>
         <button
           onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent/80 border border-white/10 hover:border-accent transition-all"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
           aria-label="Следующий"
         >
           <ChevronRight className="size-4" />
@@ -104,7 +104,9 @@ function NovaCarousel() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`relative aspect-video overflow-hidden rounded ring-1 transition-all ${
-              i === current ? "ring-accent" : "ring-white/10 opacity-50 hover:opacity-80"
+              i === current
+                ? "ring-accent shadow-[0_0_8px_rgba(59,130,246,0.4)]"
+                : "ring-white/10 opacity-50 hover:opacity-80"
             }`}
           >
             <img src={s.src} alt={s.label} className="w-full h-full object-cover" />
@@ -125,6 +127,7 @@ export function Nova() {
       <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
+        {/* Заголовок */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -157,12 +160,13 @@ export function Nova() {
           </p>
         </motion.div>
 
+        {/* Live Demo видео — object-contain чтобы не обрезалось */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative aspect-video overflow-hidden ring-1 ring-accent/30 rounded-lg group mb-4 bg-black"
+          className="relative aspect-video overflow-hidden ring-2 ring-accent/40 rounded-lg mb-6 bg-black shadow-[0_0_40px_rgba(59,130,246,0.2)]"
         >
           <video
             src={novaDemoVideo}
@@ -170,7 +174,7 @@ export function Nova() {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
           <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur border border-accent/40 px-3 py-1.5 rounded-full">
             <span className="relative flex size-2">
@@ -221,18 +225,18 @@ export function Nova() {
             </div>
             <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">
               Проведено{" "}
-              <span className="text-foreground font-medium">4 коридорных тестирования</span> с
+              <span className="text-foreground font-medium">3 коридорных тестирования</span> с
               пользователями разных возрастных групп. Найдено и устранено{" "}
               <span className="text-foreground font-medium">12+ проблем</span> интерфейса и логики
-              до закрытого релиза MVP. Полная методология — в презентации на Gamma.
+              до закрытого релиза MVP.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 border-t border-accent/10 pt-5">
             {[
-              { value: "4/4", label: "Пользователей подтвердили улучшение" },
+              { value: "3/3", label: "Пользователей подтвердили улучшение" },
               { value: "12+", label: "Проблем устранено до релиза" },
-              { value: "3", label: "Критических блокера закрыто" },
+              { value: "3",   label: "Критических блокера закрыто" },
               { value: "75–100%", label: "Поняли задачу с первого раза" },
             ].map((stat, i) => (
               <motion.div
@@ -251,19 +255,6 @@ export function Nova() {
                 </div>
               </motion.div>
             ))}
-          </div>
-
-          <div className="mt-6 pt-5 border-t border-accent/10 flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://landing-page-nova-delta.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-5 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors w-full sm:w-auto"
-            >
-              <PlayCircle className="size-4" />
-              Смотреть презентацию NOVA
-              <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
           </div>
         </motion.div>
 
@@ -310,12 +301,12 @@ export function Nova() {
               {
                 value: "n-pilot",
                 q: "Есть ли бизнес, готовый попробовать NOVA?",
-                a: "Один бизнес уже заинтересовался и готов прогнать через дашборд один реальный заказ. По итогам теста — решение, нужна NOVA или нет, и видно, как дашборд ведёт себя в полевых условиях на живых процессах.",
+                a: "Один бизнес уже заинтересовался и готов прогнать через дашборд один реальный заказ. По итогам теста — решение, нужна NOVA или нет.",
               },
               {
                 value: "n5",
                 q: "Где посмотреть детали и UX-исследование?",
-                a: "Полный разбор функционала, коридорных тестов и «до/после» — в презентации NOVA; демо интерфейса — на Яндекс.Диске.",
+                a: "Полный разбор функционала, коридорных тестов и «до/после» — в интерактивной презентации NOVA.",
               },
             ].map((item) => (
               <AccordionItem key={item.value} value={item.value} className="border-0">
@@ -324,25 +315,14 @@ export function Nova() {
                 </AccordionTrigger>
                 <AccordionContent className="px-4 sm:px-5 pb-4 text-sm text-muted-foreground leading-relaxed">
                   {item.a}
-                  {item.value === "n5" && (
-                    <a
-                      href="https://landing-page-nova-delta.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-md text-[13px] font-semibold hover:bg-accent/90 transition-colors"
-                    >
-                      <PlayCircle className="size-4" />
-                      Смотреть презентацию NOVA
-                      <ArrowUpRight className="size-3.5" />
-                    </a>
-                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Feature cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
           {[
             {
               t: "Интеллектуальный слой",
@@ -356,11 +336,14 @@ export function Nova() {
             },
             {
               t: "Демо по запросу",
-              d: "Дашборд запускается локально. Доступ к функционалу — через демо-видео на Яндекс.Диске.",
-              Icon: Send,
+              d: "Дашборд запускается локально — напиши в Telegram или на email, покажу живую демонстрацию.",
+              Icon: Rocket,
             },
           ].map((f) => (
-            <div key={f.t} className="border border-white/10 p-6 hover:border-accent/40 transition-colors">
+            <div
+              key={f.t}
+              className="border border-white/10 p-6 hover:border-accent/40 transition-colors"
+            >
               <f.Icon className="size-5 text-accent mb-4" />
               <div className="font-bold mb-2">{f.t}</div>
               <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
@@ -368,23 +351,17 @@ export function Nova() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3">
+        {/* Единственная кнопка презентации */}
+        <div className="flex justify-start">
           <a
             href="https://landing-page-nova-delta.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-5 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors w-full sm:w-auto"
+            className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
-            <PlayCircle className="size-4" /> Смотреть презентацию NOVA{" "}
-            <ArrowUpRight className="size-4" />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-accent/60 hover:text-accent px-5 py-3 rounded-md text-sm font-medium transition-colors w-full sm:w-auto"
-          >
-            <Send className="size-4" /> Демо-видео на Яндекс.Диске
+            <PlayCircle className="size-4" />
+            Смотреть презентацию NOVA
+            <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
       </div>
