@@ -147,16 +147,10 @@ export function Nova() {
             </span>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Цифровое ядро производства. MVP-решение на React — единая точка управления мебельным
-            предприятием.
+            Единая точка управления заказами, складом и AI-навигатором «Борис». Прошла полный цикл от проектирования до итеративного тестирования и рефакторинга в облегченную версию NOVA Light.
           </p>
           <p className="text-base text-muted-foreground/90 leading-relaxed border-l-2 border-accent/60 pl-4">
-            Проект родился из желания вырваться из когнитивного хаоса Excel и перегруженности
-            классических CRM-систем — к{" "}
-            <span className="text-foreground font-medium">
-              интеллектуальной экосистеме управления
-            </span>
-            , где данные, документы и AI-ассистент живут в одном понятном интерфейсе.
+            <span className="text-foreground font-medium">Два цикла разработки:</span> Первая версия оказалась перегруженной функционалом (бухгалтерия, избыточные модули) — 3/3 пользователей подтвердили сложность UX. На основе фидбека переработала систему в NOVA Light с фокусом на продажу ЛДСП материалов. Повторные тесты показали 100% улучшение юзабилити.
           </p>
         </motion.div>
 
@@ -225,19 +219,19 @@ export function Nova() {
             </div>
             <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">
               Проведено{" "}
-              <span className="text-foreground font-medium">3 коридорных тестирования</span> с
-              пользователями разных возрастных групп. Найдено и устранено{" "}
-              <span className="text-foreground font-medium">12+ проблем</span> интерфейса и логики
-              до закрытого релиза MVP.
+              <span className="text-foreground font-medium">3 сессии коридорного тестирования</span> (по 20-40 минут) с
+              пользователями разных возрастных групп. Найдено и задокументировано в Google Sheets{" "}
+              <span className="text-foreground font-medium">12+ дефектов</span> интерфейса и логики.
+              Закрыто 3 критических блокера. Исправление багов в среде OpenCode/Kiro.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 border-t border-accent/10 pt-5">
             {[
-              { value: "3/3", label: "Пользователей подтвердили улучшение" },
-              { value: "12+", label: "Проблем устранено до релиза" },
+              { value: "2 цикла", label: "Итеративная разработка и тестирование" },
+              { value: "12+", label: "Дефектов задокументировано" },
               { value: "3",   label: "Критических блокера закрыто" },
-              { value: "75–100%", label: "Поняли задачу с первого раза" },
+              { value: "100%", label: "Улучшение юзабилити в NOVA Light" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -255,6 +249,59 @@ export function Nova() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Техническая документация */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-10 border border-white/10 rounded-lg p-5 sm:p-6 bg-card/20"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
+              📄 Техническая документация
+            </span>
+          </div>
+          <p className="text-sm text-muted-foreground mb-4">
+            Разработала пошаговые технические руководства для пользователей разного уровня подготовки. 
+            Демонстрирует навык структурирования сложной информации и работы с UX текстовых документов.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <a
+              href="https://gamma.app/docs/-pn6c00ti46m0r4l?mode=doc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/10 rounded p-4 hover:border-accent/40 hover:bg-white/[0.02] transition-colors group"
+            >
+              <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
+                Мануал VPN
+              </div>
+              <div className="text-sm font-medium mb-1 group-hover:text-accent transition-colors">
+                Цифровая свобода и личный VPN
+              </div>
+              <div className="text-xs text-muted-foreground">
+                Технический мануал по настройке личного VPN
+              </div>
+            </a>
+            <a
+              href="https://gamma.app/docs/AI--ti6euqermukmwh3?mode=doc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/10 rounded p-4 hover:border-accent/40 hover:bg-white/[0.02] transition-colors group"
+            >
+              <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
+                Мануал AI Search
+              </div>
+              <div className="text-sm font-medium mb-1 group-hover:text-accent transition-colors">
+                Google AI Search: поиск будущего
+              </div>
+              <div className="text-xs text-muted-foreground">
+                Руководство по новому поколению поиска
+              </div>
+            </a>
           </div>
         </motion.div>
 
@@ -281,7 +328,7 @@ export function Nova() {
               {
                 value: "n1",
                 q: "Что такое NOVA Dashboard?",
-                a: "Единый интерфейс для управления заказами, складом и AI-ассистентом «Борис» — вместо россыпи Excel и тяжёлых CRM.",
+                a: "Единая точка управления заказами, складом и AI-навигатором «Борис». Система прошла два цикла разработки: от перегруженной версии до облегченной NOVA Light с фокусом на продажу ЛДСП материалов.",
               },
               {
                 value: "n2",
@@ -300,8 +347,8 @@ export function Nova() {
               },
               {
                 value: "n-pilot",
-                q: "Есть ли бизнес, готовый попробовать NOVA?",
-                a: "Один бизнес уже протестировал сервис — сотрудники сказали, что пользовались бы им сами, если бы это было реально работающее приложение.",
+                q: "Как проходило тестирование?",
+                a: "Провела 3 сессии коридорного тестирования (20-40 минут каждая). Первый цикл выявил перегруженность функциями — все пользователи подтвердили сложность UX. Второй цикл (NOVA Light) показал 100% улучшение юзабилити и интуитивности интерфейса.",
               },
               {
                 value: "n5",
