@@ -65,9 +65,7 @@ export function Testimonials() {
           ))}
         </div>
 
-        <p className="mt-8 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-          * Прямые контакты для верификации — по запросу.
-        </p>
+
       </div>
     </section>
   );
