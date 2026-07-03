@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Mail, Download } from "lucide-react";
 
 import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
 
@@ -30,7 +30,7 @@ export function Contact() {
             «Готова к деконструкции ваших самых сложных задач.»
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mb-6">
             <a
               href="https://t.me/Albinaa_Akbarova"
               target="_blank"
@@ -60,6 +60,15 @@ export function Contact() {
               <Mail className="size-6 text-muted-foreground group-hover:text-accent transition-colors shrink-0 ml-4" />
             </a>
           </div>
+
+          <a
+            href="/resume.html"
+            download="Albina_Akbarova_Resume.html"
+            className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
+          >
+            <Download className="size-5" />
+            Скачать резюме
+          </a>
         </motion.div>
 
         <motion.div
