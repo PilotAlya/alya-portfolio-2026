@@ -62,12 +62,12 @@ export function Contact() {
           </div>
 
           <a
-            href="/resume.html"
-            download="Albina_Akbarova_Resume.html"
+            href="/resume.pdf"
+            download="Albina_Akbarova_Resume.pdf"
             className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
           >
             <Download className="size-5" />
-            Скачать резюме
+            Скачать резюме (PDF)
           </a>
         </motion.div>
 
