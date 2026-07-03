@@ -79,19 +79,15 @@ export function LegacyCase() {
 
           <div className="flex items-end gap-8">
             <div>
-              <div className="text-6xl lg:text-7xl font-extrabold tracking-tight text-accent">
-                10-60 <span className="text-foreground">мин</span>
-              </div>
+              <Counter to={42000} suffix="%" />
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
-                Раньше на проверку
+                Рост эффективности
               </div>
             </div>
             <div>
-              <div className="text-6xl lg:text-7xl font-extrabold tracking-tight text-accent">
-                секунды
-              </div>
+              <Counter to={420} suffix="×" />
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
-                Теперь на проверку
+                Ускорение процесса
               </div>
             </div>
           </div>
