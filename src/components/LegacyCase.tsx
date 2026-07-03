@@ -56,11 +56,11 @@ export function LegacyCase() {
             {[
               {
                 t: "Price Checker",
-                d: "Автономный парсер цен маркетплейсов для динамического контроля маржи в реальном времени.",
+                d: "Автономный парсер цен маркетплейсов для динамического контроля маржи в реальном времени. Раньше проверка цен занимала 10-60 минут, теперь — секунды.",
               },
               {
                 t: "Data Validator",
-                d: "Автоматическая сверка конструкторских данных (Руматик vs мастер) — нулевые закупочные риски.",
+                d: "Автоматическая сверка конструкторских данных (Руматик vs мастер) — нулевые закупочные риски. Раньше проверка занимала 10-60 минут в зависимости от объёма, теперь — секунды.",
               },
               {
                 t: "SSOT-нормализация",
@@ -79,15 +79,19 @@ export function LegacyCase() {
 
           <div className="flex items-end gap-8">
             <div>
-              <Counter to={300} suffix="%" />
+              <div className="text-6xl lg:text-7xl font-extrabold tracking-tight text-accent">
+                10-60 <span className="text-foreground">мин</span>
+              </div>
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
-                Рост эффективности
+                Раньше на проверку
               </div>
             </div>
             <div>
-              <Counter to={4} suffix="×" />
+              <div className="text-6xl lg:text-7xl font-extrabold tracking-tight text-accent">
+                секунды
+              </div>
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
-                Скорость мониторинга
+                Теперь на проверку
               </div>
             </div>
           </div>
@@ -119,14 +123,14 @@ export function LegacyCase() {
             <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg glow-accent bg-card">
               <img
                 src={legacyMebelChecker}
-                alt="Мебель-Чекер — ИИ-ассистент для распила и сверки заказов"
+                alt="Data Validator — ИИ-ассистент для распила и сверки заказов"
                 className="w-full h-auto object-contain"
                 loading="lazy"
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
             </div>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              [02] Мебель-Чекер · AI-валидация заказов
+              [02] Data Validator · AI-валидация заказов
             </figcaption>
           </figure>
 

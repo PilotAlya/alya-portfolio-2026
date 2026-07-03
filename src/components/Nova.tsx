@@ -344,7 +344,7 @@ export function Nova() {
         {/* Единственная кнопка презентации */}
         <div className="flex justify-start">
           <a
-            href="https://landing-page-nova-delta.vercel.app/"
+            href="https://alya-nova-2026.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"

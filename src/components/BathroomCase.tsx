@@ -23,7 +23,7 @@ export function BathroomCase() {
     {
       tag: "03 · The Proof",
       sub: "REALITY",
-      caption: "Реализованный объект. Цифровая реставрация.",
+      caption: "Реализованный объект.",
       img: bathReal,
     },
   ];
@@ -57,7 +57,7 @@ export function BathroomCase() {
               },
               {
                 k: "Пайплайн",
-                v: "Эскиз → апскейл в Stable Diffusion / Midjourney → ручная цвето- и материал-коррекция.",
+                v: "Эскиз → апскейл в ChatGPT → ручная цвето- и материал-коррекция.",
               },
               {
                 k: "Чек-лист",
@@ -130,7 +130,7 @@ export function BathroomCase() {
             },
             {
               k: "Solution",
-              v: "AI-Native Pipeline: апскейл эскизов до гиперреализма и цифровая реставрация.",
+              v: "AI-Native Pipeline: апскейл эскизов до гиперреализма.",
             },
             {
               k: "Outcome",

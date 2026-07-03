@@ -29,8 +29,7 @@ export function Stack() {
       Icon: CircuitBoard,
       title: "Исследование · Данные",
       items: [
-        "Google AI Studio · NotebookLM",
-        "Abacus AI",
+        "NotebookLM · Abacus AI",
         "RAG & OCR технологии",
         "Аудит бизнес-процессов",
       ],
