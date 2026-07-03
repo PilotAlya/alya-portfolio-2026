@@ -60,7 +60,7 @@ export function LegacyCase() {
               },
               {
                 t: "Data Validator",
-                d: "Автоматическая сверка конструкторских данных (Руматик vs мастер) — нулевые закупочные риски. Раньше проверка занимала 10-60 минут в зависимости от объёма, теперь — секунды.",
+                d: "Автоматическая сверка данных, введённых сотрудником на сайте (Руматик vs мастер) — минимизация закупочных рисков. Раньше перепроверка занимала 10-20 минут в зависимости от объёма, теперь — секунды.",
               },
               {
                 t: "SSOT-нормализация",
@@ -77,13 +77,7 @@ export function LegacyCase() {
             ))}
           </div>
 
-          <div className="flex items-end gap-8">
-            <div>
-              <Counter to={42000} suffix="%" />
-              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
-                Рост эффективности
-              </div>
-            </div>
+          <div className="flex items-end">
             <div>
               <Counter to={420} suffix="×" />
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
