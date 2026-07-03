@@ -8,19 +8,20 @@ export function Stack() {
   const cols = [
     {
       Icon: Brain,
-      title: "LLM · Модели",
+      title: "LLM · Модели & AI-ассистенты",
       items: [
         "Gemini · Claude · DeepSeek",
         "ChatGPT · OpenRouter",
+        "Kiro · GitHub Copilot",
       ],
     },
     {
       Icon: Cpu,
       title: "Vibe-coding · Разработка",
       items: [
-        "Cursor · Lovable · Bolt",
-        "Kiro · OpenCode · Replit",
-        "React · TanStack · Vercel",
+        "Основные: Cursor · Antygravity · OpenCode · Kiro",
+        "Каркас: Lovable · Bolt · Replit",
+        "React · TanStack · Vercel · GitHub",
         "Постоянно тестирую новые инструменты",
       ],
     },
@@ -38,9 +39,9 @@ export function Stack() {
       Icon: Boxes,
       title: "CAD & Design",
       items: [
-        "PRO100 (авторские библиотеки)",
-        "SPlan (шаблоны чертежей)",
-        "Figma · CorelDRAW · Photoshop",
+        "PRO100 (библиотеки компонентов)",
+        "SPlan (чертежи)",
+        "Figma · Photoshop · Gamma",
       ],
     },
   ];

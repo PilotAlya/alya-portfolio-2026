@@ -147,10 +147,10 @@ export function Nova() {
             </span>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Единая точка управления заказами, складом и AI-навигатором «Борис». Прошла полный цикл от проектирования до итеративного тестирования и рефакторинга в облегченную версию NOVA Light.
+            Единая точка управления заказами, складом и AI-навигатором «Борис». Первоначально проектировалась как полнофункциональная система, но после первого цикла тестирования была переработана в NOVA Light — упрощённую версию с фокусом на продажу ЛДСП материалов (полки, дверцы и т.д.).
           </p>
           <p className="text-base text-muted-foreground/90 leading-relaxed border-l-2 border-accent/60 pl-4">
-            <span className="text-foreground font-medium">Два цикла разработки:</span> Первая версия оказалась перегруженной функционалом (бухгалтерия, избыточные модули) — 3/3 пользователей подтвердили сложность UX. На основе фидбека переработала систему в NOVA Light с фокусом на продажу ЛДСП материалов. Повторные тесты показали 100% улучшение юзабилити.
+            <span className="text-foreground font-medium">Два цикла разработки:</span> Первая версия оказалась перегруженной функционалом, выходящим за пределы моих компетенций (бухгалтерия, углубленная логика работы с клиентом) — 3/3 пользователей указали на сложность. На основе обратной связи переработала систему в NOVA Light. Повторные тесты с теми же пользователями: «Стало намного понятнее. Сами бы таким пользовались».
           </p>
         </motion.div>
 
@@ -218,11 +218,7 @@ export function Nova() {
               </span>
             </div>
             <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">
-              Проведено{" "}
-              <span className="text-foreground font-medium">3 сессии коридорного тестирования</span> (по 20-40 минут) с
-              пользователями разных возрастных групп. Найдено и задокументировано в Google Sheets{" "}
-              <span className="text-foreground font-medium">12+ дефектов</span> интерфейса и логики.
-              Закрыто 3 критических блокера. Исправление багов в среде OpenCode/Kiro.
+              <span className="text-foreground font-medium">Полный цикл тестирования (проектирование → тестирование → итерация).</span> Провела 3 сессии коридорного тестирования (по 20-40 минут) с пользователями разных возрастных групп. Найдено и задокументировано в Google Sheets 12+ проблем. Закрыто 3 критических блокера. Баги исправлялись в OpenCode. Итеративное тестирование: первый цикл → доработка → повторное тестирование.
             </p>
           </div>
 
@@ -249,59 +245,6 @@ export function Nova() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
-
-        {/* Техническая документация */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 border border-white/10 rounded-lg p-5 sm:p-6 bg-card/20"
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
-              📄 Техническая документация
-            </span>
-          </div>
-          <p className="text-sm text-muted-foreground mb-4">
-            Разработала пошаговые технические руководства для пользователей разного уровня подготовки. 
-            Демонстрирует навык структурирования сложной информации и работы с UX текстовых документов.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            <a
-              href="https://gamma.app/docs/-pn6c00ti46m0r4l?mode=doc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/10 rounded p-4 hover:border-accent/40 hover:bg-white/[0.02] transition-colors group"
-            >
-              <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                Мануал VPN
-              </div>
-              <div className="text-sm font-medium mb-1 group-hover:text-accent transition-colors">
-                Цифровая свобода и личный VPN
-              </div>
-              <div className="text-xs text-muted-foreground">
-                Технический мануал по настройке личного VPN
-              </div>
-            </a>
-            <a
-              href="https://gamma.app/docs/AI--ti6euqermukmwh3?mode=doc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/10 rounded p-4 hover:border-accent/40 hover:bg-white/[0.02] transition-colors group"
-            >
-              <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                Мануал AI Search
-              </div>
-              <div className="text-sm font-medium mb-1 group-hover:text-accent transition-colors">
-                Google AI Search: поиск будущего
-              </div>
-              <div className="text-xs text-muted-foreground">
-                Руководство по новому поколению поиска
-              </div>
-            </a>
           </div>
         </motion.div>
 
@@ -348,7 +291,7 @@ export function Nova() {
               {
                 value: "n-pilot",
                 q: "Как проходило тестирование?",
-                a: "Провела 3 сессии коридорного тестирования (20-40 минут каждая). Первый цикл выявил перегруженность функциями — все пользователи подтвердили сложность UX. Второй цикл (NOVA Light) показал 100% улучшение юзабилити и интуитивности интерфейса.",
+                a: "Два цикла: (1) Полная версия — 3 сессии, выявлена перегруженность функциями (бухгалтерия). 3/3 пользователей подтвердили сложность. (2) NOVA Light — упрощённая версия с фокусом на ЛДСП материалы. Повторные тесты с теми же людьми: «Стало намного понятнее. Сами бы таким пользовались, если бы это было полноценно-работающее приложение».",
               },
               {
                 value: "n5",
