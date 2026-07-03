@@ -11,8 +11,8 @@ import { BathroomCase } from "@/components/BathroomCase";
 import { LegacyCase } from "@/components/LegacyCase";
 import { Nova } from "@/components/Nova";
 import { Stack } from "@/components/Stack";
+import { GitHubProjects } from "@/components/GitHubProjects";
 import { Guides } from "@/components/Guides";
-import { Testimonials } from "@/components/Testimonials";
 import { Profile } from "@/components/Profile";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -60,8 +60,8 @@ function Index() {
       <LegacyCase />
       <Nova />
       <Stack />
+      <GitHubProjects />
       <Guides />
-      <Testimonials />
       <Profile />
       <Contact />
       <Footer />

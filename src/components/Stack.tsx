@@ -1,11 +1,22 @@
 import { motion } from "framer-motion";
-import { Cpu, CircuitBoard, Boxes, Brain } from "lucide-react";
+import { Cpu, CircuitBoard, Boxes, Brain, TestTube, Github } from "lucide-react";
 import { fadeUp } from "./shared";
 
 import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 
 export function Stack() {
   const cols = [
+    {
+      Icon: TestTube,
+      title: "Testing & QA",
+      items: [
+        "Функциональное тестирование веб-приложений",
+        "UX-тестирование (коридорные тесты)",
+        "Browser DevTools (Chrome, inspect)",
+        "Документирование багов (Google Sheets)",
+        "Кросс-возрастное тестирование",
+      ],
+    },
     {
       Icon: Brain,
       title: "LLM · Модели & AI-ассистенты",
@@ -90,7 +101,7 @@ export function Stack() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-4 gap-px bg-white/10 border border-white/10">
+        <div className="grid md:grid-cols-5 gap-px bg-white/10 border border-white/10">
           {cols.map((c, i) => (
             <motion.div
               key={c.title}
