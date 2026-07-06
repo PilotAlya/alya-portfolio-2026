@@ -116,11 +116,18 @@ export function Hero() {
                 <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
-                href="/resume.pdf"
-                download="Albina_Akbarova_Resume.pdf"
+                href="/resume-qa.pdf"
+                download="Albina_Akbarova_QA_Resume.pdf"
                 className="inline-flex items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
               >
-                Скачать резюме (PDF)
+                Резюме QA
+              </a>
+              <a
+                href="/resume-sa.pdf"
+                download="Albina_Akbarova_SA_Resume.pdf"
+                className="inline-flex items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                Резюме SA
               </a>
               <a
                 href="#cases"

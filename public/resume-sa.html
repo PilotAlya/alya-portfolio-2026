@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альбина Акбарова — Junior System Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            padding: 40px 20px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+        
+        header {
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+        
+        .contacts a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .contacts a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            margin-bottom: 32px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        
+        .period {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .links {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+        
+        .links a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        p {
+            margin-bottom: 12px;
+            color: #374151;
+            font-size: 14px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #374151;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        
+        .skill-category h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #2563eb;
+        }
+        
+        .skill-category ul {
+            margin-left: 0;
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+        
+        .skill-category li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+        
+        .intro {
+            background: #f9fafb;
+            padding: 20px;
+            border-left: 4px solid #2563eb;
+            margin-bottom: 24px;
+        }
+        
+        @media print {
+            .intro {
+                break-inside: avoid;
+            }
+            
+            section {
+                break-inside: avoid;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Альбина Акбарова</h1>
+        <div class="subtitle">Junior System Analyst</div>
+        <div class="contacts">
+            <span>📧 <a href="mailto:pilotalya@a-akbarova.ru">pilotalya@a-akbarova.ru</a></span>
+            <span>💼 GitHub: <a href="https://github.com/PilotAlya" target="_blank">github.com/PilotAlya</a></span>
+            <span>🌐 Портфолио: <a href="https://portfolio-resume-alya-akbarova.vercel.app/" target="_blank">portfolio-resume-alya-akbarova.vercel.app</a></span>
+            <span>🇬🇧 Английский: B2 (Upper-Intermediate)</span>
+        </div>
+    </header>
+
+    <section class="intro">
+        <p>
+            <strong>Начинающий системный аналитик</strong> с опытом проектирования MVP-систем и анализа бизнес-процессов. 
+            Имею технический бэкграунд в дизайне интерьера коммерческих пространств, где работа с чертежами и техническими требованиями развила системное мышление и навык декомпозиции сложных задач. Опыт работы с производством научил видеть связь между бизнес-процессами и техническими решениями.
+        </p>
+        <p>
+            <strong>Спроектировала и протестировала MVP-систему NOVA Dashboard:</strong> прошла полный цикл от анализа бизнес-процессов до итеративной разработки на основе пользовательского фидбека. Выполнила декомпозицию требований, приоритизацию функциональности и валидацию решений через UX-тестирования.
+        </p>
+    </section>
+
+    <section>
+        <h2>Проектирование и анализ: NOVA Dashboard</h2>
+        
+        <div class="job-header">
+            <h3>MVP-система управления мебельным производством</h3>
+            <span class="period">2026</span>
+        </div>
+        
+        <div class="links">
+            Презентация: <a href="https://alya-nova-2026.vercel.app/" target="_blank">alya-nova-2026.vercel.app</a> | 
+            Код: <a href="https://github.com/PilotAlya/Nova_light-" target="_blank">github.com/PilotAlya/Nova_light-</a>
+        </div>
+        
+        <p>
+            Единая точка управления заказами, складом и AI-ассистентом «Борис». Спроектирована на основе анализа бизнес-процессов мебельного производства. Полный цикл: анализ → проектирование → тестирование → итерация.
+        </p>
+        
+        <p><strong>Анализ и проектирование:</strong></p>
+        <ul>
+            <li><strong>Сбор требований:</strong> Проведён экспресс-аудит производственных процессов (4 дня стажировки в UrbanMebel), выявлены критические узкие места в учёте, ценообразовании и заказном цикле</li>
+            <li><strong>Декомпозиция задач:</strong> Выделены ключевые модули системы (управление заказами, склад, AI-ассистент, командная работа)</li>
+            <li><strong>Приоритизация функциональности:</strong> Определён MVP-scope для первой версии</li>
+            <li><strong>Архитектура системы:</strong> Спроектирована модульная структура с возможностью масштабирования</li>
+        </ul>
+        
+        <p><strong>Итеративная разработка (2 цикла):</strong></p>
+        
+        <p><strong>Цикл 1 — NOVA (полная версия):</strong></p>
+        <ul>
+            <li>Спроектирована полнофункциональная система с широким охватом процессов</li>
+            <li>Проведено 3 сессии пользовательского тестирования (20-40 минут каждая, разные возрастные группы)</li>
+            <li><strong>Выявлено:</strong> Система перегружена функциональностью за пределами компетенций (бухгалтерия, CRM). 3/3 пользователей указали на сложность</li>
+            <li><strong>Анализ обратной связи:</strong> Задокументировано 12+ проблем, выделены 3 критических блокера</li>
+        </ul>
+        
+        <p><strong>Цикл 2 — NOVA Light (упрощённая версия):</strong></p>
+        <ul>
+            <li><strong>Пересмотр требований:</strong> На основе фидбека сокращён scope до core-функциональности — продажа ЛДСП материалов</li>
+            <li><strong>Редизайн системы:</strong> Упрощена архитектура, убраны избыточные модули</li>
+            <li><strong>Повторная валидация:</strong> Тестирование с теми же 3 пользователями показало 100% улучшение восприятия</li>
+            <li><strong>Результат:</strong> "Стало намного понятнее. Сами бы таким пользовались" — подтверждение правильности решений</li>
+        </ul>
+        
+        <p><strong>Методология работы:</strong></p>
+        <ul>
+            <li>Документирование требований и результатов тестирований в Google Sheets</li>
+            <li>Приоритизация задач по критичности (блокеры, критичные, некритичные)</li>
+            <li>Итеративный подход: анализ → проектирование → валидация → корректировка</li>
+            <li>Работа с пользовательским фидбеком для принятия проектных решений</li>
+        </ul>
+        
+        <p><strong>Технический стек:</strong></p>
+        <p>React, TypeScript, Vite, Tailwind CSS, React Router DOM. Полностью автономная система без внешних API-зависимостей.</p>
+    </section>
+
+    <section>
+        <h2>Анализ бизнес-процессов и автоматизация</h2>
+        
+        <div class="job-header">
+            <h3>Аудит производственных процессов | UrbanMebel</h3>
+            <span class="period">2025 (стажировка, 4 дня)</span>
+        </div>
+        
+        <ul>
+            <li><strong>Экспресс-аудит:</strong> За 4 дня внутри производственной команды проведён анализ бизнес-процессов</li>
+            <li><strong>Выявленные проблемы:</strong> Критические ошибки в складском учёте, хаос в ценообразовании, ручная сверка 100+ позиций часами</li>
+            <li><strong>Документирование узких мест:</strong> Зафиксированы точки потерь эффективности в Legacy-системе «Инфо-Предприятие»</li>
+            <li><strong>Результат анализа:</strong> Находки легли в основу проектирования единой системы NOVA Dashboard</li>
+        </ul>
+        
+        <div class="job-header" style="margin-top: 24px;">
+            <h3>Дизайнер | Мебельный салон «РЭЛАН» (г. Лысьва, Пермский край)</h3>
+            <span class="period">Сент. 2024 — по наст. вр.</span>
+        </div>
+        
+        <ul>
+            <li>Проектирование корпусной мебели в PRO100 и создание технических чертежей в SPlan</li>
+            <li>Работа с техническими заданиями и требованиями клиентов</li>
+            <li><strong>Анализ процессов:</strong> Выявление узких мест в работе с Legacy-ПО «Инфо-Предприятие»</li>
+            <li><strong>Автоматизация:</strong> Создание инструментов для оптимизации рутинных операций</li>
+        </ul>
+        
+        <p><strong>Разработанные решения для автоматизации (с помощью AI-инструментов):</strong></p>
+        <ul>
+            <li><strong>Price Checker</strong> — парсер цен маркетплейсов для динамического контроля маржи. Сокращение времени проверки с 10-60 минут до секунд</li>
+            <li><strong>Data Validator</strong> — автоматическая сверка данных (Руматик vs мастер) для минимизации закупочных рисков. Сокращение времени проверки с 10-20 минут до секунд (+420× ускорение)</li>
+        </ul>
+        
+        <p><strong>Что демонстрирует:</strong></p>
+        <ul>
+            <li>Навык выявления узких мест в бизнес-процессах</li>
+            <li>Способность находить точки для автоматизации</li>
+            <li>Проектирование решений под конкретные бизнес-задачи</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Техническая документация</h2>
+        
+        <p><strong>Пользовательские мануалы и гайды:</strong></p>
+        <ul>
+            <li><strong>"Цифровая свобода и личный VPN"</strong> (<a href="https://gamma.app/docs/-pn6c00ti46m0r4l?mode=doc" target="_blank">gamma.app/docs/-pn6c00ti46m0r4l</a>) — Технический мануал по настройке личного VPN. Пошаговый алгоритм с учётом UX для пользователей разного уровня подготовки.</li>
+            <li><strong>"Google AI Search: поиск будущего"</strong> (<a href="https://gamma.app/docs/AI--ti6euqermukmwh3?mode=doc" target="_blank">gamma.app/docs/AI--ti6euqermukmwh3</a>) — Мануал по новому поколению поиска. Структурирование технической информации для широкой аудитории.</li>
+        </ul>
+        
+        <p><strong>Навыки:</strong></p>
+        <ul>
+            <li>Создание пользовательской документации с учётом разного уровня подготовки</li>
+            <li>Структурирование технической информации</li>
+            <li>Визуальное оформление документации (Gamma, Figma)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Смежный опыт</h2>
+        
+        <div class="job-header">
+            <h3>Проектная деятельность (Промышленный и музейный дизайн)</h3>
+            <span class="period">2025</span>
+        </div>
+        
+        <p><em>Участие в проектах с высокими требованиями к точности и работе по ТЗ:</em></p>
+        
+        <p><strong>Лысьвенский музей:</strong></p>
+        <ul>
+            <li>Оформление выставочных стендов и экспозиционных витрин</li>
+            <li>Работа по строгому ТЗ с использованием бюджетных средств — недопустимость ошибок</li>
+            <li>Монтаж конструкций «под ключ»</li>
+        </ul>
+        
+        <p><strong>Лысьвенский металлургический завод (ММК):</strong></p>
+        <ul>
+            <li>Проектирование офисного пространства (офисная корпусная мебель)</li>
+            <li>Разработка офисных модулей и производственной мебели</li>
+            <li>Работа с техническими требованиями промышленного уровня</li>
+        </ul>
+        
+        <p><strong>Что демонстрирует:</strong></p>
+        <p>Опыт работы по строгим ТЗ, где ошибка в 1 мм на чертеже приводит к финансовым потерям на производстве. Этот опыт развил системное мышление и навык декомпозиции сложных технических задач.</p>
+    </section>
+
+    <section>
+        <h2>Образование</h2>
+        
+        <ul>
+            <li><strong>Нетология, «Системный аналитик»</strong> — В процессе обучения. Изучение архитектуры систем, REST API, баз данных, BPMN, диаграмм Use Case, работы с требованиями. Цель — формализация уже имеющегося практического опыта проектирования систем.</li>
+            <li><strong>ПКПС, Дизайн (по отраслям), квалификация Дизайнер</strong> — 2021–2024, красный диплом. Основной профиль: дизайн интерьера коммерческих пространств. Развитие системного мышления, внимания к деталям и работы по строгим техническим стандартам.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Технические навыки</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Системный анализ</h3>
+                <ul>
+                    <li>Анализ бизнес-процессов и выявление узких мест</li>
+                    <li>Сбор и документирование требований</li>
+                    <li>Декомпозиция задач и приоритизация</li>
+                    <li>Проектирование MVP-систем</li>
+                    <li>Работа с пользовательским фидбеком</li>
+                    <li>BPMN (базовый уровень, изучаю)</li>
+                </ul>
+                
+                <h3 style="margin-top: 16px;">Документация и коммуникация</h3>
+                <ul>
+                    <li>Создание технической документации</li>
+                    <li>Пользовательские мануалы и гайды</li>
+                    <li>User Story mapping</li>
+                    <li>Структурирование требований</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Техническая база</h3>
+                <ul>
+                    <li><strong>Понимание архитектуры:</strong> React, TypeScript, REST API (базовый уровень)</li>
+                    <li><strong>AI-инструменты:</strong> Gemini, Claude, DeepSeek, ChatGPT, Kiro, GitHub Copilot</li>
+                    <li><strong>Инструменты разработки:</strong> Cursor, OpenCode, Kiro, GitHub, Vercel</li>
+                    <li><strong>Тестирование:</strong> Функциональное и UX-тестирование, документирование багов</li>
+                    <li><strong>Прототипирование:</strong> Figma, Gamma</li>
+                </ul>
+                
+                <h3 style="margin-top: 16px;">CAD и технические чертежи</h3>
+                <ul>
+                    <li>PRO100 (библиотеки компонентов)</li>
+                    <li>SPlan (чертежи)</li>
+                    <li>Работа с техническими требованиями</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ключевые преимущества</h2>
+        
+        <ul>
+            <li><strong>Полный цикл разработки:</strong> Опыт прохождения всех этапов от анализа бизнес-процессов до валидации готового решения. Понимание связи между бизнес-требованиями и техническими решениями.</li>
+            <li><strong>Системное мышление:</strong> Технический бэкграунд в дизайне интерьера коммерческих пространств развил навык декомпозиции сложных систем и работы с множеством взаимосвязанных компонентов.</li>
+            <li><strong>Работа с Legacy-системами:</strong> Опыт анализа устаревшего ПО и проектирования решений для миграции процессов. Понимание проблем, с которыми сталкивается бизнес при работе с Legacy.</li>
+            <li><strong>Итеративный подход:</strong> Готовность корректировать решения на основе пользовательского фидбека. Опыт пересмотра требований и редизайна системы (NOVA: 2 цикла разработки).</li>
+            <li><strong>Практический опыт автоматизации:</strong> Создание инструментов для оптимизации бизнес-процессов (Price Checker, Data Validator) — демонстрирует способность видеть точки для автоматизации.</li>
+            <li><strong>Техническая документация:</strong> Опыт создания пользовательских мануалов и гайдов для аудитории разного уровня подготовки.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Дополнительная информация</h2>
+        
+        <ul>
+            <li><strong>Быстрое обучение:</strong> самостоятельно осваиваю новые инструменты и технологии</li>
+            <li><strong>Early AI adopter:</strong> использую AI-инструменты для ускорения аналитической работы и автоматизации</li>
+            <li><strong>Вектор развития:</strong> Junior System Analyst → System Analyst. Цель — формализация практического опыта через обучение на Нетологии и развитие навыков работы с требованиями, BPMN, архитектурой систем</li>
+            <li><strong>Готова к удалённой работе и полной занятости</strong></li>
+        </ul>
+        
+        <p><strong>Готова развиваться в направлениях:</strong></p>
+        <ul>
+            <li>Углубление в BPMN и моделирование бизнес-процессов</li>
+            <li>Работа с UML-диаграммами (Use Case, Activity, Sequence)</li>
+            <li>Проектирование REST API и интеграций</li>
+            <li>Работа с системами управления требованиями (Jira, Confluence, Notion)</li>
+            <li>SQL и работа с базами данных (базовый уровень)</li>
+        </ul>
+        
+        <p style="margin-top: 16px;"><strong>Почему системная аналитика?</strong></p>
+        <p style="margin-bottom: 0;">
+            Системная аналитика — это возможность влиять на качество продукта на самом раннем этапе: от анализа бизнес-процессов до проектирования решений. Мой опыт работы с производством дал понимание, как бизнес-процессы переводятся в технические требования, а проектирование NOVA Dashboard показало, что я могу проходить полный цикл от анализа до валидации решений.
+        </p>
+    </section>
+</body>
+</html>
