@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, Download } from "lucide-react";
+import { ArrowUpRight, Mail, Download, Copy, Check } from "lucide-react";
+import { useState } from "react";
 
 import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
 
 export function Contact() {
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("pilotalya@a-akbarova.ru");
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
+  };
+
   return (
     <section
       id="contact"
@@ -45,9 +54,9 @@ export function Contact() {
               </div>
               <ArrowUpRight className="size-6 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
             </a>
-            <a
-              href="mailto:pilotalya@a-akbarova.ru"
-              className="group flex items-center justify-between p-6 border border-white/10 hover:border-accent hover:bg-accent/5 transition-all"
+            <button
+              onClick={copyEmail}
+              className="group flex items-center justify-between p-6 border border-white/10 hover:border-accent hover:bg-accent/5 transition-all text-left"
             >
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-2">
@@ -57,8 +66,12 @@ export function Contact() {
                   pilotalya@a-akbarova.ru
                 </div>
               </div>
-              <Mail className="size-6 text-muted-foreground group-hover:text-accent transition-colors shrink-0 ml-4" />
-            </a>
+              {emailCopied ? (
+                <Check className="size-6 text-accent shrink-0 ml-4" />
+              ) : (
+                <Copy className="size-6 text-muted-foreground group-hover:text-accent transition-colors shrink-0 ml-4" />
+              )}
+            </button>
           </div>
 
           <a
