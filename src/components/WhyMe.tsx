@@ -24,7 +24,7 @@ export function WhyMe() {
     {
       n: "03",
       problem: "MVP нужен «вчера», а команды разработки нет.",
-      solution: "Собираю работающие прототипы сама: React + TanStack + RAG, без посредников.",
+      solution: "Собираю работающие прототипы сама: React + React Router + RAG, без посредников.",
       result: "NOVA Dashboard и RAG-ассистент «Борис» — закрытый MVP, демо доступно по запросу.",
       Icon: Sparkles,
     },

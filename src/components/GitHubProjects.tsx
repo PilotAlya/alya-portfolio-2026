@@ -6,10 +6,10 @@ export function GitHubProjects() {
   const projects = [
     {
       name: "Nova_light-",
-      description: "MVP-система управления мебельным производством. Единая точка управления заказами, складом и AI-ассистентом «Борис». React, TypeScript, TanStack Router.",
+      description: "MVP-система управления мебельным производством. Единая точка управления заказами, складом и AI-ассистентом «Борис». React, TypeScript, React Router DOM.",
       url: "https://github.com/PilotAlya/Nova_light-",
       demo: "https://alya-nova-2026.vercel.app/",
-      tags: ["React", "TypeScript", "TanStack", "RAG"],
+      tags: ["React", "TypeScript", "React Router", "RAG"],
     },
   ];
 
