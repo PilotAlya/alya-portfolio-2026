@@ -30,7 +30,7 @@ export function GitHubProjects() {
             Open Source & Публичные проекты
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Мои проекты на GitHub — от MVP-систем до автоматизации. Весь код открыт для изучения.
+            Мои проекты на GitHub — от MVP-проектов до лендингов. Весь код открыт для изучения.
           </p>
         </motion.div>
 
