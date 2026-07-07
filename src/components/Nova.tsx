@@ -142,9 +142,6 @@ export function Nova() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
               NOVA Dashboard
             </h2>
-            <span className="inline-flex items-center font-mono text-[10px] uppercase tracking-widest text-accent border border-accent/40 bg-accent/10 px-2.5 py-1 rounded-full">
-              # АнтиБитрикс
-            </span>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             Единая точка управления заказами, складом и AI-навигатором «Борис». Первоначально проектировалась как полнофункциональная система, но после первого цикла тестирования была переработана в NOVA Light — упрощённую версию с фокусом на продажу ЛДСП материалов (полки, дверцы и т.д.).
