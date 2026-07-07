@@ -98,7 +98,7 @@ function NovaCarousel() {
       </div>
 
       {/* Thumbnail strip */}
-      <div className="mt-3 grid grid-cols-8 gap-1.5">
+      <div className="mt-3 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-1.5">
         {SLIDES.map((s, i) => (
           <button
             key={i}

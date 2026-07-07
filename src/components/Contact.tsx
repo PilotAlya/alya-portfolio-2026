@@ -74,23 +74,25 @@ export function Contact() {
             </button>
           </div>
 
-          <a
-            href="/resume-qa.pdf"
-            download="Albina_Akbarova_QA_Resume.pdf"
-            className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
-          >
-            <Download className="size-5" />
-            Скачать резюме QA
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="/resume-qa.pdf"
+              download="Albina_Akbarova_QA_Resume.pdf"
+              className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
+            >
+              <Download className="size-5" />
+              Скачать резюме QA
+            </a>
 
-          <a
-            href="/resume-sa.pdf"
-            download="Albina_Akbarova_SA_Resume.pdf"
-            className="group inline-flex items-center gap-3 border border-accent/40 bg-accent/10 px-6 py-4 rounded-md text-base font-semibold hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
-          >
-            <Download className="size-5" />
-            Скачать резюме SA
-          </a>
+            <a
+              href="/resume-sa.pdf"
+              download="Albina_Akbarova_SA_Resume.pdf"
+              className="group inline-flex items-center gap-3 border border-accent/40 bg-accent/10 px-6 py-4 rounded-md text-base font-semibold hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <Download className="size-5" />
+              Скачать резюме SA
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
