@@ -59,7 +59,7 @@ export function LegacyCase() {
                 d: "Автономный парсер цен маркетплейсов для динамического контроля маржи в реальном времени. Раньше проверка цен занимала 10-60 минут, теперь — секунды.",
               },
               {
-                t: "Data Validator",
+                t: "Mebel Checker",
                 d: "Автоматическая сверка данных, введённых сотрудником на сайте (Руматик vs мастер) — минимизация закупочных рисков. Раньше перепроверка занимала 10-20 минут в зависимости от объёма, теперь — секунды.",
               },
               {
@@ -113,14 +113,14 @@ export function LegacyCase() {
             <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg glow-accent bg-card">
               <img
                 src={legacyMebelChecker}
-                alt="Data Validator — ИИ-ассистент для распила и сверки заказов"
+                alt="Mebel Checker — ИИ-ассистент для распила и сверки заказов"
                 className="w-full h-auto object-contain"
                 loading="lazy"
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
             </div>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              [02] Data Validator · AI-валидация заказов
+              [02] Mebel Checker · AI-валидация заказов
             </figcaption>
           </figure>
 

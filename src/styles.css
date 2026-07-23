@@ -120,3 +120,55 @@
   100% { transform: translateX(-50%); }
 }
 .animate-ticker { animation: ticker 40s linear infinite; }
+
+/* Custom cursor — desktop only (enabled via JS) */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor-dot.is-hidden,
+.custom-cursor-ring.is-hidden {
+  opacity: 0;
+}
+
+.custom-cursor-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--color-accent) 60%, transparent);
+}
+
+.custom-cursor-ring {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in oklab, var(--color-accent) 55%, transparent);
+  z-index: 99998;
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.custom-cursor-ring.is-hover {
+  width: 44px;
+  height: 44px;
+  border-color: var(--color-accent);
+  background-color: color-mix(in oklab, var(--color-accent) 12%, transparent);
+}

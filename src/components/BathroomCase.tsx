@@ -23,7 +23,7 @@ export function BathroomCase() {
     {
       tag: "03 · The Proof",
       sub: "REALITY",
-      caption: "Реализованный объект.",
+      caption: "Реализованный объект. AI-реставрация на основе реальных фотографий реализованного проекта.",
       img: bathReal,
     },
   ];
