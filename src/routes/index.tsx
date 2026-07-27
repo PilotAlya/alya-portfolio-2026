@@ -6,11 +6,9 @@ import { Hero } from "@/components/Hero";
 import { HeroStats } from "@/components/HeroStats";
 import { WhyMe } from "@/components/WhyMe";
 import { EvolutionPath } from "@/components/EvolutionPath";
-import { EngineeringBackground } from "@/components/EngineeringBackground";
-import { BathroomCase } from "@/components/BathroomCase";
-import { LegacyCase } from "@/components/LegacyCase";
+import { ExperienceSection } from "@/components/ExperienceSection";
+import { PortfolioSection } from "@/components/PortfolioSection";
 import { Nova } from "@/components/Nova";
-import { AITestingCase } from "@/components/AITestingCase";
 import { Stack } from "@/components/Stack";
 import { GitHubProjects } from "@/components/GitHubProjects";
 import { Guides } from "@/components/Guides";
@@ -56,10 +54,8 @@ function Index() {
       <HeroStats />
       <WhyMe />
       <EvolutionPath />
-      <EngineeringBackground />
-      <BathroomCase />
-      <LegacyCase />
-      <AITestingCase />
+      <ExperienceSection />
+      <PortfolioSection />
       <Nova />
       <Stack />
       <GitHubProjects />

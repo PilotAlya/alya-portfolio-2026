@@ -41,7 +41,7 @@ export function LegacyCase() {
           transition={{ duration: 0.8 }}
         >
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Кейс 02 · Legacy Transformation
+            Опыт · Legacy Transformation
           </span>
           <h2 className="text-4xl font-bold tracking-tight mt-4 mb-6">
             Борьба с Legacy и автоматизация рутины
