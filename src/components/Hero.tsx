@@ -76,7 +76,7 @@ export function Hero() {
                   <span className="relative inline-flex rounded-full size-2 bg-accent" />
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  Available · System & AI architecture
+                  Открыта к предложениям · SA & QA
                 </span>
               </div>
             </motion.div>
@@ -101,6 +101,28 @@ export function Hero() {
               Перевожу промышленный хаос в цифровую логику —{" "}
               <span className="text-foreground italic">от чертежей мебели до RAG-агентов</span>.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex flex-wrap gap-2"
+            >
+              {[
+                { label: "Системный анализ", sub: "SA" },
+                { label: "Тестирование", sub: "QA" },
+                { label: "Аудит данных", sub: "Python" },
+                { label: "AI-инструменты", sub: "Cursor · RAG" },
+              ].map((pill) => (
+                <div
+                  key={pill.label}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 font-mono text-[10px] uppercase tracking-wider"
+                >
+                  <span className="text-foreground">{pill.label}</span>
+                  <span className="text-muted-foreground/70">· {pill.sub}</span>
+                </div>
+              ))}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
