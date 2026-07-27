@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 
 import { Nav } from "@/components/Nav";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
 import { HeroStats } from "@/components/HeroStats";
 import { WhyMe } from "@/components/WhyMe";
@@ -50,6 +51,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
+      <ScrollProgress />
       <Nav />
       <Hero />
       <HeroStats />

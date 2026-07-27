@@ -29,11 +29,15 @@ export function Nav() {
 
         <div className="hidden md:flex items-center gap-8 font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
           {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-accent transition-colors">
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link hover:text-accent transition-colors"
+            >
               {link.label}
             </a>
           ))}
-          <a href="#contact" className="text-foreground hover:text-accent transition-colors">
+          <a href="#contact" className="nav-link text-foreground hover:text-accent transition-colors">
             Контакты →
           </a>
         </div>

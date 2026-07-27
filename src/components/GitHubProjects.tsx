@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 import { fadeUp } from "./shared";
+import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 type Project = {
   name: string;
@@ -76,8 +77,12 @@ export function GitHubProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group flex flex-col border border-white/10 rounded-xl bg-background/60 p-5 hover:border-accent/40 hover:bg-card/40 transition-all"
+              {...spotlightAttrs}
+              className={spotlightClass(
+                "corner-brackets group flex flex-col rounded-xl border border-white/10 bg-background/60 p-5",
+              )}
             >
+              <CornerMarks />
               <span className="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">
                 {project.category}
               </span>
@@ -125,28 +130,28 @@ export function GitHubProjects() {
           ))}
         </div>
 
-        <motion.div
+        <motion.a
+          href="https://github.com/PilotAlya"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
+          {...spotlightAttrs}
+          className={spotlightClass(
+            "group flex items-center justify-between p-5 border border-white/10 rounded-xl bg-white/[0.02]",
+          )}
         >
-          <a
-            href="https://github.com/PilotAlya"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center justify-between p-5 border border-white/10 rounded-xl hover:border-accent/40 bg-white/[0.02] hover:bg-card transition-all"
-          >
-            <div className="flex items-center gap-4">
-              <Github className="size-6 text-accent" />
-              <div>
-                <div className="font-bold">github.com/PilotAlya</div>
-                <div className="text-sm text-muted-foreground">Все репозитории и эксперименты</div>
-              </div>
+          <div className="flex items-center gap-4">
+            <Github className="size-6 text-accent" />
+            <div>
+              <div className="font-bold">github.com/PilotAlya</div>
+              <div className="text-sm text-muted-foreground">Все репозитории и эксперименты</div>
             </div>
-            <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-          </a>
-        </motion.div>
+          </div>
+          <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+        </motion.a>
       </div>
     </section>
   );

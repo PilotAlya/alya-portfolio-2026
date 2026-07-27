@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, CircuitBoard, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
+import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 export function WhyMe() {
   const items = [
@@ -59,8 +60,12 @@ export function WhyMe() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="border border-white/10 bg-white/[0.02] p-7 hover:border-accent/40 transition-colors flex flex-col gap-5"
+              {...spotlightAttrs}
+              className={spotlightClass(
+                "corner-brackets rounded-lg border border-white/10 bg-white/[0.02] p-7 flex flex-col gap-5",
+              )}
             >
+              <CornerMarks />
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
                   [{it.n}] PROBLEM → RESULT

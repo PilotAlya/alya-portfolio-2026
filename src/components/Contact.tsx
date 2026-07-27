@@ -3,6 +3,7 @@ import { ArrowUpRight, Download, Copy, Check, MessageCircle, Mail } from "lucide
 import { useState } from "react";
 
 import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 export function Contact() {
   const [emailCopied, setEmailCopied] = useState(false);
@@ -44,7 +45,10 @@ export function Contact() {
               href="https://t.me/Albinaa_Akbarova"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col gap-4 p-6 border border-white/10 rounded-lg hover:border-accent hover:bg-accent/5 transition-all"
+              {...spotlightAttrs}
+              className={spotlightClass(
+                "group flex flex-col gap-4 p-6 rounded-lg border border-white/10",
+              )}
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="p-2 rounded-md bg-accent/10 border border-accent/20 text-accent">
@@ -64,7 +68,10 @@ export function Contact() {
             <button
               type="button"
               onClick={copyEmail}
-              className="group flex flex-col gap-4 p-6 border border-white/10 rounded-lg hover:border-accent hover:bg-accent/5 transition-all text-left"
+              {...spotlightAttrs}
+              className={spotlightClass(
+                "group flex flex-col gap-4 p-6 rounded-lg border border-white/10 text-left",
+              )}
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="p-2 rounded-md bg-accent/10 border border-accent/20 text-accent">

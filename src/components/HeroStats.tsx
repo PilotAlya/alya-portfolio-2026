@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 export function HeroStats() {
   const stats = [
@@ -21,7 +22,11 @@ export function HeroStats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.6 }}
-            className="flex flex-col gap-2"
+            {...spotlightAttrs}
+            className={spotlightClass(
+              "flex flex-col gap-2 rounded-lg border border-transparent p-4 -m-4",
+              "subtle",
+            )}
           >
             <div className="font-extrabold text-3xl sm:text-4xl tracking-tight">
               <span className="text-accent">{s.n}</span>

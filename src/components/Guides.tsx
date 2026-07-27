@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { fadeUp } from "./shared";
+import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 export function Guides() {
   return (
@@ -47,8 +48,12 @@ export function Guides() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group p-8 border border-white/10 hover:border-accent/40 hover:bg-white/[0.02] transition-all flex flex-col"
+              {...spotlightAttrs}
+              className={spotlightClass(
+                "corner-brackets group rounded-lg p-8 border border-white/10 flex flex-col",
+              )}
             >
+              <CornerMarks />
               <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
                 Guide {String(i + 1).padStart(2, "0")}
               </div>

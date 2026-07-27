@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Ruler, CircuitBoard, Bot } from "lucide-react";
 import { fadeUp, SectionCodeDecor, EVOLUTION_CODE_LINES } from "./shared";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 export function EvolutionPath() {
   const stages = [
@@ -55,9 +56,11 @@ export function EvolutionPath() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.7 }}
-              className={`p-10 lg:p-12 group transition-colors ${
-                i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-white/10" : ""
-              } ${s.featured ? "bg-accent/5" : "hover:bg-white/[0.02]"}`}
+              {...spotlightAttrs}
+              className={spotlightClass(
+                `p-10 lg:p-12 group ${i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-white/10" : ""} ${s.featured ? "bg-accent/5" : ""}`,
+                "flat",
+              )}
             >
               <div className="flex items-center justify-between mb-8">
                 <span

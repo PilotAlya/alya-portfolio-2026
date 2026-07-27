@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 import portrait from "@/assets/portrait.jpg";
 
@@ -15,12 +16,13 @@ export function Profile() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card">
+          <div className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait">
             <img
               src={portrait}
               alt="Алья Акбарова — портрет"
-              className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
             />
+            <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none" />
           </div>
         </motion.div>
 
@@ -52,7 +54,11 @@ export function Profile() {
                 d: "Комплаенс-аудит, контроль качества — см. раздел Опыт.",
               },
             ].map((c) => (
-              <div key={c.t}>
+              <div
+                key={c.t}
+                {...spotlightAttrs}
+                className={spotlightClass("rounded-lg border border-transparent p-4 -m-4", "subtle")}
+              >
                 <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-2">
                   {c.t}
                 </div>
@@ -80,7 +86,11 @@ export function Profile() {
                 Icon: Sparkles,
               },
             ].map((c) => (
-              <div key={c.t}>
+              <div
+                key={c.t}
+                {...spotlightAttrs}
+                className={spotlightClass("rounded-lg border border-transparent p-4 -m-4", "subtle")}
+              >
                 <div className="flex items-center gap-2 mb-2">
                   {c.Icon && <c.Icon className="size-3.5 text-accent" />}
                   <div className="font-mono text-[10px] uppercase tracking-widest text-foreground">
