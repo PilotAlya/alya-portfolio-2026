@@ -4,6 +4,7 @@ import { BarChart3, TrendingDown, Zap } from "lucide-react";
 import dashboardPreview from "@/assets/churn-dashboard.png";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { ParallaxImage } from "./effects/ParallaxImage";
 
 const DASHBOARD_URL = "https://client-retention-dashboard.vercel.app/";
 
@@ -94,10 +95,11 @@ export function ChurnAuditCase() {
               {...spotlightAttrs}
               className={spotlightClass("group block overflow-hidden rounded-xl border border-white/10 bg-background/60")}
             >
-              <img
+              <ParallaxImage
                 src={dashboardPreview}
                 alt="Дашборд: KPI-карточки, графики оттока и таблица проверки данных"
                 className="w-full h-auto object-cover object-top max-h-[280px] group-hover:scale-[1.02] transition-transform duration-500"
+                speed={10}
               />
               <div className="px-4 py-3 border-t border-white/10 flex items-center justify-between gap-2">
                 <span className="font-mono text-[10px] uppercase tracking-wider text-accent group-hover:text-accent/80 transition-colors">

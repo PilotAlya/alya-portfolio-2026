@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Cpu, CircuitBoard, Boxes, Brain, TestTube, Github } from "lucide-react";
 import { fadeUp } from "./shared";
+import { SectionLabel } from "./effects/SectionLabel";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 
@@ -94,9 +96,7 @@ export function Stack() {
           variants={fadeUp}
           className="mb-16 max-w-3xl"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 07 · Технологический стек
-          </span>
+          <SectionLabel chapter={7} title="Технологический стек" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">
             Стек технологий и автоматизации
           </h2>
@@ -110,7 +110,8 @@ export function Stack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-background p-8 hover:bg-card transition-colors"
+              {...spotlightAttrs}
+              className={spotlightClass("bg-background p-8", "flat")}
             >
               <c.Icon className="size-6 text-accent mb-6" />
               <div className="font-bold text-xl mb-4 uppercase tracking-tight">{c.title}</div>

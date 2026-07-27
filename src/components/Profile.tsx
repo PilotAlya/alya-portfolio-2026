@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { SectionLabel } from "./effects/SectionLabel";
 
 import portrait from "@/assets/portrait.jpg";
 
@@ -32,9 +33,7 @@ export function Profile() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 09 · Профиль специалиста
-          </span>
+          <SectionLabel chapter={9} title="Профиль специалиста" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-10">
             Профиль специалиста
           </h2>

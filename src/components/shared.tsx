@@ -5,6 +5,22 @@ export const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
+export const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.04 },
+  },
+};
+
+export const staggerItem = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 export const HERO_CODE_LINES = [
   "$ pilot-ali init --mode=system-architect",
   "> loading modules: rag-agent, nova-flex, nova-project ............ ok",

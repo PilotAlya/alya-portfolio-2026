@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "./shared";
+import { SectionLabel } from "./effects/SectionLabel";
+import { ParallaxImage } from "./effects/ParallaxImage";
 
 import engBlueprint from "@/assets/eng-blueprint.jpg";
 import eng1 from "@/assets/eng-museum-1.jpg";
@@ -18,9 +20,7 @@ export function EngineeringBackground() {
           variants={fadeUp}
           className="lg:col-span-5"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 03 · Опыт на производстве
-          </span>
+          <SectionLabel chapter={3} title="Опыт на производстве" />
           <h2 className="text-4xl font-bold tracking-tight mt-4 mb-6">
             Мебель & Производство
             <br />
@@ -62,13 +62,13 @@ export function EngineeringBackground() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative ring-1 ring-white/10 bg-white/[0.02] p-3"
+            className="relative ring-1 ring-white/10 bg-white/[0.02] p-3 overflow-hidden"
           >
-            <img
+            <ParallaxImage
               src={engBlueprint}
               alt="Чертёж витрин для Лысьвенского музея — приложение к договору"
               className="w-full h-auto object-contain"
-              loading="lazy"
+              speed={8}
             />
             <span className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-widest bg-background/80 text-accent px-2 py-1">
               Blueprint · 2025
@@ -90,11 +90,12 @@ export function EngineeringBackground() {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
                 className="relative aspect-square overflow-hidden ring-1 ring-white/5 bg-card"
               >
-                <img
+                <ParallaxImage
                   src={p.src}
                   alt={p.alt}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
-                  loading="lazy"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  containerClassName="h-full"
+                  speed={10}
                 />
               </motion.div>
             ))}

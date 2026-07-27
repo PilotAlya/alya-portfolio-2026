@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
-import { fadeUp } from "./shared";
+import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 type Project = {
@@ -83,26 +83,33 @@ export function GitHubProjects() {
               )}
             >
               <CornerMarks />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">
-                {project.category}
-              </span>
-              <h3 className="text-lg font-bold tracking-tight mb-2 group-hover:text-accent transition-colors">
-                {project.name}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-mono text-[9px] uppercase tracking-wider text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-3 pt-3 border-t border-white/10 font-mono text-[10px] uppercase tracking-wider">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-col flex-1"
+              >
+                <motion.span variants={staggerItem} className="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">
+                  {project.category}
+                </motion.span>
+                <motion.h3 variants={staggerItem} className="text-lg font-bold tracking-tight mb-2 group-hover:text-accent transition-colors">
+                  {project.name}
+                </motion.h3>
+                <motion.p variants={staggerItem} className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                  {project.description}
+                </motion.p>
+                <motion.div variants={staggerItem} className="flex flex-wrap gap-1.5 mb-4">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-mono text-[9px] uppercase tracking-wider text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </motion.div>
+                <motion.div variants={staggerItem} className="flex flex-wrap gap-3 pt-3 border-t border-white/10 font-mono text-[10px] uppercase tracking-wider">
                 {project.url && (
                   <a
                     href={project.url}
@@ -125,7 +132,8 @@ export function GitHubProjects() {
                     Demo
                   </a>
                 )}
-              </div>
+              </motion.div>
+              </motion.div>
             </motion.article>
           ))}
         </div>

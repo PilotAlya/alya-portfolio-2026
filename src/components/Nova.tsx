@@ -18,6 +18,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
+import { ParallaxImage } from "./effects/ParallaxImage";
+import { MagneticLink } from "./effects/MagneticButton";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import novaWiki from "@/assets/nova-wiki.png";
@@ -50,11 +52,12 @@ function NovaCarousel() {
     <div className="relative">
       {/* Main slide — с подсветкой по краям */}
       <div className="relative aspect-video overflow-hidden rounded-lg ring-2 ring-accent/40 bg-black shadow-[0_0_32px_rgba(59,130,246,0.2)]">
-        <img
+        <ParallaxImage
           key={current}
           src={SLIDES[current].src}
           alt={SLIDES[current].label}
           className="w-full h-full object-contain"
+          speed={8}
         />
         {/* tag */}
         <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
@@ -340,16 +343,16 @@ export function Nova() {
 
         {/* Единственная кнопка презентации */}
         <div className="flex justify-start">
-          <a
+          <MagneticLink
             href="https://alya-nova-2026.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
+            className="group items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
             <PlayCircle className="size-4" />
             Смотреть презентацию NOVA
             <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
+          </MagneticLink>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "./shared";
+import { ParallaxImage } from "./effects/ParallaxImage";
 
 import bathSims from "@/assets/case-bathroom-sims.jpg";
 import bathAi from "@/assets/case-bathroom-ai.jpg";
@@ -93,11 +94,11 @@ export function BathroomCase() {
                   p.highlight ? "ring-accent/40" : "ring-white/10"
                 }`}
               >
-                <img
+                <ParallaxImage
                   src={p.img}
                   alt={p.caption}
                   className="w-full h-auto max-h-[640px] object-contain transition-transform duration-700 group-hover:scale-[1.02]"
-                  loading="lazy"
+                  speed={14}
                 />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/70 to-transparent" />
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">

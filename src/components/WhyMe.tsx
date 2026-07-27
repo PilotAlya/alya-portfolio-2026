@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Target, CircuitBoard, Sparkles } from "lucide-react";
-import { fadeUp } from "./shared";
+import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { SectionLabel } from "./effects/SectionLabel";
 
 export function WhyMe() {
   const items = [
@@ -41,9 +42,7 @@ export function WhyMe() {
           variants={fadeUp}
           className="mb-14 max-w-3xl"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 01.5 · Почему именно я
-          </span>
+          <SectionLabel chapter={1.5} title="Почему именно я" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">
             Что я приношу в команду
           </h2>
@@ -66,31 +65,39 @@ export function WhyMe() {
               )}
             >
               <CornerMarks />
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  [{it.n}] PROBLEM → RESULT
-                </span>
-                <it.Icon className="size-4 text-accent" />
-              </div>
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-col gap-5"
+              >
+                <motion.div variants={staggerItem} className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                    [{it.n}] PROBLEM → RESULT
+                  </span>
+                  <it.Icon className="size-4 text-accent" />
+                </motion.div>
 
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                  Проблема
-                </div>
-                <p className="text-sm font-semibold leading-snug">{it.problem}</p>
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                  Что делаю
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{it.solution}</p>
-              </div>
-              <div className="border-t border-white/10 pt-4">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                  Результат
-                </div>
-                <p className="text-sm leading-relaxed">{it.result}</p>
-              </div>
+                <motion.div variants={staggerItem}>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                    Проблема
+                  </div>
+                  <p className="text-sm font-semibold leading-snug">{it.problem}</p>
+                </motion.div>
+                <motion.div variants={staggerItem}>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                    Что делаю
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{it.solution}</p>
+                </motion.div>
+                <motion.div variants={staggerItem} className="border-t border-white/10 pt-4">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
+                    Результат
+                  </div>
+                  <p className="text-sm leading-relaxed">{it.result}</p>
+                </motion.div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

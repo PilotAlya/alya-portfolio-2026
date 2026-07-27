@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { fadeUp } from "./shared";
+import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { SectionLabel } from "./effects/SectionLabel";
 
 export function Guides() {
   return (
@@ -14,9 +15,7 @@ export function Guides() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 08 · Экспертиза & Community
-          </span>
+          <SectionLabel chapter={8} title="Экспертиза & Community" />
           <h2 className="text-4xl font-bold tracking-tight mt-4 mb-4">
             Технические гайды и Open Knowledge
           </h2>
@@ -54,15 +53,28 @@ export function Guides() {
               )}
             >
               <CornerMarks />
-              <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
-                Guide {String(i + 1).padStart(2, "0")}
-              </div>
-              <h3 className="text-2xl font-bold tracking-tight mb-3">{g.t}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">{g.d}</p>
-              <span className="mt-auto inline-flex items-center gap-2 text-sm text-foreground group-hover:text-accent transition-colors">
-                Читать гайд{" "}
-                <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </span>
+              <CornerMarks />
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-col flex-1"
+              >
+                <motion.div variants={staggerItem} className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
+                  Guide {String(i + 1).padStart(2, "0")}
+                </motion.div>
+                <motion.h3 variants={staggerItem} className="text-2xl font-bold tracking-tight mb-3">
+                  {g.t}
+                </motion.h3>
+                <motion.p variants={staggerItem} className="text-sm text-muted-foreground leading-relaxed mb-6">
+                  {g.d}
+                </motion.p>
+                <motion.span variants={staggerItem} className="mt-auto inline-flex items-center gap-2 text-sm text-foreground group-hover:text-accent transition-colors">
+                  Читать гайд{" "}
+                  <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </motion.span>
+              </motion.div>
             </motion.a>
           ))}
         </div>

@@ -9,6 +9,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { NAV_SECTION_MAP, useActiveSection } from "@/hooks/useActiveSection";
+import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "#why", label: "Обо мне" },
@@ -19,6 +21,9 @@ const NAV_LINKS = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const activeSection = useActiveSection();
+
+  const isActive = (href: string) => NAV_SECTION_MAP[href] === activeSection;
 
   return (
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-md">
@@ -32,12 +37,18 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="nav-link hover:text-accent transition-colors"
+              className={cn("nav-link hover:text-accent transition-colors", isActive(link.href) && "is-active text-accent")}
             >
               {link.label}
             </a>
           ))}
-          <a href="#contact" className="nav-link text-foreground hover:text-accent transition-colors">
+          <a
+            href="#contact"
+            className={cn(
+              "nav-link text-foreground hover:text-accent transition-colors",
+              isActive("#contact") && "is-active text-accent",
+            )}
+          >
             Контакты →
           </a>
         </div>
@@ -66,7 +77,12 @@ export function Nav() {
                 <SheetClose asChild key={link.href}>
                   <a
                     href={link.href}
-                    className="px-3 py-4 border-b border-white/5 text-muted-foreground hover:text-accent transition-colors"
+                    className={cn(
+                      "px-3 py-4 border-b border-white/5 transition-colors",
+                      isActive(link.href)
+                        ? "text-accent border-accent/20"
+                        : "text-muted-foreground hover:text-accent",
+                    )}
                   >
                     {link.label}
                   </a>
@@ -75,7 +91,12 @@ export function Nav() {
               <SheetClose asChild>
                 <a
                   href="#contact"
-                  className="mt-4 inline-flex items-center justify-center px-5 py-3 bg-foreground text-background rounded-md text-xs font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className={cn(
+                    "mt-4 inline-flex items-center justify-center px-5 py-3 rounded-md text-xs font-medium transition-colors",
+                    isActive("#contact")
+                      ? "bg-accent text-accent-foreground"
+                      : "bg-foreground text-background hover:bg-accent hover:text-accent-foreground",
+                  )}
                 >
                   Контакты →
                 </a>

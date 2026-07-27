@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { MagneticLink } from "./effects/MagneticButton";
+import { SectionLabel } from "./effects/SectionLabel";
 
 export function Contact() {
   const [emailCopied, setEmailCopied] = useState(false);
@@ -29,9 +31,7 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 10 · Контакты
-          </span>
+          <SectionLabel chapter={10} title="Контакты" />
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mt-6 mb-8 leading-[0.9]">
             На связи —<br />
             для <span className="text-accent">системных вызовов</span>.
@@ -98,23 +98,23 @@ export function Contact() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
-            <a
+            <MagneticLink
               href="/resume-qa.pdf"
               download="Albina_Akbarova_QA_Resume.pdf"
-              className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
+              className="group items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
             >
               <Download className="size-5" />
               Скачать резюме QA
-            </a>
+            </MagneticLink>
 
-            <a
+            <MagneticLink
               href="/resume-sa.pdf"
               download="Albina_Akbarova_SA_Resume.pdf"
-              className="group inline-flex items-center gap-3 border border-accent/40 bg-accent/10 px-6 py-4 rounded-md text-base font-semibold hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+              className="group items-center gap-3 border border-accent/40 bg-accent/10 px-6 py-4 rounded-md text-base font-semibold hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               <Download className="size-5" />
               Скачать резюме SA
-            </a>
+            </MagneticLink>
           </div>
         </motion.div>
 

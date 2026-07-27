@@ -1,33 +1,11 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { SectionCodeDecor, LEGACY_CODE_LINES } from "./shared";
+import { CountUp } from "./effects/CountUp";
+import { ParallaxImage } from "./effects/ParallaxImage";
 
 import legacyPriceChecker from "@/assets/legacy-price-checker.gif";
 import legacyMebelChecker from "@/assets/legacy-mebel-checker.gif";
-
-function Counter({ to, suffix }: { to: number; suffix: string }) {
-  const [n, setN] = useState(0);
-  return (
-    <motion.div
-      onViewportEnter={() => {
-        const start = performance.now();
-        const dur = 1400;
-        const tick = (t: number) => {
-          const p = Math.min((t - start) / dur, 1);
-          setN(Math.round(to * (1 - Math.pow(1 - p, 3))));
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      }}
-      viewport={{ once: true }}
-      className="text-6xl lg:text-7xl font-extrabold tracking-tight text-accent"
-    >
-      +{n}
-      <span className="text-foreground">{suffix}</span>
-    </motion.div>
-  );
-}
 
 export function LegacyCase() {
   return (
@@ -79,7 +57,9 @@ export function LegacyCase() {
 
           <div className="flex items-end">
             <div>
-              <Counter to={420} suffix="×" />
+              <div className="text-6xl lg:text-7xl font-extrabold tracking-tight">
+                <CountUp to={420} prefix="+" suffix="×" duration={1600} className="text-accent" />
+              </div>
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
                 Ускорение процесса
               </div>
@@ -96,11 +76,12 @@ export function LegacyCase() {
         >
           <figure className="relative">
             <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg glow-accent bg-card">
-              <img
+              <ParallaxImage
                 src={legacyPriceChecker}
                 alt="Price Checker — парсер цен маркетплейсов в реальном времени"
                 className="w-full h-auto object-contain"
-                loading="lazy"
+                containerClassName="rounded-lg"
+                speed={6}
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
             </div>
@@ -111,11 +92,12 @@ export function LegacyCase() {
 
           <figure className="relative">
             <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg glow-accent bg-card">
-              <img
+              <ParallaxImage
                 src={legacyMebelChecker}
                 alt="Mebel Checker — ИИ-ассистент для распила и сверки заказов"
                 className="w-full h-auto object-contain"
-                loading="lazy"
+                containerClassName="rounded-lg"
+                speed={6}
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
             </div>

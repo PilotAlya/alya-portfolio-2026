@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { CountUp } from "./effects/CountUp";
 
 export function HeroStats() {
   const stats = [
@@ -29,8 +30,8 @@ export function HeroStats() {
             )}
           >
             <div className="font-extrabold text-3xl sm:text-4xl tracking-tight">
-              <span className="text-accent">{s.n}</span>
-              <span>{s.suf}</span>
+              <CountUp to={s.n} duration={1200} className="text-accent" />
+              {s.suf}
             </div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground leading-relaxed">
               {s.label}
