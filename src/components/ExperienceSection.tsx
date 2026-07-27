@@ -7,7 +7,7 @@ export function ExperienceSection() {
   return (
     <div id="experience">
       <SectionIntro
-        chapter={3}
+        chapter={4}
         label="Опыт работы"
         title="Production, процессы и Legacy"
         description="От чертежей на производстве — до автоматизации рутины в Legacy-софте. Три блока реального опыта."

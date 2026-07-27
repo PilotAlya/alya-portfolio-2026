@@ -14,8 +14,8 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "#why", label: "Обо мне" },
-  { href: "#experience", label: "Опыт" },
   { href: "#portfolio", label: "Портфолио" },
+  { href: "#experience", label: "Опыт" },
   { href: "#nova", label: "NOVA" },
 ];
 

@@ -6,7 +6,7 @@ export function PortfolioSection() {
   return (
     <div id="portfolio">
       <SectionIntro
-        chapter={4}
+        chapter={3}
         label="Портфолио"
         title="Кейсы с метриками и артефактами"
         description="Data-аудит B2B-сервиса и QA AI-ассистента — с цифрами, live-дашбордом и PDF-отчётом."

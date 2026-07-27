@@ -59,8 +59,8 @@ function Index() {
       <HeroStats />
       <WhyMe />
       <EvolutionPath />
-      <ExperienceSection />
       <PortfolioSection />
+      <ExperienceSection />
       <Nova />
       <Stack />
       <GitHubProjects />
