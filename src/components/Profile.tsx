@@ -96,42 +96,6 @@ export function Profile() {
               </div>
             ))}
           </div>
-
-          <div className="border-t border-white/10 pt-8 mt-8">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
-              Смежный опыт
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <a
-                href="#experience"
-                className="group p-4 border border-white/10 rounded-lg hover:border-accent/40 hover:bg-accent/5 transition-colors"
-              >
-                <div className="font-mono text-[10px] uppercase tracking-widest text-foreground mb-1">
-                  РЭЛАН · дизайн-проектировщик
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  2 года на производстве: проектирование, ERP, автоматизация.
-                </p>
-                <span className="inline-block mt-2 font-mono text-[10px] text-accent group-hover:underline">
-                  Подробнее в Опыт →
-                </span>
-              </a>
-              <a
-                href="#nova"
-                className="group p-4 border border-white/10 rounded-lg hover:border-accent/40 hover:bg-accent/5 transition-colors"
-              >
-                <div className="font-mono text-[10px] uppercase tracking-widest text-foreground mb-1">
-                  Urban Mebel · стажировка
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  4 дня аудита процессов — основа для NOVA Dashboard.
-                </p>
-                <span className="inline-block mt-2 font-mono text-[10px] text-accent group-hover:underline">
-                  Смотреть NOVA →
-                </span>
-              </a>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

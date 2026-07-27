@@ -1,15 +1,40 @@
 import { motion } from "framer-motion";
-import { Github, ArrowUpRight, Star } from "lucide-react";
+import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 import { fadeUp } from "./shared";
 
+type Project = {
+  name: string;
+  category: string;
+  description: string;
+  url?: string;
+  demo?: string;
+  tags: string[];
+};
+
 export function GitHubProjects() {
-  const projects = [
+  const projects: Project[] = [
     {
       name: "Nova_light-",
-      description: "MVP-система управления мебельным производством. Единая точка управления заказами, складом и AI-ассистентом «Борис». React, TypeScript, React Router DOM.",
+      category: "MVP · SA",
+      description: "Система управления мебельным производством: заказы, склад, AI-ассистент «Борис».",
       url: "https://github.com/PilotAlya/Nova_light-",
       demo: "https://alya-nova-2026.vercel.app/",
-      tags: ["React", "TypeScript", "React Router", "RAG"],
+      tags: ["React", "TypeScript", "RAG"],
+    },
+    {
+      name: "Client Retention Dashboard",
+      category: "Data Audit",
+      description: "Executive Dashboard: аудит оттока клиентов B2B-сервиса, KPI и визуализация.",
+      demo: "https://client-retention-dashboard.vercel.app/",
+      tags: ["Python", "Chart.js", "Vercel"],
+    },
+    {
+      name: "alya-portfolio-2026",
+      category: "Portfolio",
+      description: "Этот лендинг: vibe-coding на React, TanStack, Tailwind, Framer Motion.",
+      url: "https://github.com/PilotAlya/alya-portfolio-2026",
+      demo: "https://portfolio-resume-alya-akbarova.vercel.app/",
+      tags: ["React", "TanStack", "Vercel"],
     },
   ];
 
@@ -24,101 +49,95 @@ export function GitHubProjects() {
           className="mb-12 max-w-3xl"
         >
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 07.5 · GitHub Projects
+            GitHub · Projects
           </span>
           <h2 className="text-4xl font-bold tracking-tight mt-4 mb-4">
-            Open Source & Публичные проекты
+            Проекты и репозитории
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Мои проекты на GitHub — от MVP-проектов до лендингов. Весь код открыт для изучения.
+            Код, live-демо и pet-проекты — всё в одном месте.
           </p>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {projects.map((project, i) => (
-            <motion.div
+            <motion.article
               key={project.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="border border-white/10 hover:border-accent/40 bg-background p-8 hover:bg-card transition-all group"
+              transition={{ delay: i * 0.08 }}
+              className="group flex flex-col border border-white/10 rounded-xl bg-background/60 p-5 hover:border-accent/40 hover:bg-card/40 transition-all"
             >
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Github className="size-5 text-accent" />
-                    <h3 className="text-2xl font-bold tracking-tight">{project.name}</h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="font-mono text-[10px] uppercase tracking-widest text-accent border border-accent/30 px-2 py-1 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 lg:items-end shrink-0">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">
+                {project.category}
+              </span>
+              <h3 className="text-lg font-bold tracking-tight mb-2 group-hover:text-accent transition-colors">
+                {project.name}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-mono text-[9px] uppercase tracking-wider text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3 pt-3 border-t border-white/10 font-mono text-[10px] uppercase tracking-wider">
+                {project.url && (
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors"
+                    className="inline-flex items-center gap-1 text-muted-foreground hover:text-accent transition-colors"
                   >
-                    <Github className="size-4" />
-                    Смотреть код
-                    <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <Github className="size-3.5" />
+                    Код
                   </a>
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-accent transition-colors"
-                    >
-                      <Star className="size-4" />
-                      Live Demo
-                      <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </a>
-                  )}
-                </div>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <ExternalLink className="size-3.5" />
+                    Demo
+                  </a>
+                )}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
-
-          {/* GitHub Profile Link */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <a
-              href="https://github.com/PilotAlya"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between p-6 border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-card transition-all"
-            >
-              <div className="flex items-center gap-4">
-                <Github className="size-6 text-accent" />
-                <div>
-                  <div className="font-bold text-lg">github.com/PilotAlya</div>
-                  <div className="text-sm text-muted-foreground">
-                    Больше проектов и экспериментов в моём GitHub профиле
-                  </div>
-                </div>
-              </div>
-              <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-            </a>
-          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <a
+            href="https://github.com/PilotAlya"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between p-5 border border-white/10 rounded-xl hover:border-accent/40 bg-white/[0.02] hover:bg-card transition-all"
+          >
+            <div className="flex items-center gap-4">
+              <Github className="size-6 text-accent" />
+              <div>
+                <div className="font-bold">github.com/PilotAlya</div>
+                <div className="text-sm text-muted-foreground">Все репозитории и эксперименты</div>
+              </div>
+            </div>
+            <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
