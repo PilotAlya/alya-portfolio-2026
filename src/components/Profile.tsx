@@ -37,16 +37,19 @@ export function Profile() {
             Профиль специалиста
           </h2>
 
-          <div className="grid sm:grid-cols-3 gap-8 mb-10">
+          <div className="grid sm:grid-cols-3 gap-6 mb-10">
             {[
               {
-                t: "Тестирование и Анализ",
-                d: "Функциональное и UX-тестирование, тестирование ИИ-ассистентов (Яндекс Алиса, iOS), локализация багов, приоритизация дефектов, тест-дизайн.",
+                t: "Тестирование и анализ",
+                d: "QA, UX-тесты, тест-дизайн — подробнее в разделе Портфолио.",
               },
-              { t: "Разработка", d: "React, TypeScript, Vibe-coding (Cursor, Kiro, OpenCode), GitHub, Vercel." },
+              {
+                t: "Разработка",
+                d: "React, TypeScript, vibe-coding — см. NOVA Dashboard.",
+              },
               {
                 t: "Управление рисками",
-                d: "Комплаенс-аудит бизнес-процессов, выявление критических налоговых рисков, контроль качества (0% брака на публичных проектах).",
+                d: "Комплаенс-аудит, контроль качества — см. раздел Опыт.",
               },
             ].map((c) => (
               <div key={c.t}>
@@ -95,27 +98,38 @@ export function Profile() {
           </div>
 
           <div className="border-t border-white/10 pt-8 mt-8">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-5">
-              Смежный опыт · системный подход
+            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
+              Смежный опыт
             </div>
-            <div className="grid sm:grid-cols-3 gap-8">
-              {[
-                {
-                  t: "Дизайнер-проектировщик · РЭЛАН, Лысьва",
-                  d: "Управление полным циклом проектирования и контроль качества. Проектирование корпусной мебели в Pro100 по строгим техническим регламентам. Ведение сквозного складского и финансового учёта в ERP-системе «Инфопредприятие». Анализ рисков: провела комплаенс-аудит перевода мастеров на самозанятость, выявила критические налоговые риски и предотвратила штрафы для бизнеса. Создала Price Checker и Mebel Checker с помощью AI-инструментов.",
-                },
-                {
-                  t: "Стажировка · Urban Mebel",
-                  d: "За 4 дня внутри производственной команды — проведён экспресс-аудит бизнеса и выявлены критические ошибки в учёте, ценообразовании и заказном цикле. Эти находки и стали поводом для проектирования единой системы NOVA Dashboard.",
-                },
-              ].map((c) => (
-                <div key={c.t}>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-foreground mb-2">
-                    {c.t}
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <a
+                href="#experience"
+                className="group p-4 border border-white/10 rounded-lg hover:border-accent/40 hover:bg-accent/5 transition-colors"
+              >
+                <div className="font-mono text-[10px] uppercase tracking-widest text-foreground mb-1">
+                  РЭЛАН · дизайн-проектировщик
                 </div>
-              ))}
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  2 года на производстве: проектирование, ERP, автоматизация.
+                </p>
+                <span className="inline-block mt-2 font-mono text-[10px] text-accent group-hover:underline">
+                  Подробнее в Опыт →
+                </span>
+              </a>
+              <a
+                href="#nova"
+                className="group p-4 border border-white/10 rounded-lg hover:border-accent/40 hover:bg-accent/5 transition-colors"
+              >
+                <div className="font-mono text-[10px] uppercase tracking-widest text-foreground mb-1">
+                  Urban Mebel · стажировка
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  4 дня аудита процессов — основа для NOVA Dashboard.
+                </p>
+                <span className="inline-block mt-2 font-mono text-[10px] text-accent group-hover:underline">
+                  Смотреть NOVA →
+                </span>
+              </a>
             </div>
           </div>
         </motion.div>
