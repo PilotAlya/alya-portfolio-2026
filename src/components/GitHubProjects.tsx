@@ -25,6 +25,7 @@ export function GitHubProjects() {
       name: "Client Retention Dashboard",
       category: "Data Audit",
       description: "Executive Dashboard: аудит оттока клиентов B2B-сервиса, KPI и визуализация.",
+      url: "https://github.com/PilotAlya/topfacemedia-client-retention-audit",
       demo: "https://client-retention-dashboard.vercel.app/",
       tags: ["Python", "Chart.js", "Vercel"],
     },
