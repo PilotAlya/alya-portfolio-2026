@@ -29,15 +29,14 @@ export function Contact() {
           transition={{ duration: 0.8 }}
         >
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Контакты
+            Глава 10 · Контакты
           </span>
-          <h2 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mt-6 mb-6 leading-[0.9]">
-            Давайте<br />
-            <span className="text-accent">на связи</span>
+          <h2 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mt-6 mb-8 leading-[0.9]">
+            Готова к<br />
+            <span className="text-accent">системным вызовам</span>.
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mb-10">
-            Открыта к предложениям на позиции System Analyst и QA Engineer. Напишите в Telegram
-            или на почту — отвечу быстро.
+          <p className="text-xl text-muted-foreground max-w-2xl mb-10 italic">
+            «Готова к деконструкции ваших самых сложных задач.»
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mb-8">
