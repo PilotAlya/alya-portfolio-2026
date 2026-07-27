@@ -29,7 +29,7 @@ export function BathroomCase() {
   ];
 
   return (
-    <section id="cases" className="py-24 px-6 lg:px-8 bg-card/30 border-y border-white/5">
+    <section className="py-24 px-6 lg:px-8 bg-card/30 border-y border-white/5">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -39,7 +39,7 @@ export function BathroomCase() {
           className="mb-16 max-w-3xl"
         >
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Кейс 01 · Workflow Hacking
+            Опыт · Workflow Hacking
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-4">
             От «Sims-рендера» — к удалённой продаже

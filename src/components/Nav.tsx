@@ -13,7 +13,8 @@ import {
 const NAV_LINKS = [
   { href: "#why", label: "Why me" },
   { href: "#path", label: "Evolution" },
-  { href: "#cases", label: "Cases" },
+  { href: "#experience", label: "Experience" },
+  { href: "#portfolio", label: "Portfolio" },
   { href: "#nova", label: "NOVA" },
   { href: "#stack", label: "Stack" },
 ];

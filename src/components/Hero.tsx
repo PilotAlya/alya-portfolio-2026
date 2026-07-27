@@ -130,7 +130,7 @@ export function Hero() {
                 Резюме SA
               </a>
               <a
-                href="#cases"
+                href="#portfolio"
                 className="inline-flex items-center gap-2 border border-white/15 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
               >
                 Смотреть кейсы
