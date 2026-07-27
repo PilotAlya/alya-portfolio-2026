@@ -7,27 +7,20 @@ import { fadeUp } from "./shared";
 export function PortfolioSection() {
   return (
     <div id="portfolio">
-      <section className="py-16 px-6 lg:px-8 border-t border-white/5 bg-card/20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="max-w-3xl"
-          >
-            <span className="font-mono text-xs text-accent uppercase tracking-widest">
-              Глава 04 · Портфолио работ
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-4">
-              Кейсы с артефактами
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Практические работы с измеримым результатом: аудит данных, QA мобильного
-              ИИ-ассистента и проектирование MVP-системы.
-            </p>
-          </motion.div>
-        </div>
+      <section className="pt-20 pb-4 px-6 lg:px-8 border-t border-white/5">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="max-w-7xl mx-auto flex items-center gap-4"
+        >
+          <div className="h-px flex-1 bg-white/10" />
+          <span className="font-mono text-[10px] text-accent uppercase tracking-[0.2em] shrink-0">
+            Портфолио · 2 кейса
+          </span>
+          <div className="h-px flex-1 bg-white/10" />
+        </motion.div>
       </section>
       <ChurnAuditCase />
       <AITestingCase />

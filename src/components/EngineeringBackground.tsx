@@ -19,7 +19,7 @@ export function EngineeringBackground() {
           className="lg:col-span-5"
         >
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Инженерный бэкграунд
+            Глава 03 · Опыт на производстве
           </span>
           <h2 className="text-4xl font-bold tracking-tight mt-4 mb-6">
             Мебель & Производство
