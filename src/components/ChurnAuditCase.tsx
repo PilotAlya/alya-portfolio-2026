@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BarChart3, ExternalLink, TrendingDown, Zap } from "lucide-react";
 
+import dashboardPreview from "@/assets/churn-dashboard.png";
 import { fadeUp } from "./shared";
 
 const DASHBOARD_URL = "https://client-retention-dashboard.vercel.app/";
@@ -9,7 +10,7 @@ export function ChurnAuditCase() {
   return (
     <section className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-center">
+        <div className="grid lg:grid-cols-[1fr_420px] gap-12 items-start">
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -96,8 +97,25 @@ export function ChurnAuditCase() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="border border-white/10 rounded-xl p-6 bg-background/60 space-y-4"
+            className="space-y-4"
           >
+            <a
+              href={DASHBOARD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block overflow-hidden rounded-xl border border-white/10 bg-background/60 hover:border-accent/40 transition-colors"
+            >
+              <img
+                src={dashboardPreview}
+                alt="Executive Dashboard: KPI-карточки, графики оттока и таблица аудита флайтов"
+                className="w-full h-auto object-cover object-top max-h-[320px] group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="px-4 py-2 border-t border-white/10 font-mono text-[10px] uppercase tracking-wider text-muted-foreground group-hover:text-accent transition-colors">
+                Нажмите, чтобы открыть интерактивный дашборд →
+              </div>
+            </a>
+
+            <div className="border border-white/10 rounded-xl p-6 bg-background/60 space-y-4">
             <div className="flex items-center gap-3 border-b border-white/10 pb-4">
               <div className="p-2 rounded bg-accent/10 border border-accent/20 text-accent">
                 <BarChart3 className="size-5" />
@@ -111,6 +129,14 @@ export function ChurnAuditCase() {
             </div>
 
             <div className="space-y-2 text-xs font-mono">
+              <div className="flex items-center justify-between p-2 rounded bg-white/5">
+                <span className="text-muted-foreground">Уникальные клиенты:</span>
+                <span className="text-foreground font-semibold">11</span>
+              </div>
+              <div className="flex items-center justify-between p-2 rounded bg-white/5">
+                <span className="text-muted-foreground">Всего флайтов:</span>
+                <span className="text-foreground font-semibold">18</span>
+              </div>
               <div className="flex items-center justify-between p-2 rounded bg-white/5">
                 <span className="text-muted-foreground">Churn Rate (до):</span>
                 <span className="text-rose-400 font-semibold line-through">72.7%</span>
@@ -144,6 +170,7 @@ export function ChurnAuditCase() {
               <ExternalLink className="size-3.5" />
               client-retention-dashboard.vercel.app
             </a>
+            </div>
           </motion.div>
         </div>
       </div>
