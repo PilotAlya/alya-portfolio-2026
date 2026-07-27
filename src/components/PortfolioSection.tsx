@@ -1,5 +1,6 @@
 import { ChurnAuditCase } from "@/components/ChurnAuditCase";
 import { AITestingCase } from "@/components/AITestingCase";
+import { YandexBrowserCase } from "@/components/YandexBrowserCase";
 import { SectionIntro } from "@/components/SectionIntro";
 
 export function PortfolioSection() {
@@ -9,10 +10,11 @@ export function PortfolioSection() {
         chapter={3}
         label="Портфолио"
         title="Кейсы с метриками и артефактами"
-        description="Data-аудит B2B-сервиса и QA AI-ассистента — с цифрами, live-дашбордом и PDF-отчётом."
-        meta="2 кейса · live demo"
+        description="Data-аудит B2B, QA Яндекс.Браузера и тестирование AI-ассистента — с цифрами, PDF-отчётами и live-demo."
+        meta="3 кейса · PDF + demo"
       />
       <ChurnAuditCase />
+      <YandexBrowserCase />
       <AITestingCase />
     </div>
   );
