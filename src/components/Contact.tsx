@@ -32,8 +32,8 @@ export function Contact() {
             Глава 10 · Контакты
           </span>
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mt-6 mb-8 leading-[0.9]">
-            Готова к<br />
-            <span className="text-accent">системным вызовам</span>.
+            На связи —<br />
+            для <span className="text-accent">системных вызовов</span>.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-10 italic">
             «Готова к деконструкции ваших самых сложных задач.»
