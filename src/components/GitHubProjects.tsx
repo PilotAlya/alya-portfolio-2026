@@ -22,6 +22,14 @@ export function GitHubProjects() {
       tags: ["React", "TypeScript", "RAG"],
     },
     {
+      name: "landing-page-nova",
+      category: "NOVA · Landing",
+      description: "Презентационный лендинг NOVA Dashboard: кейс, скриншоты и live-демо.",
+      url: "https://github.com/PilotAlya/landing-page-nova",
+      demo: "https://alya-nova-2026.vercel.app/",
+      tags: ["React", "Vite", "Vercel"],
+    },
+    {
       name: "Client Retention Dashboard",
       category: "Data Audit",
       description: "Executive Dashboard: аудит оттока клиентов B2B-сервиса, KPI и визуализация.",
