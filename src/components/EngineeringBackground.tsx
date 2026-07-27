@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "./shared";
-import { SectionLabel } from "./effects/SectionLabel";
 import { ParallaxImage } from "./effects/ParallaxImage";
 
 import engBlueprint from "@/assets/eng-blueprint.jpg";
@@ -11,7 +10,7 @@ import eng4 from "@/assets/eng-museum-4.jpg";
 
 export function EngineeringBackground() {
   return (
-    <section className="py-24 px-6 lg:px-8">
+    <section className="py-20 px-6 lg:px-8 border-b border-white/5">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12">
         <motion.div
           initial="hidden"
@@ -20,7 +19,9 @@ export function EngineeringBackground() {
           variants={fadeUp}
           className="lg:col-span-5"
         >
-          <SectionLabel chapter={3} title="Опыт на производстве" />
+          <span className="font-mono text-xs text-accent uppercase tracking-widest">
+            Блок 01 · Производство
+          </span>
           <h2 className="text-4xl font-bold tracking-tight mt-4 mb-6">
             Мебель & Производство
             <br />
