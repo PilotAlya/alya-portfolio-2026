@@ -4,7 +4,7 @@ import { fadeUp } from "./shared";
 import { MagneticLink } from "./effects/MagneticButton";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
-const PDF_URL = "/yandex-browser-test-akbarova.pdf";
+const PDF_URL = "/yandex-browser-verdicts.pdf";
 
 export function YandexBrowserCase() {
   return (
@@ -19,7 +19,7 @@ export function YandexBrowserCase() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="font-mono text-xs text-accent uppercase tracking-widest">
-                Кейс 03 · QA браузера
+                Кейс 03 · Тестирование браузера
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-white/5 border border-white/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
                 <Monitor className="size-3 text-accent" /> Win 11 · Яндекс.Браузер 26.6.3
@@ -81,7 +81,7 @@ export function YandexBrowserCase() {
               className="items-center gap-2 bg-accent text-accent-foreground font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold hover:bg-accent/90 transition-colors"
             >
               <Download className="size-4" />
-              Смотреть PDF-отчёт (5 стр.)
+              Смотреть PDF-отчёт (3 стр.)
             </MagneticLink>
           </motion.div>
 
