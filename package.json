@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "generate-pdf": "node scripts/generate-pdf.js"
+    "generate-pdf": "node scripts/generate-pdf.js",
+    "research-studios": "python3 scripts/studio-research/research_studios.py --seed --output scripts/studio-research/output/studios.csv",
+    "research-studios:search": "python3 scripts/studio-research/research_studios.py --search --city Москва --limit 10"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
