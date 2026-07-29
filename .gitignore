@@ -32,3 +32,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Local secrets (studio research pipeline)
+scripts/studio-research/.env

@@ -90,8 +90,25 @@ CSV импортируется в Google Sheets: **Файл → Импорт →
 
 ---
 
-## Следующий шаг (если захочешь доработать)
+## Следующий шаг
 
-1. Подключить **OpenRouter** в скрипт для авто-заполнения 4-го столбца  
-2. Экспорт **n8n workflow JSON** под твой аккаунт  
-3. Отдельный скрипт **follow-up tracker** (отправлено / прочитано / ответил)
+1. **OpenRouter:** `enrich_studios.py` — см. ниже  
+2. **Трекер:** `init_tracker.py`  
+3. **Make.com:** полная инструкция → **[MAKE.md](./MAKE.md)**
+
+---
+
+## OpenRouter — обогащение CSV
+
+```bash
+cp .env.example .env   # вставь OPENROUTER_API_KEY
+python enrich_studios.py --input output/moscow.csv --output output/moscow_enriched.csv
+```
+
+## Трекер лидов
+
+```bash
+python init_tracker.py --input output/moscow_enriched.csv --output output/tracker.csv
+```
+
+Импорт `tracker.csv` → лист «Трекинг» в Google Sheets → подключи Make (см. MAKE.md).
