@@ -57,15 +57,45 @@
 
 ## Шаг 1. Python на Windows (research)
 
+### Если что-то не работает — начни отсюда
+
+**Самый простой способ (Windows):**
+
+1. Открой терминал в Cursor
+2. Перейди в папку:
+   ```powershell
+   cd путь\к\alya-portfolio-2026\scripts\studio-research
+   ```
+3. Запусти один файл:
+   ```powershell
+   .\run-test.bat
+   ```
+   или двойной клик по `run-test.bat` в проводнике
+
+Скрипт сам найдёт Python, поставит зависимости и создаст CSV в `output\`.
+
+**Диагностика вручную:**
+```powershell
+py -3 check_setup.py
+```
+(или `python check_setup.py` — что сработает)
+
+---
+
+### Ручная установка
+
 Открой терминал в Cursor (или PowerShell):
 
 ```powershell
 cd путь\к\alya-portfolio-2026\scripts\studio-research
-pip install -r requirements.txt
+py -3 -m pip install -r requirements.txt
 copy .env.example .env
 ```
 
-Открой `.env`, вставь ключ:
+> **Важно:** если команда `python` не найдена — используй `py -3` вместо `python`.
+> При установке Python с python.org обязательно галочка **«Add Python to PATH»**.
+
+Открой `.env`, вставь ключ (нужен только для AI-обогащения):
 
 ```
 OPENROUTER_API_KEY=sk-or-v1-твой-ключ
@@ -75,21 +105,22 @@ OPENROUTER_MODEL=google/gemma-2-9b-it:free
 ### 1.1 Выгрузить проверенные студии
 
 ```powershell
-python research_studios.py --seed --city Москва --limit 3 --output output/moscow.csv
+py -3 research_studios.py --seed --city Москва --limit 3 --output output/moscow.csv
 ```
 
-### 1.2 Обогатить через AI (основатель + 4-й столбец)
+### 1.2 Обогатить через AI (опционально для seed!)
 
 ```powershell
-python enrich_studios.py --input output/moscow.csv --output output/moscow_enriched.csv
+py -3 enrich_studios.py --input output/moscow.csv --output output/moscow_enriched.csv
 ```
 
-AI зайдёт на сайт, прочитает текст и заполнит поля. **Всё равно пробегись глазами** — 30 сек на строку.
+> **Для тестовых 3 студий из seed enrich можно пропустить** — имена и «почему студия» уже заполнены.
+> AI нужен, когда ищешь **новые** URL через `--search`.
 
 ### 1.3 Создать трекер для переписки
 
 ```powershell
-python init_tracker.py --input output/moscow_enriched.csv --output output/tracker.csv
+py -3 init_tracker.py --input output/moscow.csv --output output/tracker.csv
 ```
 
 ### 1.4 Импорт в Google Sheets
@@ -209,7 +240,21 @@ python init_tracker.py --input output/moscow_enriched.csv --output output/tracke
 
 ---
 
-## Частые ошибки
+## Частые ошибки (Windows)
+
+| Что видишь | Что делать |
+|------------|------------|
+| `'python' is not recognized` | Используй `py -3` вместо `python`, или переустанови Python с галочкой PATH |
+| `'pip' is not recognized` | `py -3 -m pip install -r requirements.txt` |
+| `❌ OPENROUTER_API_KEY` | Создай `.env` из `.env.example`. **Или пропусти enrich** — для seed он не нужен |
+| `Обогащено 0 строк` | Нормально для seed: данные уже «проверено вручную». Используй `moscow.csv` как есть |
+| `No module named 'requests'` | `py -3 -m pip install -r requirements.txt` из папки `studio-research` |
+| Команда в не той папке | `cd scripts\studio-research` — должны быть видны `research_studios.py` и `studios_seed.json` |
+| Кракозябры в CSV | Открывай через Google Sheets **Импорт**, не двойным кликом в Excel |
+
+---
+
+## Частые ошибки (общие)
 
 | Проблема | Решение |
 |----------|---------|
