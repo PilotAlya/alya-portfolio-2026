@@ -13,9 +13,9 @@
 
 Почему это про меня:
 
-— Собираю MVP через Cursor, OpenCode, Lovable, Gemini — не «спросила ChatGPT», а выстраиваю задачу, проверяю вывод, отлаживаю результат руками (опыт QA).
+— Собираю MVP и лендинги через Cursor, OpenCode, Lovable, Gemini — не «спросила ChatGPT», а выстраиваю задачу, проверяю вывод, отлаживаю результат руками (опыт QA).
 
-— Скорость + продукт, не перфекционизм: сама спроектировала и собрала NOVA Dashboard (React/TypeScript) — от первого MVP до NOVA Light за одну итерацию по обратной связи 3/3 пользователей. Понимаю, когда «достаточно хорошо» — это и есть релиз.
+— Скорость + продукт, не перфекционизм: сама спроектировала и на вайб-кодинге собрала NOVA Dashboard (React/TypeScript) — от первого MVP до NOVA Light за одну итерацию по обратной связи 3/3 пользователей. Понимаю, когда «достаточно хорошо» — это и есть релиз.
 
 — Размытые задачи не пугают: сама уточняю рамки, фиксирую что сделано / что не работает / что нужно от команды.
 
@@ -23,8 +23,8 @@
 
 Загрузка 10–20 ч/нед мне подходит (готова 4–6 ч/день).
 
-Кейсы с демо:
-— NOVA: https://alya-nova-2026.vercel.app/ · GitHub: github.com/PilotAlya/Nova_light-
+Кейсы с демо (мои проекты):
+— NOVA Dashboard — мой MVP, собрала сама: https://alya-nova-2026.vercel.app/ · GitHub: https://github.com/PilotAlya/Nova_light-
 — Портфолио: https://portfolio-resume-alya-akbarova.vercel.app/
 
 Готова на короткое собеседование и тестовую задачу.
@@ -42,7 +42,7 @@ pilotalya@a-akbarova.ru · Telegram: @Albinaa_Akbarova
 ```
 Здравствуйте! Альбина Акбарова, vibe-coding разработчик.
 
-Собираю MVP в Cursor / OpenCode / Lovable / Gemini, итерирую быстро, отлаживаю AI-вывод руками (QA). Кейс NOVA: перегруженный MVP → NOVA Light по обратной связи пользователей. 10–20 ч/нед подходит.
+Собираю MVP в Cursor / OpenCode / Lovable / Gemini, итерирую быстро, отлаживаю AI-вывод руками (QA). NOVA Dashboard — мой проект, спроектировала и собрала сама; перешла от перегруженного MVP к NOVA Light по обратной связи пользователей. 10–20 ч/нед подходит.
 
 Demo: alya-nova-2026.vercel.app · portfolio-resume-alya-akbarova.vercel.app
 Telegram: @Albinaa_Akbarova
