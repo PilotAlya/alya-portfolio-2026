@@ -20,24 +20,25 @@
 2–3. Лучшие проекты + что делала именно через AI:
 
 ① NOVA Dashboard — мой MVP (React/TypeScript): заказы, склад, AI-ассистент «Борис». Полный цикл на vibe-coding: от идеи до деплоя и итерации NOVA Light по обратной связи 3/3 пользователей.
-   Демо: https://alya-nova-2026.vercel.app/
+   Демо (приложение): https://nova-light-app.vercel.app/
    Админ: admin / nova2026 · Менеджер: elena / elena2026 · API-ключ: nova2026
+   Презентация проекта: https://alya-nova-2026.vercel.app/
    GitHub: https://github.com/PilotAlya/Nova_light-
 
-② Портфолио и лендинг NOVA — веб-приложения, собранные через AI-инструменты: https://portfolio-resume-alya-akbarova.vercel.app/
+② Портфолио — лендинг на vibe-coding (React, TanStack, Framer Motion): https://portfolio-resume-alya-akbarova.vercel.app/
+   GitHub: https://github.com/PilotAlya/alya-portfolio-2026
 
 ③ Client Retention Dashboard — B2B-дашборд: Python (Pandas) + визуализация, ускорение через AI: https://client-retention-dashboard.vercel.app/
 
 4. Результат, которым горжусь больше всего:
 
-NOVA Light — после первого MVP пользователи сказали «перегружено». Я не залипла в доработке всего подряд, а пересобрала продукт под core-функции. 3/3 тех же пользователей подтвердили, что стало понятнее. Для меня это и есть продуктовый подход: быстро проверить гипотезу, услышать feedback и выпустить версию, которой реально пользуются.
+NOVA Light — после первого MVP пользователи сказали «перегружено». Я не залипла в доработке всего подряд, а пересобрала продукт под core-функции. 3/3 тех же пользователей подтвердили, что стало понятнее. Для меня это продуктовый подход: быстро проверить гипотезу, услышать обратную связь и выпустить версию, которой реально пользуются.
 
 Почему вам могу быть полезна:
 
-— Быстро собираю и дорабатываю веб-MVP и интерактивные механики (не классический frontend «с нуля руками», а AI Product Builder)
-— Сейчас параллельно прототипирую мини-игру (pet-project) — логика и интерфейс в Figma; как раз в сторону игровых механик
+— Быстро собираю и дорабатываю веб-MVP и интерактивные механики (AI Product Builder, не классический frontend «с нуля руками»)
 — Опыт объяснения и тестирования с разными пользователями (коридорные тесты, мануалы в Gamma)
-— Дизайнерский бэкграунд — понимаю визуал и UX, особенно когда продукт должен быть понятным и «живым»
+— Дизайнерский бэкграунд — понимаю визуал и UX, когда продукт должен быть понятным и «живым»
 
 Формат удалённо, готова к практической задаче после знакомства.
 
@@ -45,11 +46,9 @@ NOVA Light — после первого MVP пользователи сказа
 pilotalya@a-akbarova.ru · Telegram: @Albinaa_Akbarova
 ```
 
-**Длина:** ~2100 символов
-
 ---
 
-## Короткая версия (~900 символов)
+## Короткая версия
 
 ```
 Здравствуйте! Альбина Акбарова.
@@ -57,13 +56,11 @@ pilotalya@a-akbarova.ru · Telegram: @Albinaa_Akbarova
 AI-инструменты: Cursor, OpenCode, Gemini, Lovable, Bolt, Replit.
 
 Проекты через AI:
-1. NOVA Dashboard (мой MVP, React) — alya-nova-2026.vercel.app, admin/nova2026
-2. Портфолио-лендинг — portfolio-resume-alya-akbarova.vercel.app
-3. B2B-дашборд — client-retention-dashboard.vercel.app
+1. NOVA Dashboard — демо: nova-light-app.vercel.app (admin/nova2026), презентация: alya-nova-2026.vercel.app
+2. Портфолио: portfolio-resume-alya-akbarova.vercel.app
+3. B2B-дашборд: client-retention-dashboard.vercel.app
 
-Горжусь: NOVA → NOVA Light — пересобрала MVP по feedback, 3/3 пользователей подтвердили улучшение.
-
-Сейчас прототипирую мини-игру в Figma. Готова к практической задаче.
+Горжусь: NOVA → NOVA Light — 3/3 пользователей подтвердили улучшение. Готова к практической задаче.
 
 Telegram: @Albinaa_Akbarova
 ```
