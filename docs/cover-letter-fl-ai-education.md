@@ -31,9 +31,13 @@
 
 Формат удалённо и сопровождение в чате мне подходят.
 
-Демо (NOVA — вход по паролю, пришлю в личку):
-— https://alya-nova-2026.vercel.app/
-— https://portfolio-resume-alya-akbarova.vercel.app/
+Демо NOVA Light (собрала сама): https://alya-nova-2026.vercel.app/
+— Администратор: admin / nova2026
+— Менеджер: elena / elena2026
+— API-ключ демо: nova2026
+(тестовые данные, вымышленные)
+
+Портфолио: https://portfolio-resume-alya-akbarova.vercel.app/
 
 Готова обсудить задачи, формат сопровождения и загрузку.
 
