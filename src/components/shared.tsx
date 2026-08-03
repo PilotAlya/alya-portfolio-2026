@@ -30,7 +30,7 @@ export const HERO_CODE_LINES = [
   "if (chaos.detected) { return architecture.deconstruct(chaos).rebuild() }",
   "[ok] vector_store ← embed(docs/*.pdf)  ·  1287 chunks  ·  cosine=0.93",
   "GET /api/nova/orders?status=in_progress  →  200 OK  · 42 ms",
-  "// от промышленных процессов — до автономных AI-конвейеров",
+  "// от Legacy-хаоса — до автономных AI-конвейеров",
   "schema design ── system analysis ── prompt engineering ── shipping",
   "ALYA.AKBAROVA :: pilot_ali ▸ system_analyst ▸ ai_native_engineer",
   "$ nova run --pipeline=warehouse → 1428 SKU synced  · 0 errors",

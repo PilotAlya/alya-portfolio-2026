@@ -99,8 +99,8 @@ export function Hero() {
               className="text-lg sm:text-xl text-muted-foreground max-w-xl font-light leading-relaxed"
             >
               System Analyst · AI-Native Engineer · Product Architect.
-              Перевожу промышленный хаос в цифровую логику —{" "}
-              <span className="text-foreground italic">от промышленных процессов до AI-агентов</span>.
+              Перевожу бизнес-хаос в цифровую логику —{" "}
+              <span className="text-foreground italic">от Legacy-процессов до AI-агентов</span>.
             </motion.p>
 
             <motion.div

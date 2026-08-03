@@ -8,8 +8,8 @@ export function EvolutionPath() {
   const stages = [
     {
       n: "01",
-      title: "Промышленный хаос",
-      body: "Конструирование для заводов и музеев. Урок: ошибка в 1 мм на чертеже — финансовые потери на производстве.",
+      title: "Точность и процессы",
+      body: "Ритейл, проекты для музея и завода ММК. Урок: ошибка в деталях на старте — финансовые потери на финале.",
       Icon: Ruler,
     },
     {
@@ -43,7 +43,7 @@ export function EvolutionPath() {
         >
           <SectionLabel chapter={2} title="Эволюция системности" className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 max-w-3xl text-white relative z-10">
-            От чертежа — до AI-архитектуры
+            От Legacy-хаоса — до AI-архитектуры
           </h2>
         </motion.div>
 
