@@ -26,7 +26,7 @@ export const HERO_CODE_LINES = [
   "> loading modules: rag-agent, nova-flex, nova-project ............ ok",
   "▌ parsing legacy_software('Info-Predpriyatie') → migrating schema",
   "const boris = new Agent({ role: 'wiki', memory: 'rag', tone: 'kind' })",
-  "// 1 mm на чертеже = −∞ ₽ на производстве. правило #01",
+  "// ошибка в деталях на старте = −∞ ₽ на финале. правило #01",
   "if (chaos.detected) { return architecture.deconstruct(chaos).rebuild() }",
   "[ok] vector_store ← embed(docs/*.pdf)  ·  1287 chunks  ·  cosine=0.93",
   "GET /api/nova/orders?status=in_progress  →  200 OK  · 42 ms",
