@@ -100,7 +100,7 @@ export function Hero() {
             >
               System Analyst · AI-Native Engineer · Product Architect.
               Перевожу промышленный хаос в цифровую логику —{" "}
-              <span className="text-foreground italic">от чертежей мебели до RAG-агентов</span>.
+              <span className="text-foreground italic">от промышленных процессов до AI-агентов</span>.
             </motion.p>
 
             <motion.div

@@ -25,7 +25,7 @@ export function LegacyCase() {
             Борьба с Legacy и автоматизация рутины
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            Реинжиниринг процессов учёта в UrbanMebel. Устаревшее ПО («Инфо-Предприятие») создавало
+            Реинжиниринг процессов учёта в ритейле. Устаревшее ПО («Инфо-Предприятие») создавало
             «цифровое гетто»: дублирование номенклатуры, хаос в ценообразовании, ручная сверка 100+
             позиций часами.
           </p>
@@ -37,12 +37,12 @@ export function LegacyCase() {
                 d: "Автономный парсер цен маркетплейсов для динамического контроля маржи в реальном времени. Раньше проверка цен занимала 10-60 минут, теперь — секунды.",
               },
               {
-                t: "Mebel Checker",
+                t: "Data Validator",
                 d: "Автоматическая сверка данных, введённых сотрудником на сайте (Руматик vs мастер) — минимизация закупочных рисков. Раньше перепроверка занимала 10-20 минут в зависимости от объёма, теперь — секунды.",
               },
               {
                 t: "SSOT-нормализация",
-                d: "Единая база фурнитуры, оперативное обновление штрихкодирования.",
+                d: "Единая база номенклатуры, оперативное обновление штрихкодирования.",
               },
             ].map((f) => (
               <div key={f.t} className="flex gap-4">
@@ -94,7 +94,7 @@ export function LegacyCase() {
             <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg glow-accent bg-card">
               <ParallaxImage
                 src={legacyMebelChecker}
-                alt="Mebel Checker — ИИ-ассистент для распила и сверки заказов"
+                alt="Data Validator — автоматическая сверка данных заказов"
                 className="w-full h-auto object-contain"
                 containerClassName="rounded-lg"
                 speed={6}
@@ -102,7 +102,7 @@ export function LegacyCase() {
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
             </div>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              [02] Mebel Checker · AI-валидация заказов
+              [02] Data Validator · AI-валидация заказов
             </figcaption>
           </figure>
 

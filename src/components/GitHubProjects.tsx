@@ -17,9 +17,9 @@ export function GitHubProjects() {
     {
       name: "Nova_light-",
       category: "MVP · SA",
-      description: "Система управления мебельным производством: заказы, склад, AI-ассистент «Борис».",
+      description: "Система управления заказами и складом: AI-ассистент «Борис», React, TypeScript.",
       url: "https://github.com/PilotAlya/Nova_light-",
-      demo: "https://alya-nova-2026.vercel.app/",
+      demo: "https://nova-light-app.vercel.app/",
       tags: ["React", "TypeScript", "RAG"],
     },
     {
