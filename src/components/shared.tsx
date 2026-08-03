@@ -5,6 +5,22 @@ export const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
+export const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.04 },
+  },
+};
+
+export const staggerItem = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 export const HERO_CODE_LINES = [
   "$ pilot-ali init --mode=system-architect",
   "> loading modules: rag-agent, nova-flex, nova-project ............ ok",
@@ -14,7 +30,7 @@ export const HERO_CODE_LINES = [
   "if (chaos.detected) { return architecture.deconstruct(chaos).rebuild() }",
   "[ok] vector_store ← embed(docs/*.pdf)  ·  1287 chunks  ·  cosine=0.93",
   "GET /api/nova/orders?status=in_progress  →  200 OK  · 42 ms",
-  "// от чертежей мебели — до автономных AI-конвейеров",
+  "// от промышленных процессов — до автономных AI-конвейеров",
   "schema design ── system analysis ── prompt engineering ── shipping",
   "ALYA.AKBAROVA :: pilot_ali ▸ system_analyst ▸ ai_native_engineer",
   "$ nova run --pipeline=warehouse → 1428 SKU synced  · 0 errors",

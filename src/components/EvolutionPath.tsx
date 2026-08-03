@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Ruler, CircuitBoard, Bot } from "lucide-react";
 import { fadeUp, SectionCodeDecor, EVOLUTION_CODE_LINES } from "./shared";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { SectionLabel } from "./effects/SectionLabel";
 
 export function EvolutionPath() {
   const stages = [
@@ -39,9 +41,7 @@ export function EvolutionPath() {
           variants={fadeUp}
           className="mb-16 relative z-10"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm">
-            Глава 02 · Эволюция системности
-          </span>
+          <SectionLabel chapter={2} title="Эволюция системности" className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 max-w-3xl text-white relative z-10">
             От чертежа — до AI-архитектуры
           </h2>
@@ -55,9 +55,11 @@ export function EvolutionPath() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.7 }}
-              className={`p-10 lg:p-12 group transition-colors ${
-                i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-white/10" : ""
-              } ${s.featured ? "bg-accent/5" : "hover:bg-white/[0.02]"}`}
+              {...spotlightAttrs}
+              className={spotlightClass(
+                `p-10 lg:p-12 group ${i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-white/10" : ""} ${s.featured ? "bg-accent/5" : ""}`,
+                "flat",
+              )}
             >
               <div className="flex items-center justify-between mb-8">
                 <span

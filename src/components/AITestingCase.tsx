@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Bot, FileText, Download, Smartphone, CheckCircle2, AlertTriangle } from "lucide-react";
 import { fadeUp } from "./shared";
+import { MagneticLink } from "./effects/MagneticButton";
 
 export function AITestingCase() {
   return (
@@ -54,15 +55,15 @@ export function AITestingCase() {
               </div>
             </div>
 
-            <a
+            <MagneticLink
               href="/yandex-alice-qa-report.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold hover:bg-accent/90 transition-colors"
+              className="items-center gap-2 bg-accent text-accent-foreground font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold hover:bg-accent/90 transition-colors"
             >
               <Download className="size-4" />
               Смотреть полный PDF-отчёт (3 стр.)
-            </a>
+            </MagneticLink>
           </motion.div>
 
           {/* Right Summary Card */}

@@ -3,6 +3,8 @@ import { BarChart3, TrendingDown, Zap } from "lucide-react";
 
 import dashboardPreview from "@/assets/churn-dashboard.png";
 import { fadeUp } from "./shared";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { ParallaxImage } from "./effects/ParallaxImage";
 
 const DASHBOARD_URL = "https://client-retention-dashboard.vercel.app/";
 
@@ -31,7 +33,10 @@ export function ChurnAuditCase() {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3 mb-5 text-xs">
-              <div className="p-3 border border-white/10 rounded bg-background/50">
+              <div
+                {...spotlightAttrs}
+                className={spotlightClass("p-3 rounded border border-white/10 bg-background/50", "subtle")}
+              >
                 <div className="font-mono text-[10px] uppercase text-accent mb-1 font-semibold">
                   Проблема
                 </div>
@@ -40,7 +45,10 @@ export function ChurnAuditCase() {
                   где считали неправильно.
                 </p>
               </div>
-              <div className="p-3 border border-white/10 rounded bg-background/50">
+              <div
+                {...spotlightAttrs}
+                className={spotlightClass("p-3 rounded border border-white/10 bg-background/50", "subtle")}
+              >
                 <div className="font-mono text-[10px] uppercase text-accent mb-1 font-semibold">
                   Что сделала
                 </div>
@@ -84,12 +92,14 @@ export function ChurnAuditCase() {
               href={DASHBOARD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block overflow-hidden rounded-xl border border-white/10 bg-background/60 hover:border-accent/40 transition-colors"
+              {...spotlightAttrs}
+              className={spotlightClass("group block overflow-hidden rounded-xl border border-white/10 bg-background/60")}
             >
-              <img
+              <ParallaxImage
                 src={dashboardPreview}
                 alt="Дашборд: KPI-карточки, графики оттока и таблица проверки данных"
                 className="w-full h-auto object-cover object-top max-h-[280px] group-hover:scale-[1.02] transition-transform duration-500"
+                speed={10}
               />
               <div className="px-4 py-3 border-t border-white/10 flex items-center justify-between gap-2">
                 <span className="font-mono text-[10px] uppercase tracking-wider text-accent group-hover:text-accent/80 transition-colors">
@@ -101,7 +111,10 @@ export function ChurnAuditCase() {
               </div>
             </a>
 
-            <div className="border border-white/10 rounded-xl p-5 bg-background/60 space-y-3">
+            <div
+              {...spotlightAttrs}
+              className={spotlightClass("rounded-xl border border-white/10 p-5 bg-background/60 space-y-3")}
+            >
               <div className="flex items-center gap-3 border-b border-white/10 pb-3">
                 <div className="p-2 rounded bg-accent/10 border border-accent/20 text-accent">
                   <BarChart3 className="size-4" />

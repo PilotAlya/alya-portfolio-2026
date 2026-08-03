@@ -9,34 +9,47 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { NAV_SECTION_MAP, useActiveSection } from "@/hooks/useActiveSection";
+import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { href: "#why", label: "Why me" },
-  { href: "#path", label: "Evolution" },
-  { href: "#experience", label: "Experience" },
-  { href: "#portfolio", label: "Portfolio" },
+  { href: "#why", label: "Обо мне" },
+  { href: "#portfolio", label: "Портфолио" },
+  { href: "#experience", label: "Опыт" },
   { href: "#nova", label: "NOVA" },
-  { href: "#stack", label: "Stack" },
 ];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const activeSection = useActiveSection();
+
+  const isActive = (href: string) => NAV_SECTION_MAP[href] === activeSection;
 
   return (
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="font-mono text-sm tracking-tighter">
-          Pilot Ali <span className="text-muted-foreground">// System Analyst</span>
+          Pilot Ali <span className="text-muted-foreground">// SA & QA</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8 font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
           {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-accent transition-colors">
+            <a
+              key={link.href}
+              href={link.href}
+              className={cn("nav-link hover:text-accent transition-colors", isActive(link.href) && "is-active text-accent")}
+            >
               {link.label}
             </a>
           ))}
-          <a href="#contact" className="text-foreground hover:text-accent transition-colors">
-            Hire Expert →
+          <a
+            href="#contact"
+            className={cn(
+              "nav-link text-foreground hover:text-accent transition-colors",
+              isActive("#contact") && "is-active text-accent",
+            )}
+          >
+            Контакты →
           </a>
         </div>
 
@@ -56,7 +69,7 @@ export function Nav() {
           >
             <SheetHeader className="text-left mb-8">
               <SheetTitle className="font-mono text-sm tracking-tighter">
-                Pilot Ali <span className="text-muted-foreground font-normal">// Menu</span>
+                Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-1 font-mono text-xs tracking-widest uppercase">
@@ -64,7 +77,12 @@ export function Nav() {
                 <SheetClose asChild key={link.href}>
                   <a
                     href={link.href}
-                    className="px-3 py-4 border-b border-white/5 text-muted-foreground hover:text-accent transition-colors"
+                    className={cn(
+                      "px-3 py-4 border-b border-white/5 transition-colors",
+                      isActive(link.href)
+                        ? "text-accent border-accent/20"
+                        : "text-muted-foreground hover:text-accent",
+                    )}
                   >
                     {link.label}
                   </a>
@@ -73,9 +91,14 @@ export function Nav() {
               <SheetClose asChild>
                 <a
                   href="#contact"
-                  className="mt-4 inline-flex items-center justify-center px-5 py-3 bg-foreground text-background rounded-md text-xs font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className={cn(
+                    "mt-4 inline-flex items-center justify-center px-5 py-3 rounded-md text-xs font-medium transition-colors",
+                    isActive("#contact")
+                      ? "bg-accent text-accent-foreground"
+                      : "bg-foreground text-background hover:bg-accent hover:text-accent-foreground",
+                  )}
                 >
-                  Hire Expert →
+                  Контакты →
                 </a>
               </SheetClose>
             </nav>

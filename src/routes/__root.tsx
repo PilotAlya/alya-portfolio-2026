@@ -68,27 +68,46 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://portfolio-resume-alya-akbarova.vercel.app/";
+const OG_IMAGE =
+  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b883ed8c-3734-4f80-a73d-ca7df420a0d2/id-preview-78db88b6--de76c423-48b1-4410-86f2-93fcfa3a2fce.lovable.app-1780603497138.png";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Portfolio" },
-      { name: "description", content: "Your Creative Playground is a web application for building and showcasing interactive digital experiences." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Portfolio" },
-      { property: "og:description", content: "Your Creative Playground is a web application for building and showcasing interactive digital experiences." },
+      { title: "Альбина Акбарова — System Analyst & QA Engineer" },
+      {
+        name: "description",
+        content:
+          "Портфолио Али Акбаровой (Pilot Ali). Системный анализ, QA, аудит данных, AI-инструменты. Кейсы: B2B-дашборд, Яндекс Алиса, NOVA Dashboard.",
+      },
+      { name: "author", content: "Альбина Акбарова" },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Portfolio" },
-      { name: "twitter:description", content: "Your Creative Playground is a web application for building and showcasing interactive digital experiences." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b883ed8c-3734-4f80-a73d-ca7df420a0d2/id-preview-78db88b6--de76c423-48b1-4410-86f2-93fcfa3a2fce.lovable.app-1780603497138.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b883ed8c-3734-4f80-a73d-ca7df420a0d2/id-preview-78db88b6--de76c423-48b1-4410-86f2-93fcfa3a2fce.lovable.app-1780603497138.png" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:locale", content: "ru_RU" },
+      { property: "og:title", content: "Альбина Акбарова — Pilot Ali" },
+      {
+        property: "og:description",
+        content:
+          "System Analyst & QA Engineer. Кейсы с метриками, live-дашборд, резюме SA/QA.",
+      },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Альбина Акбарова — Pilot Ali" },
+      {
+        name: "twitter:description",
+        content:
+          "System Analyst & QA Engineer. Кейсы с метриками, live-дашборд, резюме SA/QA.",
+      },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -105,7 +124,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <HeadContent />
       </head>

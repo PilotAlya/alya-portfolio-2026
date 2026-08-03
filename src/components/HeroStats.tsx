@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { CountUp } from "./effects/CountUp";
 
 export function HeroStats() {
   const stats = [
-    { n: 2, suf: " года", label: "в производстве и ритейле + ~6 мес. стажировки с учёбы" },
+    { n: 2, suf: " года", label: "в ритейле + ~6 мес. стажировки с учёбы" },
     { n: 3, suf: "", label: "AI-инструмента собрано на vibe-coding" },
     { n: 40, suf: "%", label: "рутины автоматизировано в Legacy-софте" },
     {
@@ -21,11 +23,15 @@ export function HeroStats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.6 }}
-            className="flex flex-col gap-2"
+            {...spotlightAttrs}
+            className={spotlightClass(
+              "flex flex-col gap-2 rounded-lg border border-transparent p-4 -m-4",
+              "subtle",
+            )}
           >
             <div className="font-extrabold text-3xl sm:text-4xl tracking-tight">
-              <span className="text-accent">{s.n}</span>
-              <span>{s.suf}</span>
+              <CountUp to={s.n} duration={1200} className="text-accent" />
+              {s.suf}
             </div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground leading-relaxed">
               {s.label}

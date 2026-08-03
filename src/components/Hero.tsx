@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HERO_CODE_LINES } from "./shared";
+import { MagneticLink } from "./effects/MagneticButton";
 
 function HeroCodeRain() {
   return (
@@ -76,7 +77,7 @@ export function Hero() {
                   <span className="relative inline-flex rounded-full size-2 bg-accent" />
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  Available · System & AI architecture
+                  Открыта к предложениям · SA & QA
                 </span>
               </div>
             </motion.div>
@@ -99,8 +100,30 @@ export function Hero() {
             >
               System Analyst · AI-Native Engineer · Product Architect.
               Перевожу промышленный хаос в цифровую логику —{" "}
-              <span className="text-foreground italic">от чертежей мебели до RAG-агентов</span>.
+              <span className="text-foreground italic">от промышленных процессов до AI-агентов</span>.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex flex-wrap gap-2"
+            >
+              {[
+                { label: "Системный анализ", sub: "SA" },
+                { label: "Тестирование", sub: "QA" },
+                { label: "Аудит данных", sub: "Python" },
+                { label: "AI-инструменты", sub: "Cursor · RAG" },
+              ].map((pill) => (
+                <div
+                  key={pill.label}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 font-mono text-[10px] uppercase tracking-wider"
+                >
+                  <span className="text-foreground">{pill.label}</span>
+                  <span className="text-muted-foreground/70">· {pill.sub}</span>
+                </div>
+              ))}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -108,33 +131,33 @@ export function Hero() {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-3"
             >
-              <a
+              <MagneticLink
                 href="#contact"
-                className="group inline-flex items-center gap-2 bg-foreground text-background px-5 py-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="group items-center gap-2 bg-foreground text-background px-5 py-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Связаться{" "}
                 <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-              <a
+              </MagneticLink>
+              <MagneticLink
                 href="/resume-qa.pdf"
                 download="Albina_Akbarova_QA_Resume.pdf"
-                className="inline-flex items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Резюме QA
-              </a>
-              <a
+              </MagneticLink>
+              <MagneticLink
                 href="/resume-sa.pdf"
                 download="Albina_Akbarova_SA_Resume.pdf"
-                className="inline-flex items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Резюме SA
-              </a>
-              <a
+              </MagneticLink>
+              <MagneticLink
                 href="#portfolio"
-                className="inline-flex items-center gap-2 border border-white/15 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+                className="items-center gap-2 border border-white/15 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
               >
                 Смотреть кейсы
-              </a>
+              </MagneticLink>
             </motion.div>
           </div>
 

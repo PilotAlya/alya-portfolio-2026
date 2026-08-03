@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { SectionLabel } from "./effects/SectionLabel";
 
 import portrait from "@/assets/portrait.jpg";
 
@@ -15,12 +17,13 @@ export function Profile() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card">
+          <div className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait">
             <img
               src={portrait}
               alt="Алья Акбарова — портрет"
-              className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
             />
+            <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none" />
           </div>
         </motion.div>
 
@@ -30,26 +33,31 @@ export function Profile() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Глава 09 · Профиль специалиста
-          </span>
+          <SectionLabel chapter={9} title="Профиль специалиста" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-10">
             Профиль специалиста
           </h2>
 
-          <div className="grid sm:grid-cols-3 gap-8 mb-10">
+          <div className="grid sm:grid-cols-3 gap-6 mb-10">
             {[
               {
-                t: "Тестирование и Анализ",
-                d: "Функциональное и UX-тестирование, тестирование ИИ-ассистентов (Яндекс Алиса, iOS), локализация багов, приоритизация дефектов, тест-дизайн.",
+                t: "Тестирование и анализ",
+                d: "QA, UX-тесты, тест-дизайн — подробнее в разделе Портфолио.",
               },
-              { t: "Разработка", d: "React, TypeScript, Vibe-coding (Cursor, Kiro, OpenCode), GitHub, Vercel." },
+              {
+                t: "Разработка",
+                d: "React, TypeScript, vibe-coding — см. NOVA Dashboard.",
+              },
               {
                 t: "Управление рисками",
-                d: "Комплаенс-аудит бизнес-процессов, выявление критических налоговых рисков, контроль качества (0% брака на публичных проектах).",
+                d: "Комплаенс-аудит, контроль качества — см. раздел Опыт.",
               },
             ].map((c) => (
-              <div key={c.t}>
+              <div
+                key={c.t}
+                {...spotlightAttrs}
+                className={spotlightClass("rounded-lg border border-transparent p-4 -m-4", "subtle")}
+              >
                 <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-2">
                   {c.t}
                 </div>
@@ -77,7 +85,11 @@ export function Profile() {
                 Icon: Sparkles,
               },
             ].map((c) => (
-              <div key={c.t}>
+              <div
+                key={c.t}
+                {...spotlightAttrs}
+                className={spotlightClass("rounded-lg border border-transparent p-4 -m-4", "subtle")}
+              >
                 <div className="flex items-center gap-2 mb-2">
                   {c.Icon && <c.Icon className="size-3.5 text-accent" />}
                   <div className="font-mono text-[10px] uppercase tracking-widest text-foreground">
@@ -92,31 +104,6 @@ export function Profile() {
                 <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
               </div>
             ))}
-          </div>
-
-          <div className="border-t border-white/10 pt-8 mt-8">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-5">
-              Смежный опыт · системный подход
-            </div>
-            <div className="grid sm:grid-cols-3 gap-8">
-              {[
-                {
-                  t: "Дизайнер-проектировщик · РЭЛАН, Лысьва",
-                  d: "Управление полным циклом проектирования и контроль качества. Проектирование корпусной мебели в Pro100 по строгим техническим регламентам. Ведение сквозного складского и финансового учёта в ERP-системе «Инфопредприятие». Анализ рисков: провела комплаенс-аудит перевода мастеров на самозанятость, выявила критические налоговые риски и предотвратила штрафы для бизнеса. Создала Price Checker и Mebel Checker с помощью AI-инструментов.",
-                },
-                {
-                  t: "Стажировка · Urban Mebel",
-                  d: "За 4 дня внутри производственной команды — проведён экспресс-аудит бизнеса и выявлены критические ошибки в учёте, ценообразовании и заказном цикле. Эти находки и стали поводом для проектирования единой системы NOVA Dashboard.",
-                },
-              ].map((c) => (
-                <div key={c.t}>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-foreground mb-2">
-                    {c.t}
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>

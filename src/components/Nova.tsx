@@ -18,6 +18,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
+import { ParallaxImage } from "./effects/ParallaxImage";
+import { MagneticLink } from "./effects/MagneticButton";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import novaWiki from "@/assets/nova-wiki.png";
@@ -50,11 +52,12 @@ function NovaCarousel() {
     <div className="relative">
       {/* Main slide — с подсветкой по краям */}
       <div className="relative aspect-video overflow-hidden rounded-lg ring-2 ring-accent/40 bg-black shadow-[0_0_32px_rgba(59,130,246,0.2)]">
-        <img
+        <ParallaxImage
           key={current}
           src={SLIDES[current].src}
           alt={SLIDES[current].label}
           className="w-full h-full object-contain"
+          speed={8}
         />
         {/* tag */}
         <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
@@ -144,7 +147,7 @@ export function Nova() {
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Единая точка управления заказами, складом и AI-навигатором «Борис». Первоначально проектировалась как полнофункциональная система, но после первого цикла тестирования была переработана в NOVA Light — упрощённую версию с фокусом на продажу ЛДСП материалов и готовых изделий (полки, дверцы, фасады).
+            Единая точка управления заказами, складом и AI-навигатором «Борис». Первоначально проектировалась как полнофункциональная система, но после первого цикла тестирования была переработана в NOVA Light — упрощённую версию с фокусом на базовый заказной цикл и складской учёт.
           </p>
           <p className="text-base text-muted-foreground/90 leading-relaxed border-l-2 border-accent/60 pl-4">
             <span className="text-foreground font-medium">Два цикла разработки:</span> Первая версия оказалась перегруженной функционалом, выходящим за пределы моих компетенций (бухгалтерия, углубленная логика работы с клиентом) — 3/3 пользователей указали на сложность. На основе обратной связи переработала систему в NOVA Light. Повторные тесты с теми же пользователями: «Стало намного понятнее. Сами бы таким пользовались».
@@ -268,7 +271,7 @@ export function Nova() {
               {
                 value: "n1",
                 q: "Что такое NOVA Dashboard?",
-                a: "Единая точка управления заказами, складом и AI-навигатором «Борис». Система прошла два цикла разработки: от перегруженной версии до облегченной NOVA Light с фокусом на продажу ЛДСП материалов.",
+                a: "Единая точка управления заказами, складом и AI-навигатором «Борис». Система прошла два цикла разработки: от перегруженной версии до облегченной NOVA Light с фокусом на core-функциональность.",
               },
               {
                 value: "n2",
@@ -283,12 +286,12 @@ export function Nova() {
               {
                 value: "n3",
                 q: "Для какого бизнеса подходит NOVA?",
-                a: "MVP — для мебельного производства, но архитектура масштабируется на любой бизнес со складом и заказным циклом.",
+                a: "MVP заточен под бизнес со складом и заказным циклом; архитектура масштабируется на другие отрасли.",
               },
               {
                 value: "n-pilot",
                 q: "Как проходило тестирование?",
-                a: "Два цикла: (1) Полная версия — 3 сессии, выявлена перегруженность функциями (бухгалтерия). 3/3 пользователей подтвердили сложность. (2) NOVA Light — упрощённая версия с фокусом на ЛДСП материалы. Повторные тесты с теми же людьми: «Стало намного понятнее. Сами бы таким пользовались, если бы это было полноценно-работающее приложение».",
+                a: "Два цикла: (1) Полная версия — 3 сессии, выявлена перегруженность функциями (бухгалтерия). 3/3 пользователей подтвердили сложность. (2) NOVA Light — упрощённая версия с фокусом на заказы и склад. Повторные тесты с теми же людьми: «Стало намного понятнее. Сами бы таким пользовались, если бы это было полноценно-работающее приложение».",
               },
               {
                 value: "n5",
@@ -322,8 +325,8 @@ export function Nova() {
               Icon: Activity,
             },
             {
-              t: "Демо по запросу",
-              d: "Дашборд запускается локально — напиши в Telegram или на email, покажу живую демонстрацию.",
+              t: "Live-презентация",
+              d: "Интерактивная презентация NOVA Light на Vercel — заказы, склад, AI-ассистент.",
               Icon: Rocket,
             },
           ].map((f) => (
@@ -340,16 +343,16 @@ export function Nova() {
 
         {/* Единственная кнопка презентации */}
         <div className="flex justify-start">
-          <a
+          <MagneticLink
             href="https://alya-nova-2026.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
+            className="group items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
             <PlayCircle className="size-4" />
             Смотреть презентацию NOVA
             <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
+          </MagneticLink>
         </div>
       </div>
     </section>
