@@ -41,7 +41,7 @@ export const HERO_CODE_LINES = [
 export const EVOLUTION_CODE_LINES = [
   "$ git log --oneline --from=blueprint --to=ai-arch",
   "> stage 01: industrial_chaos.init()",
-  "const precision = new Rule('1mm === ∞₽ losses')",
+  "const precision = new Rule('detail === cost')",
   "> stage 02: legacy.migrate('Info-Predpriyatie')",
   "schema.normalize({ duplicates: 'merge', source: 'SSOT' })",
   "> stage 03: nova.deploy({ agents: ['boris'], rag: true })",
