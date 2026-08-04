@@ -21,6 +21,7 @@ import { fadeUp } from "./shared";
 import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
 import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { MagneticLink } from "./effects/MagneticButton";
+import { ParallaxImage } from "./effects/ParallaxImage";
 import { NovaBento } from "./NovaBento";
 import { useNovaScrollPin } from "@/hooks/useNovaScrollPin";
 
