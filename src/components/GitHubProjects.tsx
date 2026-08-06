@@ -16,7 +16,7 @@ export function GitHubProjects() {
   const projects: Project[] = [
     {
       name: "Nova_light-",
-      category: "MVP · SA",
+      category: "MVP · AI",
       description: "Система управления заказами и складом: AI-ассистент «Борис», React, TypeScript.",
       url: "https://github.com/PilotAlya/Nova_light-",
       demo: "https://nova-light-app.vercel.app/",

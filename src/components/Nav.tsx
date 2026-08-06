@@ -14,9 +14,9 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "#why", label: "Обо мне" },
-  { href: "#portfolio", label: "Портфолио" },
-  { href: "#experience", label: "Опыт" },
   { href: "#nova", label: "NOVA" },
+  { href: "#experience", label: "Опыт" },
+  { href: "#portfolio", label: "Портфолио" },
 ];
 
 export function Nav() {
@@ -29,7 +29,7 @@ export function Nav() {
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="font-mono text-sm tracking-tighter">
-          Pilot Ali <span className="text-muted-foreground">// SA & QA</span>
+          Pilot Ali <span className="text-muted-foreground">// AI · Vibe-Coding</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8 font-mono text-[10px] tracking-widest uppercase text-muted-foreground">

@@ -77,7 +77,7 @@ export function Hero() {
                   <span className="relative inline-flex rounded-full size-2 bg-accent" />
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  Открыта к предложениям · SA & QA
+                  Открыта к предложениям · AI & Vibe-coding
                 </span>
               </div>
             </motion.div>
@@ -98,9 +98,10 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-xl font-light leading-relaxed"
             >
-              System Analyst · AI-Native Engineer · Product Architect.
-              Перевожу бизнес-хаос в цифровую логику —{" "}
-              <span className="text-foreground italic">от Legacy-процессов до AI-агентов</span>.
+              AI-Native Engineer · Vibe-Coder · Product Builder.
+              С ИИ на «ты»: быстро осваиваю новый контекст, проектирую логику, собираю MVP и
+              проверяю результат —{" "}
+              <span className="text-foreground italic">от Legacy-хаоса до AI-агентов</span>.
             </motion.p>
 
             <motion.div
@@ -110,10 +111,10 @@ export function Hero() {
               className="flex flex-wrap gap-2"
             >
               {[
-                { label: "Системный анализ", sub: "SA" },
-                { label: "Тестирование", sub: "QA" },
-                { label: "Аудит данных", sub: "Python" },
-                { label: "AI-инструменты", sub: "Cursor · RAG" },
+                { label: "Vibe-coding", sub: "Cursor · OpenCode" },
+                { label: "AI-native", sub: "LLM · RAG" },
+                { label: "MVP & прототипы", sub: "React" },
+                { label: "Валидация", sub: "QA mindset" },
               ].map((pill) => (
                 <div
                   key={pill.label}
@@ -139,18 +140,11 @@ export function Hero() {
                 <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </MagneticLink>
               <MagneticLink
-                href="/resume-qa.pdf"
-                download="Albina_Akbarova_QA_Resume.pdf"
+                href="/resume-ai.pdf"
+                download="Albina_Akbarova_AI_Resume.pdf"
                 className="items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
               >
-                Резюме QA
-              </MagneticLink>
-              <MagneticLink
-                href="/resume-sa.pdf"
-                download="Albina_Akbarova_SA_Resume.pdf"
-                className="items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
-              >
-                Резюме SA
+                Резюме AI
               </MagneticLink>
               <MagneticLink
                 href="#portfolio"
@@ -168,8 +162,9 @@ export function Hero() {
             className="relative lg:border-l lg:border-white/10 lg:pl-8 pb-4 flex flex-col items-center lg:items-stretch gap-6"
           >
             <p className="font-mono text-xs leading-relaxed text-muted-foreground uppercase">
-              «Я проектирую логику систем. Моя суперсила — деконструкция хаоса и сборка автономных
-              инструментов там, где стандартный софт бессилен.»
+              «Я не пишу код как классический разработчик — проектирую последовательность действий,
+              собираю решение с AI и довожу до рабочего результата. Системный подход и привычка
+              тестировать — мой фильтр качества.»
             </p>
             <div className="font-mono text-[10px] text-accent uppercase tracking-widest">
               — Pilot Ali

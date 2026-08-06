@@ -9,15 +9,13 @@ import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 export function Stack() {
   const cols = [
     {
-      Icon: TestTube,
-      title: "Testing & QA",
+      Icon: Cpu,
+      title: "Vibe-coding · Разработка",
       items: [
-        "Функциональное тестирование веб-приложений",
-        "UX-тестирование (коридорные тесты)",
-        "Тестирование ИИ-ассистентов и браузеров (Яндекс Алиса, Яндекс.Браузер)",
-        "Browser DevTools (Chrome, inspect)",
-        "Документирование багов (Google Sheets)",
-        "Кросс-возрастное тестирование",
+        "Основные: Cursor · Antygravity · OpenCode · Kiro",
+        "Каркас: Lovable · Bolt · Replit",
+        "React · TanStack · Vercel · GitHub",
+        "Постоянно тестирую новые инструменты",
       ],
     },
     {
@@ -30,22 +28,23 @@ export function Stack() {
       ],
     },
     {
-      Icon: Cpu,
-      title: "Vibe-coding · Разработка",
-      items: [
-        "Основные: Cursor · Antygravity · OpenCode · Kiro",
-        "Каркас: Lovable · Bolt · Replit",
-        "React · TanStack · Vercel · GitHub",
-        "Постоянно тестирую новые инструменты",
-      ],
-    },
-    {
       Icon: CircuitBoard,
       title: "Исследование · Данные",
       items: [
         "NotebookLM · Abacus AI",
         "RAG & OCR технологии",
         "Аудит бизнес-процессов",
+      ],
+    },
+    {
+      Icon: TestTube,
+      title: "Product Validation · QA mindset",
+      items: [
+        "UX-тестирование (коридорные тесты)",
+        "AI-assistant evaluation (Яндекс Алиса)",
+        "Контроль качества продукта",
+        "Browser DevTools (Chrome, inspect)",
+        "Документирование багов (Google Sheets)",
       ],
     },
     {
@@ -135,25 +134,26 @@ export function Stack() {
             {[...Array(2)].map((_, k) => (
               <div key={k} className="flex gap-12">
                 {[
+                  "Vibe-coding",
+                  "AI-Native",
                   "React",
                   "TypeScript",
                   "Python",
                   "Pandas",
-                  "QA",
-                  "System Analysis",
-                  "BPMN",
                   "RAG",
                   "Cursor",
+                  "OpenCode",
+                  "Gemini",
+                  "Prompt QA",
+                  "MVP Shipping",
                   "Chart.js",
                   "Vercel",
-                  "Gemini",
                   "Claude",
                   "Figma",
-                  "PRO100",
                   "NotebookLM",
                   "TanStack",
                   "UX Testing",
-                  "MVP",
+                  "AI Trainer",
                   "Automation",
                 ].map((t) => (
                   <span key={`${k}-${t}`} className="text-foreground/70">

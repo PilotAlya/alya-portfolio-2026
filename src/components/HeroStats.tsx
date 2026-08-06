@@ -5,12 +5,12 @@ import { CountUp } from "./effects/CountUp";
 export function HeroStats() {
   const stats = [
     { n: 2, suf: " года", label: "в ритейле + ~6 мес. стажировки с учёбы" },
-    { n: 3, suf: "", label: "AI-инструмента собрано на vibe-coding" },
+    { n: 5, suf: "+", label: "рабочих MVP и демо на Vercel" },
     { n: 40, suf: "%", label: "рутины автоматизировано в Legacy-софте" },
     {
-      n: 0,
-      suf: "%",
-      label: "брака на публичных проектах для музея и завода ММК — принцип точности переношу в QA",
+      n: 12,
+      suf: "+",
+      label: "дефектов поймано до деплоя в NOVA — UX-тесты и итерации",
     },
   ];
   return (

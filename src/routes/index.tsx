@@ -21,17 +21,17 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Альбина Акбарова — System Analyst & QA Engineer" },
+      { title: "Альбина Акбарова — AI-Native Engineer · Vibe-Coder" },
       {
         name: "description",
         content:
-          "Портфолио Али Акбаровой (Pilot Ali). Системный анализ, QA, аудит данных, AI-инструменты. Кейсы: B2B-дашборд, Яндекс Алиса, NOVA Dashboard.",
+          "Портфолио Али Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
       },
-      { property: "og:title", content: "Альбина Акбарова — Pilot Ali" },
+      { property: "og:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
       {
         property: "og:description",
         content:
-          "System Analyst & QA Engineer. Кейсы с метриками, live-дашборд, резюме SA/QA.",
+          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://portfolio-resume-alya-akbarova.vercel.app/" },
@@ -59,9 +59,9 @@ function Index() {
       <HeroStats />
       <WhyMe />
       <EvolutionPath />
-      <PortfolioSection />
-      <ExperienceSection />
       <Nova />
+      <ExperienceSection />
+      <PortfolioSection />
       <Stack />
       <GitHubProjects />
       <Guides />

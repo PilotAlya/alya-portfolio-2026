@@ -22,20 +22,20 @@ export const staggerItem = {
 };
 
 export const HERO_CODE_LINES = [
-  "$ pilot-ali init --mode=system-architect",
-  "> loading modules: rag-agent, nova-flex, nova-project ............ ok",
-  "▌ parsing legacy_software('Info-Predpriyatie') → migrating schema",
+  "$ pilot-ali init --mode=ai-native",
+  "> loading modules: rag-agent, nova-flex, vibe-coder ............ ok",
+  "▌ cursor.agent({ stack: ['OpenCode', 'Gemini'], mode: 'ship' })",
   "const boris = new Agent({ role: 'wiki', memory: 'rag', tone: 'kind' })",
-  "// ошибка в деталях на старте = −∞ ₽ на финале. правило #01",
+  "// не классический dev — проектирую логику, AI пишет код, я проверяю",
   "if (chaos.detected) { return architecture.deconstruct(chaos).rebuild() }",
   "[ok] vector_store ← embed(docs/*.pdf)  ·  1287 chunks  ·  cosine=0.93",
   "GET /api/nova/orders?status=in_progress  →  200 OK  · 42 ms",
-  "// от Legacy-хаоса — до автономных AI-конвейеров",
-  "schema design ── system analysis ── prompt engineering ── shipping",
-  "ALYA.AKBAROVA :: pilot_ali ▸ system_analyst ▸ ai_native_engineer",
+  "// от Legacy-хаоса — до AI-native shipping",
+  "vibe-coding ── prompt engineering ── validation ── deploy",
+  "ALYA.AKBAROVA :: pilot_ali ▸ ai_native_engineer ▸ vibe_coder",
   "$ nova run --pipeline=warehouse → 1428 SKU synced  · 0 errors",
   "trace_id=9f2c1b4a  ·  agent=boris  ·  latency=312ms  ·  cost=$0.0007",
-  "// «я проектирую логику систем» — повторять как мантру",
+  "// «с ИИ на ты» — системный подход + проверка результата",
 ];
 
 export const EVOLUTION_CODE_LINES = [

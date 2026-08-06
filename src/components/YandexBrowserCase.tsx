@@ -19,7 +19,7 @@ export function YandexBrowserCase() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="font-mono text-xs text-accent uppercase tracking-widest">
-                Кейс 03 · Тестирование браузера
+                Кейс 03 · Контроль качества продукта
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-white/5 border border-white/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
                 <Monitor className="size-3 text-accent" /> Win 11 · Яндекс.Браузер 26.6.3
@@ -27,13 +27,14 @@ export function YandexBrowserCase() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-              Тестирование «Яндекс.Браузера»
+              Контроль качества «Яндекс.Браузера»
             </h2>
 
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-6">
-              Комплексное функциональное тестирование интерфейса десктопного браузера на Windows.
-              Выполнила сценарии по ТЗ (боковая панель, PWA-приложения, группы вкладок), выявила
-              расхождения, зафиксировала вердикты (Pass / Pass с дефектами) и составила баг-репорты.
+              Системная проверка десктопного браузера на Windows: сценарии по ТЗ (боковая панель,
+              PWA-приложения, группы вкладок), вердикты Pass / Pass с дефектами, баг-репорты.
+              Демонстрирует привычку копать до конца и документировать результат — не core identity,
+              а фильтр качества.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3 mb-6 text-xs">
@@ -64,7 +65,7 @@ export function YandexBrowserCase() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-6">
-              {["Functional QA", "Test Cases", "Bug Reports", "Windows 11"].map((tech) => (
+              {["Product Validation", "Test Cases", "Bug Reports", "Windows 11"].map((tech) => (
                 <span
                   key={tech}
                   className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-white/10 px-2 py-1 rounded-sm"
@@ -98,7 +99,7 @@ export function YandexBrowserCase() {
                 <Globe className="size-5" />
               </div>
               <div>
-                <div className="font-mono text-xs font-bold text-foreground">Артефакты тестирования</div>
+                <div className="font-mono text-xs font-bold text-foreground">Quality Report</div>
                 <div className="font-mono text-[10px] text-muted-foreground">Яндекс.Браузер · Desktop</div>
               </div>
             </div>

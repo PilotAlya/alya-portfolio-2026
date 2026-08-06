@@ -17,13 +17,13 @@ export function EvolutionPath() {
       title: "Оцифровка процессов",
       body: "Реинжиниринг бизнес-моделей, оптимизация Legacy-софта (Инфо-Предприятие), создание автоматизированных конвейеров.",
       Icon: CircuitBoard,
-      featured: true,
     },
     {
       n: "03",
       title: "Интеллектуальный штурман",
-      body: "Разработка экосистемы NOVA (FLEX & PROJECT) через Vibe-coding. RAG-агенты, AI-пайплайны, автономные инструменты.",
+      body: "Экосистема NOVA (FLEX & PROJECT) через vibe-coding. RAG-агенты, AI-пайплайны, автономные инструменты — от идеи до деплоя на Vercel.",
       Icon: Bot,
+      featured: true,
     },
   ];
 

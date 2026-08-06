@@ -34,10 +34,10 @@ export function Contact() {
           <SectionLabel chapter={10} title="Контакты" />
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mt-6 mb-8 leading-[0.9]">
             На связи —<br />
-            для <span className="text-accent">системных вызовов</span>.
+            для <span className="text-accent">AI-продуктов и vibe-coding</span>.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-10 italic">
-            «Готова к деконструкции ваших самых сложных задач.»
+            «Готова собрать MVP, проверить AI-продукт и довести до рабочего результата.»
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mb-8">
@@ -99,23 +99,24 @@ export function Contact() {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <MagneticLink
-              href="/resume-qa.pdf"
-              download="Albina_Akbarova_QA_Resume.pdf"
+              href="/resume-ai.pdf"
+              download="Albina_Akbarova_AI_Resume.pdf"
               className="group items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
             >
               <Download className="size-5" />
-              Скачать резюме QA
-            </MagneticLink>
-
-            <MagneticLink
-              href="/resume-sa.pdf"
-              download="Albina_Akbarova_SA_Resume.pdf"
-              className="group items-center gap-3 border border-accent/40 bg-accent/10 px-6 py-4 rounded-md text-base font-semibold hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              <Download className="size-5" />
-              Скачать резюме SA
+              Скачать резюме AI
             </MagneticLink>
           </div>
+          <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+            Также:{" "}
+            <a href="/resume-qa.pdf" className="text-accent hover:underline">
+              резюме QA
+            </a>
+            {" · "}
+            <a href="/resume-sa.pdf" className="text-accent hover:underline">
+              резюме SA
+            </a>
+          </p>
         </motion.div>
 
         <motion.div
