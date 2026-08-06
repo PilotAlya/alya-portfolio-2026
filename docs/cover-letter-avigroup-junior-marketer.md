@@ -37,7 +37,7 @@
 
 — UX и обратная связь: 3 коридорных теста NOVA — фиксация, где пользователю непонятно, и итерация по результатам.
 
-— Прототипы и сайты: Figma — базовый уровень (прототипы интерфейсов); лендинги собираю на vibe-coding (React, Lovable, Cursor) — NOVA, портфolio: https://portfolio-resume-alya-akbarova.vercel.app/
+— Прототипы и сайты: Figma — базовый уровень (прототипы интерфейсов); лендинги собираю на vibe-coding (React, Lovable, Cursor) — NOVA, портфолио: https://portfolio-resume-alya-akbarova.vercel.app/
 
 — AI в работе: Gemini, ChatGPT, Cursor, OpenCode — для черновиков, исследований и ускорения рутины; результат всегда проверяю сама.
 
