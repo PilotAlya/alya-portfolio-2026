@@ -21,7 +21,7 @@ export function TelegramLeadCaptureCase() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="font-mono text-xs text-accent uppercase tracking-widest">
-                Кейс 01 · Automation & Documentation
+                Кейс 02 · Automation & Documentation
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-white/5 border border-white/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
                 <Bot className="size-3 text-accent" /> Telegram · Google Sheets

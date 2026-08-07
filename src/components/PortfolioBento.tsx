@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Bot, Kanban, BarChart3, Sparkles, Globe } from "lucide-react";
+import { ArrowUpRight, Bot, Kanban, BarChart3, Rocket } from "lucide-react";
 
+import novaDashboard from "@/assets/nova-dashboard-new.png";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { fadeUp } from "./shared";
 
 const TILES = [
   {
-    id: "case-telegram",
-    title: "Telegram → Google Sheets",
-    subtitle: "Lead capture · Apps Script · PDF-гайд",
-    tag: "Automation",
-    Icon: Bot,
-    span: "md:col-span-2 md:row-span-1",
-    href: "https://t.me/xgdsdsjsd567bot",
-    external: true,
-    accent: "from-accent/20 via-accent/5 to-transparent",
+    id: "nova",
+    title: "NOVA Dashboard",
+    subtitle: "Флагман · MVP · UX-тесты · AI «Борис» · live demo",
+    tag: "Flagship",
+    Icon: Rocket,
+    span: "md:col-span-2 md:row-span-1 min-h-[160px]",
+    href: "#nova",
+    external: false,
+    accent: "from-accent/25 via-accent/5 to-transparent",
+    image: novaDashboard,
   },
   {
     id: "case-crm",
@@ -23,48 +25,37 @@ const TILES = [
     tag: "Pet project",
     Icon: Kanban,
     span: "",
-    href: "https://testovoe-crm-lead.vercel.app",
-    external: true,
+    href: "#case-crm",
+    external: false,
     accent: "from-blue-500/15 via-transparent to-transparent",
+  },
+  {
+    id: "case-telegram",
+    title: "Telegram → Google Sheets",
+    subtitle: "Lead capture · Apps Script · PDF-гайд",
+    tag: "Automation",
+    Icon: Bot,
+    span: "",
+    href: "#case-telegram",
+    external: false,
+    accent: "from-accent/20 via-accent/5 to-transparent",
   },
   {
     id: "case-b2b",
     title: "B2B Churn Audit",
-    subtitle: "Python · 72.7% → 63.6% · Executive Dashboard",
-    tag: "Data",
+    subtitle: "72.7% → 63.6% · executive dashboard",
+    tag: "Data · background",
     Icon: BarChart3,
     span: "",
     href: "https://client-retention-dashboard.vercel.app/",
     external: true,
     accent: "from-emerald-500/10 via-transparent to-transparent",
   },
-  {
-    id: "case-alice",
-    title: "AI Assistant Evaluation",
-    subtitle: "Яндекс Алиса · 6 сценариев · 5 баг-репортов",
-    tag: "Validation",
-    Icon: Sparkles,
-    span: "",
-    href: "#case-alice",
-    external: false,
-    accent: "from-violet-500/10 via-transparent to-transparent",
-  },
-  {
-    id: "case-browser",
-    title: "Product Quality Control",
-    subtitle: "Яндекс.Браузер · Pass/Fail · 2 дефекта",
-    tag: "Validation",
-    Icon: Globe,
-    span: "md:col-span-2",
-    href: "#case-browser",
-    external: false,
-    accent: "from-amber-500/10 via-transparent to-transparent",
-  },
 ] as const;
 
 export function PortfolioBento() {
   return (
-    <section className="relative px-6 lg:px-8 pb-16 overflow-hidden">
+    <section className="relative px-6 lg:px-8 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -97,6 +88,15 @@ export function PortfolioBento() {
               <div
                 className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${tile.accent} opacity-80`}
               />
+              {"image" in tile && tile.image && (
+                <div className="pointer-events-none absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity">
+                  <img
+                    src={tile.image}
+                    alt=""
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              )}
               <div className="relative z-[1] flex items-start justify-between gap-3">
                 <div>
                   <span className="font-mono text-[9px] uppercase tracking-widest text-accent/90">

@@ -1,8 +1,6 @@
-import { ChurnAuditCase } from "@/components/ChurnAuditCase";
-import { AITestingCase } from "@/components/AITestingCase";
-import { YandexBrowserCase } from "@/components/YandexBrowserCase";
 import { CrmLeadCardCase } from "@/components/CrmLeadCardCase";
 import { TelegramLeadCaptureCase } from "@/components/TelegramLeadCaptureCase";
+import { PortfolioBackground } from "@/components/PortfolioBackground";
 import { PortfolioBento } from "@/components/PortfolioBento";
 import { SectionIntro } from "@/components/SectionIntro";
 
@@ -13,15 +11,13 @@ export function PortfolioSection() {
         chapter={5}
         label="Портфолио"
         title="Кейсы с метриками и артефактами"
-        description="Автоматизации, data-аудит, AI-продукты и валидация — с PDF, live-demo и рабочими прототипами."
-        meta="5 кейсов · PDF + demo"
+        description="Флагман NOVA — выше. Здесь pet-проекты и автоматизации с live-demo; data audit и AI validation — компактно в background."
+        meta="2 кейса · demo + background"
       />
       <PortfolioBento />
-      <TelegramLeadCaptureCase />
       <CrmLeadCardCase />
-      <ChurnAuditCase />
-      <YandexBrowserCase />
-      <AITestingCase />
+      <TelegramLeadCaptureCase />
+      <PortfolioBackground />
     </div>
   );
 }
