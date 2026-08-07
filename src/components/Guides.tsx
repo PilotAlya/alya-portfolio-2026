@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
-import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
+import { SectionHeadline } from "./effects/SectionHeadline";
 
 export function Guides() {
   return (
@@ -16,13 +16,9 @@ export function Guides() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <SectionLabel chapter={8} title="Экспертиза & Community" />
-          <h2 className="text-4xl font-bold tracking-tight mt-4 mb-4 flex items-start gap-2">
-            Технические гайды и Open Knowledge
-            <SparkStar className="mt-1.5 shrink-0" />
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
+          <SectionHeadline accent="Open Knowledge">Технические гайды и</SectionHeadline>
+          <p className="text-muted-foreground leading-relaxed mt-4 mb-4">
             «Я верю в Open Knowledge. Мои гайды — деконструкция сложных технологий в простые
             пошаговые алгоритмы для жизни и работы.»
           </p>

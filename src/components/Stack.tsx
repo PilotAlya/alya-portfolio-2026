@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "./shared";
 import { SectionLabel } from "./effects/SectionLabel";
-import { HandDrawnArrow, ScribbleBurst } from "./effects/HandDrawn";
+import { SectionHeadline } from "./effects/SectionHeadline";
 
 import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 
@@ -81,11 +81,8 @@ export function Stack() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <SectionLabel chapter={7} title="Технологический стек" />
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">
-            Стек технологий и автоматизации
-          </h2>
+          <SectionHeadline accent="автоматизации">Стек технологий и</SectionHeadline>
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
             AI-native инструменты, фреймворки и практики — всё, что использую при сборке MVP и
             автоматизации.
@@ -100,10 +97,9 @@ export function Stack() {
           transition={{ duration: 0.6 }}
           className="relative glass-panel rounded-2xl p-8 md:p-10 mb-12"
         >
-          <HandDrawnArrow
-            label="ежедневный core"
-            className="absolute -top-2 right-4 md:right-8 hidden sm:flex"
-          />
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">
+            core · Cursor · ежедневный стек
+          </p>
 
           <div className="flex flex-wrap gap-2.5 md:gap-3 justify-center md:justify-start">
             {TAGS.map((tag, i) => (

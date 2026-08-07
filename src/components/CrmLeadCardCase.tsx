@@ -65,7 +65,7 @@ export function CrmLeadCardCase() {
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="items-center gap-2 bg-accent text-accent-foreground font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold hover:bg-accent/90 transition-colors"
+              className="btn-spark items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
             >
               <ExternalLink className="size-4" />
               Открыть demo

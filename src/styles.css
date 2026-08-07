@@ -725,6 +725,54 @@ body.custom-cursor-active * {
     0 8px 32px -8px color-mix(in oklab, var(--spark) 55%, transparent);
 }
 
+.btn-cta-secondary {
+  border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+  background: color-mix(in oklab, var(--accent) 10%, transparent);
+  color: var(--foreground);
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-cta-ghost {
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--muted-foreground);
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.section-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.section-headline-accent {
+  background: linear-gradient(
+    125deg,
+    var(--glow) 0%,
+    color-mix(in oklab, var(--glow-secondary) 85%, var(--glow)) 50%,
+    var(--glow) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-hud {
+  background: color-mix(in oklab, var(--card) 35%, var(--background));
+}
+
+.footer-hud__rule {
+  border-top: 1px solid color-mix(in oklab, var(--glass-border) 100%, transparent);
+}
+
 @media (hover: hover) {
   .btn-spark:hover {
     filter: brightness(1.06);
@@ -732,6 +780,18 @@ body.custom-cursor-active * {
       0 0 0 1px color-mix(in oklab, var(--spark) 60%, transparent),
       0 12px 40px -6px color-mix(in oklab, var(--spark) 65%, transparent);
     transform: translateY(-1px);
+  }
+
+  .btn-cta-secondary:hover {
+    border-color: color-mix(in oklab, var(--accent) 65%, transparent);
+    background: color-mix(in oklab, var(--accent) 16%, transparent);
+    color: var(--foreground);
+  }
+
+  .btn-cta-ghost:hover {
+    border-color: color-mix(in oklab, var(--accent) 40%, transparent);
+    color: var(--foreground);
+    background: color-mix(in oklab, var(--glass) 60%, transparent);
   }
 }
 
