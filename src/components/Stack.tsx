@@ -47,23 +47,9 @@ export function Stack() {
   return (
     <section
       id="stack"
-      className="relative pt-16 md:pt-24 pb-32 px-6 lg:px-8 overflow-x-clip scroll-mt-20"
+      className="relative pt-16 md:pt-24 pb-32 px-6 lg:px-8 overflow-x-clip scroll-mt-20 isolate"
     >
-      {/* Chibi-Boris walking animation — CSS keyframes (visible even with reduced motion fallback) */}
-      <div className="boris-walk-strip pointer-events-none" aria-hidden>
-        <div className="boris-walk-strip__track">
-          <video
-            src={borisWalkStableVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="boris-walk-strip__video select-none block"
-          />
-        </div>
-      </div>
-
-      <div className="relative z-[1] max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -155,6 +141,20 @@ export function Stack() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Boris walks on top of section content (z-30) */}
+      <div className="boris-walk-strip pointer-events-none" aria-hidden>
+        <div className="boris-walk-strip__track">
+          <video
+            src={borisWalkStableVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="boris-walk-strip__video select-none block"
+          />
         </div>
       </div>
     </section>
