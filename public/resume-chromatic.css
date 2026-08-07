@@ -1,0 +1,237 @@
+/* Chromatic Atelier — resume PDF/HTML (matches portfolio) */
+
+:root {
+  --background: #110e18;
+  --foreground: #f2f0f7;
+  --muted: #9b94ad;
+  --accent: #b87dff;
+  --accent-secondary: #6ec8e8;
+  --spark: #c8f542;
+  --card: #181322;
+  --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
+  color: var(--foreground);
+  background: var(--background);
+  padding: 28px 22px;
+  max-width: 210mm;
+  margin: 0 auto;
+  font-size: 13px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  body {
+    padding: 18px 16px;
+    max-width: 100%;
+  }
+}
+
+header {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--spark));
+}
+
+.brand-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.contacts a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+}
+
+.contacts a:hover {
+  color: var(--spark);
+}
+
+section {
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 2px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.period {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.links {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.links a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--spark);
+}
+
+p {
+  margin-bottom: 6px;
+  color: color-mix(in srgb, var(--foreground) 88%, var(--muted));
+  font-size: 13px;
+}
+
+ul {
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+
+li {
+  margin-bottom: 3px;
+  color: color-mix(in srgb, var(--foreground) 88%, var(--muted));
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.skill-category h3 {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: var(--accent-secondary);
+}
+
+.skill-category ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+.skill-category li {
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.skill-category li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--spark);
+  font-size: 8px;
+  top: 2px;
+}
+
+.intro {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--spark);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+@media print {
+  .intro,
+  section {
+    break-inside: avoid;
+  }
+
+  h2 {
+    page-break-after: avoid;
+  }
+}

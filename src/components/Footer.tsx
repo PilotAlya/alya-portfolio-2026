@@ -6,7 +6,7 @@ export function Footer() {
           <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground space-y-2">
             <p className="text-foreground/80">session.end · portfolio_2026</p>
             <p>deploy · vercel · stack react · tanstack · framer</p>
-            <p className="text-muted-foreground/70">branch main · build chromatic-atelier</p>
+            <p className="text-muted-foreground/70">Pilot Ali · portfolio 2026 · chromatic atelier</p>
           </div>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-widest">

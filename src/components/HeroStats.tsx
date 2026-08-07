@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 
-import { HandDrawnCircle, HandDrawnWave } from "./effects/HandDrawn";
 import { CountUp } from "./effects/CountUp";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
@@ -19,10 +18,7 @@ export function HeroStats() {
 
   return (
     <section className="border-y border-border bg-card/30 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6">
-        <HandDrawnWave className="mb-2 hidden lg:block" />
-      </div>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
@@ -36,13 +32,7 @@ export function HeroStats() {
               "subtle",
             )}
           >
-            {s.highlight && (
-              <HandDrawnCircle
-                size={100}
-                className="absolute -top-2 -left-3 opacity-70 pointer-events-none"
-              />
-            )}
-            <div className="font-extrabold text-3xl sm:text-4xl tracking-tight relative z-[1]">
+            <div className="font-extrabold text-3xl sm:text-4xl tracking-tight">
               <CountUp
                 to={s.n}
                 duration={1200}
@@ -50,7 +40,7 @@ export function HeroStats() {
               />
               {s.suf}
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground leading-relaxed relative z-[1]">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground leading-relaxed">
               {s.label}
             </div>
           </motion.div>
