@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Bot, Kanban, BarChart3, Rocket } from "lucide-react";
+import { ArrowUpRight, Kanban, BarChart3, Rocket } from "lucide-react";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import churnDashboard from "@/assets/churn-dashboard.png";
@@ -47,19 +47,6 @@ const TILES = [
     accent: "from-blue-500/15 via-transparent to-transparent",
     image: novaDashboard,
     grainCaption: "React MVP",
-  },
-  {
-    id: "case-telegram",
-    title: "Telegram → Google Sheets",
-    subtitle: "Lead capture · Apps Script · no server",
-    tag: "Automation",
-    categories: ["automation"] as TileCategory[],
-    Icon: Bot,
-    span: "",
-    href: "#case-telegram",
-    external: false,
-    accent: "from-accent/20 via-accent/5 to-transparent",
-    grainOnly: true,
   },
   {
     id: "case-b2b",

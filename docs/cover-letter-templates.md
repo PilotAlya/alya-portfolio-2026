@@ -13,7 +13,7 @@
 |------|-----------|--------|
 | NOVA Dashboard | флагманский MVP / pet project | nova-light-app.vercel.app |
 | CRM Lead Card | pet project · React | #case-crm на лендинге |
-| Telegram → Sheets | automation project | #case-telegram |
+| Telegram → Sheets | automation guide | #guides |
 | B2B Churn Audit | data audit · background | client-retention-dashboard.vercel.app |
 | Яндекс QA | AI evaluation / product QC · background | PDF на лендинге |
 
