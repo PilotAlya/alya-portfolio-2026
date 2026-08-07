@@ -3,6 +3,8 @@ import { GraduationCap, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
+import { HandDrawnCircle } from "./effects/HandDrawn";
+import { GrainFrame } from "./effects/GrainFrame";
 
 import portrait from "@/assets/portrait.jpg";
 
@@ -17,13 +19,19 @@ export function Profile() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
+          <HandDrawnCircle
+            size={340}
+            className="absolute -top-6 -right-8 md:-right-12 z-10 opacity-80"
+          />
           <div className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait">
-            <img
+            <GrainFrame
               src={portrait}
               alt="Алья Акбарова — портрет"
-              className="w-full h-full object-cover object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
+              duotone
+              className="h-full w-full rounded-sm"
+              imageClassName="object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
             />
-            <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none" />
+            <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none z-[2]" />
           </div>
         </motion.div>
 

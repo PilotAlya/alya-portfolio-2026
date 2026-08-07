@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 import dashboardPreview from "@/assets/churn-dashboard.png";
+import { GrainFrame } from "./effects/GrainFrame";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
@@ -107,11 +108,13 @@ export function PortfolioBackground() {
               />
 
               {item.id === "case-b2b" && (
-                <div className="pointer-events-none absolute inset-0 opacity-[0.07] overflow-hidden rounded-[inherit]">
-                  <img
+                <div className="pointer-events-none absolute inset-0 opacity-[0.12] overflow-hidden rounded-[inherit]">
+                  <GrainFrame
                     src={dashboardPreview}
                     alt=""
-                    className="w-full h-full object-cover object-top"
+                    duotone
+                    className="h-full w-full rounded-[inherit]"
+                    imageClassName="object-top"
                   />
                 </div>
               )}

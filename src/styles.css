@@ -624,9 +624,121 @@ body.custom-cursor-active * {
   );
 }
 
+/* ── SENCE Phase 2: grain, tag cloud, filter pills ── */
+
+.grain-frame {
+  position: relative;
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.grain-frame__img {
+  display: block;
+}
+
+.grain-frame__duotone {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--accent) 55%, transparent) 0%,
+    color-mix(in oklab, var(--glow-secondary) 45%, transparent) 100%
+  );
+  mix-blend-mode: color;
+  opacity: 0.55;
+}
+
+.grain-frame__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.grain-frame__caption {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+  padding: 0.25rem 0.5rem;
+  background: color-mix(in oklab, var(--background) 75%, transparent);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+}
+
+.tag-cloud-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 9999px;
+  border: 1px solid var(--glass-border);
+  background: color-mix(in oklab, var(--glass) 80%, transparent);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-foreground);
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tag-cloud-pill--sm {
+  font-size: 0.625rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.tag-cloud-pill--md {
+  font-size: 0.6875rem;
+  padding: 0.45rem 0.9rem;
+}
+
+.tag-cloud-pill--lg {
+  font-size: 0.75rem;
+  padding: 0.55rem 1.1rem;
+  letter-spacing: 0.14em;
+}
+
+.tag-cloud-pill--core {
+  border-color: color-mix(in oklab, var(--spark) 55%, transparent);
+  background: color-mix(in oklab, var(--spark) 12%, var(--card));
+  color: var(--foreground);
+  box-shadow: 0 0 28px -10px color-mix(in oklab, var(--spark) 60%, transparent);
+}
+
+@media (hover: hover) {
+  .tag-cloud-pill:not(.tag-cloud-pill--core):hover {
+    border-color: color-mix(in oklab, var(--accent) 40%, transparent);
+    color: var(--foreground);
+    transform: translateY(-1px);
+  }
+
+  .tag-cloud-pill--core:hover {
+    box-shadow: 0 0 36px -8px color-mix(in oklab, var(--spark) 70%, transparent);
+  }
+}
+
+.filter-pill {
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-pill--active {
+  font-weight: 600;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hand-drawn-oval__ring path {
     animation: none;
     stroke-dashoffset: 0;
+  }
+
+  .tag-cloud-pill {
+    transition: none;
   }
 }
