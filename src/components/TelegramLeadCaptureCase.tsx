@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
-import { Bot, FileText, Download, Sheet, Clock, ShieldCheck } from "lucide-react";
+import { Sheet, Clock, ShieldCheck, BookOpen } from "lucide-react";
 import { fadeUp } from "./shared";
 import { GrainOverlay } from "./effects/GrainFrame";
 import { MagneticLink } from "./effects/MagneticButton";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
-
-const GUIDE_URL =
-  "https://drive.google.com/drive/folders/1EpUihavWoV-Pu3brdqD4yLX9kmiCWWGd?usp=drive_link";
-const BOT_URL = "https://t.me/xgdsdsjsd567bot";
 
 export function TelegramLeadCaptureCase() {
   return (
@@ -25,7 +21,7 @@ export function TelegramLeadCaptureCase() {
                 Кейс 02 · Automation & Documentation
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-white/5 border border-white/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
-                <Bot className="size-3 text-accent" /> Telegram · Google Sheets
+                <Sheet className="size-3 text-accent" /> Telegram · Google Sheets
               </span>
             </div>
 
@@ -35,14 +31,18 @@ export function TelegramLeadCaptureCase() {
 
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-6 prose-portfolio">
               Спроектировала процесс сбора заявок через Telegram-бота с записью в Google Sheets
-              (Apps Script, polling, антидубли). Подготовила практический PDF-гайд с setup,
-              troubleshooting и сценарием расширения до multi-step анкеты.
+              (Apps Script, polling, антидубли). Пошаговый setup, troubleshooting и сценарий
+              расширения до multi-step анкеты — в PDF-гайде в разделе{" "}
+              <a href="#guides" className="text-accent hover:text-spark transition-colors">
+                «Гайды»
+              </a>
+              .
             </p>
 
             <ul className="space-y-3 mb-6 text-sm text-muted-foreground">
               {[
                 "Связка Telegram Bot + Google Sheets без отдельного сервера",
-                "Документация процесса для повторяемого запуска",
+                "Заявки в таблице — удобнее показывать структуру и процесс, чем live-бот",
                 "Заложено развитие до анкеты (имя / email / телефон / интерес)",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
@@ -58,7 +58,6 @@ export function TelegramLeadCaptureCase() {
                 "Google Apps Script",
                 "Google Sheets",
                 "Automation",
-                "PDF Guide",
               ].map((tech) => (
                 <span
                   key={tech}
@@ -69,26 +68,13 @@ export function TelegramLeadCaptureCase() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <MagneticLink
-                href={GUIDE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-spark items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
-              >
-                <Download className="size-4" />
-                PDF-гайд
-              </MagneticLink>
-              <MagneticLink
-                href={BOT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-cta-secondary items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
-              >
-                <Bot className="size-4" />
-                Открыть бота
-              </MagneticLink>
-            </div>
+            <MagneticLink
+              href="#guides"
+              className="btn-spark items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
+            >
+              <BookOpen className="size-4" />
+              Гайд в разделе «Гайды»
+            </MagneticLink>
           </motion.div>
 
           <motion.div
@@ -135,17 +121,15 @@ export function TelegramLeadCaptureCase() {
               </div>
               <div className="flex items-center justify-between p-2 rounded bg-white/5">
                 <span className="text-muted-foreground">Документация:</span>
-                <span className="text-accent font-semibold">PDF-гайд</span>
+                <span className="text-accent font-semibold">раздел «Гайды»</span>
               </div>
             </div>
 
             <a
-              href={GUIDE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#guides"
               className="relative z-[2] w-full flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-wider text-accent border border-accent/30 py-2 rounded hover:bg-accent/10 transition-colors"
             >
-              <FileText className="size-3.5" />
+              <BookOpen className="size-3.5" />
               Setup + troubleshooting
             </a>
           </motion.div>

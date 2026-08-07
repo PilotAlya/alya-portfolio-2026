@@ -51,7 +51,7 @@ const TILES = [
   {
     id: "case-telegram",
     title: "Telegram → Google Sheets",
-    subtitle: "Lead capture · Apps Script · PDF-гайд",
+    subtitle: "Lead capture · Apps Script · no server",
     tag: "Automation",
     categories: ["automation"] as TileCategory[],
     Icon: Bot,

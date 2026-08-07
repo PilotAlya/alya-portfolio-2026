@@ -5,7 +5,7 @@ import { GrainOverlay } from "./effects/GrainFrame";
 import { MagneticLink } from "./effects/MagneticButton";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
-const DEMO_URL = "https://testovoe-crm-lead.vercel.app";
+const DEMO_URL = "https://alya-crm-lead-card.vercel.app";
 
 export function CrmLeadCardCase() {
   return (

@@ -5,9 +5,30 @@ import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
+const GUIDES = [
+  {
+    t: "Telegram → Google Sheets: lead capture",
+    d: "PDF-гайд по связке бота и таблицы: setup Apps Script, polling, антидубли, troubleshooting и сценарий расширения до multi-step анкеты.",
+    href: "https://drive.google.com/drive/folders/1EpUihavWoV-Pu3brdqD4yLX9kmiCWWGd?usp=drive_link",
+    cta: "Открыть PDF-гайд",
+  },
+  {
+    t: "Цифровая свобода и личный VPN",
+    d: "Технический мануал по цифровой свободе в условиях блокировок. Пошаговый алгоритм настройки личного VPN.",
+    href: "https://gamma.app/docs/-pn6c00ti46m0r4l",
+    cta: "Читать гайд",
+  },
+  {
+    t: "Google AI Search: поиск будущего",
+    d: "Мануал по новому поколению поиска для пользователей любого уровня.",
+    href: "https://gamma.app/docs/AI--ti6euqermukmwh3",
+    cta: "Читать гайд",
+  },
+] as const;
+
 export function Guides() {
   return (
-    <section className="py-24 px-6 lg:px-8">
+    <section id="guides" className="py-24 px-6 lg:px-8 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -24,19 +45,8 @@ export function Guides() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            {
-              t: "Цифровая свобода и личный VPN",
-              d: "Технический мануал по цифровой свободе в условиях блокировок. Пошаговый алгоритм настройки личного VPN.",
-              href: "https://gamma.app/docs/-pn6c00ti46m0r4l",
-            },
-            {
-              t: "Google AI Search: поиск будущего",
-              d: "Мануал по новому поколению поиска для пользователей любого уровня.",
-              href: "https://gamma.app/docs/AI--ti6euqermukmwh3",
-            },
-          ].map((g, i) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {GUIDES.map((g, i) => (
             <motion.a
               key={g.t}
               href={g.href}
@@ -70,7 +80,7 @@ export function Guides() {
                   {g.d}
                 </motion.p>
                 <motion.span variants={staggerItem} className="mt-auto inline-flex items-center gap-2 text-sm text-foreground group-hover:text-accent transition-colors">
-                  Читать гайд{" "}
+                  {g.cta}{" "}
                   <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </motion.span>
               </motion.div>
