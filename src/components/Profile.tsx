@@ -3,7 +3,7 @@ import { GraduationCap, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
-import { HandDrawnCircle, ScribbleBurst, SparkStar } from "./effects/HandDrawn";
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { GrainFrame } from "./effects/GrainFrame";
 
 import portrait from "@/assets/portrait.jpg";
@@ -19,10 +19,6 @@ export function Profile() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <HandDrawnCircle
-            size={340}
-            className="absolute -top-6 -right-8 md:-right-12 z-10 opacity-80"
-          />
           <div className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait">
             <GrainFrame
               src={portrait}
