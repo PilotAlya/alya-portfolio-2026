@@ -92,7 +92,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="text-6xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight leading-[0.85] font-display"
+              className="hero-title font-extrabold tracking-tight font-display max-w-full"
             >
               ALYA<br />
               <span className="text-gradient-chrome">AKBAROVA</span>
