@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { CustomCursor } from "@/components/CustomCursor";
+import { MotionProvider } from "@/components/effects/MotionProvider";
 
 function NotFoundComponent() {
   return (
@@ -129,6 +130,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <style>
+            {"[style*='opacity:0'],[style*='opacity: 0']{opacity:1!important;transform:none!important}"}
+          </style>
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -141,8 +147,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CustomCursor />
-      <Outlet />
+      <MotionProvider>
+        <CustomCursor />
+        <Outlet />
+      </MotionProvider>
     </QueryClientProvider>
   );
 }

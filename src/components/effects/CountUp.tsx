@@ -24,11 +24,12 @@ export function CountUp({
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     if (!inView) return;
 
+    setValue(0);
     const start = performance.now();
     const tick = (t: number) => {
       const progress = Math.min((t - start) / duration, 1);

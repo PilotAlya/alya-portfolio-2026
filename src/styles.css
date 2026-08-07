@@ -99,6 +99,22 @@
     height: auto;
   }
 
+  /* Keep SSR / pre-hydration content visible until React animations take over */
+  html:not(.hydrated) [style*="opacity:0"],
+  html:not(.hydrated) [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Progressive enhancement: visible content when JS is unavailable */
+  @media (scripting: none) {
+    [style*="opacity: 0"],
+    [style*="opacity:0"] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
   .font-display {
     font-family: var(--font-display);
   }

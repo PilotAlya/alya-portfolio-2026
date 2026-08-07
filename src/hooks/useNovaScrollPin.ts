@@ -1,8 +1,4 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function useNovaScrollPin() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -18,22 +14,40 @@ export function useNovaScrollPin() {
     const scrollEl = scrollRef.current;
     if (!section || !pinEl || !scrollEl) return;
 
-    let trigger: ScrollTrigger | undefined;
+    let cancelled = false;
+    let mm: ReturnType<Awaited<typeof import("gsap")>["default"]["matchMedia"]> | undefined;
+    let trigger: import("gsap/ScrollTrigger").ScrollTrigger | undefined;
 
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 1024px)", () => {
-      trigger = ScrollTrigger.create({
-        trigger: section,
-        start: "top top+=72",
-        end: () => `+=${Math.max(scrollEl.offsetHeight - pinEl.offsetHeight + 80, 400)}`,
-        pin: pinEl,
-        pinSpacing: true,
-        invalidateOnRefresh: true,
+    const init = async () => {
+      const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+      ]);
+
+      if (cancelled) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        trigger = ScrollTrigger.create({
+          trigger: section,
+          start: "top top+=72",
+          end: () => `+=${Math.max(scrollEl.offsetHeight - pinEl.offsetHeight + 80, 400)}`,
+          pin: pinEl,
+          pinSpacing: true,
+          invalidateOnRefresh: true,
+        });
       });
-    });
+
+      ScrollTrigger.refresh();
+    };
+
+    init();
 
     return () => {
-      mm.revert();
+      cancelled = true;
+      mm?.revert();
       trigger?.kill();
     };
   }, []);
