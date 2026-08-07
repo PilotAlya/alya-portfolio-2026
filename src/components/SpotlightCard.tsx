@@ -5,8 +5,23 @@ import { cn } from "@/lib/utils";
 export function onSpotlightMove(e: MouseEvent<HTMLElement>) {
   const el = e.currentTarget;
   const rect = el.getBoundingClientRect();
-  el.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
-  el.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  el.style.setProperty("--spotlight-x", `${x}px`);
+  el.style.setProperty("--spotlight-y", `${y}px`);
+
+  if (el.classList.contains("bento-card")) {
+    const tiltX = ((x / rect.width) - 0.5) * 7;
+    const tiltY = ((y / rect.height) - 0.5) * -5;
+    el.style.setProperty("--tilt-x", `${tiltX.toFixed(2)}deg`);
+    el.style.setProperty("--tilt-y", `${tiltY.toFixed(2)}deg`);
+  }
+}
+
+export function onSpotlightLeave(e: MouseEvent<HTMLElement>) {
+  const el = e.currentTarget;
+  el.style.setProperty("--tilt-x", "0deg");
+  el.style.setProperty("--tilt-y", "0deg");
 }
 
 export function spotlightClass(className?: string, variant: "default" | "flat" | "subtle" = "default") {
@@ -21,6 +36,7 @@ export function spotlightClass(className?: string, variant: "default" | "flat" |
 export const spotlightAttrs = {
   "data-cursor-hover": true,
   onMouseMove: onSpotlightMove,
+  onMouseLeave: onSpotlightLeave,
 } as const;
 
 export function CornerMarks() {

@@ -182,6 +182,34 @@ body.custom-cursor-active * {
   border-radius: 50%;
   background-color: var(--color-accent);
   box-shadow: 0 0 8px color-mix(in oklab, var(--color-accent) 60%, transparent);
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    width 0.25s ease,
+    height 0.25s ease;
+}
+
+.custom-cursor-dot.is-hover {
+  width: 6px;
+  height: 6px;
+  background-color: var(--spark);
+  box-shadow:
+    0 0 10px color-mix(in oklab, var(--spark) 70%, transparent),
+    0 0 20px color-mix(in oklab, var(--spark) 35%, transparent);
+}
+
+.custom-cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99997;
+  background: color-mix(in oklab, var(--spark) 75%, var(--color-accent));
+  box-shadow: 0 0 12px color-mix(in oklab, var(--spark) 45%, transparent);
+  will-change: transform, opacity;
 }
 
 .custom-cursor-ring {
@@ -201,8 +229,8 @@ body.custom-cursor-active * {
 .custom-cursor-ring.is-hover {
   width: 44px;
   height: 44px;
-  border-color: var(--color-accent);
-  background-color: color-mix(in oklab, var(--color-accent) 12%, transparent);
+  border-color: var(--spark);
+  background-color: color-mix(in oklab, var(--spark) 10%, transparent);
 }
 
 /* Spotlight card — radial glow follows cursor on hover */
@@ -404,6 +432,9 @@ body.custom-cursor-active * {
   border: 1px solid color-mix(in oklab, var(--color-foreground) 8%, transparent);
   background: color-mix(in oklab, var(--color-card) 65%, transparent);
   overflow: hidden;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  transform: perspective(900px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
   transition:
     border-color 0.35s ease,
     box-shadow 0.35s ease,
@@ -443,7 +474,7 @@ body.custom-cursor-active * {
     box-shadow:
       0 0 0 1px color-mix(in oklab, var(--color-accent) 8%, transparent),
       0 16px 48px -20px color-mix(in oklab, var(--color-accent) 35%, transparent);
-    transform: translateY(-2px);
+    transform: perspective(900px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(-2px);
   }
 
   .bento-card:hover::after {
@@ -508,6 +539,105 @@ body.custom-cursor-active * {
     radial-gradient(ellipse 80% 55% at 50% -15%, var(--hero-spotlight), transparent 65%),
     radial-gradient(ellipse 45% 35% at 85% 25%, var(--hero-spotlight-secondary), transparent 60%),
     radial-gradient(ellipse 35% 30% at 10% 40%, color-mix(in oklab, var(--glow-secondary) 18%, transparent), transparent 55%);
+}
+
+/* Hero animated aurora blobs — Phase 4 */
+.hero-aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+.hero-aurora__blob--violet {
+  width: min(560px, 70vw);
+  height: min(560px, 70vw);
+  top: -18%;
+  right: -12%;
+  background: color-mix(in oklab, var(--glow) 22%, transparent);
+  animation: hero-drift-a 18s ease-in-out infinite alternate;
+}
+
+.hero-aurora__blob--cyan {
+  width: min(380px, 55vw);
+  height: min(380px, 55vw);
+  top: 28%;
+  left: -10%;
+  background: color-mix(in oklab, var(--glow-secondary) 18%, transparent);
+  animation: hero-drift-b 22s ease-in-out infinite alternate;
+}
+
+.hero-aurora__blob--spark {
+  width: min(240px, 40vw);
+  height: min(240px, 40vw);
+  bottom: 8%;
+  right: 22%;
+  background: color-mix(in oklab, var(--spark) 14%, transparent);
+  animation: hero-drift-c 14s ease-in-out infinite alternate;
+}
+
+.hero-aurora__mesh {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 60% at 50% 20%,
+    color-mix(in oklab, var(--accent) 8%, transparent),
+    transparent 70%
+  );
+  opacity: 0.9;
+}
+
+@keyframes hero-drift-a {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-40px, 30px) scale(1.08);
+  }
+}
+
+@keyframes hero-drift-b {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(50px, -24px) scale(1.06);
+  }
+}
+
+@keyframes hero-drift-c {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: translate(-30px, -20px) scale(1.12);
+    opacity: 1;
+  }
+}
+
+.link-spark {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-spark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--spark), var(--accent));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .link-spark:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 .glass-panel {
@@ -766,5 +896,13 @@ body.custom-cursor-active * {
 
   .tag-cloud-pill {
     transition: none;
+  }
+
+  .hero-aurora__blob {
+    animation: none;
+  }
+
+  .custom-cursor-trail {
+    display: none;
   }
 }

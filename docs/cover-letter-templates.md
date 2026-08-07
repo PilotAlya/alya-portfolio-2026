@@ -1,16 +1,31 @@
-# Библиотека мастер-шаблонов сопроводительных писем (QA & SA)
+# Библиотека мастер-шаблонов сопроводительных писем
 
-> Обновлено под портфолио-лендинг: https://portfolio-resume-alya-akbarova.vercel.app/  
-> Кейсы на лендинге: B2B-аудит оттока · QA Яндекс.Браузера · QA «Яндекс с Алисой» · NOVA Dashboard
+> **Обновлено:** август 2026 · портфолио AI-Native Engineer · Vibe-Coder  
+> Лендинг: https://portfolio-resume-alya-akbarova.vercel.app/  
+> **Основной шаблон:** [cover-letter-ai-native-engineer.md](./cover-letter-ai-native-engineer.md)  
+> **Индекс всех писем:** [README.md](./README.md)
+
+---
+
+## Кейсы на лендинге (как называть в письмах)
+
+| Кейс | Как писать | Ссылка |
+|------|-----------|--------|
+| NOVA Dashboard | флагманский MVP / pet project | nova-light-app.vercel.app |
+| CRM Lead Card | pet project · React | #case-crm на лендинге |
+| Telegram → Sheets | automation project | #case-telegram |
+| B2B Churn Audit | data audit · background | client-retention-dashboard.vercel.app |
+| Яндекс QA | AI evaluation / product QC · background | PDF на лендинге |
 
 ---
 
 ## Как пользоваться
 
-1. Выбери шаблон под роль (QA или SA).
-2. Замени блок `[АДАПТИРУЙ ПОД КОМПАНИЮ]` — 1–2 предложения про продукт и навык из вакансии.
-3. При необходимости убери один из кейсов, если письмо получается длинным (см. «Что вырезать»).
-4. Отправляй с темой из шаблона или с названием вакансии из объявления.
+1. **AI / vibe-coding / MVP роли** → [cover-letter-ai-native-engineer.md](./cover-letter-ai-native-engineer.md)
+2. **QA / SA роли** → шаблоны ниже (Вариант 1–2)
+3. **Короткий лимит hh.ru** → Вариант 3 или короткая версия AI-шаблона
+4. Замени `[АДАПТИРУЙ ПОД КОМПАНИЮ]` — 1–2 предложения из вакансии
+5. Кейсы — **проекты**, не «тестовые задания»
 
 **Плейсхолдеры:**
 - `[Имя рекрутера / Название компании]` — если имени нет, пиши «команда [Компания]»
@@ -22,8 +37,10 @@
 - NOVA: https://alya-nova-2026.vercel.app/
 - B2B-дашборд (аудит оттока): https://client-retention-dashboard.vercel.app/
 - GitHub: https://github.com/PilotAlya
+- PDF AI-резюме: https://portfolio-resume-alya-akbarova.vercel.app/resume-ai.pdf
 - PDF QA-резюме: https://portfolio-resume-alya-akbarova.vercel.app/resume-qa.pdf
 - PDF SA-резюме: https://portfolio-resume-alya-akbarova.vercel.app/resume-sa.pdf
+- NOVA Light: https://nova-light-app.vercel.app/
 
 ---
 

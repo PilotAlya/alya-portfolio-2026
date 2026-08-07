@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HERO_CODE_LINES } from "./shared";
+import { HeroAurora } from "./effects/HeroAurora";
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { MagneticLink } from "./effects/MagneticButton";
 
 function HeroCodeRain() {
@@ -57,10 +59,9 @@ export function Hero() {
 
   return (
     <section id="top" ref={ref} className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 bg-aurora pointer-events-none" />
-      <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
-      <div className="absolute -top-32 -right-32 w-[560px] h-[560px] rounded-full bg-glow/15 blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/3 -left-24 w-[320px] h-[320px] rounded-full bg-glow-secondary/10 blur-[80px] pointer-events-none" />
+      <HeroAurora />
+      <div className="absolute inset-0 bg-aurora pointer-events-none opacity-80" />
+      <div className="absolute inset-0 bg-blueprint opacity-35 pointer-events-none" />
       <HeroCodeRain />
       <HeroCornerTags />
 
@@ -71,16 +72,19 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-block p-1 border border-border rounded-full glass-panel"
+              className="space-y-3"
             >
-              <div className="flex items-center gap-3 pl-3 pr-5 py-1.5 rounded-full">
-                <span className="relative flex size-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full size-2 bg-accent" />
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  Открыта к предложениям · AI & Vibe-coding
-                </span>
+              <ScribbleBurst className="opacity-80 -ml-1" />
+              <div className="inline-block p-1 border border-border rounded-full glass-panel">
+                <div className="flex items-center gap-3 pl-3 pr-5 py-1.5 rounded-full">
+                  <span className="relative flex size-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                    <span className="relative inline-flex rounded-full size-2 bg-accent" />
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                    Открыта к предложениям · AI & Vibe-coding
+                  </span>
+                </div>
               </div>
             </motion.div>
 

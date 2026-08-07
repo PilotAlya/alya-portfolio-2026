@@ -35,7 +35,7 @@ export function Nav() {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-border glass-panel !rounded-none !border-x-0 !border-t-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#top" className="font-mono text-sm tracking-tighter">
+        <a href="#top" className="font-mono text-sm tracking-tighter link-spark">
           Pilot Ali <span className="text-muted-foreground">// AI · Vibe-Coding</span>
         </a>
 
