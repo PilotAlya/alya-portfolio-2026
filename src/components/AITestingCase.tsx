@@ -5,7 +5,7 @@ import { MagneticLink } from "./effects/MagneticButton";
 
 export function AITestingCase() {
   return (
-    <section className="relative py-24 px-6 lg:px-8 overflow-hidden bg-card/30 border-y border-white/5">
+    <section id="case-alice" className="relative py-24 px-6 lg:px-8 overflow-hidden bg-card/30 border-y border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-center">
           <motion.div

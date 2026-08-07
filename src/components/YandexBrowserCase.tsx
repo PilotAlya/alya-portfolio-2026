@@ -8,7 +8,7 @@ const PDF_URL = "/yandex-browser-verdicts.pdf";
 
 export function YandexBrowserCase() {
   return (
-    <section className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5">
+    <section id="case-browser" className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-start">
           <motion.div

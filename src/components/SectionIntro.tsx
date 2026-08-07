@@ -26,7 +26,7 @@ export function SectionIntro({ chapter, label, title, description, meta }: Secti
       >
         <div className="max-w-3xl">
           <SectionLabel chapter={chapter} title={label} />
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">{title}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 font-display">{title}</h2>
           {description && (
             <p className="text-muted-foreground mt-3 leading-relaxed max-w-2xl">{description}</p>
           )}

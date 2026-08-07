@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -32,6 +33,7 @@
   --color-ring: var(--ring);
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
 }
 
 :root {
@@ -86,6 +88,23 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  html.lenis,
+  html.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  html.lenis body {
+    height: auto;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .prose-portfolio {
+    @apply prose prose-invert prose-sm max-w-none prose-p:text-muted-foreground prose-p:leading-relaxed prose-headings:font-display prose-headings:tracking-tight prose-a:text-accent prose-strong:text-foreground;
   }
 
   body {
@@ -357,5 +376,73 @@ body.custom-cursor-active * {
 
   .spotlight-card:hover {
     transform: none;
+  }
+
+  .bento-card::after {
+    animation: none;
+  }
+}
+
+/* Bento grid cards — Magic UI–inspired gradient border */
+.bento-card {
+  position: relative;
+  isolation: isolate;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 8%, transparent);
+  background: color-mix(in oklab, var(--color-card) 65%, transparent);
+  overflow: hidden;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    color-mix(in oklab, var(--color-accent) 45%, transparent) 50%,
+    transparent 65%
+  );
+  background-size: 250% 100%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  animation: bento-shimmer 4s linear infinite;
+}
+
+@media (hover: hover) {
+  .bento-card:hover {
+    border-color: color-mix(in oklab, var(--color-accent) 35%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-accent) 8%, transparent),
+      0 16px 48px -20px color-mix(in oklab, var(--color-accent) 35%, transparent);
+    transform: translateY(-2px);
+  }
+
+  .bento-card:hover::after {
+    opacity: 1;
+  }
+}
+
+@keyframes bento-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
   }
 }

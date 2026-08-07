@@ -10,7 +10,7 @@ const DASHBOARD_URL = "https://client-retention-dashboard.vercel.app/";
 
 export function ChurnAuditCase() {
   return (
-    <section className="relative py-16 px-6 lg:px-8 overflow-hidden border-b border-white/5">
+    <section id="case-b2b" className="relative py-16 px-6 lg:px-8 overflow-hidden border-b border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_400px] gap-10 items-start">
           <motion.div

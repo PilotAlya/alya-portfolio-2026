@@ -10,7 +10,7 @@ const BOT_URL = "https://t.me/xgdsdsjsd567bot";
 
 export function TelegramLeadCaptureCase() {
   return (
-    <section className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5 bg-card/20">
+    <section id="case-telegram" className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5 bg-card/20">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-start">
           <motion.div
@@ -32,7 +32,7 @@ export function TelegramLeadCaptureCase() {
               Telegram → Google Sheets Lead Capture
             </h2>
 
-            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-6">
+            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-6 prose-portfolio">
               Спроектировала процесс сбора заявок через Telegram-бота с записью в Google Sheets
               (Apps Script, polling, антидубли). Подготовила практический PDF-гайд с setup,
               troubleshooting и сценарием расширения до multi-step анкеты.

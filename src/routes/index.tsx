@@ -17,6 +17,7 @@ import { Guides } from "@/components/Guides";
 import { Profile } from "@/components/Profile";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { SmoothScroll } from "@/components/effects/SmoothScroll";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,23 +52,25 @@ function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
-      <NoiseOverlay />
-      <ScrollProgress />
-      <Nav />
-      <Hero />
-      <HeroStats />
-      <WhyMe />
-      <EvolutionPath />
-      <Nova />
-      <ExperienceSection />
-      <PortfolioSection />
-      <Stack />
-      <GitHubProjects />
-      <Guides />
-      <Profile />
-      <Contact />
-      <Footer />
-    </div>
+    <SmoothScroll>
+      <div className="min-h-screen bg-background text-foreground font-sans">
+        <NoiseOverlay />
+        <ScrollProgress />
+        <Nav />
+        <Hero />
+        <HeroStats />
+        <WhyMe />
+        <EvolutionPath />
+        <Nova />
+        <ExperienceSection />
+        <PortfolioSection />
+        <Stack />
+        <GitHubProjects />
+        <Guides />
+        <Profile />
+        <Contact />
+        <Footer />
+      </div>
+    </SmoothScroll>
   );
 }
