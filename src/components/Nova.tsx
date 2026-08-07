@@ -153,7 +153,6 @@ export function Nova() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <ScribbleBurst className="mb-3 -ml-1 opacity-75" />
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
             Кейс 04 · Флагманский проект
           </span>
