@@ -11,6 +11,8 @@ import {
 import appCss from "../styles.css?url";
 import { CustomCursor } from "@/components/CustomCursor";
 import { MotionProvider } from "@/components/effects/MotionProvider";
+import { ThemeProvider } from "@/components/effects/ThemeProvider";
+import { THEME_INIT_SCRIPT } from "@/lib/theme-init";
 
 function NotFoundComponent() {
   return (
@@ -113,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@500;600;700;800&display=swap",
       },
     ],
   }),
@@ -125,9 +127,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body>
         <noscript>
@@ -147,10 +150,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <MotionProvider>
-        <CustomCursor />
-        <Outlet />
-      </MotionProvider>
+      <ThemeProvider>
+        <MotionProvider>
+          <CustomCursor />
+          <Outlet />
+        </MotionProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

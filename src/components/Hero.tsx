@@ -11,7 +11,7 @@ function HeroCodeRain() {
         initial={{ y: 0 }}
         animate={{ y: "-50%" }}
         transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-2 lg:left-6 font-mono text-[10px] leading-loose text-accent/30 whitespace-nowrap"
+        className="absolute top-0 left-2 lg:left-6 font-mono text-[10px] leading-loose text-glow-secondary/35 whitespace-nowrap"
       >
         {[...HERO_CODE_LINES, ...HERO_CODE_LINES].map((l, i) => (
           <div key={`l-${i}`}>{l}</div>
@@ -36,12 +36,12 @@ function HeroCodeRain() {
 function HeroCornerTags() {
   return (
     <>
-      <div className="absolute top-6 left-6 w-4 h-4 border-l border-t border-accent/40 pointer-events-none" />
-      <div className="absolute top-6 right-6 w-4 h-4 border-r border-t border-accent/40 pointer-events-none" />
-      <div className="absolute bottom-6 left-6 w-4 h-4 border-l border-b border-accent/40 pointer-events-none" />
-      <div className="absolute bottom-6 right-6 w-4 h-4 border-r border-b border-accent/40 pointer-events-none" />
+      <div className="absolute top-6 left-6 w-4 h-4 border-l border-t hud-bracket pointer-events-none" />
+      <div className="absolute top-6 right-6 w-4 h-4 border-r border-t hud-bracket pointer-events-none" />
+      <div className="absolute bottom-6 left-6 w-4 h-4 border-l border-b hud-bracket pointer-events-none" />
+      <div className="absolute bottom-6 right-6 w-4 h-4 border-r border-b hud-bracket pointer-events-none" />
       <div className="absolute top-24 left-6 lg:left-10 pointer-events-none z-10">
-        <span className="inline-block bg-accent/15 border border-accent/30 text-accent font-mono text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm">
+        <span className="inline-block glass-pill text-accent font-mono text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm">
           2026
         </span>
       </div>
@@ -57,8 +57,10 @@ export function Hero() {
 
   return (
     <section id="top" ref={ref} className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 bg-blueprint opacity-60 pointer-events-none" />
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-aurora pointer-events-none" />
+      <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
+      <div className="absolute -top-32 -right-32 w-[560px] h-[560px] rounded-full bg-glow/15 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 -left-24 w-[320px] h-[320px] rounded-full bg-glow-secondary/10 blur-[80px] pointer-events-none" />
       <HeroCodeRain />
       <HeroCornerTags />
 
@@ -69,9 +71,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-block p-1 border border-white/10 rounded-full"
+              className="inline-block p-1 border border-border rounded-full glass-panel"
             >
-              <div className="flex items-center gap-3 pl-3 pr-5 py-1.5 bg-white/5 rounded-full">
+              <div className="flex items-center gap-3 pl-3 pr-5 py-1.5 rounded-full">
                 <span className="relative flex size-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
                   <span className="relative inline-flex rounded-full size-2 bg-accent" />
@@ -89,7 +91,7 @@ export function Hero() {
               className="text-6xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight leading-[0.85] font-display"
             >
               ALYA<br />
-              <span className="text-accent">AKBAROVA</span>
+              <span className="text-gradient-chrome">AKBAROVA</span>
             </motion.h1>
 
             <motion.p
@@ -118,7 +120,7 @@ export function Hero() {
               ].map((pill) => (
                 <div
                   key={pill.label}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 font-mono text-[10px] uppercase tracking-wider"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-pill font-mono text-[10px] uppercase tracking-wider"
                 >
                   <span className="text-foreground">{pill.label}</span>
                   <span className="text-muted-foreground/70">· {pill.sub}</span>
@@ -148,7 +150,7 @@ export function Hero() {
               </MagneticLink>
               <MagneticLink
                 href="#portfolio"
-                className="btn-shimmer items-center gap-2 border border-white/15 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+                className="btn-shimmer items-center gap-2 border border-border px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
               >
                 Смотреть кейсы
               </MagneticLink>
@@ -159,7 +161,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="relative lg:border-l lg:border-white/10 lg:pl-8 pb-4 flex flex-col items-center lg:items-stretch gap-6"
+            className="relative lg:border-l lg:border-border lg:pl-8 pb-4 flex flex-col items-center lg:items-stretch gap-6"
           >
             <p className="font-mono text-xs leading-relaxed text-muted-foreground uppercase">
               «Я не пишу код как классический разработчик — проектирую последовательность действий,

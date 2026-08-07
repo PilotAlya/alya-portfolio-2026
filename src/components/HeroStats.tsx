@@ -14,7 +14,7 @@ export function HeroStats() {
     },
   ];
   return (
-    <section className="border-y border-white/10 bg-card/30">
+    <section className="border-y border-border bg-card/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s, i) => (
           <motion.div

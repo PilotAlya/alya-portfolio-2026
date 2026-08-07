@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 
+import { ThemeToggle } from "@/components/effects/ThemeToggle";
 import {
   Sheet,
   SheetClose,
@@ -26,13 +27,13 @@ export function Nav() {
   const isActive = (href: string) => NAV_SECTION_MAP[href] === activeSection;
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-md">
+    <nav className="fixed top-0 inset-x-0 z-50 border-b border-border glass-panel !rounded-none !border-x-0 !border-t-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="font-mono text-sm tracking-tighter">
           Pilot Ali <span className="text-muted-foreground">// AI · Vibe-Coding</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8 font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
+        <div className="hidden md:flex items-center gap-6 font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -42,6 +43,7 @@ export function Nav() {
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
           <a
             href="#contact"
             className={cn(
@@ -53,57 +55,60 @@ export function Nav() {
           </a>
         </div>
 
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <button
-              type="button"
-              aria-label="Открыть меню"
-              className="md:hidden flex items-center justify-center size-10 -mr-2 rounded-md border border-white/10 hover:border-accent/50 hover:text-accent transition-colors"
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <button
+                type="button"
+                aria-label="Открыть меню"
+                className="flex items-center justify-center size-10 -mr-2 rounded-md border border-border hover:border-accent/50 hover:text-accent transition-colors"
+              >
+                <Menu className="size-5" />
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="border-border bg-background/95 backdrop-blur-md w-full sm:max-w-xs"
             >
-              <Menu className="size-5" />
-            </button>
-          </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="border-white/10 bg-background/95 backdrop-blur-md w-full sm:max-w-xs"
-          >
-            <SheetHeader className="text-left mb-8">
-              <SheetTitle className="font-mono text-sm tracking-tighter">
-                Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
-              </SheetTitle>
-            </SheetHeader>
-            <nav className="flex flex-col gap-1 font-mono text-xs tracking-widest uppercase">
-              {NAV_LINKS.map((link) => (
-                <SheetClose asChild key={link.href}>
+              <SheetHeader className="text-left mb-8">
+                <SheetTitle className="font-mono text-sm tracking-tighter">
+                  Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1 font-mono text-xs tracking-widest uppercase">
+                {NAV_LINKS.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    <a
+                      href={link.href}
+                      className={cn(
+                        "px-3 py-4 border-b border-border transition-colors",
+                        isActive(link.href)
+                          ? "text-accent border-accent/20"
+                          : "text-muted-foreground hover:text-accent",
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  </SheetClose>
+                ))}
+                <SheetClose asChild>
                   <a
-                    href={link.href}
+                    href="#contact"
                     className={cn(
-                      "px-3 py-4 border-b border-white/5 transition-colors",
-                      isActive(link.href)
-                        ? "text-accent border-accent/20"
-                        : "text-muted-foreground hover:text-accent",
+                      "mt-4 inline-flex items-center justify-center px-5 py-3 rounded-md text-xs font-medium transition-colors",
+                      isActive("#contact")
+                        ? "bg-accent text-accent-foreground"
+                        : "bg-foreground text-background hover:bg-accent hover:text-accent-foreground",
                     )}
                   >
-                    {link.label}
+                    Контакты →
                   </a>
                 </SheetClose>
-              ))}
-              <SheetClose asChild>
-                <a
-                  href="#contact"
-                  className={cn(
-                    "mt-4 inline-flex items-center justify-center px-5 py-3 rounded-md text-xs font-medium transition-colors",
-                    isActive("#contact")
-                      ? "bg-accent text-accent-foreground"
-                      : "bg-foreground text-background hover:bg-accent hover:text-accent-foreground",
-                  )}
-                >
-                  Контакты →
-                </a>
-              </SheetClose>
-            </nav>
-          </SheetContent>
-        </Sheet>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );
