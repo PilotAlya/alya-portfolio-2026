@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { SectionCodeDecor, LEGACY_CODE_LINES } from "./shared";
 import { CountUp } from "./effects/CountUp";
+import { GrainOverlay } from "./effects/GrainFrame";
+import { HandDrawnCircle } from "./effects/HandDrawn";
 import { ParallaxImage } from "./effects/ParallaxImage";
 
 import legacyPriceChecker from "@/assets/legacy-price-checker.gif";
@@ -55,8 +57,9 @@ export function LegacyCase() {
             ))}
           </div>
 
-          <div className="flex items-end">
-            <div>
+          <div className="flex items-end relative">
+            <HandDrawnCircle size={140} className="absolute -left-8 -bottom-6 opacity-60 hidden sm:block" />
+            <div className="relative">
               <div className="text-6xl lg:text-7xl font-extrabold tracking-tight">
                 <CountUp to={420} prefix="+" suffix="×" duration={1600} className="text-accent" />
               </div>
@@ -83,7 +86,8 @@ export function LegacyCase() {
                 containerClassName="rounded-lg"
                 speed={6}
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
+              <GrainOverlay intensity="subtle" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none z-[2]" />
             </div>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               [01] Price Checker · парсер цен
@@ -99,7 +103,8 @@ export function LegacyCase() {
                 containerClassName="rounded-lg"
                 speed={6}
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
+              <GrainOverlay intensity="subtle" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none z-[2]" />
             </div>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               [02] Data Validator · AI-валидация заказов

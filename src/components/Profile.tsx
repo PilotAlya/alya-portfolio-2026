@@ -3,6 +3,8 @@ import { GraduationCap, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
+import { HandDrawnCircle, ScribbleBurst, SparkStar } from "./effects/HandDrawn";
+import { GrainFrame } from "./effects/GrainFrame";
 
 import portrait from "@/assets/portrait.jpg";
 
@@ -17,13 +19,19 @@ export function Profile() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
+          <HandDrawnCircle
+            size={340}
+            className="absolute -top-6 -right-8 md:-right-12 z-10 opacity-80"
+          />
           <div className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait">
-            <img
+            <GrainFrame
               src={portrait}
               alt="Алья Акбарова — портрет"
-              className="w-full h-full object-cover object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
+              duotone
+              className="h-full w-full rounded-sm"
+              imageClassName="object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
             />
-            <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none" />
+            <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none z-[2]" />
           </div>
         </motion.div>
 
@@ -33,24 +41,26 @@ export function Profile() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <SectionLabel chapter={9} title="Профиль специалиста" />
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-10">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-10 flex items-start gap-2">
             Профиль специалиста
+            <SparkStar className="mt-2 shrink-0" />
           </h2>
 
           <div className="grid sm:grid-cols-3 gap-6 mb-10">
             {[
               {
-                t: "Тестирование и анализ",
-                d: "QA, UX-тесты, тест-дизайн — подробнее в разделе Портфолио.",
+                t: "AI-native разработка",
+                d: "Vibe-coding, прототипы, деплой на Vercel — см. NOVA и GitHub-проекты.",
               },
               {
-                t: "Разработка",
-                d: "React, TypeScript, vibe-coding — см. NOVA Dashboard.",
+                t: "Системное мышление",
+                d: "Декомпозиция, процессы, REST/API на базовом уровне — фундамент из Нетологии SA.",
               },
               {
-                t: "Управление рисками",
-                d: "Комплаенс-аудит, контроль качества — см. раздел Опыт.",
+                t: "Валидация и доведение до результата",
+                d: "UX-тесты, AI evaluation, аудит данных — подробнее в разделе Портфолио.",
               },
             ].map((c) => (
               <div
@@ -75,13 +85,13 @@ export function Profile() {
               },
               {
                 t: "Сейчас учусь",
-                d: "Нетология · «Системный аналитик» — изучение архитектуры систем, REST API, баз данных, BPMN.",
+                d: "Нетология · «Системный аналитик» — архитектура систем, REST API, BPMN. Фундамент системного мышления, не главная роль.",
                 badge: "В процессе",
                 Icon: GraduationCap,
               },
               {
-                t: "Early AI adopter",
-                d: "Начала применять ИИ-инструменты в работе ещё до того, как это стало мейнстримом — внедряла в реальные кейсы, а не просто пробовала.",
+                t: "Native AI user",
+                d: "Ежедневно Cursor, OpenCode, Gemini; новые инструменты осваиваю через практику — собираю MVP, а не просто «пробую ChatGPT».",
                 Icon: Sparkles,
               },
             ].map((c) => (

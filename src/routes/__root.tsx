@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { CustomCursor } from "@/components/CustomCursor";
+import { MotionProvider } from "@/components/effects/MotionProvider";
 
 function NotFoundComponent() {
   return (
@@ -77,30 +78,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Альбина Акбарова — System Analyst & QA Engineer" },
+      { title: "Альбина Акбарова — AI-Native Engineer · Vibe-Coder" },
       {
         name: "description",
         content:
-          "Портфолио Али Акбаровой (Pilot Ali). Системный анализ, QA, аудит данных, AI-инструменты. Кейсы: B2B-дашборд, Яндекс Алиса, NOVA Dashboard.",
+          "Портфолио Али Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
       },
       { name: "author", content: "Альбина Акбарова" },
       { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:locale", content: "ru_RU" },
-      { property: "og:title", content: "Альбина Акбарова — Pilot Ali" },
+      { property: "og:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
       {
         property: "og:description",
         content:
-          "System Analyst & QA Engineer. Кейсы с метриками, live-дашборд, резюме SA/QA.",
+          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
       },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Альбина Акбарова — Pilot Ali" },
+      { name: "twitter:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
       {
         name: "twitter:description",
         content:
-          "System Analyst & QA Engineer. Кейсы с метриками, live-дашборд, резюме SA/QA.",
+          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
@@ -112,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@500;600;700;800&display=swap",
       },
     ],
   }),
@@ -124,11 +125,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru">
+    <html lang="ru" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <style>
+            {"[style*='opacity:0'],[style*='opacity: 0']{opacity:1!important;transform:none!important}"}
+          </style>
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -141,8 +147,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CustomCursor />
-      <Outlet />
+      <MotionProvider>
+        <CustomCursor />
+        <Outlet />
+      </MotionProvider>
     </QueryClientProvider>
   );
 }

@@ -40,8 +40,9 @@ async function generatePDF(inputFile, outputFile) {
 }
 
 async function generateAllPDFs() {
-  console.log('🚀 Starting PDF generation for both resumes...\n');
+  console.log('🚀 Starting PDF generation for all resumes...\n');
   
+  await generatePDF('resume-ai.html', 'resume-ai.pdf');
   await generatePDF('resume-qa.html', 'resume-qa.pdf');
   await generatePDF('resume-sa.html', 'resume-sa.pdf');
   

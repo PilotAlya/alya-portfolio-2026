@@ -1,64 +1,49 @@
 import { motion } from "framer-motion";
-import { Cpu, CircuitBoard, Boxes, Brain, TestTube, Github } from "lucide-react";
 import { fadeUp } from "./shared";
 import { SectionLabel } from "./effects/SectionLabel";
-import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { HandDrawnArrow, ScribbleBurst } from "./effects/HandDrawn";
 
 import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 
-export function Stack() {
-  const cols = [
-    {
-      Icon: TestTube,
-      title: "Testing & QA",
-      items: [
-        "Функциональное тестирование веб-приложений",
-        "UX-тестирование (коридорные тесты)",
-        "Тестирование ИИ-ассистентов и браузеров (Яндекс Алиса, Яндекс.Браузер)",
-        "Browser DevTools (Chrome, inspect)",
-        "Документирование багов (Google Sheets)",
-        "Кросс-возрастное тестирование",
-      ],
-    },
-    {
-      Icon: Brain,
-      title: "LLM · Модели & AI-ассистенты",
-      items: [
-        "Gemini · Claude · DeepSeek",
-        "ChatGPT · OpenRouter",
-        "Kiro · GitHub Copilot",
-      ],
-    },
-    {
-      Icon: Cpu,
-      title: "Vibe-coding · Разработка",
-      items: [
-        "Основные: Cursor · Antygravity · OpenCode · Kiro",
-        "Каркас: Lovable · Bolt · Replit",
-        "React · TanStack · Vercel · GitHub",
-        "Постоянно тестирую новые инструменты",
-      ],
-    },
-    {
-      Icon: CircuitBoard,
-      title: "Исследование · Данные",
-      items: [
-        "NotebookLM · Abacus AI",
-        "RAG & OCR технологии",
-        "Аудит бизнес-процессов",
-      ],
-    },
-    {
-      Icon: Boxes,
-      title: "CAD & Design",
-      items: [
-        "PRO100 (библиотеки компонентов)",
-        "SPlan (чертежи)",
-        "Figma · Photoshop · Gamma",
-      ],
-    },
-  ];
+type TagSize = "sm" | "md" | "lg";
 
+const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
+  { label: "Cursor", size: "lg", core: true },
+  { label: "Vibe-coding", size: "lg" },
+  { label: "React", size: "md" },
+  { label: "TypeScript", size: "md" },
+  { label: "TanStack", size: "md" },
+  { label: "Vercel", size: "md" },
+  { label: "OpenCode", size: "md" },
+  { label: "Gemini", size: "md" },
+  { label: "Claude", size: "md" },
+  { label: "Lovable", size: "sm" },
+  { label: "Bolt", size: "sm" },
+  { label: "Replit", size: "sm" },
+  { label: "GitHub Copilot", size: "sm" },
+  { label: "DeepSeek", size: "sm" },
+  { label: "OpenRouter", size: "sm" },
+  { label: "NotebookLM", size: "sm" },
+  { label: "RAG", size: "sm" },
+  { label: "OCR", size: "sm" },
+  { label: "Python", size: "sm" },
+  { label: "Pandas", size: "sm" },
+  { label: "UX Testing", size: "sm" },
+  { label: "AI Evaluation", size: "sm" },
+  { label: "DevTools", size: "sm" },
+  { label: "Figma", size: "sm" },
+  { label: "PRO100", size: "sm" },
+  { label: "MVP Shipping", size: "md" },
+  { label: "Automation", size: "md" },
+];
+
+const SIZE_CLASS: Record<TagSize, string> = {
+  sm: "tag-cloud-pill--sm",
+  md: "tag-cloud-pill--md",
+  lg: "tag-cloud-pill--lg",
+};
+
+export function Stack() {
   return (
     <section
       id="stack"
@@ -94,66 +79,87 @@ export function Stack() {
           whileInView="show"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="mb-16 max-w-3xl"
+          className="mb-12 max-w-3xl"
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <SectionLabel chapter={7} title="Технологический стек" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">
             Стек технологий и автоматизации
           </h2>
+          <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
+            AI-native инструменты, фреймворки и практики — всё, что использую при сборке MVP и
+            автоматизации.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-5 gap-px bg-white/10 border border-white/10">
-          {cols.map((c, i) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              {...spotlightAttrs}
-              className={spotlightClass("bg-background p-8", "flat")}
-            >
-              <c.Icon className="size-6 text-accent mb-6" />
-              <div className="font-bold text-xl mb-4 uppercase tracking-tight">{c.title}</div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                {c.items.map((x) => (
-                  <li key={x} className="flex gap-2">
-                    <span className="text-accent">·</span>
-                    {x}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+        {/* Tag cloud — SENCE-style */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative glass-panel rounded-2xl p-8 md:p-10 mb-12"
+        >
+          <HandDrawnArrow
+            label="ежедневный core"
+            className="absolute -top-2 right-4 md:right-8 hidden sm:flex"
+          />
+
+          <div className="flex flex-wrap gap-2.5 md:gap-3 justify-center md:justify-start">
+            {TAGS.map((tag, i) => (
+              <motion.span
+                key={tag.label}
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.02, duration: 0.35 }}
+                className={[
+                  "tag-cloud-pill",
+                  SIZE_CLASS[tag.size],
+                  tag.core && "tag-cloud-pill--core",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
+                {tag.core && (
+                  <span className="text-spark text-[0.65em]" aria-hidden>
+                    ✦
+                  </span>
+                )}
+                {tag.label}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
 
         {/* marquee */}
-        <div className="relative mt-12 overflow-hidden border-y border-white/5 py-4">
+        <div className="relative overflow-hidden border-y border-white/5 py-4">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
           <div className="flex gap-12 animate-ticker whitespace-nowrap font-mono text-xs uppercase tracking-widest text-muted-foreground">
             {[...Array(2)].map((_, k) => (
               <div key={k} className="flex gap-12">
                 {[
+                  "Vibe-coding",
+                  "AI-Native",
                   "React",
                   "TypeScript",
                   "Python",
                   "Pandas",
-                  "QA",
-                  "System Analysis",
-                  "BPMN",
                   "RAG",
                   "Cursor",
+                  "OpenCode",
+                  "Gemini",
+                  "Prompt QA",
+                  "MVP Shipping",
                   "Chart.js",
                   "Vercel",
-                  "Gemini",
                   "Claude",
                   "Figma",
-                  "PRO100",
                   "NotebookLM",
                   "TanStack",
                   "UX Testing",
-                  "MVP",
+                  "AI Trainer",
                   "Automation",
                 ].map((t) => (
                   <span key={`${k}-${t}`} className="text-foreground/70">

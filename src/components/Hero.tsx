@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HERO_CODE_LINES } from "./shared";
+import { HeroAurora } from "./effects/HeroAurora";
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { MagneticLink } from "./effects/MagneticButton";
 
 function HeroCodeRain() {
@@ -11,7 +13,7 @@ function HeroCodeRain() {
         initial={{ y: 0 }}
         animate={{ y: "-50%" }}
         transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-2 lg:left-6 font-mono text-[10px] leading-loose text-accent/30 whitespace-nowrap"
+        className="absolute top-0 left-2 lg:left-6 font-mono text-[10px] leading-loose text-glow-secondary/35 whitespace-nowrap"
       >
         {[...HERO_CODE_LINES, ...HERO_CODE_LINES].map((l, i) => (
           <div key={`l-${i}`}>{l}</div>
@@ -36,12 +38,12 @@ function HeroCodeRain() {
 function HeroCornerTags() {
   return (
     <>
-      <div className="absolute top-6 left-6 w-4 h-4 border-l border-t border-accent/40 pointer-events-none" />
-      <div className="absolute top-6 right-6 w-4 h-4 border-r border-t border-accent/40 pointer-events-none" />
-      <div className="absolute bottom-6 left-6 w-4 h-4 border-l border-b border-accent/40 pointer-events-none" />
-      <div className="absolute bottom-6 right-6 w-4 h-4 border-r border-b border-accent/40 pointer-events-none" />
+      <div className="absolute top-6 left-6 w-4 h-4 border-l border-t hud-bracket pointer-events-none" />
+      <div className="absolute top-6 right-6 w-4 h-4 border-r border-t hud-bracket pointer-events-none" />
+      <div className="absolute bottom-6 left-6 w-4 h-4 border-l border-b hud-bracket pointer-events-none" />
+      <div className="absolute bottom-6 right-6 w-4 h-4 border-r border-b hud-bracket pointer-events-none" />
       <div className="absolute top-24 left-6 lg:left-10 pointer-events-none z-10">
-        <span className="inline-block bg-accent/15 border border-accent/30 text-accent font-mono text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm">
+        <span className="inline-block glass-pill text-accent font-mono text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm">
           2026
         </span>
       </div>
@@ -57,8 +59,9 @@ export function Hero() {
 
   return (
     <section id="top" ref={ref} className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 bg-blueprint opacity-60 pointer-events-none" />
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+      <HeroAurora />
+      <div className="absolute inset-0 bg-aurora pointer-events-none opacity-80" />
+      <div className="absolute inset-0 bg-blueprint opacity-35 pointer-events-none" />
       <HeroCodeRain />
       <HeroCornerTags />
 
@@ -69,16 +72,19 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-block p-1 border border-white/10 rounded-full"
+              className="space-y-3"
             >
-              <div className="flex items-center gap-3 pl-3 pr-5 py-1.5 bg-white/5 rounded-full">
-                <span className="relative flex size-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full size-2 bg-accent" />
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  Открыта к предложениям · SA & QA
-                </span>
+              <ScribbleBurst className="opacity-80 -ml-1" />
+              <div className="inline-block p-1 border border-border rounded-full glass-panel">
+                <div className="flex items-center gap-3 pl-3 pr-5 py-1.5 rounded-full">
+                  <span className="relative flex size-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                    <span className="relative inline-flex rounded-full size-2 bg-accent" />
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                    Открыта к предложениям · AI & Vibe-coding
+                  </span>
+                </div>
               </div>
             </motion.div>
 
@@ -86,10 +92,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="text-6xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight leading-[0.85]"
+              className="text-6xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight leading-[0.85] font-display"
             >
               ALYA<br />
-              <span className="text-accent">AKBAROVA</span>
+              <span className="text-gradient-chrome">AKBAROVA</span>
             </motion.h1>
 
             <motion.p
@@ -98,9 +104,10 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-xl font-light leading-relaxed"
             >
-              System Analyst · AI-Native Engineer · Product Architect.
-              Перевожу бизнес-хаос в цифровую логику —{" "}
-              <span className="text-foreground italic">от Legacy-процессов до AI-агентов</span>.
+              AI-Native Engineer · Vibe-Coder · Product Builder.
+              С ИИ на «ты»: быстро осваиваю новый контекст, проектирую логику, собираю MVP и
+              проверяю результат —{" "}
+              <span className="text-foreground italic">от Legacy-хаоса до AI-агентов</span>.
             </motion.p>
 
             <motion.div
@@ -110,14 +117,14 @@ export function Hero() {
               className="flex flex-wrap gap-2"
             >
               {[
-                { label: "Системный анализ", sub: "SA" },
-                { label: "Тестирование", sub: "QA" },
-                { label: "Аудит данных", sub: "Python" },
-                { label: "AI-инструменты", sub: "Cursor · RAG" },
+                { label: "Vibe-coding", sub: "Cursor · OpenCode" },
+                { label: "AI-native", sub: "LLM · RAG" },
+                { label: "MVP & прототипы", sub: "React" },
+                { label: "Валидация", sub: "QA mindset" },
               ].map((pill) => (
                 <div
                   key={pill.label}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 font-mono text-[10px] uppercase tracking-wider"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-pill font-mono text-[10px] uppercase tracking-wider"
                 >
                   <span className="text-foreground">{pill.label}</span>
                   <span className="text-muted-foreground/70">· {pill.sub}</span>
@@ -133,28 +140,21 @@ export function Hero() {
             >
               <MagneticLink
                 href="#contact"
-                className="group items-center gap-2 bg-foreground text-background px-5 py-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="btn-shimmer group items-center gap-2 bg-foreground text-background px-5 py-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Связаться{" "}
                 <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </MagneticLink>
               <MagneticLink
-                href="/resume-qa.pdf"
-                download="Albina_Akbarova_QA_Resume.pdf"
-                className="items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+                href="/resume-ai.pdf"
+                download="Albina_Akbarova_AI_Resume.pdf"
+                className="btn-shimmer items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
               >
-                Резюме QA
-              </MagneticLink>
-              <MagneticLink
-                href="/resume-sa.pdf"
-                download="Albina_Akbarova_SA_Resume.pdf"
-                className="items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
-              >
-                Резюме SA
+                Резюме AI
               </MagneticLink>
               <MagneticLink
                 href="#portfolio"
-                className="items-center gap-2 border border-white/15 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+                className="btn-shimmer items-center gap-2 border border-border px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
               >
                 Смотреть кейсы
               </MagneticLink>
@@ -165,11 +165,12 @@ export function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="relative lg:border-l lg:border-white/10 lg:pl-8 pb-4 flex flex-col items-center lg:items-stretch gap-6"
+            className="relative lg:border-l lg:border-border lg:pl-8 pb-4 flex flex-col items-center lg:items-stretch gap-6"
           >
             <p className="font-mono text-xs leading-relaxed text-muted-foreground uppercase">
-              «Я проектирую логику систем. Моя суперсила — деконструкция хаоса и сборка автономных
-              инструментов там, где стандартный софт бессилен.»
+              «Я не пишу код как классический разработчик — проектирую последовательность действий,
+              собираю решение с AI и довожу до рабочего результата. Системный подход и привычка
+              тестировать — мой фильтр качества.»
             </p>
             <div className="font-mono text-[10px] text-accent uppercase tracking-widest">
               — Pilot Ali

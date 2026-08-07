@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 
 type Project = {
   name: string;
@@ -16,7 +17,7 @@ export function GitHubProjects() {
   const projects: Project[] = [
     {
       name: "Nova_light-",
-      category: "MVP · SA",
+      category: "MVP · AI",
       description: "Система управления заказами и складом: AI-ассистент «Борис», React, TypeScript.",
       url: "https://github.com/PilotAlya/Nova_light-",
       demo: "https://nova-light-app.vercel.app/",
@@ -49,7 +50,7 @@ export function GitHubProjects() {
   ];
 
   return (
-    <section id="github" className="py-24 px-6 lg:px-8 bg-card/20 border-y border-white/5">
+    <section id="github" className="py-24 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -58,11 +59,13 @@ export function GitHubProjects() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
             GitHub · Projects
           </span>
-          <h2 className="text-4xl font-bold tracking-tight mt-4 mb-4">
+          <h2 className="text-4xl font-bold tracking-tight mt-4 mb-4 flex items-start gap-2">
             Проекты и репозитории
+            <SparkStar className="mt-1.5 shrink-0" />
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             Код, live-демо и pet-проекты — всё в одном месте.

@@ -14,9 +14,9 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "#why", label: "Обо мне" },
-  { href: "#portfolio", label: "Портфолио" },
-  { href: "#experience", label: "Опыт" },
   { href: "#nova", label: "NOVA" },
+  { href: "#experience", label: "Опыт" },
+  { href: "#portfolio", label: "Портфолио" },
 ];
 
 export function Nav() {
@@ -25,85 +25,80 @@ export function Nav() {
 
   const isActive = (href: string) => NAV_SECTION_MAP[href] === activeSection;
 
+  const pillClass = (href: string, extra?: string) =>
+    cn(
+      "nav-pill font-mono text-[10px] tracking-widest uppercase transition-colors",
+      isActive(href) ? "is-active" : "text-muted-foreground",
+      extra,
+    );
+
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-md">
+    <nav className="fixed top-0 inset-x-0 z-50 border-b border-border glass-panel !rounded-none !border-x-0 !border-t-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#top" className="font-mono text-sm tracking-tighter">
-          Pilot Ali <span className="text-muted-foreground">// SA & QA</span>
+        <a href="#top" className="font-mono text-sm tracking-tighter link-spark">
+          Pilot Ali <span className="text-muted-foreground">// AI · Vibe-Coding</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8 font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
+        <div className="hidden md:flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
           {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={cn("nav-link hover:text-accent transition-colors", isActive(link.href) && "is-active text-accent")}
-            >
+            <a key={link.href} href={link.href} className={pillClass(link.href)}>
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className={cn(
-              "nav-link text-foreground hover:text-accent transition-colors",
-              isActive("#contact") && "is-active text-accent",
-            )}
-          >
+          <a href="#contact" className={pillClass("#contact")}>
             Контакты →
           </a>
         </div>
 
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <button
-              type="button"
-              aria-label="Открыть меню"
-              className="md:hidden flex items-center justify-center size-10 -mr-2 rounded-md border border-white/10 hover:border-accent/50 hover:text-accent transition-colors"
+        <div className="flex md:hidden items-center gap-2">
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <button
+                type="button"
+                aria-label="Открыть меню"
+                className="flex items-center justify-center size-10 -mr-2 rounded-full border border-border hover:border-spark/50 hover:text-spark transition-colors"
+              >
+                <Menu className="size-5" />
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="border-border bg-background/95 backdrop-blur-md w-full sm:max-w-xs"
             >
-              <Menu className="size-5" />
-            </button>
-          </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="border-white/10 bg-background/95 backdrop-blur-md w-full sm:max-w-xs"
-          >
-            <SheetHeader className="text-left mb-8">
-              <SheetTitle className="font-mono text-sm tracking-tighter">
-                Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
-              </SheetTitle>
-            </SheetHeader>
-            <nav className="flex flex-col gap-1 font-mono text-xs tracking-widest uppercase">
-              {NAV_LINKS.map((link) => (
-                <SheetClose asChild key={link.href}>
+              <SheetHeader className="text-left mb-8">
+                <SheetTitle className="font-mono text-sm tracking-tighter">
+                  Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-2 font-mono text-xs tracking-widest uppercase">
+                {NAV_LINKS.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    <a
+                      href={link.href}
+                      className={cn(
+                        "nav-pill px-4 py-3 text-center",
+                        isActive(link.href) ? "is-active" : "text-muted-foreground border border-border",
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  </SheetClose>
+                ))}
+                <SheetClose asChild>
                   <a
-                    href={link.href}
+                    href="#contact"
                     className={cn(
-                      "px-3 py-4 border-b border-white/5 transition-colors",
-                      isActive(link.href)
-                        ? "text-accent border-accent/20"
-                        : "text-muted-foreground hover:text-accent",
+                      "nav-pill mt-2 px-4 py-3 text-center",
+                      isActive("#contact") ? "is-active" : "bg-foreground text-background",
                     )}
                   >
-                    {link.label}
+                    Контакты →
                   </a>
                 </SheetClose>
-              ))}
-              <SheetClose asChild>
-                <a
-                  href="#contact"
-                  className={cn(
-                    "mt-4 inline-flex items-center justify-center px-5 py-3 rounded-md text-xs font-medium transition-colors",
-                    isActive("#contact")
-                      ? "bg-accent text-accent-foreground"
-                      : "bg-foreground text-background hover:bg-accent hover:text-accent-foreground",
-                  )}
-                >
-                  Контакты →
-                </a>
-              </SheetClose>
-            </nav>
-          </SheetContent>
-        </Sheet>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );

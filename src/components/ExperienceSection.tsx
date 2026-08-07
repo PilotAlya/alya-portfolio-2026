@@ -9,7 +9,7 @@ export function ExperienceSection() {
         label="Опыт работы"
         title="Legacy, процессы и автоматизация"
         description="От работы с Legacy-софтом в ритейле — до автоматизации рутины через vibe-coding."
-        meta="1 блок · QA & SA"
+        meta="1 блок · AI & Automation"
       />
       <LegacyCase />
     </div>

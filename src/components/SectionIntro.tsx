@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { SectionLabel } from "./effects/SectionLabel";
 import { fadeUp } from "./shared";
 
@@ -13,7 +14,7 @@ type SectionIntroProps = {
 
 export function SectionIntro({ chapter, label, title, description, meta }: SectionIntroProps) {
   return (
-    <section className="relative py-10 lg:py-12 px-6 lg:px-8 border-t border-white/5 overflow-hidden">
+    <section className="relative py-10 lg:py-12 px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-blueprint opacity-25 pointer-events-none" />
       <div className="absolute top-0 left-6 lg:left-8 w-24 h-px bg-gradient-to-r from-accent/60 to-transparent pointer-events-none" />
 
@@ -25,8 +26,12 @@ export function SectionIntro({ chapter, label, title, description, meta }: Secti
         className="relative max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
       >
         <div className="max-w-3xl">
+          <ScribbleBurst className="mb-3 -ml-1 opacity-80" />
           <SectionLabel chapter={chapter} title={label} />
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">{title}</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 font-display flex items-start gap-2">
+            {title}
+            <SparkStar className="mt-2 shrink-0" />
+          </h2>
           {description && (
             <p className="text-muted-foreground mt-3 leading-relaxed max-w-2xl">{description}</p>
           )}

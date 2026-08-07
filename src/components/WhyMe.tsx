@@ -3,37 +3,40 @@ import { Target, CircuitBoard, Sparkles } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 
 export function WhyMe() {
   const items = [
     {
       n: "01",
-      problem: "Бизнес тонет в Excel и Legacy-софте.",
+      problem: "MVP нужен «вчера», а команды разработки нет.",
       solution:
-        "Декомпозирую процесс, выношу повторяющиеся операции в скрипты и AI-агентов на vibe-coding.",
-      result: "Парсер цен и Data Validator сократили рутину — проверка теперь занимает секунды вместо 10-60 минут.",
-      Icon: Target,
+        "Собираю рабочие прототипы через vibe-coding: проектирую логику, AI помогает с кодом, я проверяю и деплою.",
+      result:
+        "NOVA Dashboard, B2B-дашборд, legacy-скрипты — live-demo на Vercel, без посредников.",
+      Icon: Sparkles,
     },
     {
       n: "02",
-      problem: "Мелкая ошибка в ТЗ или UI оборачивается дорогим багом в проде.",
+      problem: "Нужно быстро разобраться в новой теме или домене.",
       solution:
-        "Принцип точности из реальных проектов → Shift-Left: проверяю требования и сценарии до релиза.",
+        "Native AI workflow: Cursor, OpenCode, Gemini, NotebookLM — системный подход к любому контексту, не важно насколько он новый.",
       result:
-        "NOVA: 12+ дефектов до деплоя; Яндекс-кейсы — Pass/Fail и баг-репорты с шагами воспроизведения.",
-      Icon: CircuitBoard,
+        "От B2B-аудита CSV до MVP с Kanban и AI-ассистентом — осваиваю через практику, а не через месяцы курсов.",
+      Icon: Target,
     },
     {
       n: "03",
-      problem: "MVP нужен «вчера», а команды разработки нет.",
-      solution: "Собираю работающие прототипы сама: React + React Router + RAG, без посредников.",
-      result: "NOVA Dashboard и RAG-ассистент «Борис» — рабочий MVP с live-презентацией.",
-      Icon: Sparkles,
+      problem: "Нужна проверка AI-продукта, а не слепая вера в генерацию.",
+      solution:
+        "UX-тесты, сценарии, Pass/Fail — проверяю своё и чужое: качество ответов LLM, логику интерфейса, edge cases.",
+      result:
+        "NOVA: 12+ правок до деплоя; кейс Яндекс Алиса — 6 сценариев, 5 баг-репортов как AI product evaluation.",
+      Icon: CircuitBoard,
     },
   ];
   return (
     <section id="why" className="py-24 px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-blueprint opacity-30 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -42,12 +45,15 @@ export function WhyMe() {
           variants={fadeUp}
           className="mb-14 max-w-3xl"
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-75" />
           <SectionLabel chapter={1.5} title="Почему именно я" />
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 flex items-start gap-2">
             Что я приношу в команду
+            <SparkStar className="mt-2 shrink-0" />
           </h2>
           <p className="text-muted-foreground mt-4 leading-relaxed">
-            Три проблемы, с которыми ко мне приходят, и как я их закрываю — с конкретным результатом.
+            Три задачи, с которыми ко мне приходят — и как я их закрываю через AI и системное
+            мышление.
           </p>
         </motion.div>
 
