@@ -710,6 +710,74 @@ body.custom-cursor-active * {
   opacity: 0.22;
 }
 
+/* Boris walk — Stack section (CSS animation, reduced-motion fallback) */
+.boris-walk-strip {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 11rem;
+  z-index: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .boris-walk-strip {
+    height: 16rem;
+  }
+}
+
+.boris-walk-strip::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--accent) 40%, transparent),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.boris-walk-strip__track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: boris-walk-across 32s linear infinite;
+  will-change: transform;
+  filter: drop-shadow(0 8px 18px color-mix(in oklab, var(--accent) 35%, transparent));
+}
+
+.boris-walk-strip__video {
+  height: 9rem;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .boris-walk-strip__video {
+    height: 15rem;
+  }
+}
+
+@keyframes boris-walk-across {
+  from {
+    transform: translateX(-12rem);
+  }
+  to {
+    transform: translateX(calc(100vw + 5rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boris-walk-strip__track {
+    animation: none;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* ── SENCE-inspired spark accents ── */
 
 .btn-spark {

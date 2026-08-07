@@ -47,33 +47,23 @@ export function Stack() {
   return (
     <section
       id="stack"
-      className="relative pt-16 md:pt-24 pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-20"
+      className="relative pt-16 md:pt-24 pb-32 px-6 lg:px-8 overflow-x-clip scroll-mt-20"
     >
-      {/* Chibi-Boris walking animation */}
-      <div className="hidden md:block absolute top-0 inset-x-0 h-64 overflow-visible pointer-events-none">
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-        <motion.div
-          className="absolute bottom-0 left-0"
-          initial={{ x: "-200px" }}
-          animate={{ x: "calc(100vw + 80px)" }}
-          transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-          style={{
-            filter: "drop-shadow(0 8px 18px rgba(59,130,246,0.35))",
-            willChange: "transform",
-          }}
-        >
+      {/* Chibi-Boris walking animation — CSS keyframes (visible even with reduced motion fallback) */}
+      <div className="boris-walk-strip pointer-events-none" aria-hidden>
+        <div className="boris-walk-strip__track">
           <video
             src={borisWalkStableVideo}
             autoPlay
             loop
             muted
             playsInline
-            className="h-60 w-auto select-none block"
+            className="boris-walk-strip__video select-none block"
           />
-        </motion.div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="relative z-[1] max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="show"
