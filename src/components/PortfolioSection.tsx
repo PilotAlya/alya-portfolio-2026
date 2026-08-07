@@ -5,7 +5,7 @@ import { SectionIntro } from "@/components/SectionIntro";
 
 export function PortfolioSection() {
   return (
-    <div id="portfolio">
+    <div id="portfolio" className="scroll-mt-24">
       <SectionIntro
         chapter={5}
         label="Портфолио"

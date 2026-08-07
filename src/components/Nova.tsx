@@ -136,7 +136,7 @@ export function Nova() {
   return (
     <section
       id="nova"
-      className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden"
+      className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden scroll-mt-24"
     >
       <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
       <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
@@ -153,7 +153,7 @@ export function Nova() {
           className="mb-12 max-w-3xl"
         >
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Кейс 04 · Флагманский проект
+            Флагманский проект · NOVA
           </span>
           <div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display">
@@ -202,7 +202,7 @@ export function Nova() {
                     <span className="relative inline-flex size-2 rounded-full bg-accent" />
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                    Live Demo
+                    Walkthrough
                   </span>
                 </div>
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background/95 via-background/60 to-transparent">
@@ -256,7 +256,7 @@ export function Nova() {
               { value: "2 цикла", label: "Итеративная разработка и тестирование" },
               { value: "12+", label: "Дефектов задокументировано" },
               { value: "3",   label: "Критических блокера закрыто" },
-              { value: "100%", label: "Улучшение юзабилити в NOVA Light" },
+              { value: "3/3", label: "«Стало понятнее» после NOVA Light" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -346,7 +346,7 @@ export function Nova() {
           {[
             {
               t: "Интеллектуальный слой",
-              d: "RAG-ассистент «Борис» для мгновенного анализа складских остатков и тех. документации.",
+              d: "Сценарий ассистента «Борис»: ответы по регламентам и номенклатуре. Реальный LLM — следующий шаг архитектуры.",
               Icon: Bot,
             },
             {

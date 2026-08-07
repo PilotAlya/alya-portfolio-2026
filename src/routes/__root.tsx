@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Портфолио Али Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
+          "Портфолио Альбины Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
       },
       { name: "author", content: "Альбина Акбарова" },
       { name: "robots", content: "index, follow" },

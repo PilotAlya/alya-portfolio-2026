@@ -31,7 +31,7 @@ export function EvolutionPath() {
   return (
     <section
       id="path"
-      className="relative py-24 px-6 lg:px-8 overflow-hidden"
+      className="relative py-24 px-6 lg:px-8 overflow-hidden scroll-mt-24"
     >
       <SectionCodeDecor lines={EVOLUTION_CODE_LINES} side="left" speed={70} />
       <div className="max-w-7xl mx-auto">

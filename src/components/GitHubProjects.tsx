@@ -16,20 +16,20 @@ type Project = {
 export function GitHubProjects() {
   const projects: Project[] = [
     {
-      name: "Nova_light-",
-      category: "MVP · AI",
-      description: "Репозиторий NOVA Light: React, TypeScript, AI-ассистент «Борис».",
-      url: "https://github.com/PilotAlya/Nova_light-",
-      demo: "https://nova-light-app.vercel.app/",
-      tags: ["React", "TypeScript", "RAG"],
+      name: "alya-portfolio-2026",
+      category: "Portfolio · 2026",
+      description: "Код этого лендинга: React, TanStack, Tailwind, Framer Motion · Chromatic Atelier.",
+      url: "https://github.com/PilotAlya/alya-portfolio-2026",
+      demo: "https://portfolio-resume-alya-akbarova.vercel.app/",
+      tags: ["React", "TanStack", "Vercel"],
     },
     {
-      name: "landing-page-nova",
-      category: "NOVA · Landing",
-      description: "Код презентационного лендинга NOVA.",
-      url: "https://github.com/PilotAlya/landing-page-nova",
-      demo: "https://alya-nova-2026.vercel.app/",
-      tags: ["React", "Vite", "Vercel"],
+      name: "Nova_light-",
+      category: "MVP · AI",
+      description: "Репозиторий NOVA Light: React, TypeScript, сценарий ассистента «Борис».",
+      url: "https://github.com/PilotAlya/Nova_light-",
+      demo: "https://nova-light-app.vercel.app/",
+      tags: ["React", "TypeScript", "MVP"],
     },
     {
       name: "Client Retention Dashboard",
@@ -39,18 +39,10 @@ export function GitHubProjects() {
       demo: "https://client-retention-dashboard.vercel.app/",
       tags: ["Python", "Chart.js", "Vercel"],
     },
-    {
-      name: "alya-portfolio-2026",
-      category: "Portfolio",
-      description: "Код этого лендинга: React, TanStack, Tailwind, Framer Motion.",
-      url: "https://github.com/PilotAlya/alya-portfolio-2026",
-      demo: "https://portfolio-resume-alya-akbarova.vercel.app/",
-      tags: ["React", "TanStack", "Vercel"],
-    },
   ];
 
   return (
-    <section id="github" className="py-24 px-6 lg:px-8">
+    <section id="github" className="py-24 px-6 lg:px-8 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -68,7 +60,7 @@ export function GitHubProjects() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
           {projects.map((project, i) => (
             <motion.article
               key={project.name}

@@ -43,7 +43,7 @@ const TILES = [
   },
   {
     title: "AI-ассистент «Борис»",
-    subtitle: "RAG-сценарий · wiki · склад · регламенты",
+    subtitle: "Сценарий ассистента · wiki · склад · регламенты",
     tag: "AI Layer",
     Icon: Bot,
     span: "",
@@ -51,12 +51,12 @@ const TILES = [
     external: false,
     accent: "from-violet-500/15 via-transparent to-transparent",
     image: novaBorisChat,
-    grainCaption: "RAG · AI",
+    grainCaption: "AI scenario",
     cta: "Подробнее",
   },
   {
     title: "UX Validation",
-    subtitle: "2 цикла · 12+ дефектов · 3 блокера · 100% улучшение",
+    subtitle: "2 цикла · 12+ дефектов · 3 блокера · 3/3 понятнее",
     tag: "Research",
     Icon: Users,
     span: "",

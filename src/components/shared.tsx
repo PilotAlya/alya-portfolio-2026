@@ -32,7 +32,7 @@ export const HERO_CODE_LINES = [
   "GET /api/nova/orders?status=in_progress  →  200 OK  · 42 ms",
   "// от Legacy-хаоса — до AI-native shipping",
   "vibe-coding ── prompt engineering ── validation ── deploy",
-  "ALYA.AKBAROVA :: pilot_ali ▸ ai_native_engineer ▸ vibe_coder",
+  "ALBINA.AKBAROVA :: pilot_ali ▸ ai_native_engineer ▸ vibe_coder",
   "$ nova run --pipeline=warehouse → 1428 SKU synced  · 0 errors",
   "trace_id=9f2c1b4a  ·  agent=boris  ·  latency=312ms  ·  cost=$0.0007",
   "// «с ИИ на ты» — системный подход + проверка результата",

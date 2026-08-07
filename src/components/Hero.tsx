@@ -58,7 +58,7 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section id="top" ref={ref} className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden">
+    <section id="top" ref={ref} className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24">
       <HeroAurora />
       <div className="absolute inset-0 bg-aurora pointer-events-none opacity-80" />
       <div className="absolute inset-0 bg-blueprint opacity-35 pointer-events-none" />
@@ -94,7 +94,7 @@ export function Hero() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="hero-title font-extrabold tracking-tight font-display max-w-full"
             >
-              ALYA<br />
+              ALBINA<br />
               <span className="text-gradient-chrome">AKBAROVA</span>
             </motion.h1>
 
@@ -110,6 +110,20 @@ export function Hero() {
               <span className="text-foreground italic">от Legacy-хаоса до AI-агентов</span>.
             </motion.p>
 
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45, duration: 0.6 }}
+              className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
+            >
+              Целевые роли ·{" "}
+              <span className="text-foreground/90">vibe-coder</span>
+              {" · "}
+              <span className="text-foreground/90">AI assessor</span>
+              {" · "}
+              <span className="text-foreground/90">AI product builder</span>
+            </motion.p>
+
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -118,7 +132,7 @@ export function Hero() {
             >
               {[
                 { label: "Vibe-coding", sub: "Cursor · OpenCode" },
-                { label: "AI-native", sub: "LLM · RAG" },
+                { label: "AI-native", sub: "LLM · validation" },
                 { label: "MVP & прототипы", sub: "React" },
                 { label: "Валидация", sub: "QA mindset" },
               ].map((pill) => (

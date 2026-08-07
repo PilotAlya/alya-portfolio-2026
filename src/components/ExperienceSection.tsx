@@ -4,7 +4,7 @@ import { SectionIntro } from "@/components/SectionIntro";
 
 export function ExperienceSection() {
   return (
-    <div id="experience">
+    <div id="experience" className="scroll-mt-24">
       <SectionIntro
         chapter={4}
         label="Опыт работы"

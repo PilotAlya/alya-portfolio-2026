@@ -26,7 +26,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 lg:py-36 px-6 lg:px-8 border-t border-border relative overflow-hidden"
+      className="py-24 lg:py-36 px-6 lg:px-8 border-t border-border relative overflow-hidden scroll-mt-24"
     >
       <div className="absolute inset-0 bg-aurora pointer-events-none" />
       <div className="absolute inset-0 bg-blueprint opacity-25 pointer-events-none" />
@@ -106,15 +106,17 @@ export function Contact() {
 
             <a
               href="/resume-qa.pdf"
+              download="Albina_Akbarova_QA_Resume.pdf"
               className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
             >
-              QA
+              Резюме QA
             </a>
             <a
               href="/resume-sa.pdf"
+              download="Albina_Akbarova_SA_Resume.pdf"
               className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
             >
-              SA
+              Резюме SA
             </a>
           </div>
 

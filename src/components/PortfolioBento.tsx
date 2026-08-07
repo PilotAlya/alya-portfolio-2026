@@ -1,38 +1,22 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Kanban, BarChart3, Rocket } from "lucide-react";
+import { ArrowUpRight, Kanban, BarChart3 } from "lucide-react";
 
-import novaDashboard from "@/assets/nova-dashboard-new.png";
 import churnDashboard from "@/assets/churn-dashboard.png";
 import { FilterPills } from "./effects/FilterPills";
 import { GrainFrame } from "./effects/GrainFrame";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { fadeUp } from "./shared";
 
-type TileCategory = "flagship" | "mvp" | "data";
+type TileCategory = "mvp" | "data";
 
 const FILTER_OPTIONS = [
-  { id: "all", label: "All" },
-  { id: "flagship", label: "Flagship" },
+  { id: "all", label: "Все" },
   { id: "mvp", label: "MVP" },
   { id: "data", label: "Data" },
 ] as const;
 
 const TILES = [
-  {
-    id: "nova",
-    title: "NOVA Dashboard",
-    subtitle: "Флагман · MVP · UX-тесты · AI «Борис» · live demo",
-    tag: "Flagship",
-    categories: ["flagship", "mvp"] as TileCategory[],
-    Icon: Rocket,
-    span: "md:col-span-2 md:row-span-1 min-h-[160px]",
-    href: "#nova",
-    external: false,
-    accent: "from-accent/25 via-accent/5 to-transparent",
-    image: novaDashboard,
-    grainCaption: "Live MVP",
-  },
   {
     id: "case-crm",
     title: "CRM Lead Card",
@@ -40,11 +24,11 @@ const TILES = [
     tag: "Pet project",
     categories: ["mvp"] as TileCategory[],
     Icon: Kanban,
-    span: "",
+    span: "md:col-span-2",
     href: "#case-crm",
     external: false,
     accent: "from-blue-500/15 via-transparent to-transparent",
-    image: novaDashboard,
+    grainOnly: true as const,
     grainCaption: "React MVP",
   },
   {
@@ -82,7 +66,7 @@ export function PortfolioBento() {
           className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
         >
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Bento · быстрый обзор проектов
+            Навигация по кейсам ниже · NOVA — в разделе выше
           </p>
           <FilterPills options={[...FILTER_OPTIONS]} value={filter} onChange={setFilter} />
         </motion.div>
@@ -120,6 +104,9 @@ export function PortfolioBento() {
                     />
                   </div>
                 )}
+                {"grainOnly" in tile && tile.grainOnly && (
+                  <div className="pointer-events-none absolute inset-0 opacity-25 bg-gradient-to-br from-accent/10 via-transparent to-transparent" />
+                )}
                 <div className="relative z-[1] flex items-start justify-between gap-3">
                   <div>
                     <span className="font-mono text-[9px] uppercase tracking-widest text-accent/90">
@@ -137,7 +124,7 @@ export function PortfolioBento() {
                   </div>
                 </div>
                 <div className="relative z-[1] mt-4 flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground group-hover:text-accent transition-colors">
-                  {tile.external ? "Live demo" : "К кейсу"}
+                  К кейсу
                   <ArrowUpRight className="size-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </motion.a>

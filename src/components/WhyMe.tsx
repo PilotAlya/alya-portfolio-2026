@@ -36,7 +36,7 @@ export function WhyMe() {
     },
   ];
   return (
-    <section id="why" className="py-24 px-6 lg:px-8 relative overflow-hidden">
+    <section id="why" className="py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
       <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial="hidden"

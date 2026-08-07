@@ -66,7 +66,7 @@ export function PortfolioBackground() {
   return (
     <section
       id="portfolio-background"
-      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-white/5"
+      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-white/5 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -99,7 +99,7 @@ export function PortfolioBackground() {
               transition={{ delay: i * 0.06, duration: 0.5 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                "bento-card group relative flex flex-col p-5 min-h-[220px]",
+                "bento-card group relative flex flex-col p-5 min-h-[220px] scroll-mt-24",
                 "subtle",
               )}
             >

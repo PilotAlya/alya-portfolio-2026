@@ -22,7 +22,7 @@ export function Profile() {
           <div className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait">
             <GrainFrame
               src={portrait}
-              alt="Алья Акбарова — портрет"
+              alt="Альбина Акбарова — портрет"
               duotone
               className="h-full w-full rounded-sm"
               imageClassName="object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
