@@ -82,7 +82,7 @@ export function Stack() {
           className="mb-12 max-w-3xl"
         >
           <SectionLabel chapter={7} title="Технологический стек" />
-          <SectionHeadline accent="автоматизации">Стек технологий и</SectionHeadline>
+          <SectionHeadline before="Стек технологий и" accent="автоматизации" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
             AI-native инструменты, фреймворки и практики — всё, что использую при сборке MVP и
             автоматизации.

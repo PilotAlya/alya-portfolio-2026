@@ -17,7 +17,7 @@ export function Guides() {
           className="mb-12 max-w-3xl"
         >
           <SectionLabel chapter={8} title="Экспертиза & Community" />
-          <SectionHeadline accent="Open Knowledge">Технические гайды и</SectionHeadline>
+          <SectionHeadline before="Технические гайды и" accent="Open Knowledge" />
           <p className="text-muted-foreground leading-relaxed mt-4 mb-4">
             «Я верю в Open Knowledge. Мои гайды — деконструкция сложных технологий в простые
             пошаговые алгоритмы для жизни и работы.»

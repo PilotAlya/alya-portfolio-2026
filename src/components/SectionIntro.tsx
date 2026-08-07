@@ -7,8 +7,9 @@ import { fadeUp } from "./shared";
 type SectionIntroProps = {
   chapter: number;
   label: string;
-  title: string;
-  titleAccent?: string;
+  titleBefore?: string;
+  titleAccent: string;
+  titleAfter?: string;
   description?: string;
   meta?: string;
 };
@@ -16,8 +17,9 @@ type SectionIntroProps = {
 export function SectionIntro({
   chapter,
   label,
-  title,
+  titleBefore,
   titleAccent,
+  titleAfter,
   description,
   meta,
 }: SectionIntroProps) {
@@ -35,11 +37,11 @@ export function SectionIntro({
       >
         <div className="max-w-3xl">
           <SectionLabel chapter={chapter} title={label} />
-          {titleAccent ? (
-            <SectionHeadline accent={titleAccent}>{title}</SectionHeadline>
-          ) : (
-            <h2 className="section-headline mt-4 text-foreground">{title}</h2>
-          )}
+          <SectionHeadline
+            before={titleBefore}
+            accent={titleAccent}
+            after={titleAfter}
+          />
           {description && (
             <p className="text-muted-foreground mt-3 leading-relaxed max-w-2xl">{description}</p>
           )}

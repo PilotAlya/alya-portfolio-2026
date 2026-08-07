@@ -38,9 +38,7 @@ export function Profile() {
           variants={fadeUp}
         >
           <SectionLabel chapter={9} title="Профиль специалиста" />
-          <SectionHeadline accent="Профиль" className="mb-10">
-            специалиста
-          </SectionHeadline>
+          <SectionHeadline accent="Профиль" after="специалиста" className="mb-10" />
 
           <div className="grid sm:grid-cols-3 gap-6 mb-10">
             {[

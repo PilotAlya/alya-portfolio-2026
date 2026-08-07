@@ -8,7 +8,7 @@ export function ExperienceSection() {
         chapter={4}
         label="Опыт работы"
         titleAccent="Legacy"
-        title="· процессы и автоматизация"
+        titleAfter="· процессы и автоматизация"
         description="От работы с Legacy-софтом в ритейле — до автоматизации рутины через vibe-coding."
         meta="1 блок · AI & Automation"
       />
