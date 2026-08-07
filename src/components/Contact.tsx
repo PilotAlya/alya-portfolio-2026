@@ -3,15 +3,22 @@ import { ArrowUpRight, Download, Copy, Check, MessageCircle, Mail } from "lucide
 import { useState } from "react";
 
 import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
+import {
+  HandDrawnOval,
+  ScribbleBurst,
+  SparkStar,
+} from "@/components/effects/HandDrawn";
+import { MagneticLink } from "@/components/effects/MagneticButton";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
-import { MagneticLink } from "./effects/MagneticButton";
-import { SectionLabel } from "./effects/SectionLabel";
+
+const TELEGRAM_URL = "https://t.me/Albinaa_Akbarova";
+const EMAIL = "pilotalya@a-akbarova.ru";
 
 export function Contact() {
   const [emailCopied, setEmailCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("pilotalya@a-akbarova.ru");
+    navigator.clipboard.writeText(EMAIL);
     setEmailCopied(true);
     setTimeout(() => setEmailCopied(false), 2000);
   };
@@ -19,103 +26,100 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 px-6 lg:px-8 border-t border-white/5 relative overflow-hidden"
+      className="py-24 lg:py-36 px-6 lg:px-8 border-t border-border relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-blueprint opacity-50 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-aurora pointer-events-none" />
+      <div className="absolute inset-0 bg-blueprint opacity-25 pointer-events-none" />
+      <div className="absolute inset-0 contact-spark-glow pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-glow/12 blur-[100px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-[1fr_340px] gap-12 items-end">
+      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="max-w-3xl"
         >
-          <SectionLabel chapter={10} title="Контакты" />
-          <h2 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mt-6 mb-8 leading-[0.9]">
-            На связи —<br />
-            для <span className="text-accent">AI-продуктов и vibe-coding</span>.
+          <div className="flex items-center gap-2 mb-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <SparkStar />
+            <span>Глава 10 · Контакты</span>
+          </div>
+
+          <ScribbleBurst className="mb-4 -ml-1" />
+
+          <h2 className="text-[clamp(2.75rem,8vw,5.75rem)] font-extrabold tracking-tight leading-[0.88] font-display uppercase mb-8">
+            Связаться
+            <br />
+            и обсудить
+            <br />
+            <span className="text-gradient-chrome">проект</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mb-10 italic">
-            «Готова собрать MVP, проверить AI-продукт и довести до рабочего результата.»
+
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
+            MVP, vibe-coding, AI-валидация — напиши, если нужен человек, который собирает,
+            проверяет и доводит до деплоя.
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mb-8">
-            <a
-              href="https://t.me/Albinaa_Akbarova"
-              target="_blank"
-              rel="noopener noreferrer"
-              {...spotlightAttrs}
-              className={spotlightClass(
-                "group flex flex-col gap-4 p-6 rounded-lg border border-white/10",
-              )}
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="p-2 rounded-md bg-accent/10 border border-accent/20 text-accent">
-                  <MessageCircle className="size-5" />
-                </div>
-                <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                  Telegram
-                </div>
-                <div className="text-xl font-bold tracking-tight">@Albinaa_Akbarova</div>
-                <div className="text-xs text-muted-foreground mt-2">Быстрый ответ</div>
-              </div>
-            </a>
+          <div className="mb-10">
+            <HandDrawnOval>
+              <MagneticLink
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-spark group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base sm:text-lg font-semibold uppercase tracking-wide"
+              >
+                <MessageCircle className="size-5" />
+                Написать в Telegram
+                <ArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </MagneticLink>
+            </HandDrawnOval>
+            <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-spark/90 pl-1">
+              ✦ быстрый ответ · @Albinaa_Akbarova
+            </p>
+          </div>
 
+          <div className="flex flex-wrap gap-2 mb-8">
             <button
               type="button"
               onClick={copyEmail}
               {...spotlightAttrs}
               className={spotlightClass(
-                "group flex flex-col gap-4 p-6 rounded-lg border border-white/10 text-left",
+                "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors",
+                "subtle",
               )}
             >
-              <div className="flex items-start justify-between gap-3">
-                <div className="p-2 rounded-md bg-accent/10 border border-accent/20 text-accent">
-                  <Mail className="size-5" />
-                </div>
-                {emailCopied ? (
-                  <Check className="size-5 text-accent shrink-0" />
-                ) : (
-                  <Copy className="size-5 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
-                )}
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                  Email
-                </div>
-                <div className="text-lg font-bold tracking-tight break-all">
-                  pilotalya@a-akbarova.ru
-                </div>
-                <div className="text-xs text-muted-foreground mt-2">
-                  {emailCopied ? "Скопировано!" : "Нажми, чтобы скопировать"}
-                </div>
-              </div>
+              <Mail className="size-3.5 text-accent" />
+              {emailCopied ? "Скопировано!" : EMAIL}
+              {!emailCopied && <Copy className="size-3 opacity-60" />}
+              {emailCopied && <Check className="size-3 text-spark" />}
             </button>
-          </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
             <MagneticLink
               href="/resume-ai.pdf"
               download="Albina_Akbarova_AI_Resume.pdf"
-              className="group items-center gap-3 bg-accent text-accent-foreground px-6 py-4 rounded-md text-base font-semibold hover:bg-accent/90 transition-colors"
+              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
             >
-              <Download className="size-5" />
-              Скачать резюме AI
+              <Download className="size-3.5" />
+              Резюме AI
             </MagneticLink>
+
+            <a
+              href="/resume-qa.pdf"
+              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
+            >
+              QA
+            </a>
+            <a
+              href="/resume-sa.pdf"
+              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
+            >
+              SA
+            </a>
           </div>
-          <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-            Также:{" "}
-            <a href="/resume-qa.pdf" className="text-accent hover:underline">
-              резюме QA
-            </a>
-            {" · "}
-            <a href="/resume-sa.pdf" className="text-accent hover:underline">
-              резюме SA
-            </a>
+
+          <p className="text-sm text-muted-foreground/80 italic max-w-md border-l-2 border-spark/40 pl-4">
+            «Готова собрать MVP, проверить AI-продукт и довести до рабочего результата.»
           </p>
         </motion.div>
 
@@ -124,10 +128,10 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.12 }}
-          className="relative mx-auto w-full max-w-[320px] lg:max-w-[360px] aspect-[520/772]"
+          className="relative mx-auto w-full max-w-[280px] lg:max-w-[320px] aspect-[520/772]"
         >
           <div
-            className="absolute inset-x-8 bottom-6 h-12 rounded-full bg-accent/35 blur-2xl"
+            className="absolute inset-x-8 bottom-6 h-12 rounded-full bg-spark/25 blur-2xl"
             aria-hidden
           />
           <video
@@ -137,7 +141,10 @@ export function Contact() {
             muted
             playsInline
             className="relative h-full w-full object-contain select-none pointer-events-none"
-            style={{ filter: "drop-shadow(0 18px 28px rgba(59,130,246,0.35))" }}
+            style={{
+              filter:
+                "drop-shadow(0 18px 28px color-mix(in oklab, var(--glow) 35%, transparent))",
+            }}
           />
         </motion.div>
       </div>

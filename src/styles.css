@@ -38,6 +38,8 @@
   --color-glow-secondary: var(--glow-secondary);
   --color-glass: var(--glass);
   --color-glass-border: var(--glass-border);
+  --color-spark: var(--spark);
+  --color-spark-foreground: var(--spark-foreground);
 }
 
 :root {
@@ -72,6 +74,8 @@
   --surface-elevated: oklch(1 0.004 285 / 88%);
   --hero-spotlight: oklch(0.72 0.18 300 / 22%);
   --hero-spotlight-secondary: oklch(0.78 0.12 210 / 16%);
+  --spark: oklch(0.62 0.19 130);
+  --spark-foreground: oklch(0.12 0.03 285);
 }
 
 .dark {
@@ -105,6 +109,8 @@
   --surface-elevated: oklch(0.17 0.035 288 / 80%);
   --hero-spotlight: oklch(0.55 0.28 300 / 35%);
   --hero-spotlight-secondary: oklch(0.65 0.18 210 / 22%);
+  --spark: oklch(0.88 0.21 125);
+  --spark-foreground: oklch(0.12 0.03 285);
 }
 
 @layer base {
@@ -597,4 +603,81 @@ body.custom-cursor-active * {
 
 .dark .section-shell-light {
   background: color-mix(in oklab, var(--card) 70%, transparent);
+}
+
+/* ── SENCE-inspired spark accents ── */
+
+.btn-spark {
+  background: var(--spark);
+  color: var(--spark-foreground);
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--spark) 40%, transparent),
+    0 8px 32px -8px color-mix(in oklab, var(--spark) 55%, transparent);
+}
+
+@media (hover: hover) {
+  .btn-spark:hover {
+    filter: brightness(1.06);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--spark) 60%, transparent),
+      0 12px 40px -6px color-mix(in oklab, var(--spark) 65%, transparent);
+    transform: translateY(-1px);
+  }
+}
+
+.hand-drawn-oval__ring path {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: oval-draw 1.2s ease forwards 0.4s;
+}
+
+@keyframes oval-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.nav-pill {
+  border-radius: 9999px;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.nav-pill.is-active {
+  background: var(--spark);
+  color: var(--spark-foreground);
+  border-color: color-mix(in oklab, var(--spark) 80%, transparent);
+  box-shadow: 0 0 24px -8px color-mix(in oklab, var(--spark) 70%, transparent);
+}
+
+@media (hover: hover) {
+  .nav-pill:not(.is-active):hover {
+    border-color: var(--glass-border);
+    color: var(--foreground);
+  }
+}
+
+.contact-spark-glow {
+  background: radial-gradient(
+    ellipse 70% 50% at 20% 80%,
+    color-mix(in oklab, var(--spark) 14%, transparent),
+    transparent 65%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hand-drawn-oval__ring path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 }
