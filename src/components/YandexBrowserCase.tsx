@@ -19,7 +19,7 @@ export function YandexBrowserCase() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="font-mono text-xs text-accent uppercase tracking-widest">
-                Кейс 03 · Контроль качества продукта
+                Кейс 04 · Контроль качества продукта
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-white/5 border border-white/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
                 <Monitor className="size-3 text-accent" /> Win 11 · Яндекс.Браузер 26.6.3

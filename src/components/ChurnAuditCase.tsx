@@ -20,7 +20,7 @@ export function ChurnAuditCase() {
             variants={fadeUp}
           >
             <span className="font-mono text-xs text-accent uppercase tracking-widest">
-              Кейс 02 · Анализ данных
+              Кейс 03 · Анализ данных
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mt-3 mb-4">
