@@ -43,9 +43,11 @@ export function EvolutionPath() {
           className="mb-16 relative z-10"
         >
           <SectionLabel chapter={2} title="Эволюция системности" className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block" />
-          <SectionHeadline accent="AI-архитектуры" className="max-w-3xl relative z-10">
-            От Legacy-хаоса — до
-          </SectionHeadline>
+          <SectionHeadline
+            before="От Legacy-хаоса — до"
+            accent="AI-архитектуры"
+            className="max-w-3xl relative z-10"
+          />
         </motion.div>
 
         <div className="grid lg:grid-cols-3 border border-white/10">

@@ -46,7 +46,7 @@ export function WhyMe() {
           className="mb-14 max-w-3xl"
         >
           <SectionLabel chapter={1.5} title="Почему именно я" />
-          <SectionHeadline accent="команду">Что я приношу в</SectionHeadline>
+          <SectionHeadline before="Что я приношу в" accent="команду" />
           <p className="text-muted-foreground mt-4 leading-relaxed">
             Три задачи, с которыми ко мне приходят — и как я их закрываю через AI и системное
             мышление.

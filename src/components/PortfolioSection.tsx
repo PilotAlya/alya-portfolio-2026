@@ -11,7 +11,7 @@ export function PortfolioSection() {
         chapter={5}
         label="Портфолио"
         titleAccent="Кейсы"
-        title="с метриками и артефактами"
+        titleAfter="с метриками и артефактами"
         description="Флагман NOVA — выше. Здесь pet-проекты и автоматизации с live-demo; data audit и AI validation — компактно в background."
         meta="2 кейса · demo + background"
       />

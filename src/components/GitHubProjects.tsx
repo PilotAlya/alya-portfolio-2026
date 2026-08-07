@@ -62,9 +62,7 @@ export function GitHubProjects() {
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
             GitHub · Projects
           </span>
-          <SectionHeadline accent="репозитории" className="mb-4">
-            Проекты и
-          </SectionHeadline>
+          <SectionHeadline before="Проекты и" accent="репозитории" className="mb-4" />
           <p className="text-muted-foreground leading-relaxed">
             Код, live-демо и pet-проекты — всё в одном месте.
           </p>

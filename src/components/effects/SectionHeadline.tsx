@@ -1,20 +1,22 @@
-import type { ReactNode } from "react";
-
 import { cn } from "@/lib/utils";
 
 type SectionHeadlineProps = {
-  accent?: string;
-  children: ReactNode;
+  /** Text before accent — sentence starts here (capital letter) */
+  before?: string;
+  /** Highlighted word or phrase */
+  accent: string;
+  /** Text after accent */
+  after?: string;
   className?: string;
 };
 
-/** One loud accent word + calm body — clean section titles */
-export function SectionHeadline({ accent, children, className }: SectionHeadlineProps) {
+/** One chrome accent within a natural reading-order headline */
+export function SectionHeadline({ before, accent, after, className }: SectionHeadlineProps) {
   return (
     <h2 className={cn("section-headline mt-4", className)}>
-      {accent && <span className="section-headline-accent">{accent}</span>}
-      {accent && " "}
-      <span className="text-foreground">{children}</span>
+      {before && <span className="text-foreground">{before} </span>}
+      <span className="section-headline-accent">{accent}</span>
+      {after && <span className="text-foreground"> {after}</span>}
     </h2>
   );
 }
