@@ -3,6 +3,7 @@ import { Target, CircuitBoard, Sparkles } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 
 export function WhyMe() {
   const items = [
@@ -36,7 +37,6 @@ export function WhyMe() {
   ];
   return (
     <section id="why" className="py-24 px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-blueprint opacity-30 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -45,9 +45,11 @@ export function WhyMe() {
           variants={fadeUp}
           className="mb-14 max-w-3xl"
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-75" />
           <SectionLabel chapter={1.5} title="Почему именно я" />
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 flex items-start gap-2">
             Что я приношу в команду
+            <SparkStar className="mt-2 shrink-0" />
           </h2>
           <p className="text-muted-foreground mt-4 leading-relaxed">
             Три задачи, с которыми ко мне приходят — и как я их закрываю через AI и системное

@@ -549,9 +549,35 @@ body.custom-cursor-active * {
   mix-blend-mode: soft-light;
 }
 
+.section-shell {
+  position: relative;
+  border-top: 1px solid color-mix(in oklab, var(--glass-border) 100%, transparent);
+}
+
 .section-shell-alt {
-  background: color-mix(in oklab, var(--card) 70%, transparent);
-  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  background: color-mix(in oklab, var(--card) 42%, transparent);
+  border-top: 1px solid var(--glass-border);
+}
+
+.section-shell-alt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 45% at 50% 0%,
+    color-mix(in oklab, var(--accent) 7%, transparent),
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+.grain-overlay--subtle .grain-frame__duotone {
+  opacity: 0.35;
+}
+
+.grain-overlay--subtle .grain-frame__noise {
+  opacity: 0.22;
 }
 
 /* ── SENCE-inspired spark accents ── */

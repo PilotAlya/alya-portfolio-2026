@@ -1,5 +1,32 @@
 import { cn } from "@/lib/utils";
 
+type GrainOverlayProps = {
+  duotone?: boolean;
+  className?: string;
+  intensity?: "subtle" | "normal";
+};
+
+/** Duotone + noise overlay for videos, GIFs, carousels */
+export function GrainOverlay({
+  duotone = true,
+  className,
+  intensity = "normal",
+}: GrainOverlayProps) {
+  return (
+    <div
+      className={cn(
+        "grain-overlay pointer-events-none absolute inset-0 z-[1]",
+        intensity === "subtle" && "grain-overlay--subtle",
+        className,
+      )}
+      aria-hidden
+    >
+      {duotone && <div className="grain-frame__duotone absolute inset-0" />}
+      <div className="grain-frame__noise absolute inset-0" />
+    </div>
+  );
+}
+
 type GrainFrameProps = {
   src: string;
   alt: string;

@@ -3,7 +3,7 @@ import { GraduationCap, Sparkles } from "lucide-react";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
-import { HandDrawnCircle } from "./effects/HandDrawn";
+import { HandDrawnCircle, ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { GrainFrame } from "./effects/GrainFrame";
 
 import portrait from "@/assets/portrait.jpg";
@@ -41,9 +41,11 @@ export function Profile() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <SectionLabel chapter={9} title="Профиль специалиста" />
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-10">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-10 flex items-start gap-2">
             Профиль специалиста
+            <SparkStar className="mt-2 shrink-0" />
           </h2>
 
           <div className="grid sm:grid-cols-3 gap-6 mb-10">

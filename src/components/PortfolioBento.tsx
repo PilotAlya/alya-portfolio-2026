@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Bot, Kanban, BarChart3, Rocket } from "lucide-react";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
+import churnDashboard from "@/assets/churn-dashboard.png";
 import { FilterPills } from "./effects/FilterPills";
-import { GrainFrame } from "./effects/GrainFrame";
+import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { fadeUp } from "./shared";
 
@@ -44,6 +45,8 @@ const TILES = [
     href: "#case-crm",
     external: false,
     accent: "from-blue-500/15 via-transparent to-transparent",
+    image: novaDashboard,
+    grainCaption: "React MVP",
   },
   {
     id: "case-telegram",
@@ -56,6 +59,7 @@ const TILES = [
     href: "#case-telegram",
     external: false,
     accent: "from-accent/20 via-accent/5 to-transparent",
+    grainOnly: true,
   },
   {
     id: "case-b2b",
@@ -68,6 +72,8 @@ const TILES = [
     href: "https://client-retention-dashboard.vercel.app/",
     external: true,
     accent: "from-emerald-500/10 via-transparent to-transparent",
+    image: churnDashboard,
+    grainCaption: "Data audit",
   },
 ] as const;
 
@@ -126,6 +132,11 @@ export function PortfolioBento() {
                       className="h-full w-full rounded-none"
                       imageClassName="object-top"
                     />
+                  </div>
+                )}
+                {"grainOnly" in tile && tile.grainOnly && (
+                  <div className="pointer-events-none absolute inset-0 opacity-30">
+                    <GrainOverlay />
                   </div>
                 )}
                 <div className="relative z-[1] flex items-start justify-between gap-3">

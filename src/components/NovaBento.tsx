@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
+import novaBorisChat from "@/assets/nova-boris-chat.png";
+import { GrainFrame } from "./effects/GrainFrame";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { fadeUp } from "./shared";
 
@@ -24,6 +26,7 @@ const TILES = [
     external: true,
     accent: "from-accent/25 via-accent/5 to-transparent",
     image: novaDashboard,
+    grainCaption: "Flagship MVP",
     cta: "Открыть demo",
   },
   {
@@ -35,6 +38,7 @@ const TILES = [
     href: "https://alya-nova-2026.vercel.app/",
     external: true,
     accent: "from-blue-500/15 via-transparent to-transparent",
+    image: novaDashboard,
     cta: "Смотреть",
   },
   {
@@ -46,6 +50,8 @@ const TILES = [
     href: "#nova-detail",
     external: false,
     accent: "from-violet-500/15 via-transparent to-transparent",
+    image: novaBorisChat,
+    grainCaption: "RAG · AI",
     cta: "Подробнее",
   },
   {
@@ -101,7 +107,7 @@ export function NovaBento() {
               transition={{ delay: i * 0.07, duration: 0.5 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                `bento-card group flex flex-col justify-between p-6 ${tile.span}`,
+                `bento-card group flex flex-col justify-between p-6 overflow-hidden ${tile.span}`,
               )}
             >
               <div
@@ -109,10 +115,13 @@ export function NovaBento() {
               />
               {"image" in tile && tile.image && (
                 <div className="pointer-events-none absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
-                  <img
+                  <GrainFrame
                     src={tile.image}
                     alt=""
-                    className="w-full h-full object-cover object-top"
+                    duotone
+                    caption={"grainCaption" in tile ? tile.grainCaption : undefined}
+                    className="h-full w-full rounded-none"
+                    imageClassName="object-top"
                   />
                 </div>
               )}

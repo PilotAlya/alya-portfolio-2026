@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "./shared";
 import { SectionLabel } from "./effects/SectionLabel";
-import { HandDrawnArrow } from "./effects/HandDrawn";
+import { HandDrawnArrow, ScribbleBurst } from "./effects/HandDrawn";
 
 import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 
@@ -81,6 +81,7 @@ export function Stack() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <SectionLabel chapter={7} title="Технологический стек" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4">
             Стек технологий и автоматизации

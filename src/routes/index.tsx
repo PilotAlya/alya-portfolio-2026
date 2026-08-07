@@ -17,6 +17,7 @@ import { Guides } from "@/components/Guides";
 import { Profile } from "@/components/Profile";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { SectionShell } from "@/components/effects/SectionShell";
 import { SmoothScroll } from "@/components/effects/SmoothScroll";
 
 export const Route = createFileRoute("/")({
@@ -59,15 +60,33 @@ function Index() {
         <Nav />
         <Hero />
         <HeroStats />
-        <WhyMe />
-        <EvolutionPath />
-        <Nova />
-        <ExperienceSection />
-        <PortfolioSection />
-        <Stack />
-        <GitHubProjects />
-        <Guides />
-        <Profile />
+        <SectionShell variant="alt">
+          <WhyMe />
+        </SectionShell>
+        <SectionShell variant="default">
+          <EvolutionPath />
+        </SectionShell>
+        <SectionShell variant="alt">
+          <Nova />
+        </SectionShell>
+        <SectionShell variant="default">
+          <ExperienceSection />
+        </SectionShell>
+        <SectionShell variant="alt">
+          <PortfolioSection />
+        </SectionShell>
+        <SectionShell variant="default">
+          <Stack />
+        </SectionShell>
+        <SectionShell variant="alt">
+          <GitHubProjects />
+        </SectionShell>
+        <SectionShell variant="default">
+          <Guides />
+        </SectionShell>
+        <SectionShell variant="alt">
+          <Profile />
+        </SectionShell>
         <Contact />
         <Footer />
       </div>

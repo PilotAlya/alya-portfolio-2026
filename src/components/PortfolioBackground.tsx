@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 import dashboardPreview from "@/assets/churn-dashboard.png";
-import { GrainFrame } from "./effects/GrainFrame";
+import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
@@ -66,7 +66,7 @@ export function PortfolioBackground() {
   return (
     <section
       id="portfolio-background"
-      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-white/5 bg-card/20"
+      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -108,14 +108,21 @@ export function PortfolioBackground() {
               />
 
               {item.id === "case-b2b" && (
-                <div className="pointer-events-none absolute inset-0 opacity-[0.12] overflow-hidden rounded-[inherit]">
+                <div className="pointer-events-none absolute inset-0 opacity-[0.14] overflow-hidden rounded-[inherit]">
                   <GrainFrame
                     src={dashboardPreview}
                     alt=""
                     duotone
+                    caption="Executive dashboard"
                     className="h-full w-full rounded-[inherit]"
                     imageClassName="object-top"
                   />
+                </div>
+              )}
+
+              {(item.id === "case-browser" || item.id === "case-alice") && (
+                <div className="pointer-events-none absolute inset-0 opacity-25 rounded-[inherit] overflow-hidden">
+                  <GrainOverlay intensity="subtle" />
                 </div>
               )}
 

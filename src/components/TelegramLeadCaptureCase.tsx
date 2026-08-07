@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Bot, FileText, Download, Sheet, Clock, ShieldCheck } from "lucide-react";
 import { fadeUp } from "./shared";
+import { GrainOverlay } from "./effects/GrainFrame";
 import { MagneticLink } from "./effects/MagneticButton";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
@@ -10,7 +11,7 @@ const BOT_URL = "https://t.me/xgdsdsjsd567bot";
 
 export function TelegramLeadCaptureCase() {
   return (
-    <section id="case-telegram" className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5 bg-card/20">
+    <section id="case-telegram" className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-start">
           <motion.div
@@ -96,9 +97,10 @@ export function TelegramLeadCaptureCase() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             {...spotlightAttrs}
-            className={spotlightClass("rounded-xl border border-white/10 p-6 bg-background/60 space-y-4")}
+            className={spotlightClass("relative overflow-hidden rounded-xl border border-white/10 p-6 bg-background/60 space-y-4")}
           >
-            <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+            <GrainOverlay intensity="subtle" />
+            <div className="relative z-[2] flex items-center gap-3 border-b border-white/10 pb-4">
               <div className="p-2 rounded bg-accent/10 border border-accent/20 text-accent">
                 <Sheet className="size-5" />
               </div>
@@ -110,7 +112,7 @@ export function TelegramLeadCaptureCase() {
               </div>
             </div>
 
-            <div className="space-y-2 text-xs font-mono">
+            <div className="relative z-[2] space-y-2 text-xs font-mono">
               <div className="flex items-center justify-between p-2 rounded bg-white/5">
                 <span className="text-muted-foreground flex items-center gap-1">
                   <Clock className="size-3" /> Polling:
@@ -141,7 +143,7 @@ export function TelegramLeadCaptureCase() {
               href={GUIDE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-wider text-accent border border-accent/30 py-2 rounded hover:bg-accent/10 transition-colors"
+              className="relative z-[2] w-full flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-wider text-accent border border-accent/30 py-2 rounded hover:bg-accent/10 transition-colors"
             >
               <FileText className="size-3.5" />
               Setup + troubleshooting

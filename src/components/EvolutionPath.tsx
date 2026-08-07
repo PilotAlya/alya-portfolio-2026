@@ -3,6 +3,7 @@ import { Ruler, CircuitBoard, Bot } from "lucide-react";
 import { fadeUp, SectionCodeDecor, EVOLUTION_CODE_LINES } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
+import { ScribbleBurst } from "./effects/HandDrawn";
 
 export function EvolutionPath() {
   const stages = [
@@ -30,7 +31,7 @@ export function EvolutionPath() {
   return (
     <section
       id="path"
-      className="relative py-24 px-6 lg:px-8 border-y border-white/5 overflow-hidden"
+      className="relative py-24 px-6 lg:px-8 overflow-hidden"
     >
       <SectionCodeDecor lines={EVOLUTION_CODE_LINES} side="left" speed={70} />
       <div className="max-w-7xl mx-auto">
@@ -41,6 +42,7 @@ export function EvolutionPath() {
           variants={fadeUp}
           className="mb-16 relative z-10"
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <SectionLabel chapter={2} title="Эволюция системности" className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block" />
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-4 max-w-3xl text-white relative z-10">
             От Legacy-хаоса — до AI-архитектуры

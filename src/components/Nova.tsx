@@ -18,7 +18,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
-import { ParallaxImage } from "./effects/ParallaxImage";
+import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
+import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { MagneticLink } from "./effects/MagneticButton";
 import { NovaBento } from "./NovaBento";
 import { useNovaScrollPin } from "@/hooks/useNovaScrollPin";
@@ -61,6 +62,7 @@ function NovaCarousel() {
           className="w-full h-full object-contain"
           speed={8}
         />
+        <GrainOverlay intensity="subtle" />
         {/* tag */}
         <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
           {SLIDES[current].tag}
@@ -114,7 +116,13 @@ function NovaCarousel() {
                 : "ring-white/10 opacity-50 hover:opacity-80"
             }`}
           >
-            <img src={s.src} alt={s.label} className="w-full h-full object-cover" />
+            <GrainFrame
+              src={s.src}
+              alt={s.label}
+              duotone
+              className="h-full w-full rounded-none"
+              imageClassName="object-cover"
+            />
           </button>
         ))}
       </div>
@@ -128,7 +136,7 @@ export function Nova() {
   return (
     <section
       id="nova"
-      className="pt-16 pb-6 px-6 lg:px-8 bg-card/40 border-y border-white/5 relative overflow-hidden"
+      className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
       <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
@@ -144,12 +152,14 @@ export function Nova() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
+          <ScribbleBurst className="mb-3 -ml-1 opacity-75" />
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
             Кейс 04 · Флагманский проект
           </span>
           <div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display flex items-start gap-2">
               NOVA Dashboard
+              <SparkStar className="mt-3 shrink-0 hidden sm:inline" />
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4 prose-portfolio">
@@ -187,6 +197,7 @@ export function Nova() {
                   playsInline
                   className="w-full h-full object-contain"
                 />
+                <GrainOverlay intensity="subtle" />
                 <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur border border-accent/40 px-3 py-1.5 rounded-full">
                   <span className="relative flex size-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
