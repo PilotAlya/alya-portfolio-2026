@@ -11,8 +11,6 @@ import {
 import appCss from "../styles.css?url";
 import { CustomCursor } from "@/components/CustomCursor";
 import { MotionProvider } from "@/components/effects/MotionProvider";
-import { ThemeProvider } from "@/components/effects/ThemeProvider";
-import { THEME_INIT_SCRIPT } from "@/lib/theme-init";
 
 function NotFoundComponent() {
   return (
@@ -127,10 +125,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="ru" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body>
         <noscript>
@@ -150,12 +147,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <MotionProvider>
-          <CustomCursor />
-          <Outlet />
-        </MotionProvider>
-      </ThemeProvider>
+      <MotionProvider>
+        <CustomCursor />
+        <Outlet />
+      </MotionProvider>
     </QueryClientProvider>
   );
 }

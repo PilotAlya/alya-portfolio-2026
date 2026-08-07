@@ -44,44 +44,9 @@
 
 :root {
   --radius: 0.5rem;
-  color-scheme: light;
-
-  /* Light — airy lilac studio */
-  --background: oklch(0.985 0.008 285);
-  --foreground: oklch(0.16 0.025 285);
-  --card: oklch(0.995 0.006 285);
-  --card-foreground: oklch(0.16 0.025 285);
-  --popover: oklch(0.995 0.006 285);
-  --popover-foreground: oklch(0.16 0.025 285);
-  --primary: oklch(0.16 0.025 285);
-  --primary-foreground: oklch(0.985 0.008 285);
-  --secondary: oklch(0.94 0.012 285);
-  --secondary-foreground: oklch(0.16 0.025 285);
-  --muted: oklch(0.94 0.012 285);
-  --muted-foreground: oklch(0.48 0.04 285);
-  --accent: oklch(0.52 0.24 300);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.16 0.025 285 / 10%);
-  --input: oklch(0.16 0.025 285 / 12%);
-  --ring: oklch(0.52 0.24 300);
-
-  --glow: oklch(0.58 0.26 300);
-  --glow-secondary: oklch(0.72 0.14 210);
-  --glass: oklch(1 0.005 285 / 72%);
-  --glass-border: oklch(0.16 0.025 285 / 12%);
-  --surface-elevated: oklch(1 0.004 285 / 88%);
-  --hero-spotlight: oklch(0.72 0.18 300 / 22%);
-  --hero-spotlight-secondary: oklch(0.78 0.12 210 / 16%);
-  --spark: oklch(0.62 0.19 130);
-  --spark-foreground: oklch(0.12 0.03 285);
-}
-
-.dark {
   color-scheme: dark;
 
-  /* Dark — violet void + cyan tech accents */
+  /* Chromatic Atelier — dark only (violet void + cyan + lime spark) */
   --background: oklch(0.11 0.025 285);
   --foreground: oklch(0.97 0.008 285);
   --card: oklch(0.15 0.03 288);
@@ -152,11 +117,7 @@
   }
 
   .prose-portfolio {
-    @apply prose prose-sm max-w-none prose-p:text-muted-foreground prose-p:leading-relaxed prose-headings:font-display prose-headings:tracking-tight prose-a:text-accent prose-strong:text-foreground;
-  }
-
-  .dark .prose-portfolio {
-    @apply prose-invert;
+    @apply prose prose-invert prose-sm max-w-none prose-p:text-muted-foreground prose-p:leading-relaxed prose-headings:font-display prose-headings:tracking-tight prose-a:text-accent prose-strong:text-foreground;
   }
 
   body {
@@ -165,9 +126,6 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    transition:
-      background-color 0.35s ease,
-      color 0.35s ease;
   }
 
   ::selection {
@@ -586,23 +544,14 @@ body.custom-cursor-active * {
   box-shadow: 0 0 20px -8px color-mix(in oklab, var(--glow) 40%, transparent);
 }
 
-.dark .noise-overlay {
+.noise-overlay {
   opacity: 0.035;
   mix-blend-mode: soft-light;
 }
 
-:root:not(.dark) .noise-overlay {
-  opacity: 0.04;
-  mix-blend-mode: multiply;
-}
-
-.section-shell-light {
-  background: color-mix(in oklab, var(--background) 92%, var(--glow) 8%);
-  border-radius: 3rem 3rem 0 0;
-}
-
-.dark .section-shell-light {
+.section-shell-alt {
   background: color-mix(in oklab, var(--card) 70%, transparent);
+  border-radius: 3rem 3rem 0 0;
 }
 
 /* ── SENCE-inspired spark accents ── */

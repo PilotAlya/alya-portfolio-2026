@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 
-import { ThemeToggle } from "@/components/effects/ThemeToggle";
 import {
   Sheet,
   SheetClose,
@@ -46,14 +45,12 @@ export function Nav() {
               {link.label}
             </a>
           ))}
-          <ThemeToggle className="mx-1" />
           <a href="#contact" className={pillClass("#contact")}>
             Контакты →
           </a>
         </div>
 
         <div className="flex md:hidden items-center gap-2">
-          <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button
