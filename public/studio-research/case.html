@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кейс: поиск дизайн-студий с AI · Pilot Ali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #110e18;
+      --ink: #f2f0f7;
+      --muted: #9b94ad;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #b87dff;
+      --spark: #c8f542;
+      --cyan: #6ec8e8;
+      --card: #181322;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+    }
+    .wrap { width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    .eyebrow {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    h1 {
+      margin: 12px 0 16px;
+      font-family: Syne, system-ui, sans-serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+      font-weight: 800;
+      max-width: 16ch;
+    }
+    .lead { margin: 0 0 20px; max-width: 58ch; color: var(--muted); font-size: 1.05rem; line-height: 1.6; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; margin-bottom: 16px; }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .panel p, .panel li { color: var(--muted); line-height: 1.55; }
+    .panel ol { margin: 0; padding-left: 1.2rem; display: grid; gap: 8px; }
+    .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .step {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 110px;
+    }
+    .step strong { display: block; margin-bottom: 6px; color: var(--ink); font-size: 0.92rem; }
+    .step span { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+    .table-wrap { overflow: auto; border-radius: 8px; border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; }
+    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 0.9rem; }
+    th {
+      background: #0c0a12;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    tr:last-child td { border-bottom: 0; }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { color: var(--spark); }
+    .badge {
+      display: inline-block;
+      background: color-mix(in srgb, var(--spark) 18%, transparent);
+      color: var(--spark);
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--spark); color: #110e18; }
+    .btn-secondary { border: 1px solid var(--line); color: var(--ink); background: transparent; }
+    .footer-note { margin-top: 14px; color: var(--muted); font-size: 0.85rem; }
+    @media (max-width: 900px) {
+      .grid, .flow { grid-template-columns: 1fr; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Portfolio case · Python automation · Pilot Ali</p>
+    <h1>Поиск дизайн-студий с AI-фильтрацией</h1>
+    <p class="lead">
+      Локальный Python-скрипт ищет студии по городу, читает тексты их сайтов
+      и с помощью ИИ оставляет только команды — без фрилансеров-одиночек.
+    </p>
+    <div class="meta">
+      <span class="chip">Python</span>
+      <span class="chip">BeautifulSoup</span>
+      <span class="chip">Gemini API</span>
+      <span class="chip">Pandas / Excel</span>
+      <span class="chip">Пермь · Екатеринбург</span>
+    </div>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Как работает</h2>
+        <div class="flow">
+          <div class="step"><strong>1. Поиск</strong><span>Находит сайты студий по запросу и городу</span></div>
+          <div class="step"><strong>2. Парсинг</strong><span>Собирает текст с главной, «О нас» и «Команда»</span></div>
+          <div class="step"><strong>3. AI-анализ</strong><span>Определяет: команда или фрилансер</span></div>
+          <div class="step"><strong>4. Excel</strong><span>Выгружает только релевантные студии</span></div>
+        </div>
+      </article>
+      <article class="panel">
+        <h2>Результат</h2>
+        <ol>
+          <li>Автоматический сбор лидов вместо ручного ресёрча</li>
+          <li>Фильтрация «команда / одиночка» через LLM</li>
+          <li>Готовая таблица с сайтами, основателями и доказательствами</li>
+          <li>Проверено на Перми и Екатеринбурге</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Демо-результат</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Студия</th>
+              <th>Город</th>
+              <th>Сайт</th>
+              <th>Основатель</th>
+              <th>Тип</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Millimetr</td>
+              <td>Пермь</td>
+              <td><a href="https://millimetr.com/" target="_blank" rel="noopener">millimetr.com</a></td>
+              <td>Иван Моисеенко</td>
+              <td><span class="badge">Команда</span></td>
+            </tr>
+            <tr>
+              <td>Студия Ксении Филатовой</td>
+              <td>Пермь</td>
+              <td><a href="https://dizayn-interera-perm.ru/" target="_blank" rel="noopener">dizayn-interera-perm.ru</a></td>
+              <td>Ксения Филатова</td>
+              <td><span class="badge">Команда</span></td>
+            </tr>
+            <tr>
+              <td>Kochenevskikh Bureau</td>
+              <td>Пермь</td>
+              <td><a href="https://kochenevskikh.ru/" target="_blank" rel="noopener">kochenevskikh.ru</a></td>
+              <td>Не найдено</td>
+              <td><span class="badge">Команда</span></td>
+            </tr>
+            <tr>
+              <td>Annte</td>
+              <td>Пермь</td>
+              <td><a href="https://annte.ru/" target="_blank" rel="noopener">annte.ru</a></td>
+              <td>Анатолий Алексеев</td>
+              <td><span class="badge">Команда</span></td>
+            </tr>
+            <tr>
+              <td>Vozhev Design</td>
+              <td>Екатеринбург</td>
+              <td><a href="https://vozhevdesign.ru/" target="_blank" rel="noopener">vozhevdesign.ru</a></td>
+              <td>Иван Вожев</td>
+              <td><span class="badge">Команда</span></td>
+            </tr>
+            <tr>
+              <td>ARCHIZ</td>
+              <td>Екатеринбург</td>
+              <td><a href="https://archi-z.ru/" target="_blank" rel="noopener">archi-z.ru</a></td>
+              <td>Светлана Попова</td>
+              <td><span class="badge">Команда</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="./demo-results.xlsx" download>Скачать Excel</a>
+        <a class="btn btn-secondary" href="./demo-results.csv" download>Скачать CSV</a>
+        <a class="btn btn-secondary" href="/#case-studios">← К портфолио</a>
+      </div>
+      <p class="footer-note">Демо-фрагмент реального запуска скрипта · Пермь и Екатеринбург</p>
+    </section>
+  </main>
+</body>
+</html>

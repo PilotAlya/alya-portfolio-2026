@@ -11,8 +11,8 @@ export function PortfolioSection() {
         label="Портфолио"
         titleAccent="Кейсы"
         titleAfter="с метриками и артефактами"
-        description="Флагман NOVA — выше. Здесь pet-project CRM с live-demo; data audit и AI validation — компактно в background. Telegram → Sheets — в разделе «Гайды»."
-        meta="1 pet-project · demo + background"
+        description="Флагман NOVA — выше. Здесь pet-project CRM и AI-автоматизация (поиск студий → Excel); data audit и AI validation — компактно в background. Telegram → Sheets — в разделе «Гайды»."
+        meta="pet-project + automation · demo + background"
       />
       <PortfolioBento />
       <CrmLeadCardCase />

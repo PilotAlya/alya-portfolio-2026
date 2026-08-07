@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Kanban, BarChart3, Rocket } from "lucide-react";
+import { ArrowUpRight, Kanban, BarChart3, Rocket, Search } from "lucide-react";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import churnDashboard from "@/assets/churn-dashboard.png";
@@ -47,6 +47,19 @@ const TILES = [
     accent: "from-blue-500/15 via-transparent to-transparent",
     image: novaDashboard,
     grainCaption: "React MVP",
+  },
+  {
+    id: "case-studios",
+    title: "Поиск дизайн-студий",
+    subtitle: "Python · Gemini · Excel · AI-фильтр команд",
+    tag: "Automation",
+    categories: ["automation"] as TileCategory[],
+    Icon: Search,
+    span: "",
+    href: "#case-studios",
+    external: false,
+    accent: "from-spark/15 via-transparent to-transparent",
+    grainOnly: true,
   },
   {
     id: "case-b2b",
