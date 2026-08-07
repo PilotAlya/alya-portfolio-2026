@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/site";
+
 export function Footer() {
   return (
     <footer className="footer-hud border-t border-white/5 py-12 px-6 lg:px-8">
@@ -11,7 +13,7 @@ export function Footer() {
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-widest">
             <a
-              href="https://github.com/PilotAlya"
+              href="https://github.com/PilotAlya/alya-portfolio-2026"
               target="_blank"
               rel="noopener noreferrer"
               className="link-spark text-muted-foreground hover:text-foreground transition-colors"
@@ -19,7 +21,7 @@ export function Footer() {
               GitHub
             </a>
             <a
-              href="https://portfolio-resume-alya-akbarova.vercel.app/"
+              href={SITE_URL}
               className="link-spark text-muted-foreground hover:text-foreground transition-colors"
             >
               Live

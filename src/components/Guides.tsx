@@ -37,11 +37,11 @@ export function Guides() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <SectionLabel chapter={8} title="Экспертиза & Community" />
+          <SectionLabel chapter={7} title="Экспертиза & Community" />
           <SectionHeadline before="Технические гайды и" accent="Open Knowledge" />
           <p className="text-muted-foreground leading-relaxed mt-4 mb-4">
-            «Я верю в Open Knowledge. Мои гайды — деконструкция сложных технологий в простые
-            пошаговые алгоритмы для жизни и работы.»
+            Практические инструкции: от automation lead capture до рабочих инструментов.
+            Главный гайд по стеку — Telegram → Sheets; остальное — open knowledge.
           </p>
         </motion.div>
 
@@ -58,10 +58,11 @@ export function Guides() {
               transition={{ delay: i * 0.1 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                "corner-brackets group rounded-lg p-8 border border-white/10 flex flex-col",
+                `corner-brackets group rounded-lg p-8 border flex flex-col ${
+                  i === 0 ? "border-accent/30 bg-accent/[0.03] md:col-span-2 lg:col-span-1" : "border-white/10"
+                }`,
               )}
             >
-              <CornerMarks />
               <CornerMarks />
               <motion.div
                 variants={staggerContainer}
@@ -71,7 +72,7 @@ export function Guides() {
                 className="flex flex-col flex-1"
               >
                 <motion.div variants={staggerItem} className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
-                  Guide {String(i + 1).padStart(2, "0")}
+                  {i === 0 ? "Core guide" : `Guide ${String(i + 1).padStart(2, "0")}`}
                 </motion.div>
                 <motion.h3 variants={staggerItem} className="text-2xl font-bold tracking-tight mb-3">
                   {g.t}

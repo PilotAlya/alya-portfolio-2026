@@ -19,6 +19,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { SectionShell } from "@/components/effects/SectionShell";
 import { SmoothScroll } from "@/components/effects/SmoothScroll";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,7 +37,7 @@ export const Route = createFileRoute("/")({
           "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://portfolio-resume-alya-akbarova.vercel.app/" },
+      { property: "og:url", content: SITE_URL },
     ],
   }),
   component: Index,

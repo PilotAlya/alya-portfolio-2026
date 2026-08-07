@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const SECTION_IDS = ["why", "experience", "portfolio", "nova", "contact"] as const;
+const SECTION_IDS = ["why", "nova", "experience", "portfolio", "github", "contact"] as const;
 
 export type ActiveSection = (typeof SECTION_IDS)[number] | "";
 
@@ -40,8 +40,9 @@ export function useActiveSection(): ActiveSection {
 
 export const NAV_SECTION_MAP: Record<string, ActiveSection> = {
   "#why": "why",
+  "#nova": "nova",
   "#experience": "experience",
   "#portfolio": "portfolio",
-  "#nova": "nova",
+  "#github": "github",
   "#contact": "contact",
 };

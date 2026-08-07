@@ -57,7 +57,7 @@ export function Stack() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <SectionLabel chapter={7} title="Технологический стек" />
+          <SectionLabel chapter={5} title="Технологический стек" />
           <SectionHeadline before="Стек технологий и" accent="автоматизации" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
             AI-native инструменты, фреймворки и практики — всё, что использую при сборке MVP и

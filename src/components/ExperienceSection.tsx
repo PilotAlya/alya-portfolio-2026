@@ -6,7 +6,7 @@ export function ExperienceSection() {
   return (
     <div id="experience" className="scroll-mt-24">
       <SectionIntro
-        chapter={4}
+        chapter={3}
         label="Опыт работы"
         titleAccent="Legacy"
         titleAfter="· процессы и автоматизация"

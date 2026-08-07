@@ -10,7 +10,7 @@ import portrait from "@/assets/portrait.jpg";
 
 export function Profile() {
   return (
-    <section className="py-32 px-6 lg:px-8">
+    <section id="profile" className="py-32 px-6 lg:px-8 scroll-mt-24">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[360px_1fr] gap-16 items-start">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -37,36 +37,11 @@ export function Profile() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <SectionLabel chapter={9} title="Профиль специалиста" />
-          <SectionHeadline accent="Профиль" after="специалиста" className="mb-10" />
-
-          <div className="grid sm:grid-cols-3 gap-6 mb-10">
-            {[
-              {
-                t: "AI-native разработка",
-                d: "Vibe-coding, прототипы, деплой на Vercel — см. NOVA и GitHub-проекты.",
-              },
-              {
-                t: "Системное мышление",
-                d: "Декомпозиция, процессы, REST/API на базовом уровне — фундамент из Нетологии SA.",
-              },
-              {
-                t: "Валидация и доведение до результата",
-                d: "UX-тесты, AI evaluation, аудит данных — подробнее в разделе Портфолио.",
-              },
-            ].map((c) => (
-              <div
-                key={c.t}
-                {...spotlightAttrs}
-                className={spotlightClass("rounded-lg border border-transparent p-4 -m-4", "subtle")}
-              >
-                <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-2">
-                  {c.t}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
-              </div>
-            ))}
-          </div>
+          <SectionLabel chapter={8} title="Профиль специалиста" />
+          <SectionHeadline accent="Профиль" after="специалиста" className="mb-6" />
+          <p className="text-muted-foreground text-sm leading-relaxed mb-10 max-w-xl">
+            Образование и AI-практика. Чем отличаюсь в работе — в блоке «Почему именно я» выше.
+          </p>
 
           <div className="border-t border-white/10 pt-8 grid sm:grid-cols-3 gap-8">
             {[

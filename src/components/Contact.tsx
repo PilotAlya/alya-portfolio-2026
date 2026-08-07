@@ -43,7 +43,7 @@ export function Contact() {
         >
           <div className="flex items-center gap-2 mb-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <SparkStar />
-            <span>Глава 10 · Контакты</span>
+            <span>Глава 09 · Контакты</span>
           </div>
 
           <ScribbleBurst className="mb-4 -ml-1" />

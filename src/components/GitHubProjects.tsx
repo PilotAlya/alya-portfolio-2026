@@ -3,6 +3,8 @@ import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionHeadline } from "./effects/SectionHeadline";
+import { SectionLabel } from "./effects/SectionLabel";
+import { SITE_URL } from "@/lib/site";
 
 type Project = {
   name: string;
@@ -20,7 +22,7 @@ export function GitHubProjects() {
       category: "Portfolio · 2026",
       description: "Код этого лендинга: React, TanStack, Tailwind, Framer Motion · Chromatic Atelier.",
       url: "https://github.com/PilotAlya/alya-portfolio-2026",
-      demo: "https://portfolio-resume-alya-akbarova.vercel.app/",
+      demo: SITE_URL,
       tags: ["React", "TanStack", "Vercel"],
     },
     {
@@ -51,9 +53,7 @@ export function GitHubProjects() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            GitHub · Projects
-          </span>
+          <SectionLabel chapter={6} title="GitHub · Projects" />
           <SectionHeadline before="Проекты и" accent="репозитории" className="mb-4" />
           <p className="text-muted-foreground leading-relaxed">
             Ссылки на код и live-demo. Полные кейсы — в разделах NOVA, Опыт и Портфолио выше.

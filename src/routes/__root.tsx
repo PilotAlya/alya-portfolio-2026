@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { CustomCursor } from "@/components/CustomCursor";
 import { MotionProvider } from "@/components/effects/MotionProvider";
+import { SITE_URL } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -69,7 +70,6 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const SITE_URL = "https://portfolio-resume-alya-akbarova.vercel.app/";
 const OG_IMAGE =
   "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b883ed8c-3734-4f80-a73d-ca7df420a0d2/id-preview-78db88b6--de76c423-48b1-4410-86f2-93fcfa3a2fce.lovable.app-1780603497138.png";
 

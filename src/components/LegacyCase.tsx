@@ -64,6 +64,10 @@ export function LegacyCase() {
               </div>
             </div>
           </div>
+
+          <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/80 border border-white/10 rounded-md px-3 py-2 inline-block">
+            Код · внутренний ритейл-контур · NDA · демо = GIF выше
+          </p>
         </motion.div>
 
         <motion.div
