@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
 import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
-import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
+import { SparkStar } from "./effects/HandDrawn";
 import { MagneticLink } from "./effects/MagneticButton";
 import { ParallaxImage } from "./effects/ParallaxImage";
 import { NovaBento } from "./NovaBento";
@@ -153,7 +153,6 @@ export function Nova() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <ScribbleBurst className="mb-3 -ml-1 opacity-75" />
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
             Кейс 04 · Флагманский проект
           </span>
