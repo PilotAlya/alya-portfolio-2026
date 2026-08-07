@@ -1,14 +1,28 @@
-/* Chromatic Atelier — resume PDF/HTML (matches portfolio) */
+/* Chromatic Atelier — hybrid resume (print-friendly + brand accents) */
 
 :root {
-  --background: #110e18;
-  --foreground: #f2f0f7;
-  --muted: #9b94ad;
-  --accent: #b87dff;
-  --accent-secondary: #6ec8e8;
-  --spark: #c8f542;
-  --card: #181322;
-  --border: rgba(255, 255, 255, 0.09);
+  --page-bg: #fafafa;
+  --text: #1a1625;
+  --text-muted: #5c5470;
+  --border-light: #e4e1ea;
+
+  --panel-bg: #110e18;
+  --panel-bg-soft: #181322;
+  --panel-text: #f2f0f7;
+  --panel-muted: #9b94ad;
+  --panel-border: rgba(255, 255, 255, 0.1);
+
+  --accent: #6d28d9;
+  --accent-bright: #b87dff;
+  --accent-secondary: #0e7490;
+  --spark: #84cc16;
+  --spark-bright: #c8f542;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+  background: var(--page-bg);
 }
 
 * {
@@ -17,13 +31,18 @@
   box-sizing: border-box;
 }
 
+html {
+  background: var(--page-bg);
+}
+
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   line-height: 1.55;
-  color: var(--foreground);
-  background: var(--background);
-  padding: 28px 22px;
+  color: var(--text);
+  background: var(--page-bg);
+  padding: 0 20px 24px;
   max-width: 210mm;
+  min-height: 100%;
   margin: 0 auto;
   font-size: 13px;
   -webkit-print-color-adjust: exact;
@@ -31,96 +50,133 @@ body {
 }
 
 @media print {
+  html,
   body {
-    padding: 18px 16px;
-    max-width: 100%;
+    background: var(--page-bg) !important;
+  }
+
+  body {
+    padding: 0 16px 20px;
   }
 }
 
+/* ── Dark brand header ── */
+
 header {
   position: relative;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 14px;
-  margin-bottom: 20px;
+  margin: 0 -20px 18px;
+  padding: 22px 20px 16px;
+  background: linear-gradient(165deg, var(--panel-bg) 0%, var(--panel-bg-soft) 100%);
+  color: var(--panel-text);
+}
+
+@media print {
+  header {
+    margin: 0 -16px 18px;
+    padding: 20px 16px 14px;
+    break-inside: avoid;
+  }
 }
 
 header::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 140px;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--spark));
+  background: linear-gradient(90deg, var(--accent-bright), var(--spark-bright));
 }
 
 .brand-tag {
   display: inline-block;
   margin-bottom: 10px;
   padding: 3px 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--panel-border);
   border-radius: 999px;
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--panel-muted);
 }
 
-h1 {
+header h1 {
   font-family: "Syne", system-ui, sans-serif;
   font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--foreground);
+  color: var(--panel-text);
   margin-bottom: 4px;
 }
 
-.subtitle {
+header .subtitle {
   font-family: "Syne", system-ui, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-bright);
   margin-bottom: 10px;
 }
 
-.contacts {
+header .contacts {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 14px;
+  gap: 8px 12px;
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
-  color: var(--muted);
+  color: var(--panel-muted);
 }
 
-.contacts a {
-  color: var(--accent-secondary);
+header .contacts a {
+  color: #7dd3fc;
   text-decoration: none;
 }
 
-.contacts a:hover {
-  color: var(--spark);
+header .contacts a:hover {
+  color: var(--spark-bright);
 }
 
-section {
+/* ── Dark intro block ── */
+
+.intro {
+  background: var(--panel-bg-soft);
+  color: #e8e4f0;
+  border: 1px solid var(--panel-border);
+  border-left: 3px solid var(--spark-bright);
+  border-radius: 6px;
+  padding: 14px 16px;
   margin-bottom: 18px;
+}
+
+.intro p {
+  color: #ddd8e8;
+}
+
+.intro strong {
+  color: var(--panel-text);
+}
+
+/* ── Light content sections ── */
+
+section {
+  margin-bottom: 16px;
 }
 
 h2 {
   font-family: "Syne", system-ui, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: var(--foreground);
+  color: var(--text);
   margin-bottom: 8px;
   padding-bottom: 5px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border-light);
 }
 
 h3 {
   font-size: 14px;
   font-weight: 600;
-  color: var(--foreground);
+  color: var(--text);
   margin-bottom: 2px;
 }
 
@@ -137,14 +193,14 @@ h3 {
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-muted);
   font-weight: 500;
   white-space: nowrap;
 }
 
 .links {
   font-size: 11px;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-bottom: 6px;
 }
 
@@ -154,12 +210,12 @@ h3 {
 }
 
 .links a:hover {
-  color: var(--spark);
+  color: var(--accent);
 }
 
 p {
   margin-bottom: 6px;
-  color: color-mix(in srgb, var(--foreground) 88%, var(--muted));
+  color: #2d2838;
   font-size: 13px;
 }
 
@@ -170,13 +226,13 @@ ul {
 
 li {
   margin-bottom: 3px;
-  color: color-mix(in srgb, var(--foreground) 88%, var(--muted));
+  color: #2d2838;
   font-size: 13px;
   line-height: 1.5;
 }
 
 strong {
-  color: var(--foreground);
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -193,7 +249,7 @@ strong {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 6px;
-  color: var(--accent-secondary);
+  color: var(--accent);
 }
 
 .skill-category ul {
@@ -216,16 +272,35 @@ strong {
   top: 2px;
 }
 
-.intro {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--spark);
-  border-radius: 4px;
-  padding: 14px 16px;
-  margin-bottom: 16px;
+/* ── Footer bookend (matches header, closes page) ── */
+
+.resume-footer {
+  margin: 22px -20px 0;
+  padding: 10px 20px;
+  background: var(--panel-bg);
+  color: var(--panel-muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.resume-footer a {
+  color: #7dd3fc;
+  text-decoration: none;
 }
 
 @media print {
+  .resume-footer {
+    margin: 20px -16px 0;
+    padding: 10px 16px;
+    break-inside: avoid;
+  }
+
   .intro,
   section {
     break-inside: avoid;
