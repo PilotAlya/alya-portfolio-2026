@@ -143,6 +143,20 @@ export function Stack() {
           </div>
         </div>
       </div>
+
+      {/* Boris walks on top of section content (z-30) */}
+      <div className="boris-walk-strip pointer-events-none" aria-hidden>
+        <div className="boris-walk-strip__track">
+          <video
+            src={borisWalkStableVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="boris-walk-strip__video select-none block"
+          />
+        </div>
+      </div>
     </section>
   );
 }
