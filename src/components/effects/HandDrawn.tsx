@@ -140,7 +140,7 @@ export function HandDrawnWave({ className }: MarkupProps) {
       viewBox="0 0 800 24"
       fill="none"
       preserveAspectRatio="none"
-      className={cn("w-full h-6 text-foreground/25 dark:text-foreground/35 pointer-events-none", className)}
+      className={cn("w-full h-6 text-foreground/30 pointer-events-none", className)}
     >
       <path
         d="M0 12 C 80 2, 160 22, 240 12 S 400 2, 480 12 S 640 22, 720 12 S 760 8, 800 12"
