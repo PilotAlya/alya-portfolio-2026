@@ -134,7 +134,7 @@ export function Hero() {
             >
               <MagneticLink
                 href="#contact"
-                className="group items-center gap-2 bg-foreground text-background px-5 py-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="btn-shimmer group items-center gap-2 bg-foreground text-background px-5 py-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Связаться{" "}
                 <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -142,13 +142,13 @@ export function Hero() {
               <MagneticLink
                 href="/resume-ai.pdf"
                 download="Albina_Akbarova_AI_Resume.pdf"
-                className="items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="btn-shimmer items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Резюме AI
               </MagneticLink>
               <MagneticLink
                 href="#portfolio"
-                className="items-center gap-2 border border-white/15 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+                className="btn-shimmer items-center gap-2 border border-white/15 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
               >
                 Смотреть кейсы
               </MagneticLink>

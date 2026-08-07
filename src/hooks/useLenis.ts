@@ -1,7 +1,11 @@
 import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 
 import "lenis/dist/lenis.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function useLenis() {
   useEffect(() => {
@@ -17,12 +21,13 @@ export function useLenis() {
 
     document.documentElement.classList.add("lenis", "lenis-smooth");
 
-    let frame = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
-      frame = requestAnimationFrame(raf);
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const ticker = (time: number) => {
+      lenis.raf(time * 1000);
     };
-    frame = requestAnimationFrame(raf);
+    gsap.ticker.add(ticker);
+    gsap.ticker.lagSmoothing(0);
 
     const onAnchorClick = (e: MouseEvent) => {
       const anchor = (e.target as HTMLElement).closest("a[href^='#']");
@@ -37,9 +42,13 @@ export function useLenis() {
 
     document.addEventListener("click", onAnchorClick);
 
+    const onResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", onResize);
+
     return () => {
-      cancelAnimationFrame(frame);
       document.removeEventListener("click", onAnchorClick);
+      window.removeEventListener("resize", onResize);
+      gsap.ticker.remove(ticker);
       document.documentElement.classList.remove("lenis", "lenis-smooth");
       lenis.destroy();
     };

@@ -20,6 +20,8 @@ import {
 import { fadeUp } from "./shared";
 import { ParallaxImage } from "./effects/ParallaxImage";
 import { MagneticLink } from "./effects/MagneticButton";
+import { NovaBento } from "./NovaBento";
+import { useNovaScrollPin } from "@/hooks/useNovaScrollPin";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import novaWiki from "@/assets/nova-wiki.png";
@@ -121,6 +123,8 @@ function NovaCarousel() {
 }
 
 export function Nova() {
+  const { sectionRef, pinRef, scrollRef } = useNovaScrollPin();
+
   return (
     <section
       id="nova"
@@ -128,6 +132,8 @@ export function Nova() {
     >
       <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
       <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
+
+      <NovaBento />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Заголовок */}
@@ -142,72 +148,86 @@ export function Nova() {
             Кейс 04 · Флагманский проект
           </span>
           <div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display">
               NOVA Dashboard
             </h2>
           </div>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Единая точка управления заказами, складом и AI-навигатором «Борис». Первоначально проектировалась как полнофункциональная система, но после первого цикла тестирования была переработана в NOVA Light — упрощённую версию с фокусом на базовый заказной цикл и складской учёт.
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4 prose-portfolio">
+            Единая точка управления заказами, складом и AI-навигатором «Борис». Первоначально
+            проектировалась как полнофункциональная система, но после первого цикла тестирования
+            была переработана в NOVA Light — упрощённую версию с фокусом на базовый заказной цикл
+            и складской учёт.
           </p>
           <p className="text-base text-muted-foreground/90 leading-relaxed border-l-2 border-accent/60 pl-4">
-            <span className="text-foreground font-medium">Два цикла разработки:</span> Первая версия оказалась перегруженной функционалом, выходящим за пределы моих компетенций (бухгалтерия, углубленная логика работы с клиентом) — 3/3 пользователей указали на сложность. На основе обратной связи переработала систему в NOVA Light. Повторные тесты с теми же пользователями: «Стало намного понятнее. Сами бы таким пользовались».
+            <span className="text-foreground font-medium">Два цикла разработки:</span> Первая
+            версия оказалась перегруженной функционалом, выходящим за пределы моих компетенций
+            (бухгалтерия, углубленная логика работы с клиентом) — 3/3 пользователей указали на
+            сложность. На основе обратной связи переработала систему в NOVA Light. Повторные
+            тесты с теми же пользователями: «Стало намного понятнее. Сами бы таким
+            пользовались».
           </p>
         </motion.div>
 
-        {/* Live Demo видео — object-contain чтобы не обрезалось */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative aspect-video overflow-hidden ring-2 ring-accent/40 rounded-lg mb-6 bg-black shadow-[0_0_40px_rgba(59,130,246,0.2)]"
-        >
-          <video
-            src={novaDemoVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-contain"
-          />
-          <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur border border-accent/40 px-3 py-1.5 rounded-full">
-            <span className="relative flex size-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex size-2 rounded-full bg-accent" />
-            </span>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-              Live Demo
-            </span>
-          </div>
-          <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background/95 via-background/60 to-transparent">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-              NOVA Dashboard · MVP
+        {/* Pin layout: video слева (desktop), контент справа скроллится */}
+        <div ref={sectionRef} className="nova-pin-section">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+            <div ref={pinRef} className="nova-pin-panel mb-8 lg:mb-0">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative aspect-video overflow-hidden ring-2 ring-accent/40 rounded-lg bg-black shadow-[0_0_40px_rgba(59,130,246,0.2)]"
+              >
+                <video
+                  src={novaDemoVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-contain"
+                />
+                <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur border border-accent/40 px-3 py-1.5 rounded-full">
+                  <span className="relative flex size-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                    <span className="relative inline-flex size-2 rounded-full bg-accent" />
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                    Live Demo
+                  </span>
+                </div>
+                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background/95 via-background/60 to-transparent">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
+                    NOVA Dashboard · MVP
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Управление складом, заказами и AI-ассистентом «Борис» в одном окне
+                  </div>
+                </div>
+              </motion.div>
             </div>
-            <div className="text-sm text-muted-foreground">
-              Управление складом, заказами и AI-ассистентом «Борис» в одном окне
-            </div>
-          </div>
-        </motion.div>
 
-        {/* Карусель скриншотов */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <NovaCarousel />
-        </motion.div>
+            <div ref={scrollRef} className="nova-scroll-panels space-y-12">
+              {/* Карусель скриншотов */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="nova-scroll-panel"
+              >
+                <NovaCarousel />
+              </motion.div>
 
-        {/* UX Validation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 border border-accent/20 bg-accent/5 rounded-lg p-4 sm:p-6"
-        >
+              {/* UX Validation */}
+              <motion.div
+                id="nova-ux"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="nova-scroll-panel border border-accent/20 bg-accent/5 rounded-lg p-4 sm:p-6"
+              >
           <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 mb-5">
             <div className="flex items-center gap-3 shrink-0">
               <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
@@ -249,13 +269,14 @@ export function Nova() {
         </motion.div>
 
         {/* FAQ */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-12"
-        >
+              <motion.div
+                id="nova-detail"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="nova-scroll-panel"
+              >
           <div className="flex items-center gap-3 mb-5">
             <HelpCircle className="size-4 text-accent" />
             <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
@@ -309,10 +330,10 @@ export function Nova() {
               </AccordionItem>
             ))}
           </Accordion>
-        </motion.div>
+              </motion.div>
 
-        {/* Feature cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+              {/* Feature cards */}
+              <div className="nova-scroll-panel grid md:grid-cols-1 gap-4">
           {[
             {
               t: "Интеллектуальный слой",
@@ -339,20 +360,23 @@ export function Nova() {
               <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
             </div>
           ))}
-        </div>
+              </div>
 
-        {/* Единственная кнопка презентации */}
-        <div className="flex justify-start">
+              {/* Презентация */}
+              <div className="nova-scroll-panel flex justify-start pb-4">
           <MagneticLink
             href="https://alya-nova-2026.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
+            className="btn-shimmer group items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
           >
             <PlayCircle className="size-4" />
             Смотреть презентацию NOVA
             <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </MagneticLink>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
