@@ -710,14 +710,15 @@ body.custom-cursor-active * {
   opacity: 0.22;
 }
 
-/* Boris walk — Stack section (CSS animation, reduced-motion fallback) */
+/* Boris walk — Stack section (CSS animation, walks over section content) */
 .boris-walk-strip {
   position: absolute;
   top: 0;
   inset-inline: 0;
   height: 11rem;
-  z-index: 0;
-  overflow: hidden;
+  z-index: 30;
+  overflow: visible;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
