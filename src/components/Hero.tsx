@@ -23,7 +23,7 @@ function HeroCodeRain() {
         initial={{ y: "-50%" }}
         animate={{ y: 0 }}
         transition={{ duration: 110, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 right-2 lg:right-6 font-mono text-[10px] leading-loose text-muted-foreground/25 whitespace-nowrap text-right hidden md:block"
+        className="absolute top-0 right-2 lg:right-6 font-mono text-[10px] leading-loose text-muted-foreground/20 md:text-muted-foreground/25 whitespace-nowrap text-right opacity-40 md:opacity-100"
       >
         {[...HERO_CODE_LINES, ...HERO_CODE_LINES].map((l, i) => (
           <div key={`r-${i}`}>{l}</div>
@@ -140,7 +140,7 @@ export function Hero() {
             >
               <MagneticLink
                 href="#contact"
-                className="btn-shimmer group items-center gap-2 bg-foreground text-background px-5 py-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="btn-spark group items-center gap-2 px-5 py-3 rounded-md text-sm font-semibold"
               >
                 Связаться{" "}
                 <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -148,13 +148,13 @@ export function Hero() {
               <MagneticLink
                 href="/resume-ai.pdf"
                 download="Albina_Akbarova_AI_Resume.pdf"
-                className="btn-shimmer items-center gap-2 border border-accent/40 bg-accent/10 px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="btn-cta-secondary items-center gap-2 px-5 py-3 rounded-md text-sm font-medium"
               >
                 Резюме AI
               </MagneticLink>
               <MagneticLink
                 href="#portfolio"
-                className="btn-shimmer items-center gap-2 border border-border px-5 py-3 rounded-md text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+                className="btn-cta-ghost items-center gap-2 px-5 py-3 rounded-md text-sm font-medium"
               >
                 Смотреть кейсы
               </MagneticLink>

@@ -74,7 +74,7 @@ export function TelegramLeadCaptureCase() {
                 href={GUIDE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="items-center gap-2 bg-accent text-accent-foreground font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold hover:bg-accent/90 transition-colors"
+                className="btn-spark items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
               >
                 <Download className="size-4" />
                 PDF-гайд
@@ -83,7 +83,7 @@ export function TelegramLeadCaptureCase() {
                 href={BOT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="items-center gap-2 border border-accent/40 bg-accent/10 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold hover:border-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="btn-cta-secondary items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
               >
                 <Bot className="size-4" />
                 Открыть бота

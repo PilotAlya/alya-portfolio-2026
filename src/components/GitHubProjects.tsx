@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
-import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
+import { SectionHeadline } from "./effects/SectionHeadline";
 
 type Project = {
   name: string;
@@ -59,14 +59,12 @@ export function GitHubProjects() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <ScribbleBurst className="mb-3 -ml-1 opacity-70" />
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
             GitHub · Projects
           </span>
-          <h2 className="text-4xl font-bold tracking-tight mt-4 mb-4 flex items-start gap-2">
-            Проекты и репозитории
-            <SparkStar className="mt-1.5 shrink-0" />
-          </h2>
+          <SectionHeadline accent="репозитории" className="mb-4">
+            Проекты и
+          </SectionHeadline>
           <p className="text-muted-foreground leading-relaxed">
             Код, live-демо и pet-проекты — всё в одном месте.
           </p>

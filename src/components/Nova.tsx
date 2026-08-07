@@ -19,7 +19,6 @@ import {
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
 import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
-import { ScribbleBurst, SparkStar } from "./effects/HandDrawn";
 import { MagneticLink } from "./effects/MagneticButton";
 import { ParallaxImage } from "./effects/ParallaxImage";
 import { NovaBento } from "./NovaBento";
@@ -157,9 +156,8 @@ export function Nova() {
             Кейс 04 · Флагманский проект
           </span>
           <div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display flex items-start gap-2">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display">
               NOVA Dashboard
-              <SparkStar className="mt-3 shrink-0 hidden sm:inline" />
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4 prose-portfolio">
@@ -379,7 +377,7 @@ export function Nova() {
             href="https://alya-nova-2026.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-shimmer group items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md text-sm font-semibold hover:bg-accent/90 transition-colors"
+            className="btn-spark group items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold"
           >
             <PlayCircle className="size-4" />
             Смотреть презентацию NOVA
