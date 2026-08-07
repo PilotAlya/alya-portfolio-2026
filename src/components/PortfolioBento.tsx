@@ -1,21 +1,20 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Kanban, BarChart3, Rocket, Search } from "lucide-react";
+import { ArrowUpRight, Kanban, BarChart3, Rocket } from "lucide-react";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import churnDashboard from "@/assets/churn-dashboard.png";
 import { FilterPills } from "./effects/FilterPills";
-import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
+import { GrainFrame } from "./effects/GrainFrame";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { fadeUp } from "./shared";
 
-type TileCategory = "flagship" | "mvp" | "automation" | "data";
+type TileCategory = "flagship" | "mvp" | "data";
 
 const FILTER_OPTIONS = [
   { id: "all", label: "All" },
   { id: "flagship", label: "Flagship" },
   { id: "mvp", label: "MVP" },
-  { id: "automation", label: "Automation" },
   { id: "data", label: "Data" },
 ] as const;
 
@@ -49,28 +48,15 @@ const TILES = [
     grainCaption: "React MVP",
   },
   {
-    id: "case-studios",
-    title: "Поиск дизайн-студий",
-    subtitle: "Python · Gemini · Excel · AI-фильтр команд",
-    tag: "Automation",
-    categories: ["automation"] as TileCategory[],
-    Icon: Search,
-    span: "",
-    href: "#case-studios",
-    external: false,
-    accent: "from-spark/15 via-transparent to-transparent",
-    grainOnly: true,
-  },
-  {
     id: "case-b2b",
     title: "B2B Churn Audit",
-    subtitle: "72.7% → 63.6% · executive dashboard",
-    tag: "Data · background",
+    subtitle: "Data audit · Python · executive dashboard",
+    tag: "Background",
     categories: ["data"] as TileCategory[],
     Icon: BarChart3,
     span: "",
-    href: "https://client-retention-dashboard.vercel.app/",
-    external: true,
+    href: "#case-b2b",
+    external: false,
     accent: "from-emerald-500/10 via-transparent to-transparent",
     image: churnDashboard,
     grainCaption: "Data audit",
@@ -132,11 +118,6 @@ export function PortfolioBento() {
                       className="h-full w-full rounded-none"
                       imageClassName="object-top"
                     />
-                  </div>
-                )}
-                {"grainOnly" in tile && tile.grainOnly && (
-                  <div className="pointer-events-none absolute inset-0 opacity-30">
-                    <GrainOverlay />
                   </div>
                 )}
                 <div className="relative z-[1] flex items-start justify-between gap-3">

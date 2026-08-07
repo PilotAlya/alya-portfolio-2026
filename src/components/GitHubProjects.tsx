@@ -18,7 +18,7 @@ export function GitHubProjects() {
     {
       name: "Nova_light-",
       category: "MVP · AI",
-      description: "Система управления заказами и складом: AI-ассистент «Борис», React, TypeScript.",
+      description: "Репозиторий NOVA Light: React, TypeScript, AI-ассистент «Борис».",
       url: "https://github.com/PilotAlya/Nova_light-",
       demo: "https://nova-light-app.vercel.app/",
       tags: ["React", "TypeScript", "RAG"],
@@ -26,7 +26,7 @@ export function GitHubProjects() {
     {
       name: "landing-page-nova",
       category: "NOVA · Landing",
-      description: "Презентационный лендинг NOVA Dashboard: кейс, скриншоты и live-демо.",
+      description: "Код презентационного лендинга NOVA.",
       url: "https://github.com/PilotAlya/landing-page-nova",
       demo: "https://alya-nova-2026.vercel.app/",
       tags: ["React", "Vite", "Vercel"],
@@ -34,7 +34,7 @@ export function GitHubProjects() {
     {
       name: "Client Retention Dashboard",
       category: "Data Audit",
-      description: "Executive Dashboard: аудит оттока клиентов B2B-сервиса, KPI и визуализация.",
+      description: "Код executive dashboard к B2B-аудиту (кейс в background портфолио).",
       url: "https://github.com/PilotAlya/topfacemedia-client-retention-audit",
       demo: "https://client-retention-dashboard.vercel.app/",
       tags: ["Python", "Chart.js", "Vercel"],
@@ -42,7 +42,7 @@ export function GitHubProjects() {
     {
       name: "alya-portfolio-2026",
       category: "Portfolio",
-      description: "Этот лендинг: vibe-coding на React, TanStack, Tailwind, Framer Motion.",
+      description: "Код этого лендинга: React, TanStack, Tailwind, Framer Motion.",
       url: "https://github.com/PilotAlya/alya-portfolio-2026",
       demo: "https://portfolio-resume-alya-akbarova.vercel.app/",
       tags: ["React", "TanStack", "Vercel"],
@@ -64,7 +64,7 @@ export function GitHubProjects() {
           </span>
           <SectionHeadline before="Проекты и" accent="репозитории" className="mb-4" />
           <p className="text-muted-foreground leading-relaxed">
-            Код, live-демо и pet-проекты — всё в одном месте.
+            Ссылки на код и live-demo. Полные кейсы — в разделах NOVA, Опыт и Портфолио выше.
           </p>
         </motion.div>
 
