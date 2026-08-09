@@ -13,7 +13,7 @@ function HeroCodeRain() {
         initial={{ y: 0 }}
         animate={{ y: "-50%" }}
         transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-2 lg:left-6 font-mono text-[10px] leading-loose text-glow-secondary/35 whitespace-nowrap"
+        className="absolute top-0 left-2 lg:left-6 font-mono text-[10px] leading-loose text-accent/35 whitespace-nowrap"
       >
         {[...HERO_CODE_LINES, ...HERO_CODE_LINES].map((l, i) => (
           <div key={`l-${i}`}>{l}</div>
@@ -94,7 +94,7 @@ export function Hero() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="hero-title font-extrabold tracking-tight font-display max-w-full"
             >
-              ALBINA<br />
+              ALYA<br />
               <span className="text-gradient-chrome">AKBAROVA</span>
             </motion.h1>
 

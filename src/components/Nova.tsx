@@ -18,7 +18,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
-import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
 import { MagneticLink } from "./effects/MagneticButton";
 import { ParallaxImage } from "./effects/ParallaxImage";
 import { NovaBento } from "./NovaBento";
@@ -54,7 +53,7 @@ function NovaCarousel() {
   return (
     <div className="relative">
       {/* Main slide — с подсветкой по краям */}
-      <div className="relative aspect-video overflow-hidden rounded-lg ring-2 ring-accent/40 bg-black shadow-[0_0_32px_rgba(59,130,246,0.2)]">
+      <div className="relative aspect-video overflow-hidden rounded-lg ring-2 ring-accent/40 bg-black shadow-[0_0_32px_color-mix(in_oklab,var(--accent)_35%,transparent)]">
         <ParallaxImage
           key={current}
           src={SLIDES[current].src}
@@ -62,7 +61,6 @@ function NovaCarousel() {
           className="w-full h-full object-contain"
           speed={8}
         />
-        <GrainOverlay intensity="subtle" />
         {/* tag */}
         <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
           {SLIDES[current].tag}
@@ -112,16 +110,15 @@ function NovaCarousel() {
             onClick={() => setCurrent(i)}
             className={`relative aspect-video overflow-hidden rounded ring-1 transition-all ${
               i === current
-                ? "ring-accent shadow-[0_0_8px_rgba(59,130,246,0.4)]"
+                ? "ring-accent shadow-[0_0_8px_color-mix(in_oklab,var(--accent)_45%,transparent)]"
                 : "ring-white/10 opacity-50 hover:opacity-80"
             }`}
           >
-            <GrainFrame
+            <img
               src={s.src}
               alt={s.label}
-              duotone
-              className="h-full w-full rounded-none"
-              imageClassName="object-cover"
+              className="h-full w-full object-cover"
+              loading="lazy"
             />
           </button>
         ))}
@@ -185,7 +182,7 @@ export function Nova() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="relative aspect-video overflow-hidden ring-2 ring-accent/40 rounded-lg bg-black shadow-[0_0_40px_rgba(59,130,246,0.2)]"
+                className="relative aspect-video overflow-hidden ring-2 ring-accent/40 rounded-lg bg-black shadow-[0_0_40px_color-mix(in_oklab,var(--accent)_35%,transparent)]"
               >
                 <video
                   src={novaDemoVideo}
@@ -195,7 +192,6 @@ export function Nova() {
                   playsInline
                   className="w-full h-full object-contain"
                 />
-                <GrainOverlay intensity="subtle" />
                 <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur border border-accent/40 px-3 py-1.5 rounded-full">
                   <span className="relative flex size-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />

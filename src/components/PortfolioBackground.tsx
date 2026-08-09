@@ -30,7 +30,7 @@ const ITEMS = [
     href: DASHBOARD_URL,
     linkLabel: "Dashboard",
     external: true,
-    accent: "from-emerald-500/10 via-transparent to-transparent",
+    accent: "from-spark/15 via-transparent to-transparent",
   },
   {
     id: "case-browser",

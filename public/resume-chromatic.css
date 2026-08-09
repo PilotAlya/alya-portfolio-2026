@@ -14,7 +14,7 @@
 
   --accent: #6d28d9;
   --accent-bright: #b87dff;
-  --accent-secondary: #0e7490;
+  --accent-secondary: #6d28d9;
   --spark: #84cc16;
   --spark-bright: #c8f542;
 }
@@ -129,7 +129,7 @@ header .contacts {
 }
 
 header .contacts a {
-  color: #7dd3fc;
+  color: #c4b5fd;
   text-decoration: none;
 }
 
@@ -290,7 +290,7 @@ strong {
 }
 
 .resume-footer a {
-  color: #7dd3fc;
+  color: #c4b5fd;
   text-decoration: none;
 }
 

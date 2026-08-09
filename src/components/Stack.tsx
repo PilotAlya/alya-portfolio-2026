@@ -103,45 +103,6 @@ export function Stack() {
             ))}
           </div>
         </motion.div>
-
-        {/* marquee */}
-        <div className="relative overflow-hidden border-y border-white/5 py-4">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
-          <div className="flex gap-12 animate-ticker whitespace-nowrap font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            {[...Array(2)].map((_, k) => (
-              <div key={k} className="flex gap-12">
-                {[
-                  "Vibe-coding",
-                  "AI-Native",
-                  "React",
-                  "TypeScript",
-                  "Python",
-                  "Pandas",
-                  "RAG",
-                  "Cursor",
-                  "OpenCode",
-                  "Gemini",
-                  "Prompt QA",
-                  "MVP Shipping",
-                  "Chart.js",
-                  "Vercel",
-                  "Claude",
-                  "Figma",
-                  "NotebookLM",
-                  "TanStack",
-                  "UX Testing",
-                  "AI Trainer",
-                  "Automation",
-                ].map((t) => (
-                  <span key={`${k}-${t}`} className="text-foreground/70">
-                    {t} <span className="text-accent">/</span>
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* Boris walks on top of section content (z-30) */}
