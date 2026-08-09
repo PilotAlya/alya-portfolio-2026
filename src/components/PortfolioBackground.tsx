@@ -44,7 +44,7 @@ const ITEMS = [
     href: BROWSER_PDF,
     linkLabel: "PDF-отчёт",
     external: true,
-    accent: "from-amber-500/10 via-transparent to-transparent",
+    accent: "from-accent/15 via-transparent to-transparent",
   },
   {
     id: "case-alice",
@@ -58,7 +58,7 @@ const ITEMS = [
     href: ALICE_PDF,
     linkLabel: "PDF-отчёт",
     external: true,
-    accent: "from-violet-500/10 via-transparent to-transparent",
+    accent: "from-spark/12 via-transparent to-transparent",
   },
 ] as const;
 
