@@ -40,6 +40,7 @@
 | [cover-letter-datalight.md](./cover-letter-datalight.md) | Data Light · проверка описаний видео |
 | [cover-letter-datalight-video-search.md](./cover-letter-datalight-video-search.md) | Data Light · поиск видеоконтента |
 | [cover-letter-valanatoys-ai-assistant.md](./cover-letter-valanatoys-ai-assistant.md) | Valanatoys · ассистент / стажёр в ИИ |
+| [application-avtonomnye-tekhnologii-labeling.md](./application-avtonomnye-tekhnologii-labeling.md) | Автономные технологии · разметчик (анкета) |
 | [cover-letter-architect.md](./cover-letter-architect.md) | Architect |
 | [cover-letter-changellenge-ds.md](./cover-letter-changellenge-ds.md) | Changellenge · DS |
 | [cover-letter-lenivin-pm-intern.md](./cover-letter-lenivin-pm-intern.md) | Lenivin · PM intern |
