@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { SectionCodeDecor, LEGACY_CODE_LINES } from "./shared";
 import { CountUp } from "./effects/CountUp";
+import { MediaZoom } from "./effects/MediaZoom";
 
 import legacyPriceChecker from "@/assets/legacy-price-checker.gif";
 import legacyMebelChecker from "@/assets/legacy-mebel-checker.gif";
@@ -78,32 +79,42 @@ export function LegacyCase() {
           className="relative space-y-6"
         >
           <figure className="relative">
-            <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg bg-card">
+            <MediaZoom
+              src={legacyPriceChecker}
+              alt="Price Checker — парсер цен маркетплейсов в реальном времени"
+              caption="[01] Price Checker · парсер цен"
+              className="overflow-hidden ring-1 ring-white/10 rounded-lg bg-card"
+            >
               <img
                 src={legacyPriceChecker}
                 alt="Price Checker — парсер цен маркетплейсов в реальном времени"
-                className="legacy-demo-gif w-full h-auto object-contain"
+                className="legacy-demo-gif w-full h-auto object-contain pointer-events-none"
                 loading="lazy"
                 decoding="async"
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
-            </div>
+            </MediaZoom>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               [01] Price Checker · парсер цен
             </figcaption>
           </figure>
 
           <figure className="relative">
-            <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg bg-card">
+            <MediaZoom
+              src={legacyMebelChecker}
+              alt="Data Validator — автоматическая сверка данных заказов"
+              caption="[02] Data Validator · AI-валидация заказов"
+              className="overflow-hidden ring-1 ring-white/10 rounded-lg bg-card"
+            >
               <img
                 src={legacyMebelChecker}
                 alt="Data Validator — автоматическая сверка данных заказов"
-                className="legacy-demo-gif w-full h-auto object-contain"
+                className="legacy-demo-gif w-full h-auto object-contain pointer-events-none"
                 loading="lazy"
                 decoding="async"
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
-            </div>
+            </MediaZoom>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               [02] Data Validator · AI-валидация заказов
             </figcaption>

@@ -9,6 +9,7 @@ import {
   SparkStar,
 } from "@/components/effects/HandDrawn";
 import { MagneticLink } from "@/components/effects/MagneticButton";
+import { MediaZoom } from "@/components/effects/MediaZoom";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 const TELEGRAM_URL = "https://t.me/Albinaa_Akbarova";
@@ -130,24 +131,35 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.12 }}
-          className="relative mx-auto w-full max-w-[280px] lg:max-w-[320px] aspect-[520/772]"
+          className="relative mx-auto w-full max-w-[280px] lg:max-w-[320px]"
         >
           <div
-            className="absolute inset-x-8 bottom-6 h-12 rounded-full bg-spark/25 blur-2xl"
+            className="absolute inset-x-8 bottom-10 h-12 rounded-full bg-spark/25 blur-2xl"
             aria-hidden
           />
-          <video
+          <MediaZoom
             src={borisIdleCleanVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="relative h-full w-full object-contain select-none pointer-events-none"
-            style={{
-              filter:
-                "drop-shadow(0 18px 28px color-mix(in oklab, var(--glow) 35%, transparent))",
-            }}
-          />
+            alt="Борис — маскот NOVA"
+            caption="Маскот NOVA · Борис"
+            kind="video"
+            className="aspect-[520/772]"
+          >
+            <video
+              src={borisIdleCleanVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="relative h-full w-full object-contain select-none pointer-events-none"
+              style={{
+                filter:
+                  "drop-shadow(0 18px 28px color-mix(in oklab, var(--glow) 35%, transparent))",
+              }}
+            />
+          </MediaZoom>
+          <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+            Маскот NOVA · Борис
+          </p>
         </motion.div>
       </div>
     </section>
