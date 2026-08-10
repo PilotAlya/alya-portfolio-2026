@@ -167,7 +167,7 @@ export function Hero() {
                 Резюме AI
               </MagneticLink>
               <MagneticLink
-                href="#portfolio"
+                href="#nova"
                 className="btn-cta-ghost items-center gap-2 px-5 py-3 rounded-md text-sm font-medium"
               >
                 Смотреть кейсы
