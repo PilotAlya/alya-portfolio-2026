@@ -5,6 +5,7 @@ import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 import { GrainFrame } from "./effects/GrainFrame";
+import { MediaZoom } from "./effects/MediaZoom";
 
 import portrait from "@/assets/portrait.jpg";
 
@@ -19,16 +20,21 @@ export function Profile() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait">
+          <MediaZoom
+            src={portrait}
+            alt="Альбина Акбарова — портрет"
+            caption="Альбина Акбарова · Pilot Ali"
+            className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait"
+          >
             <GrainFrame
               src={portrait}
               alt="Альбина Акбарова — портрет"
               duotone
-              className="h-full w-full rounded-sm"
+              className="h-full w-full rounded-sm pointer-events-none"
               imageClassName="object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
             />
             <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none z-[2]" />
-          </div>
+          </MediaZoom>
         </motion.div>
 
         <motion.div

@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
 import { MagneticLink } from "./effects/MagneticButton";
+import { MediaZoom } from "./effects/MediaZoom";
 import { ParallaxImage } from "./effects/ParallaxImage";
 import { NovaBento } from "./NovaBento";
 import { useNovaScrollPin } from "@/hooks/useNovaScrollPin";
@@ -44,6 +45,12 @@ const SLIDES = [
   { src: nova404,           label: "404 · «Я устал… я ухожу»", tag: "404" },
 ];
 
+const NOVA_GALLERY = SLIDES.map((s) => ({
+  src: s.src,
+  alt: s.label,
+  caption: s.label,
+}));
+
 function NovaCarousel() {
   const [current, setCurrent] = useState(0);
 
@@ -54,34 +61,46 @@ function NovaCarousel() {
     <div className="relative">
       {/* Main slide — с подсветкой по краям */}
       <div className="relative aspect-video overflow-hidden rounded-lg ring-2 ring-accent/40 bg-black shadow-[0_0_32px_color-mix(in_oklab,var(--accent)_35%,transparent)]">
-        <ParallaxImage
-          key={current}
+        <MediaZoom
           src={SLIDES[current].src}
           alt={SLIDES[current].label}
-          className="w-full h-full object-contain"
-          speed={8}
-        />
+          caption={SLIDES[current].label}
+          items={NOVA_GALLERY}
+          index={current}
+          className="absolute inset-0"
+          hintClassName="top-3 right-3 bottom-auto"
+        >
+          <ParallaxImage
+            key={current}
+            src={SLIDES[current].src}
+            alt={SLIDES[current].label}
+            className="w-full h-full object-contain pointer-events-none"
+            speed={8}
+          />
+        </MediaZoom>
         {/* tag */}
-        <div className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
+        <div className="pointer-events-none absolute top-3 left-3 z-[4] font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
           {SLIDES[current].tag}
         </div>
         {/* caption */}
-        <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-background/95 to-transparent">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] p-3 bg-gradient-to-t from-background/95 to-transparent">
           <div className="font-mono text-[10px] uppercase tracking-wider text-white/80">
             {SLIDES[current].label}
           </div>
         </div>
         {/* arrows */}
         <button
+          type="button"
           onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
+          className="absolute left-2 top-1/2 z-[5] -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
           aria-label="Предыдущий"
         >
           <ChevronLeft className="size-4" />
         </button>
         <button
+          type="button"
           onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
+          className="absolute right-2 top-1/2 z-[5] -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
           aria-label="Следующий"
         >
           <ChevronRight className="size-4" />

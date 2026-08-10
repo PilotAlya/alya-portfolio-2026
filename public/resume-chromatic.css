@@ -272,35 +272,9 @@ strong {
   top: 2px;
 }
 
-/* ── Footer bookend (matches header, closes page) ── */
-
-.resume-footer {
-  margin: 22px -20px 0;
-  padding: 10px 20px;
-  background: var(--panel-bg);
-  color: var(--panel-muted);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 6px 12px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.resume-footer a {
-  color: #c4b5fd;
-  text-decoration: none;
-}
+/* ── Print helpers ── */
 
 @media print {
-  .resume-footer {
-    margin: 20px -16px 0;
-    padding: 10px 16px;
-    break-inside: avoid;
-  }
-
   .intro,
   section {
     break-inside: avoid;
