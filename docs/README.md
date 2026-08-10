@@ -39,6 +39,7 @@
 | [cover-letter-yandex-crowd-ai-trainer.md](./cover-letter-yandex-crowd-ai-trainer.md) | Яндекс Crowd · AI trainer |
 | [cover-letter-datalight.md](./cover-letter-datalight.md) | Data Light · проверка описаний видео |
 | [cover-letter-datalight-video-search.md](./cover-letter-datalight-video-search.md) | Data Light · поиск видеоконтента |
+| [cover-letter-datalight-ai-response-eval.md](./cover-letter-datalight-ai-response-eval.md) | Data Light · оценка качества ответов нейросети |
 | [cover-letter-valanatoys-ai-assistant.md](./cover-letter-valanatoys-ai-assistant.md) | Valanatoys · ассистент / стажёр в ИИ |
 | [application-avtonomnye-tekhnologii-labeling.md](./application-avtonomnye-tekhnologii-labeling.md) | Автономные технологии · разметчик (анкета) |
 | [cover-letter-teamforce-labeling.md](./cover-letter-teamforce-labeling.md) | Team Force · разметчик данных для нейросетей |
