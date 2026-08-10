@@ -27,6 +27,7 @@
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
 | [cover-letter-luis-ai-engineer.md](./cover-letter-luis-ai-engineer.md) | ЛУИС+ · AI-инженер |
 | [cover-letter-vkusvill-ai-automation.md](./cover-letter-vkusvill-ai-automation.md) | ВкусВилл · AI-автоматизация бизнес-процессов |
+| [cover-letter-datalabeling-markup.md](./cover-letter-datalabeling-markup.md) | DATA LABELING · специалист разметки данных |
 | [cover-letter-serakov-data-labeling.md](./cover-letter-serakov-data-labeling.md) | SERAKOV.AI · разметка данных |
 | [cover-letter-sber-data-labeling.md](./cover-letter-sber-data-labeling.md) | Сбер · разметка данных (Великие Луки) |
 | [cover-letter-yadro-data-annotation.md](./cover-letter-yadro-data-annotation.md) | YADRO · специалист разметки данных |
@@ -36,7 +37,8 @@
 | [cover-letter-a2-ai-crm-junior.md](./cover-letter-a2-ai-crm-junior.md) | A2 · AI CRM junior |
 | [cover-letter-agima-ai-intern.md](./cover-letter-agima-ai-intern.md) | AGIMA · AI intern |
 | [cover-letter-yandex-crowd-ai-trainer.md](./cover-letter-yandex-crowd-ai-trainer.md) | Яндекс Crowd · AI trainer |
-| [cover-letter-datalight.md](./cover-letter-datalight.md) | Datalight |
+| [cover-letter-datalight.md](./cover-letter-datalight.md) | Data Light · проверка описаний видео |
+| [cover-letter-datalight-video-search.md](./cover-letter-datalight-video-search.md) | Data Light · поиск видеоконтента |
 | [cover-letter-architect.md](./cover-letter-architect.md) | Architect |
 | [cover-letter-changellenge-ds.md](./cover-letter-changellenge-ds.md) | Changellenge · DS |
 | [cover-letter-lenivin-pm-intern.md](./cover-letter-lenivin-pm-intern.md) | Lenivin · PM intern |
