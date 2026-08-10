@@ -7,6 +7,19 @@ import { MediaZoom } from "./effects/MediaZoom";
 import legacyPriceChecker from "@/assets/legacy-price-checker.gif";
 import legacyMebelChecker from "@/assets/legacy-mebel-checker.gif";
 
+const LEGACY_GALLERY = [
+  {
+    src: legacyPriceChecker,
+    alt: "Price Checker — парсер цен маркетплейсов в реальном времени",
+    caption: "[01] Price Checker · парсер цен",
+  },
+  {
+    src: legacyMebelChecker,
+    alt: "Data Validator — автоматическая сверка данных заказов",
+    caption: "[02] Data Validator · AI-валидация заказов",
+  },
+] as const;
+
 export function LegacyCase() {
   return (
     <section className="relative py-32 px-6 lg:px-8 overflow-hidden">
@@ -83,6 +96,8 @@ export function LegacyCase() {
               src={legacyPriceChecker}
               alt="Price Checker — парсер цен маркетплейсов в реальном времени"
               caption="[01] Price Checker · парсер цен"
+              items={[...LEGACY_GALLERY]}
+              index={0}
               className="overflow-hidden ring-1 ring-white/10 rounded-lg bg-card"
             >
               <img
@@ -104,6 +119,8 @@ export function LegacyCase() {
               src={legacyMebelChecker}
               alt="Data Validator — автоматическая сверка данных заказов"
               caption="[02] Data Validator · AI-валидация заказов"
+              items={[...LEGACY_GALLERY]}
+              index={1}
               className="overflow-hidden ring-1 ring-white/10 rounded-lg bg-card"
             >
               <img

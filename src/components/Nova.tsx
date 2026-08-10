@@ -45,6 +45,12 @@ const SLIDES = [
   { src: nova404,           label: "404 · «Я устал… я ухожу»", tag: "404" },
 ];
 
+const NOVA_GALLERY = SLIDES.map((s) => ({
+  src: s.src,
+  alt: s.label,
+  caption: s.label,
+}));
+
 function NovaCarousel() {
   const [current, setCurrent] = useState(0);
 
@@ -59,6 +65,8 @@ function NovaCarousel() {
           src={SLIDES[current].src}
           alt={SLIDES[current].label}
           caption={SLIDES[current].label}
+          items={NOVA_GALLERY}
+          index={current}
           className="absolute inset-0"
           hintClassName="top-3 right-3 bottom-auto"
         >
