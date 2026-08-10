@@ -41,7 +41,7 @@
 | [cover-letter-datalight-video-search.md](./cover-letter-datalight-video-search.md) | Data Light · поиск видеоконтента |
 | [cover-letter-valanatoys-ai-assistant.md](./cover-letter-valanatoys-ai-assistant.md) | Valanatoys · ассистент / стажёр в ИИ |
 | [application-avtonomnye-tekhnologii-labeling.md](./application-avtonomnye-tekhnologii-labeling.md) | Автономные технологии · разметчик (анкета) |
-| [cover-letter-teamforce-labeling.md](./cover-letter-teamforce-labeling.md) | Team Force · копирайтер / разметчик |
+| [cover-letter-teamforce-labeling.md](./cover-letter-teamforce-labeling.md) | Team Force · разметчик данных для нейросетей |
 | [cover-letter-krivoshein-assistant.md](./cover-letter-krivoshein-assistant.md) | ИП Кривошеин · помощник руководителя |
 | [cover-letter-moya-skazka-editor.md](./cover-letter-moya-skazka-editor.md) | Моя сказка / SunRoom · автор-редактор |
 | [cover-letter-fix-assessor.md](./cover-letter-fix-assessor.md) | FIX · асессор / поддержка проекта (финтех) |
