@@ -11,7 +11,6 @@ import {
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import novaBorisChat from "@/assets/nova-boris-chat.png";
-import { GrainFrame } from "./effects/GrainFrame";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { fadeUp } from "./shared";
 
@@ -37,32 +36,32 @@ const TILES = [
     span: "",
     href: "https://alya-nova-2026.vercel.app/",
     external: true,
-    accent: "from-blue-500/15 via-transparent to-transparent",
+    accent: "from-accent/20 via-transparent to-transparent",
     image: novaDashboard,
     cta: "Смотреть",
   },
   {
     title: "AI-ассистент «Борис»",
-    subtitle: "RAG-сценарий · wiki · склад · регламенты",
+    subtitle: "Сценарий ассистента · wiki · склад · регламенты",
     tag: "AI Layer",
     Icon: Bot,
     span: "",
     href: "#nova-detail",
     external: false,
-    accent: "from-violet-500/15 via-transparent to-transparent",
+    accent: "from-accent/15 via-transparent to-transparent",
     image: novaBorisChat,
-    grainCaption: "RAG · AI",
+    grainCaption: "AI scenario",
     cta: "Подробнее",
   },
   {
     title: "UX Validation",
-    subtitle: "2 цикла · 12+ дефектов · 3 блокера · 100% улучшение",
+    subtitle: "2 цикла · 12+ дефектов · 3 блокера · 3/3 понятнее",
     tag: "Research",
     Icon: Users,
     span: "",
     href: "#nova-ux",
     external: false,
-    accent: "from-emerald-500/10 via-transparent to-transparent",
+    accent: "from-spark/15 via-transparent to-transparent",
     cta: "Метрики",
   },
   {
@@ -114,15 +113,17 @@ export function NovaBento() {
                 className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${tile.accent} opacity-90`}
               />
               {"image" in tile && tile.image && (
-                <div className="pointer-events-none absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
-                  <GrainFrame
+                <div className="pointer-events-none absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity">
+                  <img
                     src={tile.image}
                     alt=""
-                    duotone
-                    caption={"grainCaption" in tile ? tile.grainCaption : undefined}
-                    className="h-full w-full rounded-none"
-                    imageClassName="object-top"
+                    className="h-full w-full object-cover object-top"
                   />
+                  {"grainCaption" in tile && tile.grainCaption && (
+                    <span className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.18em] text-spark">
+                      {tile.grainCaption}
+                    </span>
+                  )}
                 </div>
               )}
               <div className="relative z-[1] flex items-start justify-between gap-3">

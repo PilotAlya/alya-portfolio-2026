@@ -4,46 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Альбина Акбарова — AI-Native Engineer · Vibe-Coder</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1.5;
-            color: #1a1a1a;
-            background: #ffffff;
-            padding: 30px 20px;
-            max-width: 210mm;
-            margin: 0 auto;
-            font-size: 13px;
-        }
-        @media print { body { padding: 0; max-width: 100%; } }
-        header { border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 20px; }
-        h1 { font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
-        .subtitle { font-size: 16px; color: #2563eb; font-weight: 600; margin-bottom: 10px; }
-        .contacts { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: #4b5563; }
-        .contacts a { color: #2563eb; text-decoration: none; }
-        section { margin-bottom: 18px; }
-        h2 { font-size: 17px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid #e5e7eb; }
-        h3 { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
-        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-        .period { font-size: 12px; color: #6b7280; font-weight: 500; }
-        .links { font-size: 12px; color: #6b7280; margin-bottom: 6px; }
-        .links a { color: #2563eb; text-decoration: none; }
-        p { margin-bottom: 6px; color: #374151; font-size: 13px; }
-        ul { margin-left: 16px; margin-bottom: 8px; }
-        li { margin-bottom: 3px; color: #374151; font-size: 13px; line-height: 1.5; }
-        strong { color: #1a1a1a; font-weight: 600; }
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
-        .skill-category h3 { font-size: 13px; margin-bottom: 4px; color: #2563eb; }
-        .skill-category ul { margin-left: 0; list-style: none; }
-        .skill-category li { padding-left: 14px; position: relative; margin-bottom: 2px; }
-        .skill-category li::before { content: "•"; position: absolute; left: 0; color: #2563eb; font-weight: bold; }
-        .intro { background: #f9fafb; padding: 14px; border-left: 4px solid #2563eb; margin-bottom: 16px; }
-        @media print { .intro, section { break-inside: avoid; } h2 { page-break-after: avoid; } }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/resume-chromatic.css">
 </head>
 <body>
     <header>
+        <div class="brand-tag">Pilot Ali · 2026</div>
         <h1>Альбина Акбарова</h1>
         <div class="subtitle">AI-Native Engineer · Vibe-Coder</div>
         <div class="contacts">
@@ -96,7 +64,7 @@
             <span class="period">2026</span>
         </div>
         <div class="links">
-            Demo: <a href="https://testovoe-crm-lead.vercel.app/">testovoe-crm-lead.vercel.app</a>
+            Demo: <a href="https://alya-crm-lead-card.vercel.app/">alya-crm-lead-card.vercel.app</a>
         </div>
         <p>Веб-приложение для добавления лида в CRM: форма с валидацией, маской телефона, списком карточек и сохранением в localStorage. Деплой на Vercel.</p>
         <ul>
@@ -114,8 +82,7 @@
             <span class="period">2026</span>
         </div>
         <div class="links">
-            PDF: <a href="https://drive.google.com/drive/folders/1EpUihavWoV-Pu3brdqD4yLX9kmiCWWGd?usp=drive_link">Google Drive</a> |
-            Bot: <a href="https://t.me/xgdsdsjsd567bot">@xgdsdsjsd567bot</a>
+            Гайд: <a href="https://portfolio-resume-alya-akbarova.vercel.app/#guides">portfolio → раздел «Гайды»</a>
         </div>
         <ul>
             <li>Telegram Bot + Google Sheets через Apps Script (polling 1 мин), без отдельного сервера</li>
@@ -146,6 +113,23 @@
             <li><strong>Price Checker</strong> — парсер цен маркетплейсов (Python + Gemini). 10–60 мин → секунды</li>
             <li><strong>Data Validator</strong> — автосверка данных. +420× ускорение процесса</li>
             <li>40% рутины автоматизировано в Legacy-софте «Инфо-Предприятие»</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Поиск дизайн-студий — Python + AI-фильтр</h2>
+        <div class="job-header">
+            <h3>Автоматизация ресёрча: студии-команды vs фрилансеры</h3>
+            <span class="period">2026</span>
+        </div>
+        <div class="links">
+            Демо: <a href="https://portfolio-resume-alya-akbarova.vercel.app/#case-studios">portfolio → кейс</a> |
+            Excel: <a href="https://portfolio-resume-alya-akbarova.vercel.app/studio-research/demo-results.xlsx">скачать</a>
+        </div>
+        <ul>
+            <li>Python: поиск по городу → парсинг сайтов → Gemini API (команда / одиночка) → Excel</li>
+            <li>Фильтр агрегаторов, обработка 403/404, ключи в .env</li>
+            <li>Протестировано на Перми и Екатеринбурге — готовая база для outreach</li>
         </ul>
     </section>
 
@@ -219,5 +203,10 @@
             <li>Резюме QA и SA доступны на портфолио — для смешанных вакансий</li>
         </ul>
     </section>
+
+    <footer class="resume-footer">
+        <span>Pilot Ali · AI-Native Engineer · 2026</span>
+        <a href="https://portfolio-resume-alya-akbarova.vercel.app/">portfolio-resume-alya-akbarova.vercel.app</a>
+    </footer>
 </body>
 </html>

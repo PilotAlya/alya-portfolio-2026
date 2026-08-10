@@ -36,7 +36,7 @@ export function WhyMe() {
     },
   ];
   return (
-    <section id="why" className="py-24 px-6 lg:px-8 relative overflow-hidden">
+    <section id="why" className="py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
       <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -45,7 +45,7 @@ export function WhyMe() {
           variants={fadeUp}
           className="mb-14 max-w-3xl"
         >
-          <SectionLabel chapter={1.5} title="Почему именно я" />
+          <SectionLabel chapter={1} title="Почему именно я" />
           <SectionHeadline before="Что я приношу в" accent="команду" />
           <p className="text-muted-foreground mt-4 leading-relaxed">
             Три задачи, с которыми ко мне приходят — и как я их закрываю через AI и системное

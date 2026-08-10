@@ -58,7 +58,9 @@
 - **NOVA Light (live):** https://nova-light-app.vercel.app/
 - **NOVA презентация:** https://alya-nova-2026.vercel.app/
 - **B2B Churn Dashboard:** https://client-retention-dashboard.vercel.app/
-- **CRM Lead Card:** https://testovoe-crm-lead.vercel.app/
+- **CRM Lead Card:** https://alya-crm-lead-card.vercel.app/
+- **Studio research (кейс):** https://portfolio-resume-alya-akbarova.vercel.app/#case-studios
+- **Studio research Excel:** https://portfolio-resume-alya-akbarova.vercel.app/studio-research/demo-results.xlsx
 - **GitHub:** https://github.com/PilotAlya
 - **Резюме AI (PDF):** https://portfolio-resume-alya-akbarova.vercel.app/resume-ai.pdf
 - **Резюме QA (PDF):** https://portfolio-resume-alya-akbarova.vercel.app/resume-qa.pdf

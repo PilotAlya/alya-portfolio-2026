@@ -1,0 +1,312 @@
+/* Chromatic Atelier — hybrid resume (print-friendly + brand accents) */
+
+:root {
+  --page-bg: #fafafa;
+  --text: #1a1625;
+  --text-muted: #5c5470;
+  --border-light: #e4e1ea;
+
+  --panel-bg: #110e18;
+  --panel-bg-soft: #181322;
+  --panel-text: #f2f0f7;
+  --panel-muted: #9b94ad;
+  --panel-border: rgba(255, 255, 255, 0.1);
+
+  --accent: #6d28d9;
+  --accent-bright: #b87dff;
+  --accent-secondary: #6d28d9;
+  --spark: #84cc16;
+  --spark-bright: #c8f542;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+  background: var(--page-bg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--page-bg);
+  padding: 0 20px 24px;
+  max-width: 210mm;
+  min-height: 100%;
+  margin: 0 auto;
+  font-size: 13px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  html,
+  body {
+    background: var(--page-bg) !important;
+  }
+
+  body {
+    padding: 0 16px 20px;
+  }
+}
+
+/* ── Dark brand header ── */
+
+header {
+  position: relative;
+  margin: 0 -20px 18px;
+  padding: 22px 20px 16px;
+  background: linear-gradient(165deg, var(--panel-bg) 0%, var(--panel-bg-soft) 100%);
+  color: var(--panel-text);
+}
+
+@media print {
+  header {
+    margin: 0 -16px 18px;
+    padding: 20px 16px 14px;
+    break-inside: avoid;
+  }
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-bright), var(--spark-bright));
+}
+
+.brand-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 8px;
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--panel-muted);
+}
+
+header h1 {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--panel-text);
+  margin-bottom: 4px;
+}
+
+header .subtitle {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-bright);
+  margin-bottom: 10px;
+}
+
+header .contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--panel-muted);
+}
+
+header .contacts a {
+  color: #c4b5fd;
+  text-decoration: none;
+}
+
+header .contacts a:hover {
+  color: var(--spark-bright);
+}
+
+/* ── Dark intro block ── */
+
+.intro {
+  background: var(--panel-bg-soft);
+  color: #e8e4f0;
+  border: 1px solid var(--panel-border);
+  border-left: 3px solid var(--spark-bright);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.intro p {
+  color: #ddd8e8;
+}
+
+.intro strong {
+  color: var(--panel-text);
+}
+
+/* ── Light content sections ── */
+
+section {
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-family: "Syne", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.period {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.links {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.links a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+p {
+  margin-bottom: 6px;
+  color: #2d2838;
+  font-size: 13px;
+}
+
+ul {
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+
+li {
+  margin-bottom: 3px;
+  color: #2d2838;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.skill-category h3 {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+.skill-category ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+.skill-category li {
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.skill-category li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--spark);
+  font-size: 8px;
+  top: 2px;
+}
+
+/* ── Footer bookend (matches header, closes page) ── */
+
+.resume-footer {
+  margin: 22px -20px 0;
+  padding: 10px 20px;
+  background: var(--panel-bg);
+  color: var(--panel-muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.resume-footer a {
+  color: #c4b5fd;
+  text-decoration: none;
+}
+
+@media print {
+  .resume-footer {
+    margin: 20px -16px 0;
+    padding: 10px 16px;
+    break-inside: avoid;
+  }
+
+  .intro,
+  section {
+    break-inside: avoid;
+  }
+
+  h2 {
+    page-break-after: avoid;
+  }
+}

@@ -14,18 +14,25 @@ const options = {
     top: '0',
     right: '0',
     bottom: '0',
-    left: '0'
+    left: '0',
   },
-  preferCSSPageSize: true
+  preferCSSPageSize: true,
 };
 
 async function generatePDF(inputFile, outputFile) {
   const htmlPath = path.join(__dirname, '../public', inputFile);
+  const cssPath = path.join(__dirname, '../public', 'resume-chromatic.css');
   const outputPath = path.join(__dirname, '../public', outputFile);
 
   console.log(`📄 Generating ${outputFile}...`);
 
-  const htmlContent = fs.readFileSync(htmlPath, 'utf8');
+  let htmlContent = fs.readFileSync(htmlPath, 'utf8');
+  const cssContent = fs.readFileSync(cssPath, 'utf8');
+  htmlContent = htmlContent.replace(
+    '<link rel="stylesheet" href="/resume-chromatic.css">',
+    `<style>${cssContent}</style>`,
+  );
+
   const file = { content: htmlContent };
 
   try {

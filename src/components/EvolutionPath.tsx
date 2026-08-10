@@ -16,13 +16,13 @@ export function EvolutionPath() {
     {
       n: "02",
       title: "Оцифровка процессов",
-      body: "Реинжиниринг бизнес-моделей, оптимизация Legacy-софта (Инфо-Предприятие), создание автоматизированных конвейеров.",
+      body: "Реинжиниринг процессов и автоматизация рутины в ритейле — детали в блоке «Опыт».",
       Icon: CircuitBoard,
     },
     {
       n: "03",
       title: "Интеллектуальный штурман",
-      body: "Экосистема NOVA (FLEX & PROJECT) через vibe-coding. RAG-агенты, AI-пайплайны, автономные инструменты — от идеи до деплоя на Vercel.",
+      body: "NOVA и AI-пайплайны через vibe-coding — от идеи до деплоя. Полный кейс — в разделе NOVA ниже.",
       Icon: Bot,
       featured: true,
     },
@@ -31,7 +31,7 @@ export function EvolutionPath() {
   return (
     <section
       id="path"
-      className="relative py-24 px-6 lg:px-8 overflow-hidden"
+      className="relative py-24 px-6 lg:px-8 overflow-hidden scroll-mt-24"
     >
       <SectionCodeDecor lines={EVOLUTION_CODE_LINES} side="left" speed={70} />
       <div className="max-w-7xl mx-auto">

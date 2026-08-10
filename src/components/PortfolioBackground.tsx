@@ -30,7 +30,7 @@ const ITEMS = [
     href: DASHBOARD_URL,
     linkLabel: "Dashboard",
     external: true,
-    accent: "from-emerald-500/10 via-transparent to-transparent",
+    accent: "from-spark/15 via-transparent to-transparent",
   },
   {
     id: "case-browser",
@@ -44,7 +44,7 @@ const ITEMS = [
     href: BROWSER_PDF,
     linkLabel: "PDF-отчёт",
     external: true,
-    accent: "from-amber-500/10 via-transparent to-transparent",
+    accent: "from-accent/15 via-transparent to-transparent",
   },
   {
     id: "case-alice",
@@ -58,7 +58,7 @@ const ITEMS = [
     href: ALICE_PDF,
     linkLabel: "PDF-отчёт",
     external: true,
-    accent: "from-violet-500/10 via-transparent to-transparent",
+    accent: "from-spark/12 via-transparent to-transparent",
   },
 ] as const;
 
@@ -66,7 +66,7 @@ export function PortfolioBackground() {
   return (
     <section
       id="portfolio-background"
-      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-white/5"
+      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-white/5 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -99,7 +99,7 @@ export function PortfolioBackground() {
               transition={{ delay: i * 0.06, duration: 0.5 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                "bento-card group relative flex flex-col p-5 min-h-[220px]",
+                "bento-card group relative flex flex-col p-5 min-h-[220px] scroll-mt-24",
                 "subtle",
               )}
             >

@@ -3,6 +3,8 @@ import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionHeadline } from "./effects/SectionHeadline";
+import { SectionLabel } from "./effects/SectionLabel";
+import { SITE_URL } from "@/lib/site";
 
 type Project = {
   name: string;
@@ -16,41 +18,33 @@ type Project = {
 export function GitHubProjects() {
   const projects: Project[] = [
     {
-      name: "Nova_light-",
-      category: "MVP · AI",
-      description: "Система управления заказами и складом: AI-ассистент «Борис», React, TypeScript.",
-      url: "https://github.com/PilotAlya/Nova_light-",
-      demo: "https://nova-light-app.vercel.app/",
-      tags: ["React", "TypeScript", "RAG"],
+      name: "alya-portfolio-2026",
+      category: "Portfolio · 2026",
+      description: "Код этого лендинга: React, TanStack, Tailwind, Framer Motion · Chromatic Atelier.",
+      url: "https://github.com/PilotAlya/alya-portfolio-2026",
+      demo: SITE_URL,
+      tags: ["React", "TanStack", "Vercel"],
     },
     {
-      name: "landing-page-nova",
-      category: "NOVA · Landing",
-      description: "Презентационный лендинг NOVA Dashboard: кейс, скриншоты и live-демо.",
-      url: "https://github.com/PilotAlya/landing-page-nova",
-      demo: "https://alya-nova-2026.vercel.app/",
-      tags: ["React", "Vite", "Vercel"],
+      name: "Nova_light-",
+      category: "MVP · AI",
+      description: "Репозиторий NOVA Light: React, TypeScript, сценарий ассистента «Борис».",
+      url: "https://github.com/PilotAlya/Nova_light-",
+      demo: "https://nova-light-app.vercel.app/",
+      tags: ["React", "TypeScript", "MVP"],
     },
     {
       name: "Client Retention Dashboard",
       category: "Data Audit",
-      description: "Executive Dashboard: аудит оттока клиентов B2B-сервиса, KPI и визуализация.",
+      description: "Код executive dashboard к B2B-аудиту (кейс в background портфолио).",
       url: "https://github.com/PilotAlya/topfacemedia-client-retention-audit",
       demo: "https://client-retention-dashboard.vercel.app/",
       tags: ["Python", "Chart.js", "Vercel"],
     },
-    {
-      name: "alya-portfolio-2026",
-      category: "Portfolio",
-      description: "Этот лендинг: vibe-coding на React, TanStack, Tailwind, Framer Motion.",
-      url: "https://github.com/PilotAlya/alya-portfolio-2026",
-      demo: "https://portfolio-resume-alya-akbarova.vercel.app/",
-      tags: ["React", "TanStack", "Vercel"],
-    },
   ];
 
   return (
-    <section id="github" className="py-24 px-6 lg:px-8">
+    <section id="github" className="py-24 px-6 lg:px-8 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -59,16 +53,14 @@ export function GitHubProjects() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            GitHub · Projects
-          </span>
+          <SectionLabel chapter={6} title="GitHub · Projects" />
           <SectionHeadline before="Проекты и" accent="репозитории" className="mb-4" />
           <p className="text-muted-foreground leading-relaxed">
-            Код, live-демо и pet-проекты — всё в одном месте.
+            Ссылки на код и live-demo. Полные кейсы — в разделах NOVA, Опыт и Портфолио выше.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
           {projects.map((project, i) => (
             <motion.article
               key={project.name}

@@ -5,11 +5,11 @@ import { GrainOverlay } from "./effects/GrainFrame";
 import { MagneticLink } from "./effects/MagneticButton";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
-const DEMO_URL = "https://testovoe-crm-lead.vercel.app";
+const DEMO_URL = "https://alya-crm-lead-card.vercel.app";
 
 export function CrmLeadCardCase() {
   return (
-    <section id="case-crm" className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5">
+    <section id="case-crm" className="relative py-24 px-6 lg:px-8 overflow-hidden border-b border-white/5 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-start">
           <motion.div
@@ -20,7 +20,7 @@ export function CrmLeadCardCase() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="font-mono text-xs text-accent uppercase tracking-widest">
-                Кейс 01 · Pet project · CRM
+                Pet project · CRM
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-white/5 border border-white/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
                 <UserPlus className="size-3 text-accent" /> React · Vite

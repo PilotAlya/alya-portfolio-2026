@@ -46,7 +46,7 @@
   --radius: 0.5rem;
   color-scheme: dark;
 
-  /* Chromatic Atelier — dark only (violet void + cyan + lime spark) */
+  /* Chromatic Atelier — dark only (violet + lime spark) */
   --background: oklch(0.11 0.025 285);
   --foreground: oklch(0.97 0.008 285);
   --card: oklch(0.15 0.03 288);
@@ -68,12 +68,12 @@
   --ring: oklch(0.68 0.22 300);
 
   --glow: oklch(0.68 0.24 300);
-  --glow-secondary: oklch(0.78 0.15 210);
+  --glow-secondary: oklch(0.78 0.16 300);
   --glass: oklch(0.15 0.03 288 / 55%);
   --glass-border: oklch(1 0 0 / 10%);
   --surface-elevated: oklch(0.17 0.035 288 / 80%);
   --hero-spotlight: oklch(0.55 0.28 300 / 35%);
-  --hero-spotlight-secondary: oklch(0.65 0.18 210 / 22%);
+  --hero-spotlight-secondary: oklch(0.62 0.2 300 / 22%);
   --spark: oklch(0.88 0.21 125);
   --spark-foreground: oklch(0.12 0.03 285);
 }
@@ -145,6 +145,14 @@
 /* Glow accents */
 .glow-accent {
   box-shadow: 0 0 60px -10px color-mix(in oklab, var(--color-accent) 50%, transparent);
+}
+
+/* Legacy screen recordings — keep GIFs sharp (no parallax scale / grain) */
+.legacy-demo-gif {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto;
 }
 
 @keyframes ticker {
@@ -938,11 +946,11 @@ body.custom-cursor-active * {
   inset: 0;
   background: linear-gradient(
     135deg,
-    color-mix(in oklab, var(--accent) 55%, transparent) 0%,
-    color-mix(in oklab, var(--glow-secondary) 45%, transparent) 100%
+    color-mix(in oklab, var(--accent) 50%, transparent) 0%,
+    color-mix(in oklab, var(--spark) 28%, transparent) 100%
   );
   mix-blend-mode: color;
-  opacity: 0.55;
+  opacity: 0.45;
 }
 
 .grain-frame__noise {

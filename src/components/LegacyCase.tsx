@@ -2,9 +2,6 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { SectionCodeDecor, LEGACY_CODE_LINES } from "./shared";
 import { CountUp } from "./effects/CountUp";
-import { GrainOverlay } from "./effects/GrainFrame";
-import { HandDrawnCircle } from "./effects/HandDrawn";
-import { ParallaxImage } from "./effects/ParallaxImage";
 
 import legacyPriceChecker from "@/assets/legacy-price-checker.gif";
 import legacyMebelChecker from "@/assets/legacy-mebel-checker.gif";
@@ -57,9 +54,8 @@ export function LegacyCase() {
             ))}
           </div>
 
-          <div className="flex items-end relative">
-            <HandDrawnCircle size={140} className="absolute -left-8 -bottom-6 opacity-60 hidden sm:block" />
-            <div className="relative">
+          <div className="flex items-end">
+            <div>
               <div className="text-6xl lg:text-7xl font-extrabold tracking-tight">
                 <CountUp to={420} prefix="+" suffix="×" duration={1600} className="text-accent" />
               </div>
@@ -68,6 +64,10 @@ export function LegacyCase() {
               </div>
             </div>
           </div>
+
+          <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/80 border border-white/10 rounded-md px-3 py-2 inline-block">
+            Код · внутренний ритейл-контур · NDA · демо = GIF выше
+          </p>
         </motion.div>
 
         <motion.div
@@ -78,16 +78,15 @@ export function LegacyCase() {
           className="relative space-y-6"
         >
           <figure className="relative">
-            <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg glow-accent bg-card">
-              <ParallaxImage
+            <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg bg-card">
+              <img
                 src={legacyPriceChecker}
                 alt="Price Checker — парсер цен маркетплейсов в реальном времени"
-                className="w-full h-auto object-contain"
-                containerClassName="rounded-lg"
-                speed={6}
+                className="legacy-demo-gif w-full h-auto object-contain"
+                loading="lazy"
+                decoding="async"
               />
-              <GrainOverlay intensity="subtle" />
-              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none z-[2]" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
             </div>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               [01] Price Checker · парсер цен
@@ -95,16 +94,15 @@ export function LegacyCase() {
           </figure>
 
           <figure className="relative">
-            <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg glow-accent bg-card">
-              <ParallaxImage
+            <div className="relative overflow-hidden ring-1 ring-white/10 rounded-lg bg-card">
+              <img
                 src={legacyMebelChecker}
                 alt="Data Validator — автоматическая сверка данных заказов"
-                className="w-full h-auto object-contain"
-                containerClassName="rounded-lg"
-                speed={6}
+                className="legacy-demo-gif w-full h-auto object-contain"
+                loading="lazy"
+                decoding="async"
               />
-              <GrainOverlay intensity="subtle" />
-              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none z-[2]" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
             </div>
             <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               [02] Data Validator · AI-валидация заказов

@@ -5,9 +5,30 @@ import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
+const GUIDES = [
+  {
+    t: "Telegram → Google Sheets: lead capture",
+    d: "PDF-гайд по связке бота и таблицы: setup Apps Script, polling, антидубли, troubleshooting и сценарий расширения до multi-step анкеты.",
+    href: "https://drive.google.com/drive/folders/1EpUihavWoV-Pu3brdqD4yLX9kmiCWWGd?usp=drive_link",
+    cta: "Открыть PDF-гайд",
+  },
+  {
+    t: "Цифровая свобода и личный VPN",
+    d: "Технический мануал по цифровой свободе в условиях блокировок. Пошаговый алгоритм настройки личного VPN.",
+    href: "https://gamma.app/docs/-pn6c00ti46m0r4l",
+    cta: "Читать гайд",
+  },
+  {
+    t: "Google AI Search: поиск будущего",
+    d: "Мануал по новому поколению поиска для пользователей любого уровня.",
+    href: "https://gamma.app/docs/AI--ti6euqermukmwh3",
+    cta: "Читать гайд",
+  },
+] as const;
+
 export function Guides() {
   return (
-    <section className="py-24 px-6 lg:px-8">
+    <section id="guides" className="py-24 px-6 lg:px-8 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -16,27 +37,16 @@ export function Guides() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <SectionLabel chapter={8} title="Экспертиза & Community" />
+          <SectionLabel chapter={7} title="Экспертиза & Community" />
           <SectionHeadline before="Технические гайды и" accent="Open Knowledge" />
           <p className="text-muted-foreground leading-relaxed mt-4 mb-4">
-            «Я верю в Open Knowledge. Мои гайды — деконструкция сложных технологий в простые
-            пошаговые алгоритмы для жизни и работы.»
+            Практические инструкции: от automation lead capture до рабочих инструментов.
+            Главный гайд по стеку — Telegram → Sheets; остальное — open knowledge.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            {
-              t: "Цифровая свобода и личный VPN",
-              d: "Технический мануал по цифровой свободе в условиях блокировок. Пошаговый алгоритм настройки личного VPN.",
-              href: "https://gamma.app/docs/-pn6c00ti46m0r4l",
-            },
-            {
-              t: "Google AI Search: поиск будущего",
-              d: "Мануал по новому поколению поиска для пользователей любого уровня.",
-              href: "https://gamma.app/docs/AI--ti6euqermukmwh3",
-            },
-          ].map((g, i) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {GUIDES.map((g, i) => (
             <motion.a
               key={g.t}
               href={g.href}
@@ -48,10 +58,11 @@ export function Guides() {
               transition={{ delay: i * 0.1 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                "corner-brackets group rounded-lg p-8 border border-white/10 flex flex-col",
+                `corner-brackets group rounded-lg p-8 border flex flex-col ${
+                  i === 0 ? "border-accent/30 bg-accent/[0.03] md:col-span-2 lg:col-span-1" : "border-white/10"
+                }`,
               )}
             >
-              <CornerMarks />
               <CornerMarks />
               <motion.div
                 variants={staggerContainer}
@@ -61,7 +72,7 @@ export function Guides() {
                 className="flex flex-col flex-1"
               >
                 <motion.div variants={staggerItem} className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
-                  Guide {String(i + 1).padStart(2, "0")}
+                  {i === 0 ? "Core guide" : `Guide ${String(i + 1).padStart(2, "0")}`}
                 </motion.div>
                 <motion.h3 variants={staggerItem} className="text-2xl font-bold tracking-tight mb-3">
                   {g.t}
@@ -70,7 +81,7 @@ export function Guides() {
                   {g.d}
                 </motion.p>
                 <motion.span variants={staggerItem} className="mt-auto inline-flex items-center gap-2 text-sm text-foreground group-hover:text-accent transition-colors">
-                  Читать гайд{" "}
+                  {g.cta}{" "}
                   <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </motion.span>
               </motion.div>

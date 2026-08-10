@@ -29,8 +29,8 @@
    Live: https://nova-light-app.vercel.app/ · Презентация: https://alya-nova-2026.vercel.app/
 
 2. Pet-проекты и автоматизация
-   CRM Lead Card (React + localStorage), Telegram → Google Sheets lead capture + PDF-гайд.
-   Всё на vibe-coding, деплой на Vercel.
+   CRM Lead Card (React + localStorage). Поиск дизайн-студий: Python + Gemini → Excel (команды vs фрилансеры). Telegram → Sheets — PDF-гайд в разделе «Гайды».
+   Всё на vibe-coding / AI-assisted, деплой и артефакты на портфолио.
 
 3. Data & validation (бэкграунд)
    B2B Churn Audit: пересчитала отток 72.7% → 63.6% (Python), executive dashboard для руководства.

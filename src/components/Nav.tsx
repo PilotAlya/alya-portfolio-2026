@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { href: "#nova", label: "NOVA" },
   { href: "#experience", label: "Опыт" },
   { href: "#portfolio", label: "Портфолио" },
+  { href: "#github", label: "GitHub" },
 ];
 
 export function Nav() {

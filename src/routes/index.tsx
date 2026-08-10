@@ -19,6 +19,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { SectionShell } from "@/components/effects/SectionShell";
 import { SmoothScroll } from "@/components/effects/SmoothScroll";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Портфолио Али Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
+          "Портфолио Альбины Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
       },
       { property: "og:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
       {
@@ -36,7 +37,7 @@ export const Route = createFileRoute("/")({
           "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://portfolio-resume-alya-akbarova.vercel.app/" },
+      { property: "og:url", content: SITE_URL },
     ],
   }),
   component: Index,
@@ -44,12 +45,19 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (window.location.hash) {
-        history.replaceState(null, "", window.location.pathname + window.location.search);
-      }
-      window.scrollTo(0, 0);
-    }
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash;
+    if (!hash || hash === "#") return;
+
+    const scrollToHash = () => {
+      const el = document.querySelector(hash);
+      if (!(el instanceof HTMLElement)) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    // Wait for layout / fonts so scroll-mt and Lenis settle
+    const t = window.setTimeout(scrollToHash, 120);
+    return () => window.clearTimeout(t);
   }, []);
 
   return (
