@@ -26,6 +26,7 @@
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
 | [cover-letter-luis-ai-engineer.md](./cover-letter-luis-ai-engineer.md) | ЛУИС+ · AI-инженер |
+| [cover-letter-vkusvill-ai-automation.md](./cover-letter-vkusvill-ai-automation.md) | ВкусВилл · AI-автоматизация бизнес-процессов |
 | [cover-letter-marketplace-ai-dev.md](./cover-letter-marketplace-ai-dev.md) | Marketplace · AI dev |
 | [cover-letter-mirgorod-ai-assistant.md](./cover-letter-mirgorod-ai-assistant.md) | Mirgorod · AI assistant |
 | [cover-letter-botamin-voice-ai.md](./cover-letter-botamin-voice-ai.md) | Botamin · voice AI |
