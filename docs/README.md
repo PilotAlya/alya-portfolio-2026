@@ -42,6 +42,7 @@
 | [cover-letter-valanatoys-ai-assistant.md](./cover-letter-valanatoys-ai-assistant.md) | Valanatoys · ассистент / стажёр в ИИ |
 | [application-avtonomnye-tekhnologii-labeling.md](./application-avtonomnye-tekhnologii-labeling.md) | Автономные технологии · разметчик (анкета) |
 | [cover-letter-teamforce-labeling.md](./cover-letter-teamforce-labeling.md) | Team Force · копирайтер / разметчик |
+| [cover-letter-krivoshein-assistant.md](./cover-letter-krivoshein-assistant.md) | ИП Кривошеин · помощник руководителя |
 | [cover-letter-architect.md](./cover-letter-architect.md) | Architect |
 | [cover-letter-changellenge-ds.md](./cover-letter-changellenge-ds.md) | Changellenge · DS |
 | [cover-letter-lenivin-pm-intern.md](./cover-letter-lenivin-pm-intern.md) | Lenivin · PM intern |
