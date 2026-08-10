@@ -11,7 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { CustomCursor } from "@/components/CustomCursor";
 import { MotionProvider } from "@/components/effects/MotionProvider";
-import { SITE_URL } from "@/lib/site";
+import { SITE_ORIGIN, SITE_URL } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -70,8 +70,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const OG_IMAGE =
-  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b883ed8c-3734-4f80-a73d-ca7df420a0d2/id-preview-78db88b6--de76c423-48b1-4410-86f2-93fcfa3a2fce.lovable.app-1780603497138.png";
+/** Absolute OG image — versioned filename helps bust Telegram/hh caches after redesign. */
+const OG_IMAGE = `${SITE_ORIGIN}/og-image-2026.png`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -96,6 +96,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
       },
       { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "ALYA AKBAROVA — AI-Native Engineer · Vibe-Coder · Pilot Ali",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
       {
