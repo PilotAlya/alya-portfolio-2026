@@ -24,6 +24,7 @@
 | [cover-letter-axevil-vibecoder.md](./cover-letter-axevil-vibecoder.md) | Axevil Capital · vibe-coder + дизайн |
 | [cover-letter-bitrix24-ai-creator.md](./cover-letter-bitrix24-ai-creator.md) | Битрикс24 · AI-креатор / вайбкодер |
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
+| [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
 | [cover-letter-marketplace-ai-dev.md](./cover-letter-marketplace-ai-dev.md) | Marketplace · AI dev |
 | [cover-letter-mirgorod-ai-assistant.md](./cover-letter-mirgorod-ai-assistant.md) | Mirgorod · AI assistant |
 | [cover-letter-botamin-voice-ai.md](./cover-letter-botamin-voice-ai.md) | Botamin · voice AI |
