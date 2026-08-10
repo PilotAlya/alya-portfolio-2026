@@ -45,6 +45,7 @@
 | [cover-letter-krivoshein-assistant.md](./cover-letter-krivoshein-assistant.md) | ИП Кривошеин · помощник руководителя |
 | [cover-letter-moya-skazka-editor.md](./cover-letter-moya-skazka-editor.md) | Моя сказка / SunRoom · автор-редактор |
 | [cover-letter-fix-assessor.md](./cover-letter-fix-assessor.md) | FIX · асессор / поддержка проекта (финтех) |
+| [cover-letter-clickavia-support.md](./cover-letter-clickavia-support.md) | Clickavia · customer support (ночная смена) |
 | [cover-letter-architect.md](./cover-letter-architect.md) | Architect |
 | [cover-letter-changellenge-ds.md](./cover-letter-changellenge-ds.md) | Changellenge · DS |
 | [cover-letter-lenivin-pm-intern.md](./cover-letter-lenivin-pm-intern.md) | Lenivin · PM intern |
