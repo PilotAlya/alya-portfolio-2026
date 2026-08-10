@@ -28,6 +28,7 @@
 | [cover-letter-luis-ai-engineer.md](./cover-letter-luis-ai-engineer.md) | ЛУИС+ · AI-инженер |
 | [cover-letter-vkusvill-ai-automation.md](./cover-letter-vkusvill-ai-automation.md) | ВкусВилл · AI-автоматизация бизнес-процессов |
 | [cover-letter-serakov-data-labeling.md](./cover-letter-serakov-data-labeling.md) | SERAKOV.AI · разметка данных |
+| [cover-letter-sber-data-labeling.md](./cover-letter-sber-data-labeling.md) | Сбер · разметка данных (Великие Луки) |
 | [cover-letter-marketplace-ai-dev.md](./cover-letter-marketplace-ai-dev.md) | Marketplace · AI dev |
 | [cover-letter-mirgorod-ai-assistant.md](./cover-letter-mirgorod-ai-assistant.md) | Mirgorod · AI assistant |
 | [cover-letter-botamin-voice-ai.md](./cover-letter-botamin-voice-ai.md) | Botamin · voice AI |
