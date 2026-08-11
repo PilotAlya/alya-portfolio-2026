@@ -68,6 +68,7 @@
 | [cover-letter-hr-belki-ai-assistant.md](./cover-letter-hr-belki-ai-assistant.md) | HR BELKI · бизнес-ассистент собственника (AI) |
 | [cover-letter-hrp-sms-support.md](./cover-letter-hrp-sms-support.md) | HRP · техподдержка / SMS-модерация |
 | [cover-letter-aviasales-support.md](./cover-letter-aviasales-support.md) | Aviasales · специалист технической поддержки |
+| [cover-letter-tetrika-applications-manager.md](./cover-letter-tetrika-applications-manager.md) | Тетрика · менеджер по обработке заявок |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
 | [cover-letter-sapiens-de-intern.md](./cover-letter-sapiens-de-intern.md) | Sapiens · Data engineer стажёр (Москва/офис) |
 | [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
