@@ -23,6 +23,7 @@
 |------|-----------------|
 | [cover-letter-axevil-vibecoder.md](./cover-letter-axevil-vibecoder.md) | Axevil Capital · vibe-coder + дизайн |
 | [cover-letter-kitegroup-vibecoder.md](./cover-letter-kitegroup-vibecoder.md) | KiteGroup · вайбкодер / vibe coder |
+| [cover-letter-reliz-vibecoding.md](./cover-letter-reliz-vibecoding.md) | Reliz · вайбкодинг и нейросети |
 | [cover-letter-bitrix24-ai-creator.md](./cover-letter-bitrix24-ai-creator.md) | Битрикс24 · AI-креатор / вайбкодер |
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
