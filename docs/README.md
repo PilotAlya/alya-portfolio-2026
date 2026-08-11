@@ -65,6 +65,7 @@
 | [cover-letter-shahtech-bots.md](./cover-letter-shahtech-bots.md) | ShahTech · младший разработчик голосовых и чат-ботов |
 | [cover-letter-favorit-ai-growth-assistant.md](./cover-letter-favorit-ai-growth-assistant.md) | ЮЦ Фаворит · ассистент основателя (AI/Growth) |
 | [cover-letter-flowwow-tech-support.md](./cover-letter-flowwow-tech-support.md) | Flowwow · специалист технической поддержки |
+| [cover-letter-hr-belki-ai-assistant.md](./cover-letter-hr-belki-ai-assistant.md) | HR BELKI · бизнес-ассистент собственника (AI) |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
 | [cover-letter-sapiens-de-intern.md](./cover-letter-sapiens-de-intern.md) | Sapiens · Data engineer стажёр (Москва/офис) |
 | [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
