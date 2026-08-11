@@ -59,6 +59,7 @@
 | [cover-letter-clickavia-support.md](./cover-letter-clickavia-support.md) | Clickavia · customer support (ночная смена) |
 | [cover-letter-architect.md](./cover-letter-architect.md) | Architect |
 | [cover-letter-changellenge-ds.md](./cover-letter-changellenge-ds.md) | Changellenge · DS |
+| [cover-letter-changellenge-eb-researcher.md](./cover-letter-changellenge-eb-researcher.md) | Changellenge · EB Researcher / аналитик-исследователь |
 | [cover-letter-lenivin-pm-intern.md](./cover-letter-lenivin-pm-intern.md) | Lenivin · PM intern |
 | [cover-letter-proryv-pm-marketing.md](./cover-letter-proryv-pm-marketing.md) | Proryv · PM marketing |
 | [cover-letter-pazdnikova-sa.md](./cover-letter-pazdnikova-sa.md) | SA (Паздникова) |
