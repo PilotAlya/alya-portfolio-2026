@@ -65,6 +65,7 @@
 | [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
 | [cover-letter-magomedova-data-monitoring.md](./cover-letter-magomedova-data-monitoring.md) | Магомедова · мониторинг данных |
 | [cover-letter-photobook-layout.md](./cover-letter-photobook-layout.md) | Фотокниги · вёрстка по шаблонам |
+| [cover-letter-vornakova-copywriter.md](./cover-letter-vornakova-copywriter.md) | Ворнакова · копирайтер (junior) |
 | [cover-letter-lenivin-pm-intern.md](./cover-letter-lenivin-pm-intern.md) | Lenivin · PM intern |
 | [cover-letter-proryv-pm-marketing.md](./cover-letter-proryv-pm-marketing.md) | Proryv · PM marketing |
 | [cover-letter-pazdnikova-sa.md](./cover-letter-pazdnikova-sa.md) | SA (Паздникова) |
