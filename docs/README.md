@@ -61,6 +61,7 @@
 | [cover-letter-changellenge-ds.md](./cover-letter-changellenge-ds.md) | Changellenge · DS |
 | [cover-letter-changellenge-eb-researcher.md](./cover-letter-changellenge-eb-researcher.md) | Changellenge · EB Researcher / аналитик-исследователь |
 | [cover-letter-changellenge-ai-bizdev-intern.md](./cover-letter-changellenge-ai-bizdev-intern.md) | Changellenge · практикант AI & BizDev |
+| [cover-letter-kiberone-supervisor.md](./cover-letter-kiberone-supervisor.md) | KIBERone · супервайзер школы программирования |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
 | [cover-letter-sapiens-de-intern.md](./cover-letter-sapiens-de-intern.md) | Sapiens · Data engineer стажёр (Москва/офис) |
 | [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
