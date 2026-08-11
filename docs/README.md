@@ -62,6 +62,7 @@
 | [cover-letter-changellenge-eb-researcher.md](./cover-letter-changellenge-eb-researcher.md) | Changellenge · EB Researcher / аналитик-исследователь |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
 | [cover-letter-sapiens-de-intern.md](./cover-letter-sapiens-de-intern.md) | Sapiens · Data engineer стажёр (Москва/офис) |
+| [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
 | [cover-letter-lenivin-pm-intern.md](./cover-letter-lenivin-pm-intern.md) | Lenivin · PM intern |
 | [cover-letter-proryv-pm-marketing.md](./cover-letter-proryv-pm-marketing.md) | Proryv · PM marketing |
 | [cover-letter-pazdnikova-sa.md](./cover-letter-pazdnikova-sa.md) | SA (Паздникова) |
