@@ -27,6 +27,7 @@
 | [cover-letter-skillbox-platform-admin.md](./cover-letter-skillbox-platform-admin.md) | Skillbox · администрирование образовательной платформы |
 | [cover-letter-tbank-kb-editor.md](./cover-letter-tbank-kb-editor.md) | Т-Банк · редактор клиентской базы знаний |
 | [cover-letter-crafttalk-chatbots.md](./cover-letter-crafttalk-chatbots.md) | CraftTalk · специалист по чат-ботам |
+| [cover-letter-sotnikov-online-school-copywriter.md](./cover-letter-sotnikov-online-school-copywriter.md) | ИП Сотников · копирайтер онлайн-школы (stretch) |
 | [cover-letter-bitrix24-ai-creator.md](./cover-letter-bitrix24-ai-creator.md) | Битрикс24 · AI-креатор / вайбкодер |
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
