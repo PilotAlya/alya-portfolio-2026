@@ -77,6 +77,7 @@
 | [cover-letter-fedotova-ai-tech-assistant.md](./cover-letter-fedotova-ai-tech-assistant.md) | ИП Федотова · тех. ассистент AI / автоматизация |
 | [cover-letter-daitov-ai-architect-assistant.md](./cover-letter-daitov-ai-architect-assistant.md) | ИП Даитов · помощник AI-архитектора (СДЭК ПВЗ) |
 | [cover-letter-itfrut-ai-editor.md](./cover-letter-itfrut-ai-editor.md) | IT frut · AI-редактор / копирайтер (stretch) |
+| [cover-letter-yutim-ai-trainer.md](./cover-letter-yutim-ai-trainer.md) | ЮТИМ · AI-тренер для обучения нейросетей |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
 | [cover-letter-sapiens-de-intern.md](./cover-letter-sapiens-de-intern.md) | Sapiens · Data engineer стажёр (Москва/офис) |
 | [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
