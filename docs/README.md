@@ -74,6 +74,7 @@
 | [cover-letter-staffee-founder-assistant.md](./cover-letter-staffee-founder-assistant.md) | STAFFEE · правая рука предпринимателя (AI) |
 | [cover-letter-anecole-vibecoder.md](./cover-letter-anecole-vibecoder.md) | Anecole · вайбкодер / AI-разработчик |
 | [questionnaire-work-experience-ai.md](./questionnaire-work-experience-ai.md) | Анкета · опыт работы + ИИ (готовые ответы) |
+| [cover-letter-fedotova-ai-tech-assistant.md](./cover-letter-fedotova-ai-tech-assistant.md) | ИП Федотова · тех. ассистент AI / автоматизация |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
 | [cover-letter-sapiens-de-intern.md](./cover-letter-sapiens-de-intern.md) | Sapiens · Data engineer стажёр (Москва/офис) |
 | [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
