@@ -78,6 +78,7 @@
 | [cover-letter-daitov-ai-architect-assistant.md](./cover-letter-daitov-ai-architect-assistant.md) | ИП Даитов · помощник AI-архитектора (СДЭК ПВЗ) |
 | [cover-letter-itfrut-ai-editor.md](./cover-letter-itfrut-ai-editor.md) | IT frut · AI-редактор / копирайтер (stretch) |
 | [cover-letter-seojazz-vibecoder.md](./cover-letter-seojazz-vibecoder.md) | SEOJazz · вайбкодер в SEO-агентство |
+| [cover-letter-jol-ai-vibecoding-intern.md](./cover-letter-jol-ai-vibecoding-intern.md) | Jol AI · стажёр по вайбкодингу (2 недели, unpaid) |
 | [cover-letter-yutim-ai-trainer.md](./cover-letter-yutim-ai-trainer.md) | ЮТИМ · AI-тренер для обучения нейросетей |
 | [cover-letter-playrix-junior-qa.md](./cover-letter-playrix-junior-qa.md) | Playrix · Junior QA (скорее skip) |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
