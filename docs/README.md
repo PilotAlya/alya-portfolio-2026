@@ -75,6 +75,7 @@
 | [cover-letter-anecole-vibecoder.md](./cover-letter-anecole-vibecoder.md) | Anecole · вайбкодер / AI-разработчик |
 | [questionnaire-work-experience-ai.md](./questionnaire-work-experience-ai.md) | Анкета · опыт работы + ИИ (готовые ответы) |
 | [cover-letter-fedotova-ai-tech-assistant.md](./cover-letter-fedotova-ai-tech-assistant.md) | ИП Федотова · тех. ассистент AI / автоматизация |
+| [cover-letter-daitov-ai-architect-assistant.md](./cover-letter-daitov-ai-architect-assistant.md) | ИП Даитов · помощник AI-архитектора (СДЭК ПВЗ) |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
 | [cover-letter-sapiens-de-intern.md](./cover-letter-sapiens-de-intern.md) | Sapiens · Data engineer стажёр (Москва/офис) |
 | [cover-letter-yuzhny-parus-db-operator.md](./cover-letter-yuzhny-parus-db-operator.md) | Южный Парус · оператор баз данных |
