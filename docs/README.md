@@ -32,6 +32,8 @@
 | [cover-letter-bitrix24-ai-creator.md](./cover-letter-bitrix24-ai-creator.md) | Битрикс24 · AI-креатор / вайбкодер |
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
+| [questionnaire-ai-builds-results.md](./questionnaire-ai-builds-results.md) | Анкета: AI-работы, инструменты, цифры, «дожать задачу» |
+| [questionnaire-work-experience-ai.md](./questionnaire-work-experience-ai.md) | Анкета: опыт работы, AI, Sheets, зарплата |
 | [cover-letter-luis-ai-engineer.md](./cover-letter-luis-ai-engineer.md) | ЛУИС+ · AI-инженер |
 | [cover-letter-vkusvill-ai-automation.md](./cover-letter-vkusvill-ai-automation.md) | ВкусВилл · AI-автоматизация бизнес-процессов |
 | [cover-letter-datalabeling-markup.md](./cover-letter-datalabeling-markup.md) | DATA LABELING · специалист разметки данных |
