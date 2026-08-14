@@ -37,6 +37,7 @@
 | [cover-letter-shevchenko-ad-projects-admin.md](./cover-letter-shevchenko-ad-projects-admin.md) | ИП Шевченко · администратор рекламных проектов |
 | [cover-letter-puls-novostroek-db-operator.md](./cover-letter-puls-novostroek-db-operator.md) | Пульс Продаж Новостроек · оператор базы данных |
 | [cover-letter-apart-homes-okk.md](./cover-letter-apart-homes-okk.md) | Apart Homes · специалист / менеджер ОКК |
+| [cover-letter-intellectual-group-it-assistant.md](./cover-letter-intellectual-group-it-assistant.md) | Интеллектуал Групп · ассистент в IT |
 | [cover-letter-luis-ai-engineer.md](./cover-letter-luis-ai-engineer.md) | ЛУИС+ · AI-инженер |
 | [cover-letter-vkusvill-ai-automation.md](./cover-letter-vkusvill-ai-automation.md) | ВкусВилл · AI-автоматизация бизнес-процессов |
 | [cover-letter-datalabeling-markup.md](./cover-letter-datalabeling-markup.md) | DATA LABELING · специалист разметки данных |
