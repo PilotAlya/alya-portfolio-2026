@@ -40,6 +40,7 @@
 | [cover-letter-intellectual-group-it-assistant.md](./cover-letter-intellectual-group-it-assistant.md) | Интеллектуал Групп · ассистент в IT |
 | [cover-letter-kiselev-marketing-tech.md](./cover-letter-kiselev-marketing-tech.md) | KISELEV MARKETING · специалист технического отдела |
 | [cover-letter-gst-pc-db-operator.md](./cover-letter-gst-pc-db-operator.md) | ООО ГСТ · оператор ПК / оператор БД |
+| [cover-letter-barelef-tech-content-ai.md](./cover-letter-barelef-tech-content-ai.md) | Барельеф · тех. контент-менеджер / AI-редактор (stretch) |
 | [cover-letter-luis-ai-engineer.md](./cover-letter-luis-ai-engineer.md) | ЛУИС+ · AI-инженер |
 | [cover-letter-vkusvill-ai-automation.md](./cover-letter-vkusvill-ai-automation.md) | ВкусВилл · AI-автоматизация бизнес-процессов |
 | [cover-letter-datalabeling-markup.md](./cover-letter-datalabeling-markup.md) | DATA LABELING · специалист разметки данных |
