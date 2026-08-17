@@ -95,7 +95,6 @@
 | [cover-letter-jol-ai-prompt-intern.md](./cover-letter-jol-ai-prompt-intern.md) | JOL AI · стажёр AI / Prompt Engineer → штат |
 | [cover-letter-career-compass-marketplace-support.md](./cover-letter-career-compass-marketplace-support.md) | Карьерный Компас · поддержка маркетплейса (входящие) |
 | [cover-letter-seojazz-vibecoder.md](./cover-letter-seojazz-vibecoder.md) | SEOJazz · вайбкодер в SEO-агентство |
-| [cover-letter-jol-ai-vibecoding-intern.md](./cover-letter-jol-ai-vibecoding-intern.md) | Jol AI · стажёр по вайбкодингу (2 недели, unpaid) |
 | [cover-letter-yutim-ai-trainer.md](./cover-letter-yutim-ai-trainer.md) | ЮТИМ · AI-тренер для обучения нейросетей |
 | [cover-letter-playrix-junior-qa.md](./cover-letter-playrix-junior-qa.md) | Playrix · Junior QA (скорее skip) |
 | [cover-letter-uremont-vibecoder.md](./cover-letter-uremont-vibecoder.md) | UREMONT · Vibe Coder / AI-разработчик |
