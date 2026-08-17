@@ -37,6 +37,7 @@
 | [cover-letter-servizoria-mystery-shopper.md](./cover-letter-servizoria-mystery-shopper.md) | Сервизория · корректор анкет тайных покупателей |
 | [cover-letter-b2b-friends-cold-calls.md](./cover-letter-b2b-friends-cold-calls.md) | Б2Б ФРЕНДС · **SKIP** (холодные звонки) |
 | [RULE-no-calls.md](./RULE-no-calls.md) | **Правило:** не брать тёплые/холодные звонки |
+| [cover-letter-rostelecom-data-intern.md](./cover-letter-rostelecom-data-intern.md) | Ростелеком · стажёр обработка/анализ данных |
 | [cover-letter-gran-photo-auditor.md](./cover-letter-gran-photo-auditor.md) | ГРАН · фотоаудитор / проверка данных |
 | [cover-letter-1x1-vafin-chat-manager.md](./cover-letter-1x1-vafin-chat-manager.md) | 1x1 / Вафин · менеджер в чате (без звонков) |
 | [cover-letter-m30-pc-operator.md](./cover-letter-m30-pc-operator.md) | ООО М30 · оператор ПК (ввод бухдокументов) |
