@@ -48,6 +48,8 @@
 | [cover-letter-sber-data-labeling.md](./cover-letter-sber-data-labeling.md) | Сбер · разметка данных (Великие Луки) |
 | [cover-letter-sber-gigachat-editor.md](./cover-letter-sber-gigachat-editor.md) | Сбер · редактор текстов для GigaChat / AI-тренер |
 | [skip-sberai-llm-researcher.md](./skip-sberai-llm-researcher.md) | SberAI · AI Researcher RnD NLP — **skip** |
+| [skip-xsolla-ai-intern.md](./skip-xsolla-ai-intern.md) | Xsolla · стажёр AI-инженер — **скорее skip** |
+| [cover-letter-jol-ai-prompt-intern.md](./cover-letter-jol-ai-prompt-intern.md) | JOL AI · стажёр AI / Prompt Engineer → штат |
 | [cover-letter-yadro-data-annotation.md](./cover-letter-yadro-data-annotation.md) | YADRO · специалист разметки данных |
 | [cover-letter-marketplace-ai-dev.md](./cover-letter-marketplace-ai-dev.md) | Marketplace · AI dev |
 | [cover-letter-mirgorod-ai-assistant.md](./cover-letter-mirgorod-ai-assistant.md) | Mirgorod · AI assistant |
