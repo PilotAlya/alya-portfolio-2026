@@ -42,6 +42,7 @@
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
 | [questionnaire-ai-builds-results.md](./questionnaire-ai-builds-results.md) | Анкета: AI-работы, инструменты, цифры, «дожать задачу» |
+| [answers-strengths-weaknesses.md](./answers-strengths-weaknesses.md) | Шпаргалка: 3 сильных / 3 слабых качества |
 | [questionnaire-work-experience-ai.md](./questionnaire-work-experience-ai.md) | Анкета: опыт работы, AI, Sheets, зарплата |
 | [cover-letter-shevchenko-ad-projects-admin.md](./cover-letter-shevchenko-ad-projects-admin.md) | ИП Шевченко · администратор рекламных проектов |
 | [cover-letter-puls-novostroek-db-operator.md](./cover-letter-puls-novostroek-db-operator.md) | Пульс Продаж Новостроек · оператор базы данных |
