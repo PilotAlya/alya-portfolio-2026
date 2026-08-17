@@ -79,6 +79,7 @@
 | [cover-letter-favorit-ai-growth-assistant.md](./cover-letter-favorit-ai-growth-assistant.md) | ЮЦ Фаворит · ассистент основателя (AI/Growth) |
 | [cover-letter-flowwow-tech-support.md](./cover-letter-flowwow-tech-support.md) | Flowwow · специалист технической поддержки |
 | [cover-letter-dodo-brands-tech-support.md](./cover-letter-dodo-brands-tech-support.md) | DODO BRANDS · ТП Додо ИС (stretch) |
+| [cover-letter-ozon-customer-service.md](./cover-letter-ozon-customer-service.md) | Ozon · специалист клиентского сервиса |
 | [cover-letter-hr-belki-ai-assistant.md](./cover-letter-hr-belki-ai-assistant.md) | HR BELKI · бизнес-ассистент собственника (AI) |
 | [cover-letter-hrp-sms-support.md](./cover-letter-hrp-sms-support.md) | HRP · техподдержка / SMS-модерация |
 | [cover-letter-aviasales-support.md](./cover-letter-aviasales-support.md) | Aviasales · специалист технической поддержки |
