@@ -37,6 +37,7 @@
 | [cover-letter-peakart-content-editor.md](./cover-letter-peakart-content-editor.md) | PeakArt · Junior Art Content Editor |
 | [cover-letter-servizoria-mystery-shopper.md](./cover-letter-servizoria-mystery-shopper.md) | Сервизория · корректор анкет тайных покупателей |
 | [cover-letter-b2b-friends-cold-calls.md](./cover-letter-b2b-friends-cold-calls.md) | Б2Б ФРЕНДС · **SKIP** (холодные звонки) |
+| [skip-vshii-admin-warm-calls.md](./skip-vshii-admin-warm-calls.md) | ВШИИ · администратор · **SKIP** (тёплые звонки) |
 | [RULE-no-calls.md](./RULE-no-calls.md) | **Правило:** не брать тёплые/холодные звонки |
 | [cover-letter-rostelecom-data-intern.md](./cover-letter-rostelecom-data-intern.md) | Ростелеком · стажёр обработка/анализ данных |
 | [cover-letter-evrotehklimat-content-editor.md](./cover-letter-evrotehklimat-content-editor.md) | ЕВРОТЕХКЛИМАТ · контент-редактор сайта |
