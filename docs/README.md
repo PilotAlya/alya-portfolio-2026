@@ -81,6 +81,7 @@
 | [cover-letter-dodo-brands-tech-support.md](./cover-letter-dodo-brands-tech-support.md) | DODO BRANDS · ТП Додо ИС (stretch) |
 | [cover-letter-ozon-customer-service.md](./cover-letter-ozon-customer-service.md) | Ozon · специалист клиентского сервиса |
 | [cover-letter-profstroy-chat-support.md](./cover-letter-profstroy-chat-support.md) | Профстрой · начинающий чат-поддержка (без продаж) |
+| [cover-letter-ecomcall-jayket-tech-support.md](./cover-letter-ecomcall-jayket-tech-support.md) | EcomCall / ДЖЕЙКЕТ · ТП входящая линия |
 | [cover-letter-hr-belki-ai-assistant.md](./cover-letter-hr-belki-ai-assistant.md) | HR BELKI · бизнес-ассистент собственника (AI) |
 | [cover-letter-hrp-sms-support.md](./cover-letter-hrp-sms-support.md) | HRP · техподдержка / SMS-модерация |
 | [cover-letter-aviasales-support.md](./cover-letter-aviasales-support.md) | Aviasales · специалист технической поддержки |
