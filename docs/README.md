@@ -38,6 +38,7 @@
 | [cover-letter-gran-photo-auditor.md](./cover-letter-gran-photo-auditor.md) | ГРАН · фотоаудитор / проверка данных |
 | [cover-letter-1x1-vafin-chat-manager.md](./cover-letter-1x1-vafin-chat-manager.md) | 1x1 / Вафин · менеджер в чате (без звонков) |
 | [cover-letter-m30-pc-operator.md](./cover-letter-m30-pc-operator.md) | ООО М30 · оператор ПК (ввод бухдокументов) |
+| [questionnaire-strengths-weaknesses.md](./questionnaire-strengths-weaknesses.md) | Анкета: 3 сильных / 3 слабых качества |
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
 | [questionnaire-ai-builds-results.md](./questionnaire-ai-builds-results.md) | Анкета: AI-работы, инструменты, цифры, «дожать задачу» |
