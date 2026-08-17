@@ -91,6 +91,7 @@
 | [cover-letter-junior-marketer-ai-digital.md](./cover-letter-junior-marketer-ai-digital.md) | Junior Marketer / AI & digital (stretch · офис СПб) |
 | [cover-letter-getpr-editor-assistant.md](./cover-letter-getpr-editor-assistant.md) | GetPR · ассистент менеджера-редактора |
 | [cover-letter-eliseev-order-support.md](./cover-letter-eliseev-order-support.md) | ИП Елисеев · сопровождение интернет-заказов |
+| [cover-letter-career-compass-marketplace-support.md](./cover-letter-career-compass-marketplace-support.md) | Карьерный Компас · поддержка маркетплейса (входящие) |
 | [cover-letter-seojazz-vibecoder.md](./cover-letter-seojazz-vibecoder.md) | SEOJazz · вайбкодер в SEO-агентство |
 | [cover-letter-jol-ai-vibecoding-intern.md](./cover-letter-jol-ai-vibecoding-intern.md) | Jol AI · стажёр по вайбкодингу (2 недели, unpaid) |
 | [cover-letter-yutim-ai-trainer.md](./cover-letter-yutim-ai-trainer.md) | ЮТИМ · AI-тренер для обучения нейросетей |
