@@ -23,6 +23,7 @@
 | Файл | Компания / роль |
 |------|-----------------|
 | [cover-letter-iti-world-junior-media-buyer.md](./cover-letter-iti-world-junior-media-buyer.md) | ООО Айти Ворлд · Junior Media Buyer / ассистент байера (FB Ads, stretch) |
+| [cover-letter-eto-legko-marketing-support-intern.md](./cover-letter-eto-legko-marketing-support-intern.md) | Это Легко · ассистент поддержки маркетинга (стажёр) |
 | [cover-letter-axevil-vibecoder.md](./cover-letter-axevil-vibecoder.md) | Axevil Capital · vibe-coder + дизайн |
 | [cover-letter-kitegroup-vibecoder.md](./cover-letter-kitegroup-vibecoder.md) | KiteGroup · вайбкодер / vibe coder |
 | [cover-letter-reliz-vibecoding.md](./cover-letter-reliz-vibecoding.md) | Reliz · вайбкодинг и нейросети |
