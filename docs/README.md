@@ -86,6 +86,7 @@
 | [cover-letter-fedotova-ai-tech-assistant.md](./cover-letter-fedotova-ai-tech-assistant.md) | ИП Федотова · тех. ассистент AI / автоматизация |
 | [cover-letter-daitov-ai-architect-assistant.md](./cover-letter-daitov-ai-architect-assistant.md) | ИП Даитов · помощник AI-архитектора (СДЭК ПВЗ) |
 | [cover-letter-itfrut-ai-editor.md](./cover-letter-itfrut-ai-editor.md) | IT frut · AI-редактор / копирайтер (stretch) |
+| [cover-letter-itfrut-seo-assistant.md](./cover-letter-itfrut-seo-assistant.md) | IT frut · помощник SEO-специалиста |
 | [cover-letter-seojazz-vibecoder.md](./cover-letter-seojazz-vibecoder.md) | SEOJazz · вайбкодер в SEO-агентство |
 | [cover-letter-jol-ai-vibecoding-intern.md](./cover-letter-jol-ai-vibecoding-intern.md) | Jol AI · стажёр по вайбкодингу (2 недели, unpaid) |
 | [cover-letter-yutim-ai-trainer.md](./cover-letter-yutim-ai-trainer.md) | ЮТИМ · AI-тренер для обучения нейросетей |
