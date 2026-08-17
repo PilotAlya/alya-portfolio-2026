@@ -2,7 +2,8 @@
 
 > **Позиционирование:** AI-Native Engineer · Vibe-Coder · Product Builder  
 > QA/SA — бэкграунд и фильтр качества, не основная идентичность в письме.  
-> **Портфолио:** https://portfolio-resume-alya-akbarova.vercel.app/
+> **Портфолио:** https://portfolio-resume-alya-akbarova.vercel.app/  
+> **Правило:** тёплые и холодные звонки — **skip** ([RULE-no-calls.md](./RULE-no-calls.md))
 
 ---
 
@@ -34,7 +35,8 @@
 | [cover-letter-saveliev-ai-operator.md](./cover-letter-saveliev-ai-operator.md) | ИП Савельев · оператор ИИ (онлайн-школа рисования) |
 | [cover-letter-peakart-content-editor.md](./cover-letter-peakart-content-editor.md) | PeakArt · Junior Art Content Editor |
 | [cover-letter-servizoria-mystery-shopper.md](./cover-letter-servizoria-mystery-shopper.md) | Сервизория · корректор анкет тайных покупателей |
-| [cover-letter-b2b-friends-cold-calls.md](./cover-letter-b2b-friends-cold-calls.md) | Б2Б ФРЕНДС · оформитель заявок (холодные звонки) |
+| [cover-letter-b2b-friends-cold-calls.md](./cover-letter-b2b-friends-cold-calls.md) | Б2Б ФРЕНДС · **SKIP** (холодные звонки) |
+| [RULE-no-calls.md](./RULE-no-calls.md) | **Правило:** не брать тёплые/холодные звонки |
 | [cover-letter-gran-photo-auditor.md](./cover-letter-gran-photo-auditor.md) | ГРАН · фотоаудитор / проверка данных |
 | [cover-letter-1x1-vafin-chat-manager.md](./cover-letter-1x1-vafin-chat-manager.md) | 1x1 / Вафин · менеджер в чате (без звонков) |
 | [cover-letter-m30-pc-operator.md](./cover-letter-m30-pc-operator.md) | ООО М30 · оператор ПК (ввод бухдокументов) |
