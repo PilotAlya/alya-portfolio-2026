@@ -41,6 +41,7 @@
 | [cover-letter-evrotehklimat-content-editor.md](./cover-letter-evrotehklimat-content-editor.md) | ЕВРОТЕХКЛИМАТ · контент-редактор сайта |
 | [cover-letter-everyd-marketplace-assistant.md](./cover-letter-everyd-marketplace-assistant.md) | EVERYD · помощник менеджера WB/Ozon |
 | [cover-letter-tira-chat-support.md](./cover-letter-tira-chat-support.md) | ТИРА · специалист обращений (чат, без продаж) |
+| [cover-letter-subscrible-social-growth.md](./cover-letter-subscrible-social-growth.md) | Subscrible · Social Media Growth (SFW+Adult, stretch) |
 | [cover-letter-gran-photo-auditor.md](./cover-letter-gran-photo-auditor.md) | ГРАН · фотоаудитор / проверка данных |
 | [cover-letter-1x1-vafin-chat-manager.md](./cover-letter-1x1-vafin-chat-manager.md) | 1x1 / Вафин · менеджер в чате (без звонков) |
 | [cover-letter-m30-pc-operator.md](./cover-letter-m30-pc-operator.md) | ООО М30 · оператор ПК (ввод бухдокументов) |
