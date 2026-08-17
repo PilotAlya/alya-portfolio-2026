@@ -34,6 +34,7 @@
 | [cover-letter-saveliev-ai-operator.md](./cover-letter-saveliev-ai-operator.md) | ИП Савельев · оператор ИИ (онлайн-школа рисования) |
 | [cover-letter-peakart-content-editor.md](./cover-letter-peakart-content-editor.md) | PeakArt · Junior Art Content Editor |
 | [cover-letter-servizoria-mystery-shopper.md](./cover-letter-servizoria-mystery-shopper.md) | Сервизория · корректор анкет тайных покупателей |
+| [cover-letter-b2b-friends-cold-calls.md](./cover-letter-b2b-friends-cold-calls.md) | Б2Б ФРЕНДС · оформитель заявок (холодные звонки) |
 | [cover-letter-lh-junior-product-marketer.md](./cover-letter-lh-junior-product-marketer.md) | LH Recruiting Automation · Junior Product Marketer |
 | [application-justwill-ba-pm.md](./application-justwill-ba-pm.md) | JustWill · BA / Junior PM (ответы на анкету) |
 | [questionnaire-ai-builds-results.md](./questionnaire-ai-builds-results.md) | Анкета: AI-работы, инструменты, цифры, «дожать задачу» |
