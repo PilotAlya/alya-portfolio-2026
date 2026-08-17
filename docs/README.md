@@ -89,6 +89,7 @@
 | [cover-letter-itfrut-seo-assistant.md](./cover-letter-itfrut-seo-assistant.md) | IT frut · помощник SEO-специалиста |
 | [cover-letter-dmitriev-profi-manager.md](./cover-letter-dmitriev-profi-manager.md) | Дмитриев · менеджер Профи.ру (ЕГЭ/ОГЭ) |
 | [cover-letter-junior-marketer-ai-digital.md](./cover-letter-junior-marketer-ai-digital.md) | Junior Marketer / AI & digital (stretch · офис СПб) |
+| [cover-letter-getpr-editor-assistant.md](./cover-letter-getpr-editor-assistant.md) | GetPR · ассистент менеджера-редактора |
 | [cover-letter-seojazz-vibecoder.md](./cover-letter-seojazz-vibecoder.md) | SEOJazz · вайбкодер в SEO-агентство |
 | [cover-letter-jol-ai-vibecoding-intern.md](./cover-letter-jol-ai-vibecoding-intern.md) | Jol AI · стажёр по вайбкодингу (2 недели, unpaid) |
 | [cover-letter-yutim-ai-trainer.md](./cover-letter-yutim-ai-trainer.md) | ЮТИМ · AI-тренер для обучения нейросетей |
