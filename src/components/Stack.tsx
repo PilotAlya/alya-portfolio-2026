@@ -3,8 +3,6 @@ import { fadeUp } from "./shared";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
-import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
-
 type TagSize = "sm" | "md" | "lg";
 
 const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
@@ -99,20 +97,6 @@ export function Stack() {
             ))}
           </div>
         </motion.div>
-      </div>
-
-      {/* Boris walks on top of section content (z-30) */}
-      <div className="boris-walk-strip pointer-events-none" aria-hidden>
-        <div className="boris-walk-strip__track">
-          <video
-            src={borisWalkStableVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="boris-walk-strip__video select-none block"
-          />
-        </div>
       </div>
     </section>
   );

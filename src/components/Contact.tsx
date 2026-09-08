@@ -2,9 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Copy, Check, MessageCircle, Mail } from "lucide-react";
 import { useState } from "react";
 
-import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
 import { MagneticLink } from "@/components/effects/MagneticButton";
-import { MediaZoom } from "@/components/effects/MediaZoom";
 import { SectionLabel } from "@/components/effects/SectionLabel";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
@@ -29,7 +27,7 @@ export function Contact() {
       <div className="absolute inset-0 contact-spark-glow pointer-events-none" />
       <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-glow/12 blur-[100px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,40 +90,6 @@ export function Contact() {
             «Беру задачу, разбираюсь, собираю рабочую версию и довожу до результата, которым можно
             пользоваться.»
           </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.12 }}
-          className="relative mx-auto w-full max-w-[280px] lg:max-w-[320px]"
-        >
-          <div
-            className="absolute inset-x-8 bottom-10 h-12 rounded-full bg-spark/25 blur-2xl"
-            aria-hidden
-          />
-          <MediaZoom
-            src={borisIdleCleanVideo}
-            alt="Борис — маскот NOVA"
-            caption="Маскот NOVA · Борис"
-            kind="video"
-            className="aspect-[520/772]"
-          >
-            <video
-              src={borisIdleCleanVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="relative h-full w-full object-contain select-none pointer-events-none"
-              style={{
-                filter:
-                  "drop-shadow(0 18px 28px color-mix(in oklab, var(--glow) 35%, transparent))",
-              }}
-            />
-          </MediaZoom>
-          <p className="mt-3 text-center text-sm text-muted-foreground">Маскот NOVA · Борис</p>
         </motion.div>
       </div>
     </section>
