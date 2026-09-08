@@ -33,7 +33,7 @@
   --color-ring: var(--ring);
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "Inter", system-ui, sans-serif;
-  --font-display: "Syne", "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
   --color-glow: var(--glow);
   --color-glow-secondary: var(--glow-secondary);
   --color-glass: var(--glass);
@@ -43,39 +43,39 @@
 }
 
 :root {
-  --radius: 1.125rem;
+  --radius: 0.75rem;
   color-scheme: light;
 
-  /* Studio Atelier — warm neutral, pill-shaped, editorial (Vespa/GreenMotive reference) */
-  --background: oklch(0.965 0.008 85);
-  --foreground: oklch(0.19 0.012 75);
-  --card: oklch(0.99 0.004 85);
-  --card-foreground: oklch(0.19 0.012 75);
-  --popover: oklch(0.99 0.004 85);
-  --popover-foreground: oklch(0.19 0.012 75);
-  --primary: oklch(0.19 0.012 75);
-  --primary-foreground: oklch(0.98 0.006 85);
-  --secondary: oklch(0.91 0.009 80);
-  --secondary-foreground: oklch(0.19 0.012 75);
-  --muted: oklch(0.91 0.009 80);
-  --muted-foreground: oklch(0.47 0.014 75);
-  --accent: oklch(0.58 0.13 45);
-  --accent-foreground: oklch(0.98 0.006 85);
+  /* Studio Index — cool neutral gray, graphic/editorial print-portfolio reference */
+  --background: oklch(0.895 0.004 260);
+  --foreground: oklch(0.15 0.006 260);
+  --card: oklch(0.99 0.002 260);
+  --card-foreground: oklch(0.15 0.006 260);
+  --popover: oklch(0.99 0.002 260);
+  --popover-foreground: oklch(0.15 0.006 260);
+  --primary: oklch(0.15 0.006 260);
+  --primary-foreground: oklch(0.99 0.002 260);
+  --secondary: oklch(0.93 0.004 260);
+  --secondary-foreground: oklch(0.15 0.006 260);
+  --muted: oklch(0.93 0.004 260);
+  --muted-foreground: oklch(0.45 0.006 260);
+  --accent: oklch(0.6 0.19 35);
+  --accent-foreground: oklch(0.99 0.002 260);
   --destructive: oklch(0.58 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.19 0.012 75 / 10%);
-  --input: oklch(0.19 0.012 75 / 13%);
-  --ring: oklch(0.58 0.13 45);
+  --border: oklch(0.15 0.006 260 / 13%);
+  --input: oklch(0.15 0.006 260 / 16%);
+  --ring: oklch(0.6 0.19 35);
 
-  --glow: oklch(0.58 0.13 45);
-  --glow-secondary: oklch(0.65 0.09 75);
-  --glass: oklch(0.99 0.004 85 / 72%);
-  --glass-border: oklch(0.19 0.012 75 / 9%);
-  --surface-elevated: oklch(0.97 0.006 85 / 90%);
-  --hero-spotlight: oklch(0.7 0.08 70 / 12%);
-  --hero-spotlight-secondary: oklch(0.68 0.07 45 / 9%);
-  --spark: oklch(0.19 0.012 75);
-  --spark-foreground: oklch(0.98 0.006 85);
+  --glow: oklch(0.15 0.006 260);
+  --glow-secondary: oklch(0.6 0.19 35);
+  --glass: oklch(0.99 0.002 260 / 72%);
+  --glass-border: oklch(0.15 0.006 260 / 10%);
+  --surface-elevated: oklch(0.97 0.003 260 / 92%);
+  --hero-spotlight: oklch(0.15 0.006 260 / 7%);
+  --hero-spotlight-secondary: oklch(0.6 0.19 35 / 8%);
+  --spark: oklch(0.15 0.006 260);
+  --spark-foreground: oklch(0.99 0.002 260);
 }
 
 @layer base {
@@ -664,9 +664,9 @@ body.custom-cursor-active * {
 .section-headline {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
 }
 
 .section-headline-accent {
@@ -675,14 +675,43 @@ body.custom-cursor-active * {
 
 .hero-title {
   font-size: clamp(2.5rem, 4.5vw + 1.25rem, 4.75rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
 }
 
 @media (min-width: 1280px) {
   .hero-title {
     font-size: clamp(4rem, 5vw, 5rem);
   }
+}
+
+/* Print-portfolio corner ticks — small always-on registration marks */
+.corner-ticks {
+  position: relative;
+}
+
+.corner-ticks::before,
+.corner-ticks::after,
+.corner-ticks .corner-tick {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.corner-ticks::before {
+  top: 10px;
+  left: 10px;
+  border-left: 1.5px solid color-mix(in oklab, var(--color-foreground) 45%, transparent);
+  border-top: 1.5px solid color-mix(in oklab, var(--color-foreground) 45%, transparent);
+}
+
+.corner-ticks::after {
+  bottom: 10px;
+  right: 10px;
+  border-right: 1.5px solid color-mix(in oklab, var(--color-foreground) 45%, transparent);
+  border-bottom: 1.5px solid color-mix(in oklab, var(--color-foreground) 45%, transparent);
 }
 
 @media (hover: hover) {

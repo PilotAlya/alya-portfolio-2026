@@ -14,10 +14,15 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24"
+      className="corner-ticks relative pt-32 pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24"
     >
       <HeroAurora />
       <div className="absolute inset-0 bg-aurora pointer-events-none opacity-80" />
+
+      <div className="relative max-w-7xl mx-auto mb-10 flex items-center justify-between text-xs font-medium tracking-wide text-muted-foreground">
+        <span>2026</span>
+        <span>PILOT ALI // ДИЗАЙН · САЙТЫ · ИИ</span>
+      </div>
 
       <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_360px] gap-12 items-end">
@@ -42,7 +47,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="hero-title font-extrabold tracking-tight font-display max-w-full"
+              className="hero-title font-black tracking-tight font-display max-w-full"
             >
               ALYA
               <br />
@@ -108,7 +113,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="relative rounded-3xl bg-card border border-foreground/8 p-7 pb-4 flex flex-col items-start gap-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.25)]"
+            className="corner-ticks relative rounded-2xl bg-card border border-foreground/8 p-7 pb-4 flex flex-col items-start gap-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.25)]"
           >
             <p className="text-base leading-relaxed text-foreground">
               «Я не обещаю "ИИ, который решит всё". Я разбираюсь в задаче, собираю конкретный
