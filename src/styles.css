@@ -556,10 +556,12 @@ body.custom-cursor-active * {
   opacity: 0.22;
 }
 
-/* Boris walk — Stack section (CSS animation, walks over section content) */
+/* Boris walk — Stack section (CSS animation, walks over section content).
+   Starts below the floating nav's band (nav sits at top-4/6 + 3.5rem tall)
+   so the walk-cycle never visually collides with it. */
 .boris-walk-strip {
   position: absolute;
-  top: 0;
+  top: 5.5rem;
   inset-inline: 0;
   height: 11rem;
   z-index: 30;
@@ -569,6 +571,7 @@ body.custom-cursor-active * {
 
 @media (min-width: 768px) {
   .boris-walk-strip {
+    top: 6rem;
     height: 16rem;
   }
 }
