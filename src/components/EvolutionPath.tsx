@@ -38,11 +38,7 @@ export function EvolutionPath() {
           variants={fadeUp}
           className="mb-16 relative z-10"
         >
-          <SectionLabel
-            chapter={2}
-            title="Мой путь"
-            className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block"
-          />
+          <SectionLabel title="Мой путь" />
           <SectionHeadline
             before="От точности на бумаге — до"
             accent="цифровых решений"
@@ -50,7 +46,7 @@ export function EvolutionPath() {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 border border-foreground/10">
+        <div className="grid lg:grid-cols-3 gap-4">
           {stages.map((s, i) => (
             <motion.div
               key={s.n}
@@ -60,21 +56,21 @@ export function EvolutionPath() {
               transition={{ delay: i * 0.12, duration: 0.7 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                `p-10 lg:p-12 group ${i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-foreground/10" : ""} ${s.featured ? "bg-accent/5" : ""}`,
+                `rounded-2xl border p-10 lg:p-12 group ${s.featured ? "bg-accent/5 border-accent/20" : "bg-card border-foreground/8"}`,
                 "flat",
               )}
             >
               <div className="flex items-center justify-between mb-8">
                 <span
-                  className={`font-mono text-xs ${s.featured ? "text-accent" : "text-muted-foreground"}`}
+                  className={`inline-flex size-9 items-center justify-center rounded-full text-sm font-semibold ${s.featured ? "bg-spark text-spark-foreground" : "bg-secondary text-muted-foreground"}`}
                 >
-                  STAGE {s.n}
+                  {s.n}
                 </span>
                 <s.Icon
                   className={`size-5 ${s.featured ? "text-accent" : "text-muted-foreground"} group-hover:text-accent transition-colors`}
                 />
               </div>
-              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{s.title}</h3>
+              <h3 className="text-2xl font-semibold mb-4 tracking-tight">{s.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{s.body}</p>
             </motion.div>
           ))}

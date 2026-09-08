@@ -38,7 +38,7 @@ export function Profile() {
         </motion.div>
 
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}>
-          <SectionLabel chapter={7} title="Обо мне" />
+          <SectionLabel title="Обо мне" />
           <SectionHeadline accent="Немного обо мне" className="mb-6" />
           <p className="text-muted-foreground text-sm leading-relaxed mb-10 max-w-xl">
             Образование и то, как я работаю с ИИ каждый день. Чем я полезна в работе — в блоке

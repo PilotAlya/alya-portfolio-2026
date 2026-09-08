@@ -45,7 +45,7 @@ export function WhyMe() {
           variants={fadeUp}
           className="mb-14 max-w-3xl"
         >
-          <SectionLabel chapter={1} title="Почему именно я" />
+          <SectionLabel title="Почему именно я" />
           <SectionHeadline before="Что я приношу в" accent="ваш проект" />
           <p className="text-muted-foreground mt-4 leading-relaxed">
             Три задачи, с которыми ко мне чаще всего приходят — и как я их решаю.

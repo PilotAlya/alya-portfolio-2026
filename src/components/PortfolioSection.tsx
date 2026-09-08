@@ -7,7 +7,6 @@ export function PortfolioSection() {
   return (
     <div id="portfolio" className="scroll-mt-24">
       <SectionIntro
-        chapter={4}
         label="Портфолио"
         titleAccent="Ещё примеры"
         titleAfter="работ"

@@ -25,7 +25,7 @@ export function Guides() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <SectionLabel chapter={6} title="Готовый гайд" />
+          <SectionLabel title="Готовый гайд" />
           <SectionHeadline before="Инструкция, которой" accent="можно пользоваться" />
           <p className="text-muted-foreground leading-relaxed mt-4 mb-4">
             Один из готовых результатов моей работы — бесплатная и понятная инструкция для бизнеса.

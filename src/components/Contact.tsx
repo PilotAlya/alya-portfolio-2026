@@ -3,9 +3,9 @@ import { ArrowUpRight, Copy, Check, MessageCircle, Mail } from "lucide-react";
 import { useState } from "react";
 
 import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
-import { HandDrawnOval, ScribbleBurst, SparkStar } from "@/components/effects/HandDrawn";
 import { MagneticLink } from "@/components/effects/MagneticButton";
 import { MediaZoom } from "@/components/effects/MediaZoom";
+import { SectionLabel } from "@/components/effects/SectionLabel";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 const TELEGRAM_URL = "https://t.me/Albinaa_Akbarova";
@@ -26,7 +26,6 @@ export function Contact() {
       className="py-24 lg:py-36 px-6 lg:px-8 border-t border-border relative overflow-hidden scroll-mt-24"
     >
       <div className="absolute inset-0 bg-aurora pointer-events-none" />
-      <div className="absolute inset-0 bg-blueprint opacity-25 pointer-events-none" />
       <div className="absolute inset-0 contact-spark-glow pointer-events-none" />
       <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-glow/12 blur-[100px] pointer-events-none" />
 
@@ -38,14 +37,12 @@ export function Contact() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <div className="flex items-center gap-2 mb-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <SparkStar />
-            <span>Лист 08 · Контакты</span>
-          </div>
+          <SectionLabel
+            title="Контакты"
+            className="inline-flex items-center gap-2 text-sm font-medium text-accent mb-6"
+          />
 
-          <ScribbleBurst className="mb-4 -ml-1" />
-
-          <h2 className="text-[clamp(2.75rem,8vw,5.75rem)] font-extrabold tracking-tight leading-[0.88] font-display uppercase mb-8">
+          <h2 className="text-[clamp(2.75rem,8vw,5.75rem)] font-extrabold tracking-tight leading-[0.88] font-display mb-8">
             Связаться
             <br />
             и обсудить
@@ -59,20 +56,18 @@ export function Contact() {
           </p>
 
           <div className="mb-10">
-            <HandDrawnOval>
-              <MagneticLink
-                href={TELEGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-spark group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base sm:text-lg font-semibold uppercase tracking-wide"
-              >
-                <MessageCircle className="size-5" />
-                Написать в Telegram
-                <ArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </MagneticLink>
-            </HandDrawnOval>
-            <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-spark/90 pl-1">
-              ✦ быстрый ответ · @Albinaa_Akbarova
+            <MagneticLink
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-spark group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base sm:text-lg font-semibold"
+            >
+              <MessageCircle className="size-5" />
+              Написать в Telegram
+              <ArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </MagneticLink>
+            <p className="mt-4 text-sm text-muted-foreground pl-1">
+              Быстрый ответ · @Albinaa_Akbarova
             </p>
           </div>
 
@@ -82,7 +77,7 @@ export function Contact() {
               onClick={copyEmail}
               {...spotlightAttrs}
               className={spotlightClass(
-                "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors",
+                "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors",
                 "subtle",
               )}
             >
@@ -130,9 +125,7 @@ export function Contact() {
               }}
             />
           </MediaZoom>
-          <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-            Маскот NOVA · Борис
-          </p>
+          <p className="mt-3 text-center text-sm text-muted-foreground">Маскот NOVA · Борис</p>
         </motion.div>
       </div>
     </section>

@@ -54,7 +54,7 @@ export function Stack() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <SectionLabel chapter={5} title="Инструменты" />
+          <SectionLabel title="Инструменты" />
           <SectionHeadline before="С чем я" accent="работаю" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
             Инструменты, которыми пользуюсь каждый день, чтобы быстро собирать рабочие прототипы и
