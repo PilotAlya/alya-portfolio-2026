@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  Bot,
-  PlayCircle,
-  Rocket,
-  Users,
-  Github,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowUpRight, Bot, PlayCircle, Rocket, Users, Github, ExternalLink } from "lucide-react";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
 import novaBorisChat from "@/assets/nova-boris-chat.png";
@@ -16,22 +8,22 @@ import { fadeUp } from "./shared";
 
 const TILES = [
   {
-    title: "NOVA Light · Live Demo",
-    subtitle: "Заказы, склад, Kanban — рабочий MVP на Vercel",
-    tag: "Flagship · MVP",
+    title: "NOVA Light · живая версия",
+    subtitle: "Заказы, склад, канбан — можно открыть и покликать прямо сейчас",
+    tag: "Главный проект",
     Icon: Rocket,
     span: "md:col-span-2 md:row-span-2 min-h-[280px]",
     href: "https://nova-light-app.vercel.app/",
     external: true,
     accent: "from-accent/25 via-accent/5 to-transparent",
     image: novaDashboard,
-    grainCaption: "Flagship MVP",
+    grainCaption: "Живая демо-версия",
     cta: "Открыть demo",
   },
   {
     title: "Презентация NOVA",
-    subtitle: "Кейс, UX-тесты, до/после · alya-nova-2026",
-    tag: "Presentation",
+    subtitle: "Кейс, тесты с пользователями, «до/после»",
+    tag: "Презентация",
     Icon: PlayCircle,
     span: "",
     href: "https://alya-nova-2026.vercel.app/",
@@ -41,22 +33,22 @@ const TILES = [
     cta: "Смотреть",
   },
   {
-    title: "AI-ассистент «Борис»",
-    subtitle: "Сценарий ассистента · wiki · склад · регламенты",
-    tag: "AI Layer",
+    title: "ИИ-ассистент «Борис»",
+    subtitle: "Отвечает по инструкциям, товарным спискам и заказам",
+    tag: "ИИ-помощник",
     Icon: Bot,
     span: "",
     href: "#nova-detail",
     external: false,
     accent: "from-accent/15 via-transparent to-transparent",
     image: novaBorisChat,
-    grainCaption: "AI scenario",
+    grainCaption: "Как работает",
     cta: "Подробнее",
   },
   {
-    title: "UX Validation",
-    subtitle: "2 цикла · 12+ дефектов · 3 блокера · 3/3 понятнее",
-    tag: "Research",
+    title: "Проверка на реальных людях",
+    subtitle: "2 круга тестов · 12+ проблем найдено · 3 критичных исправлено",
+    tag: "Тестирование",
     Icon: Users,
     span: "",
     href: "#nova-ux",
@@ -65,15 +57,15 @@ const TILES = [
     cta: "Метрики",
   },
   {
-    title: "GitHub · Nova_light-",
-    subtitle: "React · TypeScript · open source MVP",
-    tag: "Code",
+    title: "Исходный код проекта",
+    subtitle: "Открытый код на GitHub, если хотите заглянуть под капот",
+    tag: "Код",
     Icon: Github,
     span: "md:col-span-2",
     href: "https://github.com/PilotAlya/Nova_light-",
     external: true,
     accent: "from-foreground/5 via-transparent to-transparent",
-    cta: "Repository",
+    cta: "Посмотреть код",
   },
 ] as const;
 
@@ -89,7 +81,7 @@ export function NovaBento() {
           className="mb-8"
         >
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            NOVA · bento · флагманский проект
+            NOVA · коротко о проекте
           </p>
         </motion.div>
 
@@ -114,11 +106,7 @@ export function NovaBento() {
               />
               {"image" in tile && tile.image && (
                 <div className="pointer-events-none absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity">
-                  <img
-                    src={tile.image}
-                    alt=""
-                    className="h-full w-full object-cover object-top"
-                  />
+                  <img src={tile.image} alt="" className="h-full w-full object-cover object-top" />
                   {"grainCaption" in tile && tile.grainCaption && (
                     <span className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.18em] text-spark">
                       {tile.grainCaption}
@@ -138,7 +126,7 @@ export function NovaBento() {
                     {tile.subtitle}
                   </p>
                 </div>
-                <div className="shrink-0 p-2 rounded-md border border-white/10 bg-background/40 text-accent group-hover:border-accent/40 transition-colors">
+                <div className="shrink-0 p-2 rounded-md border border-foreground/10 bg-background/40 text-accent group-hover:border-accent/40 transition-colors">
                   <tile.Icon className="size-4" />
                 </div>
               </div>

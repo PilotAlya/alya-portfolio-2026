@@ -11,7 +11,7 @@ export function SectionLabel({ chapter, title, className }: SectionLabelProps) {
 
   return (
     <span className={className ?? "font-mono text-xs text-accent uppercase tracking-widest"}>
-      Глава{" "}
+      Лист{" "}
       <CountUp
         to={chapter}
         decimals={isDecimal ? 1 : 0}

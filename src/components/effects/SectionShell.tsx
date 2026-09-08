@@ -21,10 +21,7 @@ export function SectionShell({
   return (
     <Tag
       id={id}
-      className={cn(
-        variant === "alt" ? "section-shell-alt" : "section-shell",
-        className,
-      )}
+      className={cn(variant === "alt" ? "section-shell-alt" : "section-shell", className)}
     >
       {children}
     </Tag>

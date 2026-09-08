@@ -1,39 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { HERO_CODE_LINES } from "./shared";
 import { HeroAurora } from "./effects/HeroAurora";
 import { ScribbleBurst } from "./effects/HandDrawn";
 import { MagneticLink } from "./effects/MagneticButton";
-
-function HeroCodeRain() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
-      <motion.div
-        initial={{ y: 0 }}
-        animate={{ y: "-50%" }}
-        transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-2 lg:left-6 font-mono text-[10px] leading-loose text-accent/35 whitespace-nowrap"
-      >
-        {[...HERO_CODE_LINES, ...HERO_CODE_LINES].map((l, i) => (
-          <div key={`l-${i}`}>{l}</div>
-        ))}
-      </motion.div>
-      <motion.div
-        initial={{ y: "-50%" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 110, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 right-2 lg:right-6 font-mono text-[10px] leading-loose text-muted-foreground/20 md:text-muted-foreground/25 whitespace-nowrap text-right opacity-40 md:opacity-100"
-      >
-        {[...HERO_CODE_LINES, ...HERO_CODE_LINES].map((l, i) => (
-          <div key={`r-${i}`}>{l}</div>
-        ))}
-      </motion.div>
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
-    </div>
-  );
-}
 
 function HeroCornerTags() {
   return (
@@ -58,11 +28,14 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section id="top" ref={ref} className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24">
+    <section
+      id="top"
+      ref={ref}
+      className="relative pt-40 pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24"
+    >
       <HeroAurora />
       <div className="absolute inset-0 bg-aurora pointer-events-none opacity-80" />
       <div className="absolute inset-0 bg-blueprint opacity-35 pointer-events-none" />
-      <HeroCodeRain />
       <HeroCornerTags />
 
       <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto">
@@ -82,7 +55,7 @@ export function Hero() {
                     <span className="relative inline-flex rounded-full size-2 bg-accent" />
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                    Открыта к предложениям · AI & Vibe-coding
+                    Беру 1–2 новых проекта в месяц
                   </span>
                 </div>
               </div>
@@ -94,7 +67,8 @@ export function Hero() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="hero-title font-extrabold tracking-tight font-display max-w-full"
             >
-              ALYA<br />
+              ALYA
+              <br />
               <span className="text-gradient-chrome">AKBAROVA</span>
             </motion.h1>
 
@@ -104,24 +78,9 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-xl font-light leading-relaxed"
             >
-              AI-Native Engineer · Vibe-Coder · Product Builder.
-              С ИИ на «ты»: быстро осваиваю новый контекст, проектирую логику, собираю MVP и
-              проверяю результат —{" "}
-              <span className="text-foreground italic">от Legacy-хаоса до AI-агентов</span>.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
-            >
-              Целевые роли ·{" "}
-              <span className="text-foreground/90">vibe-coder</span>
-              {" · "}
-              <span className="text-foreground/90">AI assessor</span>
-              {" · "}
-              <span className="text-foreground/90">AI product builder</span>
+              Помогаю бизнесу быстро получить рабочий результат: сайт, каталог, CRM или ИИ-помощника
+              — от идеи до версии, которую можно{" "}
+              <span className="text-foreground italic">показать клиентам и опробовать</span>.
             </motion.p>
 
             <motion.div
@@ -131,10 +90,10 @@ export function Hero() {
               className="flex flex-wrap gap-2"
             >
               {[
-                { label: "Vibe-coding", sub: "Cursor · OpenCode" },
-                { label: "AI-native", sub: "LLM · validation" },
-                { label: "MVP & прототипы", sub: "React" },
-                { label: "Валидация", sub: "QA mindset" },
+                { label: "Сайты и прототипы", sub: "быстрый старт" },
+                { label: "ИИ-помощники", sub: "под вашу задачу" },
+                { label: "Автоматизация рутины", sub: "меньше ручной работы" },
+                { label: "Проверка результата", sub: "тестирую перед показом" },
               ].map((pill) => (
                 <div
                   key={pill.label}
@@ -160,17 +119,10 @@ export function Hero() {
                 <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </MagneticLink>
               <MagneticLink
-                href="/resume-ai.pdf"
-                download="Albina_Akbarova_AI_Resume.pdf"
+                href="#nova"
                 className="btn-cta-secondary items-center gap-2 px-5 py-3 rounded-md text-sm font-medium"
               >
-                Резюме AI
-              </MagneticLink>
-              <MagneticLink
-                href="#nova"
-                className="btn-cta-ghost items-center gap-2 px-5 py-3 rounded-md text-sm font-medium"
-              >
-                Смотреть кейсы
+                Смотреть примеры работ
               </MagneticLink>
             </motion.div>
           </div>
@@ -182,9 +134,9 @@ export function Hero() {
             className="relative lg:border-l lg:border-border lg:pl-8 pb-4 flex flex-col items-center lg:items-stretch gap-6"
           >
             <p className="font-mono text-xs leading-relaxed text-muted-foreground uppercase">
-              «Я не пишу код как классический разработчик — проектирую последовательность действий,
-              собираю решение с AI и довожу до рабочего результата. Системный подход и привычка
-              тестировать — мой фильтр качества.»
+              «Я не обещаю "ИИ, который решит всё". Я разбираюсь в задаче, собираю конкретный
+              рабочий инструмент под неё и проверяю, что он действительно работает — прежде чем
+              показать вам.»
             </p>
             <div className="font-mono text-[10px] text-accent uppercase tracking-widest">
               — Pilot Ali

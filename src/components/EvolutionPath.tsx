@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Ruler, CircuitBoard, Bot } from "lucide-react";
-import { fadeUp, SectionCodeDecor, EVOLUTION_CODE_LINES } from "./shared";
+import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
@@ -10,30 +10,26 @@ export function EvolutionPath() {
     {
       n: "01",
       title: "Точность и процессы",
-      body: "Ритейл, проекты для музея и завода ММК. Урок: ошибка в деталях на старте — финансовые потери на финале.",
+      body: "Ритейл, проекты для музея и завода ММК. Урок на всю жизнь: ошибка в деталях на старте — финансовые потери в конце.",
       Icon: Ruler,
     },
     {
       n: "02",
-      title: "Оцифровка процессов",
-      body: "Реинжиниринг процессов и автоматизация рутины в ритейле — детали в блоке «Опыт».",
+      title: "Порядок в цифрах",
+      body: "Наводила порядок в учёте и автоматизировала рутину в ритейле — подробности в блоке «Опыт» ниже.",
       Icon: CircuitBoard,
     },
     {
       n: "03",
-      title: "Интеллектуальный штурман",
-      body: "NOVA и AI-пайплайны через vibe-coding — от идеи до деплоя. Полный кейс — в разделе NOVA ниже.",
+      title: "Помощник на основе ИИ",
+      body: "NOVA — система для бизнеса с ИИ-помощником внутри, от идеи до рабочей версии. Полный кейс — в разделе NOVA ниже.",
       Icon: Bot,
       featured: true,
     },
   ];
 
   return (
-    <section
-      id="path"
-      className="relative py-24 px-6 lg:px-8 overflow-hidden scroll-mt-24"
-    >
-      <SectionCodeDecor lines={EVOLUTION_CODE_LINES} side="left" speed={70} />
+    <section id="path" className="relative py-24 px-6 lg:px-8 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -42,15 +38,19 @@ export function EvolutionPath() {
           variants={fadeUp}
           className="mb-16 relative z-10"
         >
-          <SectionLabel chapter={2} title="Эволюция системности" className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block" />
+          <SectionLabel
+            chapter={2}
+            title="Мой путь"
+            className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block"
+          />
           <SectionHeadline
-            before="От Legacy-хаоса — до"
-            accent="AI-архитектуры"
+            before="От точности на бумаге — до"
+            accent="цифровых решений"
             className="max-w-3xl relative z-10"
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 border border-white/10">
+        <div className="grid lg:grid-cols-3 border border-foreground/10">
           {stages.map((s, i) => (
             <motion.div
               key={s.n}
@@ -60,7 +60,7 @@ export function EvolutionPath() {
               transition={{ delay: i * 0.12, duration: 0.7 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                `p-10 lg:p-12 group ${i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-white/10" : ""} ${s.featured ? "bg-accent/5" : ""}`,
+                `p-10 lg:p-12 group ${i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-foreground/10" : ""} ${s.featured ? "bg-accent/5" : ""}`,
                 "flat",
               )}
             >

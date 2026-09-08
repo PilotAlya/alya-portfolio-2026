@@ -9,10 +9,10 @@ export function PortfolioSection() {
       <SectionIntro
         chapter={4}
         label="Портфолио"
-        titleAccent="Кейсы"
-        titleAfter="с метриками и артефактами"
-        description="Флагман NOVA — выше. Здесь pet-project CRM с live-demo; data audit и AI validation — компактно в background. Автоматизация поиска студий — в разделе «Опыт»; Telegram → Sheets — в «Гайдах»."
-        meta="1 pet-project · demo + background"
+        titleAccent="Ещё примеры"
+        titleAfter="работ"
+        description="Мини-CRM с живым демо, проверка данных для бизнеса и оценка ИИ-помощников — примеры из практики, кроме главного проекта NOVA."
+        meta="Ещё примеры работ"
       />
       <PortfolioBento />
       <CrmLeadCardCase />

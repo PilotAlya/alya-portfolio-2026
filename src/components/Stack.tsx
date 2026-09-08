@@ -9,7 +9,7 @@ type TagSize = "sm" | "md" | "lg";
 
 const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
   { label: "Cursor", size: "lg", core: true },
-  { label: "Vibe-coding", size: "lg" },
+  { label: "Сборка с ИИ", size: "lg" },
   { label: "React", size: "md" },
   { label: "TypeScript", size: "md" },
   { label: "TanStack", size: "md" },
@@ -24,17 +24,14 @@ const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
   { label: "DeepSeek", size: "sm" },
   { label: "OpenRouter", size: "sm" },
   { label: "NotebookLM", size: "sm" },
-  { label: "RAG", size: "sm" },
-  { label: "OCR", size: "sm" },
   { label: "Python", size: "sm" },
   { label: "Pandas", size: "sm" },
-  { label: "UX Testing", size: "sm" },
-  { label: "AI Evaluation", size: "sm" },
-  { label: "DevTools", size: "sm" },
+  { label: "Тестирование", size: "sm" },
+  { label: "Оценка качества ИИ", size: "sm" },
   { label: "Figma", size: "sm" },
   { label: "PRO100", size: "sm" },
-  { label: "MVP Shipping", size: "md" },
-  { label: "Automation", size: "md" },
+  { label: "Быстрый запуск", size: "md" },
+  { label: "Автоматизация", size: "md" },
 ];
 
 const SIZE_CLASS: Record<TagSize, string> = {
@@ -57,11 +54,11 @@ export function Stack() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <SectionLabel chapter={5} title="Технологический стек" />
-          <SectionHeadline before="Стек технологий и" accent="автоматизации" />
+          <SectionLabel chapter={5} title="Инструменты" />
+          <SectionHeadline before="С чем я" accent="работаю" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            AI-native инструменты, фреймворки и практики — всё, что использую при сборке MVP и
-            автоматизации.
+            Инструменты, которыми пользуюсь каждый день, чтобы быстро собирать рабочие прототипы и
+            автоматизировать рутину.
           </p>
         </motion.div>
 
@@ -74,7 +71,7 @@ export function Stack() {
           className="relative glass-panel rounded-2xl p-8 md:p-10 mb-12"
         >
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">
-            core · Cursor · ежедневный стек
+            основной инструмент · Cursor
           </p>
 
           <div className="flex flex-wrap gap-2.5 md:gap-3 justify-center md:justify-start">

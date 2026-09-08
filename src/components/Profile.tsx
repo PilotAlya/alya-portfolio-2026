@@ -24,7 +24,7 @@ export function Profile() {
             src={portrait}
             alt="Альбина Акбарова — портрет"
             caption="Альбина Акбарова · Pilot Ali"
-            className="relative aspect-[3/5] overflow-hidden ring-1 ring-white/10 bg-card rounded-sm group/portrait"
+            className="relative aspect-[3/5] overflow-hidden ring-1 ring-foreground/10 bg-card rounded-sm group/portrait"
           >
             <GrainFrame
               src={portrait}
@@ -37,19 +37,15 @@ export function Profile() {
           </MediaZoom>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
-          <SectionLabel chapter={8} title="Профиль специалиста" />
-          <SectionHeadline accent="Профиль" after="специалиста" className="mb-6" />
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}>
+          <SectionLabel chapter={7} title="Обо мне" />
+          <SectionHeadline accent="Немного обо мне" className="mb-6" />
           <p className="text-muted-foreground text-sm leading-relaxed mb-10 max-w-xl">
-            Образование и AI-практика. Чем отличаюсь в работе — в блоке «Почему именно я» выше.
+            Образование и то, как я работаю с ИИ каждый день. Чем я полезна в работе — в блоке
+            «Почему именно я» выше.
           </p>
 
-          <div className="border-t border-white/10 pt-8 grid sm:grid-cols-3 gap-8">
+          <div className="border-t border-foreground/10 pt-8 grid sm:grid-cols-3 gap-8">
             {[
               {
                 t: "Профильное образование",
@@ -58,20 +54,23 @@ export function Profile() {
               },
               {
                 t: "Сейчас учусь",
-                d: "Нетология · «Системный аналитик» — архитектура систем, REST API, BPMN. Фундамент системного мышления, не главная роль.",
+                d: "Учусь на системного аналитика в Нетологии — это про то, как выстраивать логику сложных систем и процессов. Хороший фундамент, но не главная роль.",
                 badge: "В процессе",
                 Icon: GraduationCap,
               },
               {
-                t: "Native AI user",
-                d: "Ежедневно Cursor, OpenCode, Gemini; новые инструменты осваиваю через практику — собираю MVP, а не просто «пробую ChatGPT».",
+                t: "Работаю с ИИ каждый день",
+                d: "Использую ИИ-инструменты в работе ежедневно — не просто «пробую ChatGPT», а собираю с их помощью реальные рабочие вещи: сайты, помощников, автоматизации.",
                 Icon: Sparkles,
               },
             ].map((c) => (
               <div
                 key={c.t}
                 {...spotlightAttrs}
-                className={spotlightClass("rounded-lg border border-transparent p-4 -m-4", "subtle")}
+                className={spotlightClass(
+                  "rounded-lg border border-transparent p-4 -m-4",
+                  "subtle",
+                )}
               >
                 <div className="flex items-center gap-2 mb-2">
                   {c.Icon && <c.Icon className="size-3.5 text-accent" />}

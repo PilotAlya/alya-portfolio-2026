@@ -37,18 +37,14 @@ export function SectionIntro({
       >
         <div className="max-w-3xl">
           <SectionLabel chapter={chapter} title={label} />
-          <SectionHeadline
-            before={titleBefore}
-            accent={titleAccent}
-            after={titleAfter}
-          />
+          <SectionHeadline before={titleBefore} accent={titleAccent} after={titleAfter} />
           {description && (
             <p className="text-muted-foreground mt-3 leading-relaxed max-w-2xl">{description}</p>
           )}
         </div>
 
         {meta && (
-          <div className="shrink-0 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground border border-white/10 rounded-md px-4 py-2.5 bg-white/[0.02]">
+          <div className="shrink-0 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground border border-foreground/10 rounded-md px-4 py-2.5 bg-foreground/[0.02]">
             {meta}
           </div>
         )}

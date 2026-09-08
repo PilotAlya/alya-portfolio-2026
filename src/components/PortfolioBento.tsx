@@ -9,9 +9,9 @@ import { fadeUp } from "./shared";
 const TILES = [
   {
     id: "case-crm",
-    title: "CRM Lead Card",
-    subtitle: "React · Vite · localStorage · маска телефона",
-    tag: "Pet project",
+    title: "Мини-CRM для клиентов",
+    subtitle: "Форма лида, маска телефона, сохранение данных",
+    tag: "Личный проект",
     Icon: Kanban,
     span: "md:col-span-2",
     href: "#case-crm",
@@ -20,15 +20,15 @@ const TILES = [
   },
   {
     id: "case-b2b",
-    title: "B2B Churn Audit",
-    subtitle: "Data audit · Python · executive dashboard",
-    tag: "Background",
+    title: "Проверка оттока клиентов",
+    subtitle: "Аудит данных и дашборд для руководства",
+    tag: "Проверка данных",
     Icon: BarChart3,
     span: "",
     href: "#case-b2b",
     accent: "from-spark/15 via-transparent to-transparent",
     image: churnDashboard,
-    grainCaption: "Data audit",
+    grainCaption: "Дашборд",
   },
 ] as const;
 
@@ -90,7 +90,7 @@ export function PortfolioBento() {
                     {tile.subtitle}
                   </p>
                 </div>
-                <div className="shrink-0 p-2 rounded-md border border-white/10 bg-background/40 text-accent group-hover:border-accent/40 transition-colors">
+                <div className="shrink-0 p-2 rounded-md border border-foreground/10 bg-background/40 text-accent group-hover:border-accent/40 transition-colors">
                   <tile.Icon className="size-4" />
                 </div>
               </div>

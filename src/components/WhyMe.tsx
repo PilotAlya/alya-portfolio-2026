@@ -9,29 +9,29 @@ export function WhyMe() {
   const items = [
     {
       n: "01",
-      problem: "MVP нужен «вчера», а команды разработки нет.",
+      problem: "Нужен рабочий прототип быстро, а своей команды разработки нет.",
       solution:
-        "Собираю рабочие прототипы через vibe-coding: проектирую логику, AI помогает с кодом, я проверяю и деплою.",
+        "Проектирую логику продукта и с помощью современных ИИ-инструментов быстро собираю рабочую версию — сама проверяю и запускаю.",
       result:
-        "NOVA Dashboard, B2B-дашборд, legacy-скрипты — live-demo на Vercel, без посредников.",
+        "NOVA, мини-CRM, дашборд для бизнеса — готовые примеры, которые можно открыть и потрогать прямо сейчас.",
       Icon: Sparkles,
     },
     {
       n: "02",
-      problem: "Нужно быстро разобраться в новой теме или домене.",
+      problem: "Нужно быстро разобраться в новой теме или сфере бизнеса.",
       solution:
-        "Native AI workflow: Cursor, OpenCode, Gemini, NotebookLM — системный подход к любому контексту, не важно насколько он новый.",
+        "Использую ИИ как инструмент для быстрого погружения: изучаю тему, раскладываю по полочкам и сразу применяю на практике.",
       result:
-        "От B2B-аудита CSV до MVP с Kanban и AI-ассистентом — осваиваю через практику, а не через месяцы курсов.",
+        "От проверки данных для бизнеса до системы с канбан-доской и ИИ-помощником — учусь через реальные задачи, а не только по курсам.",
       Icon: Target,
     },
     {
       n: "03",
-      problem: "Нужна проверка AI-продукта, а не слепая вера в генерацию.",
+      problem: "Нужна уверенность, что решение реально работает, а не просто красиво выглядит.",
       solution:
-        "UX-тесты, сценарии, Pass/Fail — проверяю своё и чужое: качество ответов LLM, логику интерфейса, edge cases.",
+        "Тестирую всё, что делаю: собираю обратную связь от реальных людей, проверяю разные сценарии, ищу слабые места до того, как их найдёт клиент.",
       result:
-        "NOVA: 12+ правок до деплоя; кейс Яндекс Алиса — 6 сценариев, 5 баг-репортов как AI product evaluation.",
+        "В NOVA — 12+ доработок по итогам тестов с пользователями. В опыте есть и проверка голосового помощника: 6 сценариев, честные отчёты о найденных проблемах.",
       Icon: CircuitBoard,
     },
   ];
@@ -46,10 +46,9 @@ export function WhyMe() {
           className="mb-14 max-w-3xl"
         >
           <SectionLabel chapter={1} title="Почему именно я" />
-          <SectionHeadline before="Что я приношу в" accent="команду" />
+          <SectionHeadline before="Что я приношу в" accent="ваш проект" />
           <p className="text-muted-foreground mt-4 leading-relaxed">
-            Три задачи, с которыми ко мне приходят — и как я их закрываю через AI и системное
-            мышление.
+            Три задачи, с которыми ко мне чаще всего приходят — и как я их решаю.
           </p>
         </motion.div>
 
@@ -63,7 +62,7 @@ export function WhyMe() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                "corner-brackets rounded-lg border border-white/10 bg-white/[0.02] p-7 flex flex-col gap-5",
+                "corner-brackets rounded-lg border border-foreground/10 bg-foreground/[0.02] p-7 flex flex-col gap-5",
               )}
             >
               <CornerMarks />
@@ -93,7 +92,7 @@ export function WhyMe() {
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{it.solution}</p>
                 </motion.div>
-                <motion.div variants={staggerItem} className="border-t border-white/10 pt-4">
+                <motion.div variants={staggerItem} className="border-t border-foreground/10 pt-4">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
                     Результат
                   </div>

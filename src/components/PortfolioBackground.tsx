@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  BarChart3,
-  ExternalLink,
-  Globe,
-  Sparkles,
-  TrendingDown,
-} from "lucide-react";
+import { ArrowUpRight, BarChart3, ExternalLink, Globe, Sparkles, TrendingDown } from "lucide-react";
 
 import dashboardPreview from "@/assets/churn-dashboard.png";
 import { GrainFrame, GrainOverlay } from "./effects/GrainFrame";
@@ -20,27 +13,27 @@ const ALICE_PDF = "/yandex-alice-qa-report.pdf";
 const ITEMS = [
   {
     id: "case-b2b",
-    tag: "Data Audit",
+    tag: "Проверка данных",
     Icon: BarChart3,
-    title: "B2B Churn Audit",
+    title: "Проверка оттока клиентов",
     summary:
-      "Проверила отчёт аналитиков: отток был завышен с 72.7% до реальных 63.6%. Python-скрипт для сверки + executive dashboard для руководства.",
+      "Перепроверила отчёт аналитиков компании — отток клиентов оказался завышен: 72.7% вместо реальных 63.6%. Написала скрипт для проверки и собрала наглядный дашборд для руководства.",
     metric: "72.7% → 63.6%",
-    metricLabel: "коррекция оттока",
+    metricLabel: "исправленная цифра оттока",
     href: DASHBOARD_URL,
-    linkLabel: "Dashboard",
+    linkLabel: "Дашборд",
     external: true,
     accent: "from-spark/15 via-transparent to-transparent",
   },
   {
     id: "case-browser",
-    tag: "Product QC",
+    tag: "Проверка продукта",
     Icon: Globe,
     title: "Яндекс.Браузер",
     summary:
-      "3 сценария по ТЗ (боковая панель, PWA, группы вкладок). Pass / Pass с дефектами, 2 баг-репорта. Background — фильтр качества, не core identity.",
-    metric: "3 → 2 Pass",
-    metricLabel: "сценариев",
+      "Проверила 3 функции браузера по техническому заданию (боковая панель, установка как приложение, группы вкладок). Нашла и задокументировала 2 проблемы.",
+    metric: "3 → 2 без замечаний",
+    metricLabel: "сценариев проверено",
     href: BROWSER_PDF,
     linkLabel: "PDF-отчёт",
     external: true,
@@ -48,13 +41,13 @@ const ITEMS = [
   },
   {
     id: "case-alice",
-    tag: "AI Evaluation",
+    tag: "Оценка ИИ",
     Icon: Sparkles,
-    title: "Яндекс с Алисой",
+    title: "Голосовой помощник Алиса",
     summary:
-      "Оценка conversational AI: 6 сценариев (диалоги, погода, музыка, карусели). 1 Pass / 5 Fail, 5 баг-репортов с Expected/Actual и severity.",
+      "Проверила, насколько хорошо голосовой помощник справляется с диалогом: 6 сценариев (погода, музыка, карточки и другое). Нашла проблемы в 5 из 6 и оформила подробные отчёты.",
     metric: "6 сценариев",
-    metricLabel: "AI quality",
+    metricLabel: "проверено диалогов",
     href: ALICE_PDF,
     linkLabel: "PDF-отчёт",
     external: true,
@@ -66,7 +59,7 @@ export function PortfolioBackground() {
   return (
     <section
       id="portfolio-background"
-      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-white/5 scroll-mt-24"
+      className="relative py-16 px-6 lg:px-8 overflow-hidden border-t border-foreground/5 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -77,14 +70,14 @@ export function PortfolioBackground() {
           className="mb-10 max-w-3xl"
         >
           <span className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
-            Background · Data & Validation
+            Дополнительный опыт
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mt-3 mb-3 font-display">
             Ещё из практики
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Аудит данных, контроль качества продукта и оценка AI-ассистентов — часть бэкграунда SA/QA,
-            которую использую как фильтр при shipping, а не как основную идентичность.
+            Проверка данных, контроль качества продукта и оценка ИИ-помощников — эти навыки я
+            использую как фильтр качества во всём, что делаю.
           </p>
         </motion.div>
 
@@ -131,7 +124,7 @@ export function PortfolioBackground() {
                   <span className="font-mono text-[9px] uppercase tracking-widest text-accent/90">
                     {item.tag}
                   </span>
-                  <div className="shrink-0 p-1.5 rounded-md border border-white/10 bg-background/40 text-accent">
+                  <div className="shrink-0 p-1.5 rounded-md border border-foreground/10 bg-background/40 text-accent">
                     <item.Icon className="size-3.5" />
                   </div>
                 </div>
@@ -144,7 +137,7 @@ export function PortfolioBackground() {
                   {item.summary}
                 </p>
 
-                <div className="flex items-end justify-between gap-3 pt-3 border-t border-white/10">
+                <div className="flex items-end justify-between gap-3 pt-3 border-t border-foreground/10">
                   <div>
                     <div className="font-mono text-sm font-bold text-accent flex items-center gap-1">
                       {item.id === "case-b2b" && <TrendingDown className="size-3" />}
@@ -173,16 +166,6 @@ export function PortfolioBackground() {
             </motion.article>
           ))}
         </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mt-6 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70"
-        >
-          PDF и dashboard · артефакты для AI assessor / data audit ролей
-        </motion.p>
       </div>
     </section>
   );

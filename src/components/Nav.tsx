@@ -17,7 +17,6 @@ const NAV_LINKS = [
   { href: "#nova", label: "NOVA" },
   { href: "#experience", label: "Опыт" },
   { href: "#portfolio", label: "Портфолио" },
-  { href: "#github", label: "GitHub" },
 ];
 
 export function Nav() {
@@ -37,7 +36,7 @@ export function Nav() {
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-border glass-panel !rounded-none !border-x-0 !border-t-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="font-mono text-sm tracking-tighter link-spark">
-          Pilot Ali <span className="text-muted-foreground">// AI · Vibe-Coding</span>
+          Pilot Ali <span className="text-muted-foreground">// сайты и ИИ для бизнеса</span>
         </a>
 
         <div className="hidden md:flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
@@ -78,7 +77,9 @@ export function Nav() {
                       href={link.href}
                       className={cn(
                         "nav-pill px-4 py-3 text-center",
-                        isActive(link.href) ? "is-active" : "text-muted-foreground border border-border",
+                        isActive(link.href)
+                          ? "is-active"
+                          : "text-muted-foreground border border-border",
                       )}
                     >
                       {link.label}

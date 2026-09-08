@@ -78,22 +78,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Альбина Акбарова — AI-Native Engineer · Vibe-Coder" },
+      { title: "Альбина Акбарова — сайты, прототипы и ИИ-помощники для бизнеса" },
       {
         name: "description",
         content:
-          "Портфолио Альбины Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
+          "Портфолио Альбины Акбаровой (Pilot Ali). Помогаю бизнесу быстро получить рабочий сайт, прототип или ИИ-помощника — от идеи до запуска. Кейсы: NOVA Dashboard, мини-CRM, автоматизации.",
       },
       { name: "author", content: "Альбина Акбарова" },
       { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:locale", content: "ru_RU" },
-      { property: "og:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
+      { property: "og:title", content: "Альбина Акбарова — сайты и ИИ-инструменты для бизнеса" },
       {
         property: "og:description",
         content:
-          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
+          "Собираю рабочие прототипы и ИИ-помощников, проверяю результат и довожу до запуска.",
       },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:type", content: "image/png" },
@@ -101,14 +101,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "ALYA AKBAROVA — AI-Native Engineer · Vibe-Coder · Pilot Ali",
+        content: "Альбина Акбарова — сайты и ИИ-помощники для бизнеса · Pilot Ali",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
+      { name: "twitter:title", content: "Альбина Акбарова — сайты и ИИ-инструменты для бизнеса" },
       {
         name: "twitter:description",
         content:
-          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
+          "Собираю рабочие прототипы и ИИ-помощников, проверяю результат и довожу до запуска.",
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
@@ -132,14 +132,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className="dark" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
         <noscript>
           <style>
-            {"[style*='opacity:0'],[style*='opacity: 0']{opacity:1!important;transform:none!important}"}
+            {
+              "[style*='opacity:0'],[style*='opacity: 0']{opacity:1!important;transform:none!important}"
+            }
           </style>
         </noscript>
         {children}

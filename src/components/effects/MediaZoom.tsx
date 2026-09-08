@@ -1,11 +1,7 @@
 import { ChevronLeft, ChevronRight, Expand } from "lucide-react";
 import { useEffect, useState, type KeyboardEvent, type ReactNode } from "react";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 export type MediaZoomItem = {
@@ -42,9 +38,7 @@ export function MediaZoom({
   children,
 }: MediaZoomProps) {
   const gallery: MediaZoomItem[] =
-    items && items.length > 0
-      ? items
-      : [{ src, alt, caption, kind }];
+    items && items.length > 0 ? items : [{ src, alt, caption, kind }];
 
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(index);
@@ -102,7 +96,7 @@ export function MediaZoom({
         {children}
         <span
           className={cn(
-            "pointer-events-none absolute bottom-3 right-3 z-[3] inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-background/80 px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground opacity-80 transition-opacity sm:opacity-0 sm:group-hover/zoom:opacity-100 sm:group-focus-visible/zoom:opacity-100",
+            "pointer-events-none absolute bottom-3 right-3 z-[3] inline-flex items-center gap-1.5 rounded-md border border-foreground/15 bg-background/80 px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground opacity-80 transition-opacity sm:opacity-0 sm:group-hover/zoom:opacity-100 sm:group-focus-visible/zoom:opacity-100",
             hintClassName,
           )}
         >
@@ -114,9 +108,9 @@ export function MediaZoom({
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           className={cn(
-            "fixed left-1/2 top-1/2 z-50 flex h-[min(96vh,100dvh)] w-[min(98vw,1600px)] max-w-none -translate-x-1/2 -translate-y-1/2 flex-col gap-0 overflow-hidden border-white/10 bg-background/97 p-0 sm:rounded-lg",
+            "fixed left-1/2 top-1/2 z-50 flex h-[min(96vh,100dvh)] w-[min(98vw,1600px)] max-w-none -translate-x-1/2 -translate-y-1/2 flex-col gap-0 overflow-hidden border-foreground/10 bg-background/97 p-0 sm:rounded-lg",
             "data-[state=open]:zoom-in-95",
-            "[&>button]:z-20 [&>button]:right-3 [&>button]:top-3 [&>button]:rounded-full [&>button]:border [&>button]:border-white/15 [&>button]:bg-background/80 [&>button]:p-2 [&>button]:opacity-100",
+            "[&>button]:z-20 [&>button]:right-3 [&>button]:top-3 [&>button]:rounded-full [&>button]:border [&>button]:border-foreground/15 [&>button]:bg-background/80 [&>button]:p-2 [&>button]:opacity-100",
           )}
         >
           <DialogTitle className="sr-only">
@@ -153,7 +147,7 @@ export function MediaZoom({
                     e.stopPropagation();
                     goPrev();
                   }}
-                  className="absolute left-2 top-1/2 z-[5] flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-background/80 text-foreground backdrop-blur transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground sm:left-4 sm:size-12"
+                  className="absolute left-2 top-1/2 z-[5] flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/15 bg-background/80 text-foreground backdrop-blur transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground sm:left-4 sm:size-12"
                   aria-label="Предыдущее"
                 >
                   <ChevronLeft className="size-6" />
@@ -164,7 +158,7 @@ export function MediaZoom({
                     e.stopPropagation();
                     goNext();
                   }}
-                  className="absolute right-2 top-1/2 z-[5] flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-background/80 text-foreground backdrop-blur transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground sm:right-4 sm:size-12"
+                  className="absolute right-2 top-1/2 z-[5] flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/15 bg-background/80 text-foreground backdrop-blur transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground sm:right-4 sm:size-12"
                   aria-label="Следующее"
                 >
                   <ChevronRight className="size-6" />
@@ -173,7 +167,7 @@ export function MediaZoom({
             )}
           </div>
 
-          <div className="flex shrink-0 items-center justify-between gap-3 border-t border-white/10 px-4 py-3 sm:px-6">
+          <div className="flex shrink-0 items-center justify-between gap-3 border-t border-foreground/10 px-4 py-3 sm:px-6">
             <p className="min-w-0 flex-1 truncate font-mono text-[10px] uppercase tracking-widest text-muted-foreground sm:text-xs">
               {current.caption ?? current.alt}
             </p>

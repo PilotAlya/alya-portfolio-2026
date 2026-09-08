@@ -35,14 +35,14 @@ import novaPipelineTasks from "@/assets/nova-pipeline-tasks.png";
 import novaDemoVideo from "@/assets/nova-demo.webm";
 
 const SLIDES = [
-  { src: novaOnboarding,    label: "Онбординг · 7 шагов", tag: "Onboarding" },
-  { src: novaDashboard,     label: "Дашборд · Администратор", tag: "Dashboard" },
+  { src: novaOnboarding, label: "Онбординг · 7 шагов", tag: "Onboarding" },
+  { src: novaDashboard, label: "Дашборд · Администратор", tag: "Dashboard" },
   { src: novaPipelineTasks, label: "Пайплайн задач · Канбан", tag: "Pipeline" },
-  { src: novaWiki,          label: "База знаний · Wiki · элемент геймификации", tag: "Knowledge" },
-  { src: novaTeam,          label: "Команда · Наши герои", tag: "Team" },
-  { src: novaKassa,         label: "Касса · Смена", tag: "Kassa" },
-  { src: novaBorisChat,     label: "Командный чат", tag: "Chat" },
-  { src: nova404,           label: "404 · «Я устал… я ухожу»", tag: "404" },
+  { src: novaWiki, label: "База знаний · Wiki · элемент геймификации", tag: "Knowledge" },
+  { src: novaTeam, label: "Команда · Наши герои", tag: "Team" },
+  { src: novaKassa, label: "Касса · Смена", tag: "Kassa" },
+  { src: novaBorisChat, label: "Командный чат", tag: "Chat" },
+  { src: nova404, label: "404 · «Я устал… я ухожу»", tag: "404" },
 ];
 
 const NOVA_GALLERY = SLIDES.map((s) => ({
@@ -83,7 +83,7 @@ function NovaCarousel() {
           {SLIDES[current].tag}
         </div>
         {/* caption */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] p-3 bg-gradient-to-t from-background/95 to-transparent">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] p-3 bg-gradient-to-t from-black/90 to-transparent">
           <div className="font-mono text-[10px] uppercase tracking-wider text-white/80">
             {SLIDES[current].label}
           </div>
@@ -92,7 +92,7 @@ function NovaCarousel() {
         <button
           type="button"
           onClick={prev}
-          className="absolute left-2 top-1/2 z-[5] -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
+          className="absolute left-2 top-1/2 z-[5] -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-foreground/10 hover:border-accent transition-all"
           aria-label="Предыдущий"
         >
           <ChevronLeft className="size-4" />
@@ -100,7 +100,7 @@ function NovaCarousel() {
         <button
           type="button"
           onClick={next}
-          className="absolute right-2 top-1/2 z-[5] -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-white/10 hover:border-accent transition-all"
+          className="absolute right-2 top-1/2 z-[5] -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-background/70 hover:bg-accent border border-foreground/10 hover:border-accent transition-all"
           aria-label="Следующий"
         >
           <ChevronRight className="size-4" />
@@ -130,15 +130,10 @@ function NovaCarousel() {
             className={`relative aspect-video overflow-hidden rounded ring-1 transition-all ${
               i === current
                 ? "ring-accent shadow-[0_0_8px_color-mix(in_oklab,var(--accent)_45%,transparent)]"
-                : "ring-white/10 opacity-50 hover:opacity-80"
+                : "ring-foreground/10 opacity-50 hover:opacity-80"
             }`}
           >
-            <img
-              src={s.src}
-              alt={s.label}
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
+            <img src={s.src} alt={s.label} className="h-full w-full object-cover" loading="lazy" />
           </button>
         ))}
       </div>
@@ -150,10 +145,7 @@ export function Nova() {
   const { sectionRef, pinRef, scrollRef } = useNovaScrollPin();
 
   return (
-    <section
-      id="nova"
-      className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden scroll-mt-24"
-    >
+    <section id="nova" className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
       <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
 
@@ -169,7 +161,7 @@ export function Nova() {
           className="mb-12 max-w-3xl"
         >
           <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Флагманский проект · NOVA
+            Главный проект · NOVA
           </span>
           <div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display">
@@ -177,18 +169,16 @@ export function Nova() {
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4 prose-portfolio">
-            Единая точка управления заказами, складом и AI-навигатором «Борис». Первоначально
-            проектировалась как полнофункциональная система, но после первого цикла тестирования
-            была переработана в NOVA Light — упрощённую версию с фокусом на базовый заказной цикл
-            и складской учёт.
+            NOVA — это единое окно для управления заказами, складом и общением с ИИ-помощником
+            «Борис». Первая версия получилась слишком сложной, поэтому после тестов с реальными
+            людьми я упростила её до NOVA Light — версии, где остались только заказы и склад.
           </p>
           <p className="text-base text-muted-foreground/90 leading-relaxed border-l-2 border-accent/60 pl-4">
-            <span className="text-foreground font-medium">Два цикла разработки:</span> Первая
-            версия оказалась перегруженной функционалом, выходящим за пределы моих компетенций
-            (бухгалтерия, углубленная логика работы с клиентом) — 3/3 пользователей указали на
-            сложность. На основе обратной связи переработала систему в NOVA Light. Повторные
-            тесты с теми же пользователями: «Стало намного понятнее. Сами бы таким
-            пользовались».
+            <span className="text-foreground font-medium">Два круга доработки:</span> в первую
+            версию я попыталась уместить даже бухгалтерию и сложную логику работы с клиентами — и
+            все 3 человека, с кем я тестировала, сказали, что пользоваться этим тяжело. Я убрала
+            лишнее и сделала NOVA Light. Показала тем же людям снова — и услышала: «Стало намного
+            понятнее. Сами бы таким пользовались».
           </p>
         </motion.div>
 
@@ -222,7 +212,7 @@ export function Nova() {
                 </div>
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background/95 via-background/60 to-transparent">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                    NOVA Dashboard · MVP
+                    NOVA Dashboard · прототип
                   </div>
                   <div className="text-sm text-muted-foreground">
                     Управление складом, заказами и AI-ассистентом «Борис» в одном окне
@@ -252,47 +242,53 @@ export function Nova() {
                 transition={{ duration: 0.6 }}
                 className="nova-scroll-panel border border-accent/20 bg-accent/5 rounded-lg p-4 sm:p-6"
               >
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 mb-5">
-            <div className="flex items-center gap-3 shrink-0">
-              <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
-                <Users className="size-5 text-accent" />
-              </div>
-              <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
-                UX Validation
-              </span>
-            </div>
-            <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">
-              <span className="text-foreground font-medium">Полный цикл тестирования (проектирование → тестирование → итерация).</span> Провела 3 сессии коридорного тестирования (по 20-40 минут) с пользователями разных возрастных групп. Найдено и задокументировано в Google Sheets 12+ проблем. Закрыто 3 критических блокера. Баги исправлялись в OpenCode. Итеративное тестирование: первый цикл → доработка → повторное тестирование.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 border-t border-accent/10 pt-5">
-            {[
-              { value: "2 цикла", label: "Итеративная разработка и тестирование" },
-              { value: "12+", label: "Дефектов задокументировано" },
-              { value: "3",   label: "Критических блокера закрыто" },
-              { value: "3/3", label: "«Стало понятнее» после NOVA Light" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.45 }}
-                className="border border-white/10 rounded-lg p-3 sm:p-4 bg-card/40 text-center"
-              >
-                <div className="text-lg sm:text-2xl font-extrabold tracking-tight text-accent mb-1">
-                  {stat.value}
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 mb-5">
+                  <div className="flex items-center gap-3 shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+                      <Users className="size-5 text-accent" />
+                    </div>
+                    <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
+                      Проверка на реальных людях
+                    </span>
+                  </div>
+                  <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-foreground font-medium">
+                      Я не просто сделала интерфейс — я его протестировала.
+                    </span>{" "}
+                    Провела 3 сессии по 20–40 минут с людьми разных возрастов: наблюдала, как они
+                    пользуются NOVA, и записывала все проблемы. Нашла и задокументировала 12+
+                    проблем, закрыла 3 самых критичных. Потом протестировала снова — с теми же
+                    людьми.
+                  </p>
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-muted-foreground leading-snug">
-                  {stat.label}
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 border-t border-accent/10 pt-5">
+                  {[
+                    { value: "2 круга", label: "Доработки и повторного тестирования" },
+                    { value: "12+", label: "Проблем найдено и записано" },
+                    { value: "3", label: "Самых критичных — исправлено" },
+                    { value: "3/3", label: "Сказали «стало понятнее» после доработки" },
+                  ].map((stat, i) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.06, duration: 0.45 }}
+                      className="border border-foreground/10 rounded-lg p-3 sm:p-4 bg-card/40 text-center"
+                    >
+                      <div className="text-lg sm:text-2xl font-extrabold tracking-tight text-accent mb-1">
+                        {stat.value}
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] text-muted-foreground leading-snug">
+                        {stat.label}
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* FAQ */}
+              {/* FAQ */}
               <motion.div
                 id="nova-detail"
                 initial={{ opacity: 0, y: 20 }}
@@ -301,103 +297,103 @@ export function Nova() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="nova-scroll-panel"
               >
-          <div className="flex items-center gap-3 mb-5">
-            <HelpCircle className="size-4 text-accent" />
-            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
-              Вопросы про NOVA
-            </span>
-          </div>
-          <Accordion
-            type="single"
-            collapsible
-            className="border border-white/10 rounded-lg overflow-hidden divide-y divide-white/10"
-          >
-            {[
-              {
-                value: "n1",
-                q: "Что такое NOVA Dashboard?",
-                a: "Единая точка управления заказами, складом и AI-навигатором «Борис». Система прошла два цикла разработки: от перегруженной версии до облегченной NOVA Light с фокусом на core-функциональность.",
-              },
-              {
-                value: "n2",
-                q: "Как работает ассистент «Борис»?",
-                a: "Ассистент отвечает строго по тому, что ему выдали: загруженные регламенты, списки номенклатуры, инструкции и данные о заказах. Он не выходит за рамки этих источников и не выдумывает ответов.",
-              },
-              {
-                value: "n-ai",
-                q: "Есть ли в MVP реальный ИИ?",
-                a: "В текущем MVP реального ИИ нет — дашборд показывает сценарий его работы. Интеграция настоящей модели технически возможна и закладывается в архитектуру как следующий шаг.",
-              },
-              {
-                value: "n3",
-                q: "Для какого бизнеса подходит NOVA?",
-                a: "MVP заточен под бизнес со складом и заказным циклом; архитектура масштабируется на другие отрасли.",
-              },
-              {
-                value: "n-pilot",
-                q: "Как проходило тестирование?",
-                a: "Два цикла: (1) Полная версия — 3 сессии, выявлена перегруженность функциями (бухгалтерия). 3/3 пользователей подтвердили сложность. (2) NOVA Light — упрощённая версия с фокусом на заказы и склад. Повторные тесты с теми же людьми: «Стало намного понятнее. Сами бы таким пользовались, если бы это было полноценно-работающее приложение».",
-              },
-              {
-                value: "n5",
-                q: "Где посмотреть детали и UX-исследование?",
-                a: "Полный разбор функционала, коридорных тестов и «до/после» — в интерактивной презентации NOVA.",
-              },
-            ].map((item) => (
-              <AccordionItem key={item.value} value={item.value} className="border-0">
-                <AccordionTrigger className="px-4 sm:px-5 py-4 text-sm font-medium hover:no-underline hover:bg-white/[0.02] transition-colors [&[data-state=open]>svg]:rotate-180">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="px-4 sm:px-5 pb-4 text-sm text-muted-foreground leading-relaxed">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                <div className="flex items-center gap-3 mb-5">
+                  <HelpCircle className="size-4 text-accent" />
+                  <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
+                    Вопросы про NOVA
+                  </span>
+                </div>
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="border border-foreground/10 rounded-lg overflow-hidden divide-y divide-foreground/10"
+                >
+                  {[
+                    {
+                      value: "n1",
+                      q: "Что такое NOVA Dashboard?",
+                      a: "Единое окно для управления заказами, складом и общением с ИИ-помощником «Борис». Я сделала два варианта: первый оказался слишком сложным, второй — NOVA Light — проще и удобнее в работе.",
+                    },
+                    {
+                      value: "n2",
+                      q: "Как работает ассистент «Борис»?",
+                      a: "Борис отвечает только на основе того, что ему загрузили: инструкций, списков товаров, данных о заказах. Он не выдумывает ответы и не выходит за рамки того, что знает.",
+                    },
+                    {
+                      value: "n-ai",
+                      q: "Есть ли внутри настоящий искусственный интеллект?",
+                      a: "Сейчас нет — дашборд показывает, как это будет работать в реальности (сценарий, а не подключённая модель). Подключить настоящий ИИ технически возможно — это следующий шаг, если проект пойдёт дальше.",
+                    },
+                    {
+                      value: "n3",
+                      q: "Для какого бизнеса подходит NOVA?",
+                      a: "Для бизнеса, где есть склад и заказы — например, магазин, мастерская, шоурум. Систему можно адаптировать и под другие отрасли.",
+                    },
+                    {
+                      value: "n-pilot",
+                      q: "Как проходило тестирование?",
+                      a: "В два круга. Сначала — полная версия: 3 сессии показали, что она перегружена лишними функциями вроде бухгалтерии, все 3 человека подтвердили, что пользоваться сложно. Затем — NOVA Light, упрощённая версия с фокусом на заказы и склад. Те же люди протестировали снова: «Стало намного понятнее. Сами бы таким пользовались, если бы это было полноценно работающее приложение».",
+                    },
+                    {
+                      value: "n5",
+                      q: "Где посмотреть детали и результаты тестирования?",
+                      a: "Полный разбор функционала, тестов и «до/после» — в отдельной презентации NOVA.",
+                    },
+                  ].map((item) => (
+                    <AccordionItem key={item.value} value={item.value} className="border-0">
+                      <AccordionTrigger className="px-4 sm:px-5 py-4 text-sm font-medium hover:no-underline hover:bg-foreground/[0.02] transition-colors [&[data-state=open]>svg]:rotate-180">
+                        {item.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="px-4 sm:px-5 pb-4 text-sm text-muted-foreground leading-relaxed">
+                        {item.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </motion.div>
 
               {/* Feature cards */}
               <div className="nova-scroll-panel grid md:grid-cols-1 gap-4">
-          {[
-            {
-              t: "Интеллектуальный слой",
-              d: "Сценарий ассистента «Борис»: ответы по регламентам и номенклатуре. Реальный LLM — следующий шаг архитектуры.",
-              Icon: Bot,
-            },
-            {
-              t: "Автономность",
-              d: "Самообновляемые дашборды, заменяющие отдел отчётности.",
-              Icon: Activity,
-            },
-            {
-              t: "Live-презентация",
-              d: "Интерактивная презентация NOVA Light на Vercel — заказы, склад, AI-ассистент.",
-              Icon: Rocket,
-            },
-          ].map((f) => (
-            <div
-              key={f.t}
-              className="border border-white/10 p-6 hover:border-accent/40 transition-colors"
-            >
-              <f.Icon className="size-5 text-accent mb-4" />
-              <div className="font-bold mb-2">{f.t}</div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
-            </div>
-          ))}
+                {[
+                  {
+                    t: "ИИ-помощник внутри",
+                    d: "Борис отвечает по инструкциям и товарным спискам. Подключение полноценной модели ИИ — следующий шаг развития.",
+                    Icon: Bot,
+                  },
+                  {
+                    t: "Живая отчётность",
+                    d: "Дашборды обновляются сами — не нужно вручную сводить отчёты каждый раз.",
+                    Icon: Activity,
+                  },
+                  {
+                    t: "Живая демо-версия",
+                    d: "Можно открыть и покликать прямо сейчас — заказы, склад, чат с Борисом.",
+                    Icon: Rocket,
+                  },
+                ].map((f) => (
+                  <div
+                    key={f.t}
+                    className="border border-foreground/10 p-6 hover:border-accent/40 transition-colors"
+                  >
+                    <f.Icon className="size-5 text-accent mb-4" />
+                    <div className="font-bold mb-2">{f.t}</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
+                  </div>
+                ))}
               </div>
 
               {/* Презентация */}
               <div className="nova-scroll-panel flex justify-start pb-4">
-          <MagneticLink
-            href="https://alya-nova-2026.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-spark group items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold"
-          >
-            <PlayCircle className="size-4" />
-            Смотреть презентацию NOVA
-            <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </MagneticLink>
+                <MagneticLink
+                  href="https://alya-nova-2026.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-spark group items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold"
+                >
+                  <PlayCircle className="size-4" />
+                  Смотреть презентацию NOVA
+                  <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </MagneticLink>
               </div>
             </div>
           </div>

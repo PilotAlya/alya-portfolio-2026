@@ -12,7 +12,6 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { Nova } from "@/components/Nova";
 import { Stack } from "@/components/Stack";
-import { GitHubProjects } from "@/components/GitHubProjects";
 import { Guides } from "@/components/Guides";
 import { Profile } from "@/components/Profile";
 import { Contact } from "@/components/Contact";
@@ -24,17 +23,17 @@ import { SITE_URL } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Альбина Акбарова — AI-Native Engineer · Vibe-Coder" },
+      { title: "Альбина Акбарова — сайты, прототипы и ИИ-помощники для бизнеса" },
       {
         name: "description",
         content:
-          "Портфолио Альбины Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
+          "Помогаю бизнесу быстро получить рабочий прототип сайта, сервиса или ИИ-помощника — от идеи до запуска. Готовые примеры: NOVA, мини-CRM, автоматизации.",
       },
-      { property: "og:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
+      { property: "og:title", content: "Альбина Акбарова — сайты и ИИ-инструменты для бизнеса" },
       {
         property: "og:description",
         content:
-          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
+          "Собираю рабочие прототипы и ИИ-помощников, проверяю результат и довожу до запуска.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
@@ -87,9 +86,6 @@ function Index() {
           <Stack />
         </SectionShell>
         <SectionShell variant="alt">
-          <GitHubProjects />
-        </SectionShell>
-        <SectionShell variant="default">
           <Guides />
         </SectionShell>
         <SectionShell variant="alt">

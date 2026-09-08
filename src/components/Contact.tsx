@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Download, Copy, Check, MessageCircle, Mail } from "lucide-react";
+import { ArrowUpRight, Copy, Check, MessageCircle, Mail } from "lucide-react";
 import { useState } from "react";
 
 import borisIdleCleanVideo from "@/assets/boris-idle-final.webm";
-import {
-  HandDrawnOval,
-  ScribbleBurst,
-  SparkStar,
-} from "@/components/effects/HandDrawn";
+import { HandDrawnOval, ScribbleBurst, SparkStar } from "@/components/effects/HandDrawn";
 import { MagneticLink } from "@/components/effects/MagneticButton";
 import { MediaZoom } from "@/components/effects/MediaZoom";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
@@ -44,7 +40,7 @@ export function Contact() {
         >
           <div className="flex items-center gap-2 mb-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <SparkStar />
-            <span>Глава 09 · Контакты</span>
+            <span>Лист 08 · Контакты</span>
           </div>
 
           <ScribbleBurst className="mb-4 -ml-1" />
@@ -58,8 +54,8 @@ export function Contact() {
           </h2>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            MVP, vibe-coding, AI-валидация — напиши, если нужен человек, который собирает,
-            проверяет и доводит до деплоя.
+            Нужен рабочий сайт, прототип или ИИ-помощник для бизнеса? Напишите — обсудим задачу, и я
+            скажу, как это можно сделать.
           </p>
 
           <div className="mb-10">
@@ -95,34 +91,11 @@ export function Contact() {
               {!emailCopied && <Copy className="size-3 opacity-60" />}
               {emailCopied && <Check className="size-3 text-spark" />}
             </button>
-
-            <MagneticLink
-              href="/resume-ai.pdf"
-              download="Albina_Akbarova_AI_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
-            >
-              <Download className="size-3.5" />
-              Резюме AI
-            </MagneticLink>
-
-            <a
-              href="/resume-qa.pdf"
-              download="Albina_Akbarova_QA_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
-            >
-              Резюме QA
-            </a>
-            <a
-              href="/resume-sa.pdf"
-              download="Albina_Akbarova_SA_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
-            >
-              Резюме SA
-            </a>
           </div>
 
           <p className="text-sm text-muted-foreground/80 italic max-w-md border-l-2 border-spark/40 pl-4">
-            «Готова собрать MVP, проверить AI-продукт и довести до рабочего результата.»
+            «Беру задачу, разбираюсь, собираю рабочую версию и довожу до результата, которым можно
+            пользоваться.»
           </p>
         </motion.div>
 

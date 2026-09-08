@@ -7,22 +7,10 @@ import { SectionHeadline } from "./effects/SectionHeadline";
 
 const GUIDES = [
   {
-    t: "Telegram → Google Sheets: lead capture",
-    d: "PDF-гайд по связке бота и таблицы: setup Apps Script, polling, антидубли, troubleshooting и сценарий расширения до multi-step анкеты.",
+    t: "Как настроить автосбор заявок из Telegram в таблицу",
+    d: "Пошаговый гайд: бот в Telegram сам записывает заявки в Google Таблицу — без дублей и без ручного переноса. Пригодится, если заявки сейчас теряются в переписке.",
     href: "https://drive.google.com/drive/folders/1EpUihavWoV-Pu3brdqD4yLX9kmiCWWGd?usp=drive_link",
     cta: "Открыть PDF-гайд",
-  },
-  {
-    t: "Цифровая свобода и личный VPN",
-    d: "Технический мануал по цифровой свободе в условиях блокировок. Пошаговый алгоритм настройки личного VPN.",
-    href: "https://gamma.app/docs/-pn6c00ti46m0r4l",
-    cta: "Читать гайд",
-  },
-  {
-    t: "Google AI Search: поиск будущего",
-    d: "Мануал по новому поколению поиска для пользователей любого уровня.",
-    href: "https://gamma.app/docs/AI--ti6euqermukmwh3",
-    cta: "Читать гайд",
   },
 ] as const;
 
@@ -37,16 +25,15 @@ export function Guides() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <SectionLabel chapter={7} title="Экспертиза & Community" />
-          <SectionHeadline before="Технические гайды и" accent="Open Knowledge" />
+          <SectionLabel chapter={6} title="Готовый гайд" />
+          <SectionHeadline before="Инструкция, которой" accent="можно пользоваться" />
           <p className="text-muted-foreground leading-relaxed mt-4 mb-4">
-            Практические инструкции: от automation lead capture до рабочих инструментов.
-            Главный гайд по стеку — Telegram → Sheets; остальное — open knowledge.
+            Один из готовых результатов моей работы — бесплатная и понятная инструкция для бизнеса.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {GUIDES.map((g, i) => (
+          {GUIDES.map((g) => (
             <motion.a
               key={g.t}
               href={g.href}
@@ -55,12 +42,9 @@ export function Guides() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                `corner-brackets group rounded-lg p-8 border flex flex-col ${
-                  i === 0 ? "border-accent/30 bg-accent/[0.03] md:col-span-2 lg:col-span-1" : "border-white/10"
-                }`,
+                "corner-brackets group rounded-lg p-8 border flex flex-col border-accent/30 bg-accent/[0.03] md:col-span-2 lg:col-span-1",
               )}
             >
               <CornerMarks />
@@ -71,16 +55,28 @@ export function Guides() {
                 viewport={{ once: true }}
                 className="flex flex-col flex-1"
               >
-                <motion.div variants={staggerItem} className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
-                  {i === 0 ? "Core guide" : `Guide ${String(i + 1).padStart(2, "0")}`}
+                <motion.div
+                  variants={staggerItem}
+                  className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4"
+                >
+                  Бесплатный гайд
                 </motion.div>
-                <motion.h3 variants={staggerItem} className="text-2xl font-bold tracking-tight mb-3">
+                <motion.h3
+                  variants={staggerItem}
+                  className="text-2xl font-bold tracking-tight mb-3"
+                >
                   {g.t}
                 </motion.h3>
-                <motion.p variants={staggerItem} className="text-sm text-muted-foreground leading-relaxed mb-6">
+                <motion.p
+                  variants={staggerItem}
+                  className="text-sm text-muted-foreground leading-relaxed mb-6"
+                >
                   {g.d}
                 </motion.p>
-                <motion.span variants={staggerItem} className="mt-auto inline-flex items-center gap-2 text-sm text-foreground group-hover:text-accent transition-colors">
+                <motion.span
+                  variants={staggerItem}
+                  className="mt-auto inline-flex items-center gap-2 text-sm text-foreground group-hover:text-accent transition-colors"
+                >
                   {g.cta}{" "}
                   <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </motion.span>

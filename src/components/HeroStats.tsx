@@ -5,13 +5,28 @@ import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 export function HeroStats() {
   const stats = [
-    { n: 2, suf: " года", label: "в ритейле + ~6 мес. стажировки с учёбы", highlight: false },
-    { n: 5, suf: "+", label: "рабочих MVP и демо на Vercel", highlight: true },
-    { n: 40, suf: "%", label: "рутины автоматизировано в Legacy-софте", highlight: false },
+    {
+      n: 2,
+      suf: " года",
+      label: "практики в ритейле + стажировки во время учёбы",
+      highlight: false,
+    },
+    {
+      n: 5,
+      suf: "+",
+      label: "рабочих прототипов и демо-сайтов в открытом доступе",
+      highlight: true,
+    },
+    {
+      n: 40,
+      suf: "%",
+      label: "рутинных задач автоматизировано в старом учётном софте",
+      highlight: false,
+    },
     {
       n: 12,
       suf: "+",
-      label: "дефектов поймано до деплоя в NOVA — UX-тесты и итерации",
+      label: "проблем найдено и исправлено в NOVA до показа пользователям",
       highlight: false,
     },
   ];
