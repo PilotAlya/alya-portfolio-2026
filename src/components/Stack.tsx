@@ -28,7 +28,8 @@ const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
   { label: "Pandas", size: "sm" },
   { label: "Тестирование", size: "sm" },
   { label: "Оценка качества ИИ", size: "sm" },
-  { label: "Figma", size: "sm" },
+  { label: "Figma", size: "md" },
+  { label: "Gamma", size: "md" },
   { label: "PRO100", size: "sm" },
   { label: "Быстрый запуск", size: "md" },
   { label: "Автоматизация", size: "md" },
@@ -57,8 +58,8 @@ export function Stack() {
           <SectionLabel title="Инструменты" />
           <SectionHeadline before="С чем я" accent="работаю" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            Инструменты, которыми пользуюсь каждый день, чтобы быстро собирать рабочие прототипы и
-            автоматизировать рутину.
+            Инструменты, которыми пользуюсь каждый день, чтобы быстро собирать сайты, делать
+            презентации и автоматизировать рутину.
           </p>
         </motion.div>
 
@@ -70,9 +71,7 @@ export function Stack() {
           transition={{ duration: 0.6 }}
           className="relative glass-panel rounded-2xl p-8 md:p-10 mb-12"
         >
-          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">
-            основной инструмент · Cursor
-          </p>
+          <p className="text-sm text-muted-foreground mb-4">Основной инструмент · Cursor</p>
 
           <div className="flex flex-wrap gap-2.5 md:gap-3 justify-center md:justify-start">
             {TAGS.map((tag, i) => (

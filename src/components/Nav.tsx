@@ -37,7 +37,9 @@ export function Nav() {
       <div className="max-w-7xl mx-auto glass-panel rounded-full px-4 lg:px-5 h-14 flex items-center justify-between shadow-[0_8px_28px_-16px_rgba(0,0,0,0.18)]">
         <a href="#top" className="text-sm font-semibold tracking-tight pl-2">
           Pilot Ali{" "}
-          <span className="text-muted-foreground font-normal">// сайты и ИИ для бизнеса</span>
+          <span className="hidden sm:inline text-muted-foreground font-normal">
+            // дизайн, сайты и ИИ для бизнеса
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-1">

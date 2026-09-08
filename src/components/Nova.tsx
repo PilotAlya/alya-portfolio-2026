@@ -21,6 +21,7 @@ import { fadeUp } from "./shared";
 import { MagneticLink } from "./effects/MagneticButton";
 import { MediaZoom } from "./effects/MediaZoom";
 import { ParallaxImage } from "./effects/ParallaxImage";
+import { SectionLabel } from "./effects/SectionLabel";
 import { NovaBento } from "./NovaBento";
 import { useNovaScrollPin } from "@/hooks/useNovaScrollPin";
 
@@ -79,14 +80,12 @@ function NovaCarousel() {
           />
         </MediaZoom>
         {/* tag */}
-        <div className="pointer-events-none absolute top-3 left-3 z-[4] font-mono text-[9px] uppercase tracking-widest text-accent bg-background/80 backdrop-blur border border-accent/30 px-2 py-0.5 rounded">
+        <div className="pointer-events-none absolute top-3 left-3 z-[4] text-xs font-medium text-accent bg-background/85 backdrop-blur px-2.5 py-1 rounded-full">
           {SLIDES[current].tag}
         </div>
         {/* caption */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] p-3 bg-gradient-to-t from-black/90 to-transparent">
-          <div className="font-mono text-[10px] uppercase tracking-wider text-white/80">
-            {SLIDES[current].label}
-          </div>
+          <div className="text-sm text-white/85">{SLIDES[current].label}</div>
         </div>
         {/* arrows */}
         <button
@@ -146,7 +145,6 @@ export function Nova() {
 
   return (
     <section id="nova" className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
-      <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
       <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
 
       <NovaBento />
@@ -160,9 +158,7 @@ export function Nova() {
           variants={fadeUp}
           className="mb-12 max-w-3xl"
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Главный проект · NOVA
-          </span>
+          <SectionLabel title="Главный проект · NOVA" />
           <div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display">
               NOVA Dashboard
@@ -191,7 +187,7 @@ export function Nova() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="relative aspect-video overflow-hidden ring-2 ring-accent/40 rounded-lg bg-black shadow-[0_0_40px_color-mix(in_oklab,var(--accent)_35%,transparent)]"
+                className="relative aspect-video overflow-hidden rounded-2xl bg-black shadow-[0_20px_50px_-24px_rgba(0,0,0,0.35)]"
               >
                 <video
                   src={novaDemoVideo}
@@ -201,17 +197,15 @@ export function Nova() {
                   playsInline
                   className="w-full h-full object-contain"
                 />
-                <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur border border-accent/40 px-3 py-1.5 rounded-full">
+                <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/85 backdrop-blur px-3 py-1.5 rounded-full">
                   <span className="relative flex size-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
                     <span className="relative inline-flex size-2 rounded-full bg-accent" />
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                    Walkthrough
-                  </span>
+                  <span className="text-xs font-medium text-accent">Walkthrough</span>
                 </div>
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background/95 via-background/60 to-transparent">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
+                  <div className="text-sm font-medium text-accent mb-1">
                     NOVA Dashboard · прототип
                   </div>
                   <div className="text-sm text-muted-foreground">
@@ -240,14 +234,14 @@ export function Nova() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="nova-scroll-panel border border-accent/20 bg-accent/5 rounded-lg p-4 sm:p-6"
+                className="nova-scroll-panel border border-accent/20 bg-accent/5 rounded-2xl p-4 sm:p-6"
               >
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 mb-5">
                   <div className="flex items-center gap-3 shrink-0">
                     <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
                       <Users className="size-5 text-accent" />
                     </div>
-                    <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
+                    <span className="text-sm font-medium text-accent">
                       Проверка на реальных людях
                     </span>
                   </div>
@@ -275,7 +269,7 @@ export function Nova() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.06, duration: 0.45 }}
-                      className="border border-foreground/10 rounded-lg p-3 sm:p-4 bg-card/40 text-center"
+                      className="border border-foreground/10 rounded-2xl p-3 sm:p-4 bg-card text-center"
                     >
                       <div className="text-lg sm:text-2xl font-extrabold tracking-tight text-accent mb-1">
                         {stat.value}
@@ -299,14 +293,12 @@ export function Nova() {
               >
                 <div className="flex items-center gap-3 mb-5">
                   <HelpCircle className="size-4 text-accent" />
-                  <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-accent">
-                    Вопросы про NOVA
-                  </span>
+                  <span className="text-sm font-medium text-accent">Вопросы про NOVA</span>
                 </div>
                 <Accordion
                   type="single"
                   collapsible
-                  className="border border-foreground/10 rounded-lg overflow-hidden divide-y divide-foreground/10"
+                  className="border border-foreground/10 rounded-2xl overflow-hidden divide-y divide-foreground/10"
                 >
                   {[
                     {
@@ -353,7 +345,7 @@ export function Nova() {
               </motion.div>
 
               {/* Feature cards */}
-              <div className="nova-scroll-panel grid md:grid-cols-1 gap-4">
+              <div className="nova-scroll-panel grid sm:grid-cols-3 gap-4">
                 {[
                   {
                     t: "ИИ-помощник внутри",
@@ -373,7 +365,7 @@ export function Nova() {
                 ].map((f) => (
                   <div
                     key={f.t}
-                    className="border border-foreground/10 p-6 hover:border-accent/40 transition-colors"
+                    className="rounded-2xl border border-foreground/10 bg-card p-6 hover:border-accent/40 transition-colors"
                   >
                     <f.Icon className="size-5 text-accent mb-4" />
                     <div className="font-bold mb-2">{f.t}</div>
@@ -388,7 +380,7 @@ export function Nova() {
                   href="https://alya-nova-2026.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-spark group items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold"
+                  className="btn-spark group items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold"
                 >
                   <PlayCircle className="size-4" />
                   Смотреть презентацию NOVA

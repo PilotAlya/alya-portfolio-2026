@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { CountUp } from "./effects/CountUp";
 import { MediaZoom } from "./effects/MediaZoom";
+import { SectionLabel } from "./effects/SectionLabel";
 
 import legacyPriceChecker from "@/assets/legacy-price-checker.gif";
 import legacyMebelChecker from "@/assets/legacy-mebel-checker.gif";
@@ -29,9 +30,7 @@ export function LegacyCase() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">
-            Опыт · Автоматизация в ритейле
-          </span>
+          <SectionLabel title="Опыт · Автоматизация в ритейле" />
           <h2 className="text-4xl font-bold tracking-tight mt-4 mb-6">
             Как я избавила магазин от ручной рутины
           </h2>
@@ -71,13 +70,13 @@ export function LegacyCase() {
               <div className="text-6xl lg:text-7xl font-extrabold tracking-tight">
                 <CountUp to={420} prefix="+" suffix="×" duration={1600} className="text-accent" />
               </div>
-              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
+              <div className="text-sm text-muted-foreground mt-2">
                 Во сколько раз быстрее, чем вручную
               </div>
             </div>
           </div>
 
-          <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/80 border border-foreground/10 rounded-md px-3 py-2 inline-block">
+          <p className="mt-8 text-sm text-muted-foreground/80 border border-foreground/10 rounded-full px-4 py-2 inline-block">
             Код — внутренний проект под NDA, показываю в виде записи экрана (GIF выше)
           </p>
         </motion.div>
@@ -96,7 +95,7 @@ export function LegacyCase() {
               caption="[01] Price Checker · парсер цен"
               items={[...LEGACY_GALLERY]}
               index={0}
-              className="overflow-hidden ring-1 ring-foreground/10 rounded-lg bg-card"
+              className="overflow-hidden ring-1 ring-foreground/10 rounded-2xl bg-card"
             >
               <img
                 src={legacyPriceChecker}
@@ -105,10 +104,10 @@ export function LegacyCase() {
                 loading="lazy"
                 decoding="async"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-2xl pointer-events-none" />
             </MediaZoom>
-            <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              [01] Price Checker · парсер цен
+            <figcaption className="mt-2 text-sm text-muted-foreground">
+              Price Checker · парсер цен
             </figcaption>
           </figure>
 
@@ -119,7 +118,7 @@ export function LegacyCase() {
               caption="[02] Data Validator · AI-валидация заказов"
               items={[...LEGACY_GALLERY]}
               index={1}
-              className="overflow-hidden ring-1 ring-foreground/10 rounded-lg bg-card"
+              className="overflow-hidden ring-1 ring-foreground/10 rounded-2xl bg-card"
             >
               <img
                 src={legacyMebelChecker}
@@ -128,14 +127,14 @@ export function LegacyCase() {
                 loading="lazy"
                 decoding="async"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-lg pointer-events-none" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-accent/20 rounded-2xl pointer-events-none" />
             </MediaZoom>
-            <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              [02] Data Validator · AI-валидация заказов
+            <figcaption className="mt-2 text-sm text-muted-foreground">
+              Data Validator · проверка заказов
             </figcaption>
           </figure>
 
-          <div className="absolute -bottom-3 -right-3 bg-background border border-foreground/15 px-3 py-1.5 rounded text-[10px] font-mono uppercase text-accent">
+          <div className="absolute -bottom-3 -right-3 bg-background border border-foreground/15 px-3.5 py-1.5 rounded-full text-xs font-medium text-accent shadow-sm">
             Собрано с помощью ИИ-инструментов
           </div>
         </motion.div>

@@ -3,6 +3,7 @@ import { UserPlus, ExternalLink, Phone, Database, Kanban } from "lucide-react";
 import { fadeUp } from "./shared";
 import { GrainOverlay } from "./effects/GrainFrame";
 import { MagneticLink } from "./effects/MagneticButton";
+import { SectionLabel } from "./effects/SectionLabel";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 const DEMO_URL = "https://alya-crm-lead-card.vercel.app";
@@ -22,10 +23,8 @@ export function CrmLeadCardCase() {
             variants={fadeUp}
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="font-mono text-xs text-accent uppercase tracking-widest">
-                Личный проект · Мини-CRM
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-foreground/5 border border-foreground/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
+              <SectionLabel title="Личный проект · Мини-CRM" />
+              <span className="text-xs text-muted-foreground bg-foreground/5 border border-foreground/10 px-2.5 py-1 rounded-full flex items-center gap-1">
                 <UserPlus className="size-3 text-accent" /> React · Vite
               </span>
             </div>
@@ -58,7 +57,7 @@ export function CrmLeadCardCase() {
               {["React", "TypeScript", "Vite", "localStorage", "Vercel"].map((tech) => (
                 <span
                   key={tech}
-                  className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-foreground/10 px-2 py-1 rounded-sm"
+                  className="text-xs text-muted-foreground border border-foreground/10 px-2.5 py-1 rounded-full"
                 >
                   {tech}
                 </span>
@@ -69,7 +68,7 @@ export function CrmLeadCardCase() {
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-spark items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
+              className="btn-spark items-center gap-2 text-sm px-5 py-3 rounded-full font-semibold"
             >
               <ExternalLink className="size-4" />
               Открыть demo
@@ -83,44 +82,42 @@ export function CrmLeadCardCase() {
             transition={{ duration: 0.7 }}
             {...spotlightAttrs}
             className={spotlightClass(
-              "relative overflow-hidden rounded-xl border border-foreground/10 p-6 bg-background/60 space-y-4",
+              "relative overflow-hidden rounded-2xl border border-foreground/10 p-6 bg-card space-y-4",
             )}
           >
             <GrainOverlay intensity="subtle" />
             <div className="relative z-[2] flex items-center gap-3 border-b border-foreground/10 pb-4">
-              <div className="p-2 rounded bg-accent/10 border border-accent/20 text-accent">
+              <div className="p-2 rounded-full bg-accent/10 border border-accent/20 text-accent">
                 <Kanban className="size-5" />
               </div>
               <div>
-                <div className="font-mono text-xs font-bold text-foreground">Что внутри</div>
-                <div className="font-mono text-[10px] text-muted-foreground">
-                  Мини-CRM · без сервера
-                </div>
+                <div className="text-sm font-semibold text-foreground">Что внутри</div>
+                <div className="text-xs text-muted-foreground">Мини-CRM · без сервера</div>
               </div>
             </div>
 
-            <div className="relative z-[2] space-y-2 text-xs font-mono">
-              <div className="flex items-center justify-between p-2 rounded bg-foreground/5">
+            <div className="relative z-[2] space-y-2 text-sm">
+              <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5">
                 <span className="text-muted-foreground">Поля формы:</span>
                 <span className="text-foreground font-semibold">6+</span>
               </div>
-              <div className="flex items-center justify-between p-2 rounded bg-foreground/5">
+              <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5">
                 <span className="text-muted-foreground flex items-center gap-1">
                   <Phone className="size-3" /> Маска:
                 </span>
                 <span className="text-accent font-semibold">+7 (XXX) …</span>
               </div>
-              <div className="flex items-center justify-between p-2 rounded bg-foreground/5">
+              <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5">
                 <span className="text-muted-foreground flex items-center gap-1">
                   <Database className="size-3" /> Хранение:
                 </span>
                 <span className="text-emerald-600 font-semibold">в браузере</span>
               </div>
-              <div className="flex items-center justify-between p-2 rounded bg-foreground/5">
+              <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5">
                 <span className="text-muted-foreground">Этап сделки:</span>
                 <span className="text-foreground font-semibold">в карточке</span>
               </div>
-              <div className="flex items-center justify-between p-2 rounded bg-foreground/5">
+              <div className="flex items-center justify-between p-2.5 rounded-xl bg-foreground/5">
                 <span className="text-muted-foreground">Посмотреть:</span>
                 <span className="text-accent font-semibold">онлайн-демо</span>
               </div>
@@ -130,7 +127,7 @@ export function CrmLeadCardCase() {
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-[2] w-full flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-wider text-accent border border-accent/30 py-2 rounded hover:bg-accent/10 transition-colors"
+              className="relative z-[2] w-full flex items-center justify-center gap-2 text-sm font-medium text-accent border border-accent/30 py-2.5 rounded-full hover:bg-accent/10 transition-colors"
             >
               <ExternalLink className="size-3.5" />
               Live demo

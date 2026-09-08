@@ -3,6 +3,7 @@ import { Search, Download, ExternalLink, Sparkles, Filter } from "lucide-react";
 import { fadeUp } from "./shared";
 import { GrainOverlay } from "./effects/GrainFrame";
 import { MagneticLink } from "./effects/MagneticButton";
+import { SectionLabel } from "./effects/SectionLabel";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 const CASE_PAGE = "/studio-research/case.html";
@@ -82,10 +83,8 @@ export function StudioResearchCase() {
             variants={fadeUp}
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="font-mono text-xs text-accent uppercase tracking-widest">
-                Опыт · Автоматизация
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-foreground/5 border border-foreground/10 px-2 py-0.5 rounded-sm flex items-center gap-1">
+              <SectionLabel title="Опыт · Автоматизация" />
+              <span className="text-xs text-muted-foreground bg-foreground/5 border border-foreground/10 px-2.5 py-1 rounded-full flex items-center gap-1">
                 <Search className="size-3 text-accent" /> Python · Gemini · Excel
               </span>
             </div>
@@ -115,11 +114,10 @@ export function StudioResearchCase() {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8">
               {PIPELINE.map((s) => (
-                <div
-                  key={s.n}
-                  className="rounded-md border border-foreground/10 bg-foreground/[0.03] p-3"
-                >
-                  <div className="font-mono text-[10px] text-spark mb-1">{s.n}</div>
+                <div key={s.n} className="rounded-2xl border border-foreground/10 bg-card p-3">
+                  <div className="inline-flex size-6 items-center justify-center rounded-full bg-secondary text-[11px] font-semibold text-muted-foreground mb-2">
+                    {s.n}
+                  </div>
                   <div className="text-sm font-medium text-foreground">{s.t}</div>
                   <div className="text-[11px] text-muted-foreground mt-1 leading-snug">{s.d}</div>
                 </div>
@@ -138,7 +136,7 @@ export function StudioResearchCase() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground border border-foreground/10 px-2 py-1 rounded-sm"
+                  className="text-xs text-muted-foreground border border-foreground/10 px-2.5 py-1 rounded-full"
                 >
                   {tech}
                 </span>
@@ -149,7 +147,7 @@ export function StudioResearchCase() {
               <MagneticLink
                 href={XLSX_URL}
                 download="studio-research-demo.xlsx"
-                className="btn-spark items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
+                className="btn-spark items-center gap-2 text-sm px-5 py-3 rounded-full font-semibold"
               >
                 <Download className="size-4" />
                 Скачать Excel
@@ -158,7 +156,7 @@ export function StudioResearchCase() {
                 href={CASE_PAGE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-cta-secondary items-center gap-2 font-mono text-xs uppercase tracking-widest px-4 py-2.5 rounded-md font-semibold"
+                className="btn-cta-secondary items-center gap-2 text-sm px-5 py-3 rounded-full font-semibold"
               >
                 <ExternalLink className="size-4" />
                 Демо-страница
@@ -173,19 +171,17 @@ export function StudioResearchCase() {
             transition={{ duration: 0.7 }}
             {...spotlightAttrs}
             className={spotlightClass(
-              "relative overflow-hidden rounded-xl border border-foreground/10 p-6 bg-background/60 space-y-4",
+              "relative overflow-hidden rounded-2xl border border-foreground/10 p-6 bg-card space-y-4",
             )}
           >
             <GrainOverlay intensity="subtle" />
             <div className="relative z-[2] flex items-center gap-3 border-b border-foreground/10 pb-4">
-              <div className="p-2 rounded bg-accent/10 border border-accent/20 text-accent">
+              <div className="p-2 rounded-full bg-accent/10 border border-accent/20 text-accent">
                 <Filter className="size-5" />
               </div>
               <div>
-                <div className="font-mono text-xs font-bold text-foreground">Столбцы Excel</div>
-                <div className="font-mono text-[10px] text-muted-foreground">
-                  как в demo-results.xlsx
-                </div>
+                <div className="text-sm font-semibold text-foreground">Столбцы Excel</div>
+                <div className="text-xs text-muted-foreground">как в demo-results.xlsx</div>
               </div>
             </div>
             <ol className="relative z-[2] space-y-2.5 text-sm text-muted-foreground list-none">
@@ -198,7 +194,7 @@ export function StudioResearchCase() {
                 ["Доказательство", "короткое обоснование от ИИ"],
               ].map(([col, hint]) => (
                 <li key={col} className="flex items-start gap-3">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-spark shrink-0 mt-0.5 w-[7.5rem]">
+                  <span className="text-xs font-medium text-spark shrink-0 mt-0.5 w-[7.5rem]">
                     {col}
                   </span>
                   <span className="text-xs leading-relaxed">{hint}</span>
@@ -216,16 +212,14 @@ export function StudioResearchCase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-xl border border-foreground/10 bg-background/50"
+          className="relative overflow-hidden rounded-2xl border border-foreground/10 bg-card"
         >
           <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3 border-b border-foreground/10">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              Демо-результат · 6 строк
-            </div>
+            <div className="text-sm text-muted-foreground">Демо-результат · 6 строк</div>
             <a
               href={XLSX_URL}
               download="studio-research-demo.xlsx"
-              className="font-mono text-[10px] uppercase tracking-widest text-accent hover:text-spark transition-colors inline-flex items-center gap-1.5"
+              className="text-sm text-accent hover:text-spark transition-colors inline-flex items-center gap-1.5"
             >
               <Download className="size-3" />
               Excel
@@ -234,7 +228,7 @@ export function StudioResearchCase() {
           <div className="overflow-x-auto">
             <table className="w-full min-w-[860px] text-left border-collapse">
               <thead>
-                <tr className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground border-b border-foreground/10 bg-foreground/[0.02]">
+                <tr className="text-xs text-muted-foreground border-b border-foreground/10 bg-foreground/[0.02]">
                   <th className="py-3 px-4 font-medium">Студия</th>
                   <th className="py-3 px-3 font-medium">Город</th>
                   <th className="py-3 px-3 font-medium">Сайт</th>
@@ -260,7 +254,7 @@ export function StudioResearchCase() {
                         href={row.site}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-[10px] text-accent hover:text-spark transition-colors"
+                        className="text-xs text-accent hover:text-spark transition-colors"
                       >
                         {row.host}
                       </a>
@@ -269,7 +263,7 @@ export function StudioResearchCase() {
                       {row.founder}
                     </td>
                     <td className="py-3 px-3">
-                      <span className="inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-spark bg-spark/10 px-1.5 py-0.5 rounded-sm whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-spark bg-spark/10 px-2 py-0.5 rounded-full whitespace-nowrap">
                         <Sparkles className="size-2.5" />
                         Команда
                       </span>

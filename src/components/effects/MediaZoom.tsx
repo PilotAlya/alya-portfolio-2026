@@ -96,7 +96,7 @@ export function MediaZoom({
         {children}
         <span
           className={cn(
-            "pointer-events-none absolute bottom-3 right-3 z-[3] inline-flex items-center gap-1.5 rounded-md border border-foreground/15 bg-background/80 px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground opacity-80 transition-opacity sm:opacity-0 sm:group-hover/zoom:opacity-100 sm:group-focus-visible/zoom:opacity-100",
+            "pointer-events-none absolute bottom-3 right-3 z-[3] inline-flex items-center gap-1.5 rounded-full border border-foreground/15 bg-background/80 px-2.5 py-1 text-xs text-muted-foreground opacity-80 transition-opacity sm:opacity-0 sm:group-hover/zoom:opacity-100 sm:group-focus-visible/zoom:opacity-100",
             hintClassName,
           )}
         >
@@ -108,7 +108,7 @@ export function MediaZoom({
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           className={cn(
-            "fixed left-1/2 top-1/2 z-50 flex h-[min(96vh,100dvh)] w-[min(98vw,1600px)] max-w-none -translate-x-1/2 -translate-y-1/2 flex-col gap-0 overflow-hidden border-foreground/10 bg-background/97 p-0 sm:rounded-lg",
+            "fixed left-1/2 top-1/2 z-50 flex h-[min(96vh,100dvh)] w-[min(98vw,1600px)] max-w-none -translate-x-1/2 -translate-y-1/2 flex-col gap-0 overflow-hidden border-foreground/10 bg-background/97 p-0 sm:rounded-3xl",
             "data-[state=open]:zoom-in-95",
             "[&>button]:z-20 [&>button]:right-3 [&>button]:top-3 [&>button]:rounded-full [&>button]:border [&>button]:border-foreground/15 [&>button]:bg-background/80 [&>button]:p-2 [&>button]:opacity-100",
           )}
@@ -168,11 +168,11 @@ export function MediaZoom({
           </div>
 
           <div className="flex shrink-0 items-center justify-between gap-3 border-t border-foreground/10 px-4 py-3 sm:px-6">
-            <p className="min-w-0 flex-1 truncate font-mono text-[10px] uppercase tracking-widest text-muted-foreground sm:text-xs">
+            <p className="min-w-0 flex-1 truncate text-sm text-muted-foreground">
               {current.caption ?? current.alt}
             </p>
             {multi && (
-              <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-accent">
+              <span className="shrink-0 text-sm text-accent">
                 {active + 1} / {gallery.length}
               </span>
             )}

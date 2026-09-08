@@ -24,13 +24,13 @@ export function Profile() {
             src={portrait}
             alt="Альбина Акбарова — портрет"
             caption="Альбина Акбарова · Pilot Ali"
-            className="relative aspect-[3/5] overflow-hidden ring-1 ring-foreground/10 bg-card rounded-sm group/portrait"
+            className="relative aspect-[3/5] overflow-hidden ring-1 ring-foreground/10 bg-card rounded-3xl group/portrait"
           >
             <GrainFrame
               src={portrait}
               alt="Альбина Акбарова — портрет"
               duotone
-              className="h-full w-full rounded-sm pointer-events-none"
+              className="h-full w-full rounded-3xl pointer-events-none"
               imageClassName="object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
             />
             <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none z-[2]" />
@@ -68,17 +68,15 @@ export function Profile() {
                 key={c.t}
                 {...spotlightAttrs}
                 className={spotlightClass(
-                  "rounded-lg border border-transparent p-4 -m-4",
+                  "rounded-2xl border border-transparent p-4 -m-4",
                   "subtle",
                 )}
               >
                 <div className="flex items-center gap-2 mb-2">
                   {c.Icon && <c.Icon className="size-3.5 text-accent" />}
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-foreground">
-                    {c.t}
-                  </div>
+                  <div className="text-sm font-semibold text-foreground">{c.t}</div>
                   {c.badge && (
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-accent border border-accent/40 px-1.5 py-0.5">
+                    <span className="text-[11px] font-medium text-accent border border-accent/40 rounded-full px-2 py-0.5">
                       {c.badge}
                     </span>
                   )}

@@ -43,7 +43,7 @@ export function HeroStats() {
             transition={{ delay: i * 0.08, duration: 0.6 }}
             {...spotlightAttrs}
             className={spotlightClass(
-              "relative flex flex-col gap-2 rounded-lg border border-transparent p-4 -m-4",
+              "relative flex flex-col gap-2 rounded-2xl border border-transparent p-4 -m-4",
               "subtle",
             )}
           >
@@ -55,9 +55,7 @@ export function HeroStats() {
               />
               {s.suf}
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground leading-relaxed">
-              {s.label}
-            </div>
+            <div className="text-sm text-muted-foreground leading-relaxed">{s.label}</div>
           </motion.div>
         ))}
       </div>

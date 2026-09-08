@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 import { Nav } from "@/components/Nav";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { NoiseOverlay } from "@/components/effects/NoiseOverlay";
 import { Hero } from "@/components/Hero";
 import { HeroStats } from "@/components/HeroStats";
 import { WhyMe } from "@/components/WhyMe";
@@ -23,17 +22,20 @@ import { SITE_URL } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Альбина Акбарова — сайты, прототипы и ИИ-помощники для бизнеса" },
+      { title: "Альбина Акбарова — дизайн, сайты и ИИ-помощники для бизнеса" },
       {
         name: "description",
         content:
-          "Помогаю бизнесу быстро получить рабочий прототип сайта, сервиса или ИИ-помощника — от идеи до запуска. Готовые примеры: NOVA, мини-CRM, автоматизации.",
+          "Помогаю бизнесу быстро получить нужный результат: сайт, лендинг, презентацию или ИИ-помощника — от идеи до запуска. Готовые примеры: NOVA, мини-CRM, автоматизации.",
       },
-      { property: "og:title", content: "Альбина Акбарова — сайты и ИИ-инструменты для бизнеса" },
+      {
+        property: "og:title",
+        content: "Альбина Акбарова — дизайн, сайты и ИИ-инструменты для бизнеса",
+      },
       {
         property: "og:description",
         content:
-          "Собираю рабочие прототипы и ИИ-помощников, проверяю результат и довожу до запуска.",
+          "Собираю сайты, презентации и ИИ-помощников, проверяю результат и довожу до запуска.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
@@ -62,7 +64,6 @@ function Index() {
   return (
     <SmoothScroll>
       <div className="min-h-screen bg-background text-foreground font-sans">
-        <NoiseOverlay />
         <ScrollProgress />
         <Nav />
         <Hero />

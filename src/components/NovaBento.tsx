@@ -80,9 +80,7 @@ export function NovaBento() {
           variants={fadeUp}
           className="mb-8"
         >
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            NOVA · коротко о проекте
-          </p>
+          <p className="text-sm text-muted-foreground">NOVA · коротко о проекте</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 auto-rows-fr">
@@ -108,7 +106,7 @@ export function NovaBento() {
                 <div className="pointer-events-none absolute inset-0 opacity-25 group-hover:opacity-40 transition-opacity">
                   <img src={tile.image} alt="" className="h-full w-full object-cover object-top" />
                   {"grainCaption" in tile && tile.grainCaption && (
-                    <span className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.18em] text-spark">
+                    <span className="absolute bottom-3 left-3 text-xs font-medium text-spark">
                       {tile.grainCaption}
                     </span>
                   )}
@@ -116,9 +114,7 @@ export function NovaBento() {
               )}
               <div className="relative z-[1] flex items-start justify-between gap-3">
                 <div>
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-accent/90">
-                    {tile.tag}
-                  </span>
+                  <span className="text-xs font-medium text-accent/90">{tile.tag}</span>
                   <h3 className="font-display text-lg font-semibold tracking-tight mt-1.5 group-hover:text-accent transition-colors">
                     {tile.title}
                   </h3>
@@ -126,11 +122,11 @@ export function NovaBento() {
                     {tile.subtitle}
                   </p>
                 </div>
-                <div className="shrink-0 p-2 rounded-md border border-foreground/10 bg-background/40 text-accent group-hover:border-accent/40 transition-colors">
+                <div className="shrink-0 p-2 rounded-full border border-foreground/10 bg-background/60 text-accent group-hover:border-accent/40 transition-colors">
                   <tile.Icon className="size-4" />
                 </div>
               </div>
-              <div className="relative z-[1] mt-4 flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground group-hover:text-accent transition-colors">
+              <div className="relative z-[1] mt-4 flex items-center gap-1 text-sm text-muted-foreground group-hover:text-accent transition-colors">
                 {tile.cta}
                 {tile.external ? (
                   <ExternalLink className="size-3" />

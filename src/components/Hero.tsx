@@ -55,8 +55,8 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-xl font-light leading-relaxed"
             >
-              Помогаю бизнесу быстро получить рабочий результат: сайт, каталог, CRM или ИИ-помощника
-              — от идеи до версии, которую можно{" "}
+              Помогаю бизнесу быстро получить нужный результат: сайт, лендинг, презентацию, CRM или
+              ИИ-помощника — от идеи до версии, которую можно{" "}
               <span className="text-foreground italic">показать клиентам и опробовать</span>.
             </motion.p>
 
@@ -67,9 +67,9 @@ export function Hero() {
               className="flex flex-wrap gap-2"
             >
               {[
-                { label: "Сайты и прототипы", sub: "быстрый старт" },
-                { label: "ИИ-помощники", sub: "под вашу задачу" },
-                { label: "Автоматизация рутины", sub: "меньше ручной работы" },
+                { label: "Сайты и лендинги", sub: "быстрый старт" },
+                { label: "Презентации и дизайн", sub: "Gamma, Figma" },
+                { label: "ИИ-помощники", sub: "и автоматизация рутины" },
                 { label: "Проверка результата", sub: "тестирую перед показом" },
               ].map((pill) => (
                 <div

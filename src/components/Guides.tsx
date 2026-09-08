@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
-import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
@@ -44,10 +44,9 @@ export function Guides() {
               viewport={{ once: true }}
               {...spotlightAttrs}
               className={spotlightClass(
-                "corner-brackets group rounded-lg p-8 border flex flex-col border-accent/30 bg-accent/[0.03] md:col-span-2 lg:col-span-1",
+                "group rounded-2xl p-8 border flex flex-col border-accent/30 bg-accent/[0.03] md:col-span-2 lg:col-span-1",
               )}
             >
-              <CornerMarks />
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -55,10 +54,7 @@ export function Guides() {
                 viewport={{ once: true }}
                 className="flex flex-col flex-1"
               >
-                <motion.div
-                  variants={staggerItem}
-                  className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4"
-                >
+                <motion.div variants={staggerItem} className="text-sm font-medium text-accent mb-4">
                   Бесплатный гайд
                 </motion.div>
                 <motion.h3

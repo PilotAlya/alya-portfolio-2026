@@ -41,14 +41,3 @@ export const spotlightAttrs = {
   onMouseMove: onSpotlightMove,
   onMouseLeave: onSpotlightLeave,
 } as const;
-
-export function CornerMarks() {
-  return (
-    <>
-      <span aria-hidden className="corner-mark corner-mark--tl" />
-      <span aria-hidden className="corner-mark corner-mark--tr" />
-      <span aria-hidden className="corner-mark corner-mark--bl" />
-      <span aria-hidden className="corner-mark corner-mark--br" />
-    </>
-  );
-}

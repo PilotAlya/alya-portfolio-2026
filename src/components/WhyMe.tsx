@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, CircuitBoard, Sparkles } from "lucide-react";
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
-import { CornerMarks, spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
@@ -9,11 +9,11 @@ export function WhyMe() {
   const items = [
     {
       n: "01",
-      problem: "Нужен рабочий прототип быстро, а своей команды разработки нет.",
+      problem: "Нужен результат быстро: сайт, лендинг, презентация — а своей команды нет.",
       solution:
-        "Проектирую логику продукта и с помощью современных ИИ-инструментов быстро собираю рабочую версию — сама проверяю и запускаю.",
+        "Проектирую логику и сама собираю нужное с помощью современных инструментов для кода и дизайна — от лендинга до презентации.",
       result:
-        "NOVA, мини-CRM, дашборд для бизнеса — готовые примеры, которые можно открыть и потрогать прямо сейчас.",
+        "NOVA — сайт, дашборд и презентация к нему, мини-CRM — готовые примеры, которые можно открыть и посмотреть прямо сейчас.",
       Icon: Sparkles,
     },
     {
@@ -62,10 +62,9 @@ export function WhyMe() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               {...spotlightAttrs}
               className={spotlightClass(
-                "corner-brackets rounded-lg border border-foreground/10 bg-foreground/[0.02] p-7 flex flex-col gap-5",
+                "rounded-2xl border border-foreground/10 bg-card p-7 flex flex-col gap-5",
               )}
             >
-              <CornerMarks />
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -74,28 +73,22 @@ export function WhyMe() {
                 className="flex flex-col gap-5"
               >
                 <motion.div variants={staggerItem} className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                    [{it.n}] PROBLEM → RESULT
+                  <span className="inline-flex size-9 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-muted-foreground">
+                    {it.n}
                   </span>
                   <it.Icon className="size-4 text-accent" />
                 </motion.div>
 
                 <motion.div variants={staggerItem}>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                    Проблема
-                  </div>
+                  <div className="text-xs font-medium text-muted-foreground mb-1">Проблема</div>
                   <p className="text-sm font-semibold leading-snug">{it.problem}</p>
                 </motion.div>
                 <motion.div variants={staggerItem}>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                    Что делаю
-                  </div>
+                  <div className="text-xs font-medium text-muted-foreground mb-1">Что делаю</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{it.solution}</p>
                 </motion.div>
                 <motion.div variants={staggerItem} className="border-t border-foreground/10 pt-4">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
-                    Результат
-                  </div>
+                  <div className="text-xs font-medium text-accent mb-1">Результат</div>
                   <p className="text-sm leading-relaxed">{it.result}</p>
                 </motion.div>
               </motion.div>
