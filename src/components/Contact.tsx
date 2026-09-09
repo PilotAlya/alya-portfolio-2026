@@ -45,7 +45,7 @@ export function Contact() {
             <br />
             и обсудить
             <br />
-            <span className="text-gradient-chrome">проект</span>
+            <span className="text-gradient-chrome accent-italic">проект</span>
           </h2>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
@@ -86,7 +86,7 @@ export function Contact() {
             </button>
           </div>
 
-          <p className="text-sm text-muted-foreground/80 italic max-w-md border-l-2 border-spark/40 pl-4">
+          <p className="accent-italic text-lg text-muted-foreground max-w-md border-l-2 border-spark/40 pl-4">
             «Беру задачу, разбираюсь, собираю рабочую версию и довожу до результата, которым можно
             пользоваться.»
           </p>

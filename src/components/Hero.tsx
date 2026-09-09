@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HeroAurora } from "./effects/HeroAurora";
+import { HeroBlob } from "./effects/HeroBlob";
 import { MagneticLink } from "./effects/MagneticButton";
 
 export function Hero() {
@@ -18,6 +19,7 @@ export function Hero() {
     >
       <HeroAurora />
       <div className="absolute inset-0 bg-aurora pointer-events-none opacity-80" />
+      <HeroBlob />
 
       <div className="relative max-w-7xl mx-auto mb-10 flex items-center justify-between text-xs font-medium tracking-wide text-muted-foreground">
         <span>2026</span>
@@ -32,8 +34,14 @@ export function Hero() {
         >
           <div className="inline-flex items-center gap-3 pl-3 pr-5 py-1.5 rounded-full glass-panel">
             <span className="relative flex size-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex rounded-full size-2 bg-accent" />
+              <span
+                className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                style={{ backgroundColor: "var(--lime)" }}
+              />
+              <span
+                className="relative inline-flex rounded-full size-2"
+                style={{ backgroundColor: "var(--lime)" }}
+              />
             </span>
             <span className="text-sm font-medium text-foreground">
               Беру 1–2 новых проекта в месяц
@@ -104,10 +112,10 @@ export function Hero() {
             </MagneticLink>
           </div>
 
-          <p className="max-w-md text-base leading-relaxed text-foreground/90 italic border-l-2 border-spark/40 pl-4">
+          <p className="accent-italic max-w-md text-lg leading-relaxed text-foreground/90 border-l-2 border-spark/40 pl-4">
             «Я не обещаю "ИИ, который решит всё". Разбираюсь в задаче, собираю рабочий инструмент
             под неё и проверяю, что он работает — прежде чем показать вам.»
-            <span className="not-italic block mt-2 text-sm font-medium text-accent">
+            <span className="font-sans not-italic block mt-2 text-sm font-medium text-accent">
               — Pilot Ali
             </span>
           </p>

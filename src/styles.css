@@ -34,6 +34,7 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "Inter", system-ui, sans-serif;
   --font-display: "Inter", system-ui, sans-serif;
+  --font-accent: "Instrument Serif", serif;
   --color-glow: var(--glow);
   --color-glow-secondary: var(--glow-secondary);
   --color-glass: var(--glass);
@@ -46,36 +47,42 @@
   --radius: 0.75rem;
   color-scheme: light;
 
-  /* Studio Index — cool neutral gray, graphic/editorial print-portfolio reference */
-  --background: oklch(0.895 0.004 260);
-  --foreground: oklch(0.15 0.006 260);
-  --card: oklch(0.99 0.002 260);
-  --card-foreground: oklch(0.15 0.006 260);
-  --popover: oklch(0.99 0.002 260);
-  --popover-foreground: oklch(0.15 0.006 260);
-  --primary: oklch(0.15 0.006 260);
-  --primary-foreground: oklch(0.99 0.002 260);
-  --secondary: oklch(0.93 0.004 260);
-  --secondary-foreground: oklch(0.15 0.006 260);
-  --muted: oklch(0.93 0.004 260);
-  --muted-foreground: oklch(0.45 0.006 260);
-  --accent: oklch(0.6 0.19 35);
-  --accent-foreground: oklch(0.99 0.002 260);
+  /* Warm print portfolio — cream + ink + blue/lime/orange accents */
+  --background: oklch(0.966 0.004 95);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(0.99 0.002 95);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(0.99 0.002 95);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.145 0 0);
+  --primary-foreground: oklch(0.99 0.002 95);
+  --secondary: oklch(0.94 0.004 95);
+  --secondary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.94 0.004 95);
+  --muted-foreground: oklch(0.6 0.008 95);
+  --accent: oklch(0.45 0.19 264);
+  --accent-foreground: oklch(0.99 0.002 95);
   --destructive: oklch(0.58 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.15 0.006 260 / 13%);
-  --input: oklch(0.15 0.006 260 / 16%);
-  --ring: oklch(0.6 0.19 35);
+  --border: oklch(0.145 0.006 95 / 12%);
+  --input: oklch(0.145 0.006 95 / 16%);
+  --ring: oklch(0.45 0.19 264);
 
-  --glow: oklch(0.15 0.006 260);
-  --glow-secondary: oklch(0.6 0.19 35);
-  --glass: oklch(0.99 0.002 260 / 72%);
-  --glass-border: oklch(0.15 0.006 260 / 10%);
-  --surface-elevated: oklch(0.97 0.003 260 / 92%);
-  --hero-spotlight: oklch(0.15 0.006 260 / 7%);
-  --hero-spotlight-secondary: oklch(0.6 0.19 35 / 8%);
-  --spark: oklch(0.15 0.006 260);
-  --spark-foreground: oklch(0.99 0.002 260);
+  --glow: oklch(0.45 0.19 264);
+  --glow-secondary: oklch(0.68 0.19 40);
+  --glass: oklch(0.99 0.002 95 / 55%);
+  --glass-border: oklch(0.145 0.006 95 / 10%);
+  --surface-elevated: oklch(0.97 0.003 95 / 92%);
+  --hero-spotlight: oklch(0.45 0.19 264 / 8%);
+  --hero-spotlight-secondary: oklch(0.68 0.19 40 / 8%);
+  --spark: oklch(0.145 0 0);
+  --spark-foreground: oklch(0.88 0.19 121);
+
+  /* Bespoke accent trio, used directly (not part of the shadcn token set) */
+  --blue: oklch(0.45 0.19 264);
+  --blue-soft: oklch(0.78 0.09 264);
+  --lime: oklch(0.88 0.19 121);
+  --orange: oklch(0.68 0.19 40);
 }
 
 @layer base {
@@ -478,6 +485,45 @@ body.custom-cursor-active * {
   display: none;
 }
 
+/* Floating gradient blob — print-portfolio reference hero motif */
+.hero-blob {
+  position: absolute;
+  right: -4vw;
+  top: 4vh;
+  width: min(48vw, 640px);
+  height: min(48vw, 640px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+  animation: hero-blob-float 9s ease-in-out infinite;
+}
+
+@keyframes hero-blob-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-26px) rotate(2deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-blob {
+    opacity: 0.35;
+    width: 90vw;
+    height: 90vw;
+    right: -30vw;
+    top: -4vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob {
+    animation: none;
+  }
+}
+
 @keyframes hero-drift-a {
   from {
     transform: translate(0, 0) scale(1);
@@ -519,6 +565,63 @@ body.custom-cursor-active * {
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Glass cards — warm-cream backdrop-blur panels, print-portfolio reference */
+.glass-card {
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s ease,
+    border-color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px -20px color-mix(in oklab, var(--color-foreground) 16%, transparent);
+  }
+}
+
+/* Colored italic-serif index badge — "01 · Продукт" style */
+.idx-pill {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 0.9375rem;
+  color: #fff;
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+.idx-pill--blue {
+  background: var(--blue);
+}
+
+.idx-pill--orange {
+  background: var(--orange);
+}
+
+.idx-pill--ink {
+  background: var(--foreground);
+  color: var(--lime);
+}
+
+.text-orange-accent {
+  color: var(--orange);
+}
+
+.accent-italic {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .text-gradient-chrome {
@@ -598,7 +701,11 @@ body.custom-cursor-active * {
 }
 
 .section-headline-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
   color: var(--accent);
+  letter-spacing: -0.01em;
 }
 
 .hero-title {
@@ -827,7 +934,6 @@ body.custom-cursor-active * {
     padding-left: 0.75rem;
   }
 
-  .index-row:hover .index-row__n,
   .index-row:hover .index-row__title {
     color: var(--accent);
   }
@@ -839,11 +945,11 @@ body.custom-cursor-active * {
 }
 
 .index-row__n {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  font-weight: 800;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 400;
   color: var(--muted-foreground);
-  transition: color 0.25s ease;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1021,13 +1127,14 @@ body.custom-cursor-active * {
 }
 
 .milestone__n {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 800;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 400;
   font-variant-numeric: tabular-nums;
-  color: var(--muted-foreground);
+  color: var(--blue);
 }
 
 .milestone__n--featured {
-  color: var(--accent);
+  color: var(--orange);
 }
