@@ -1,80 +1,62 @@
-import { motion } from "framer-motion";
-
-import { fadeUp } from "./shared";
-import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
 const SERVICES = [
   {
-    idx: "01",
     title: "Дизайн и визуал",
-    desc: "Макеты, визуализации, прототипы в Figma. Композиция — с диплома дизайнера. Подходит и для заказа, и как proof вкуса на вакансии.",
+    desc: "Макеты, визуализации, прототипы в Figma. Композиция — с диплома дизайнера. Для заказа и как proof вкуса на вакансии.",
     href: "#work",
-    example: "Пример: ванная и музейные витрины",
+    example: "Ванная и музейные витрины",
   },
   {
-    idx: "02",
     title: "Презентации",
-    desc: "Структура, слайды, «до / после» — презентация, которую можно отправить заказчику или приложить к кейсу. Gamma и Figma.",
+    desc: "Структура, слайды, «до / после» — презентация для заказчика или кейса. Gamma и Figma.",
     href: "https://alya-nova-2026.vercel.app/",
-    example: "Пример: презентация NOVA",
+    example: "Презентация NOVA",
     external: true,
   },
   {
-    idx: "03",
     title: "Сайты и лендинги",
-    desc: "От структуры блоков до живой ссылки: собираю сама через vibe-coding — не жду отдельную команду разработки.",
-    href: "#case-crm",
-    example: "Пример: мини-CRM и это портфолио",
+    desc: "От структуры блоков до живой ссылки: собираю через vibe-coding — без отдельной команды разработки.",
+    href: "#nova",
+    example: "Это портфолио и мини-CRM",
   },
   {
-    idx: "04",
     title: "Интерфейсы продуктов",
-    desc: "Экраны, онбординг, канбан — UI + vibe-coding до демо. Проверяю на людях, пока пользоваться станет удобно.",
+    desc: "Экраны, онбординг, канбан — UI + vibe-coding до демо. Проверяю на людях до сдачи.",
     href: "#nova",
-    example: "Пример: NOVA Dashboard",
+    example: "NOVA Dashboard",
   },
 ] as const;
 
 export function Services() {
   return (
-    <section id="services" className="py-24 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
+    <section id="services" className="py-20 lg:py-28 px-6 lg:px-8 relative scroll-mt-24">
       <div className="relative max-w-7xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUp}
-          className="mb-14 max-w-3xl"
-        >
-          <SectionLabel title="Что могу сделать" />
+        <div className="mb-12 max-w-2xl">
           <SectionHeadline before="Дизайн снаружи," accent="сборка внутри" />
-          <p className="text-muted-foreground mt-4 leading-relaxed">
+          <p className="text-muted-foreground mt-4 leading-relaxed max-w-[42rem]">
             Заказчику — результат без папки с макетами. Команде — глаз дизайнера и быстрая сборка
-            лендинга или MVP до демо.
+            до демо.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px border border-border bg-border">
-          {SERVICES.map((s, i) => (
-            <motion.a
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-0 border-t border-border">
+          {SERVICES.map((s) => (
+            <a
               key={s.title}
               href={s.href}
               target={"external" in s && s.external ? "_blank" : undefined}
               rel={"external" in s && s.external ? "noopener noreferrer" : undefined}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="group flex flex-col bg-background p-6 lg:p-7 transition-colors hover:bg-secondary/60"
+              className="group border-b border-border py-7 flex flex-col gap-2 transition-colors hover:bg-secondary/40 -mx-3 px-3 md:mx-0 md:px-0 md:pr-6"
             >
-              <span className="lab-caption text-accent mb-5">{s.idx}</span>
-              <h3 className="text-base font-semibold tracking-tight mb-2 font-display">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
-              <span className="mt-4 text-xs font-medium text-foreground/70 group-hover:text-accent transition-colors">
+              <h3 className="text-lg font-display font-bold tracking-tight group-hover:text-accent transition-colors">
+                {s.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-[36rem]">{s.desc}</p>
+              <span className="mt-1 text-sm text-foreground/70 group-hover:text-accent transition-colors">
                 {s.example} →
               </span>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>

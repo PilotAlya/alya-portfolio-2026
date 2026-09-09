@@ -12,7 +12,6 @@ import novaTeam from "@/assets/nova-team.png";
 import { fadeUp } from "./shared";
 import { MediaZoom } from "./effects/MediaZoom";
 import { SectionHeadline } from "./effects/SectionHeadline";
-import { SectionLabel } from "./effects/SectionLabel";
 
 const BATHROOM_GALLERY = [
   { src: bathroomModel, alt: "3D-модель ванной", caption: "01 · Модель пространства" },
@@ -64,20 +63,6 @@ const INDEX = [
     href: "https://alya-nova-2026.vercel.app/",
     external: true,
   },
-  {
-    n: "05",
-    title: "Мини-CRM",
-    tag: "Продукт",
-    desc: "Форма лида с маской телефона — маленький рабочий интерфейс на vibe-coding.",
-    href: "#case-crm",
-  },
-  {
-    n: "06",
-    title: "Автоматизация в ритейле",
-    tag: "Продукт",
-    desc: "От ручной сверки данных — к скриптам, которые проверяют данные сами.",
-    href: "#experience",
-  },
 ] as const;
 
 export function SelectedWork() {
@@ -91,12 +76,10 @@ export function SelectedWork() {
           variants={fadeUp}
           className="mb-14 max-w-3xl"
         >
-          <SectionLabel title="Избранные работы" />
           <SectionHeadline before="Сначала глаз," accent="потом продукт" />
           <p className="text-muted-foreground mt-4 leading-relaxed max-w-2xl">
-            Одна галерея — две дорожки: визуальный дизайн (интерьеры, презентации) и продукт на
-            vibe-coding (NOVA, CRM, автоматизации). Для заказчика и для вакансии — одни и те же
-            доказательства.
+            Одна галерея — две дорожки: визуальный дизайн и продукт на vibe-coding. Для заказчика и
+            для вакансии — одни и те же доказательства.
           </p>
         </motion.div>
 
@@ -126,7 +109,7 @@ export function SelectedWork() {
 
             <div className="flex flex-col justify-between gap-6 p-1 lg:py-4">
               <div>
-                <span className="idx-pill idx-pill--blue">01 · Дизайн</span>
+                <span className="index-row__tag">Дизайн</span>
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight font-display mt-1 mb-3">
                   Ванная: модель → картинка → кадр
                 </h3>
@@ -180,7 +163,7 @@ export function SelectedWork() {
               />
             </MediaZoom>
             <div className="p-6 lg:p-8">
-              <span className="idx-pill idx-pill--orange">02 · Дизайн</span>
+              <span className="index-row__tag">Дизайн</span>
               <h3 className="text-xl font-bold tracking-tight font-display mt-1 mb-3">
                 Лысьвенский музей и завод ММК
               </h3>
@@ -217,7 +200,7 @@ export function SelectedWork() {
               />
             </MediaZoom>
             <div className="p-6 lg:p-8">
-              <span className="idx-pill idx-pill--ink">03 · Продукт</span>
+              <span className="index-row__tag">Продукт</span>
               <h3 className="text-xl font-bold tracking-tight font-display mt-1 mb-3">
                 NOVA — дашборд, который можно открыть
               </h3>

@@ -7,8 +7,6 @@ import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { SelectedWork } from "@/components/SelectedWork";
 import { WhyMe } from "@/components/WhyMe";
-import { ExperienceSection } from "@/components/ExperienceSection";
-import { PortfolioSection } from "@/components/PortfolioSection";
 import { Nova } from "@/components/Nova";
 import { Stack } from "@/components/Stack";
 import { Profile } from "@/components/Profile";
@@ -27,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Лендинги, презентации, веб-интерфейсы: Figma и Photoshop + vibe-coding до живого демо. Для заказчиков и продуктовых ролей. Кейсы: NOVA, музей, визуализации.",
+          "Лендинги, презентации, веб-интерфейсы: Figma + vibe-coding до живого демо. Для заказчиков и продуктовых ролей. Кейсы: NOVA, музей, визуализации.",
       },
       {
         property: "og:title",
@@ -78,12 +76,6 @@ function Index() {
         </SectionShell>
         <SectionShell variant="alt">
           <Nova />
-        </SectionShell>
-        <SectionShell variant="default">
-          <ExperienceSection />
-        </SectionShell>
-        <SectionShell variant="alt">
-          <PortfolioSection />
         </SectionShell>
         <SectionShell variant="default">
           <Stack />

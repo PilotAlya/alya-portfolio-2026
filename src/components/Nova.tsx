@@ -17,11 +17,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { fadeUp } from "./shared";
 import { MediaZoom } from "./effects/MediaZoom";
 import { ParallaxImage } from "./effects/ParallaxImage";
-import { SectionLabel } from "./effects/SectionLabel";
-import { NovaBento } from "./NovaBento";
 import { useNovaScrollPin } from "@/hooks/useNovaScrollPin";
 
 import novaDashboard from "@/assets/nova-dashboard-new.png";
@@ -144,38 +141,24 @@ export function Nova() {
 
   return (
     <section id="nova" className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden scroll-mt-24">
-      <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
-
-      <NovaBento />
-
       <div className="relative max-w-7xl mx-auto">
         {/* Заголовок */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className="mb-12 max-w-3xl"
-        >
-          <SectionLabel title="Главный проект · NOVA" />
-          <div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
+        <div className="mb-12 max-w-3xl">
+          <div className="mb-6 flex flex-wrap items-center gap-3">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-display">
               NOVA Dashboard
             </h2>
           </div>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4 prose-portfolio">
-            NOVA — это единое окно для управления заказами, складом и общением с ИИ-помощником
-            «Борис». Первая версия получилась слишком сложной, поэтому после тестов с реальными
-            людьми я упростила её до NOVA Light — версии, где остались только заказы и склад.
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-[42rem]">
+            NOVA — единое окно для заказов, склада и ИИ-помощника «Борис». После тестов с людьми
+            упростила до NOVA Light — остались только заказы и склад.
           </p>
-          <p className="text-base text-muted-foreground/90 leading-relaxed border-l-2 border-accent/60 pl-4">
-            <span className="text-foreground font-medium">Два круга доработки:</span> в первую
-            версию я попыталась уместить даже бухгалтерию и сложную логику работы с клиентами — и
-            все 3 человека, с кем я тестировала, сказали, что пользоваться этим тяжело. Я убрала
-            лишнее и сделала NOVA Light. Показала тем же людям снова — и услышала: «Стало намного
-            понятнее. Сами бы таким пользовались».
+          <p className="text-base text-muted-foreground leading-relaxed max-w-[42rem]">
+            <span className="text-foreground font-medium">Два круга доработки:</span> первая версия
+            была перегружена — все трое тестировщиков сказали, что тяжело. Убрала лишнее. Ответ:
+            «Стало намного понятнее. Сами бы таким пользовались».
           </p>
-        </motion.div>
+        </div>
 
         {/* Pin layout: video слева (desktop), контент справа скроллится */}
         <div ref={sectionRef} className="nova-pin-section">

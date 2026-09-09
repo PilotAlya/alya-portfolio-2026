@@ -431,17 +431,17 @@ body.custom-cursor-active * {
 
 @media (max-width: 768px) {
   .hero-object--flower {
-    right: -22vw;
-    top: 2vh;
-    width: 68vw;
-    opacity: 0.55;
+    right: -28vw;
+    top: -2vh;
+    width: 58vw;
+    opacity: 0.28;
   }
 
   .hero-object--spiral {
-    right: 4vw;
-    bottom: 12vh;
-    width: 28vw;
-    opacity: 0.45;
+    right: -4vw;
+    bottom: 4vh;
+    width: 22vw;
+    opacity: 0.22;
   }
 }
 
@@ -666,8 +666,8 @@ body.custom-cursor-active * {
 
 .hero-title {
   font-size: clamp(2.75rem, 8.5vw, 6.5rem);
-  line-height: 0.86;
-  letter-spacing: -0.05em;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
   font-weight: 800;
   max-width: 100%;
 }
@@ -676,7 +676,7 @@ body.custom-cursor-active * {
 @media (max-width: 480px) {
   .hero-title {
     font-size: min(8.2vw, 2.1rem);
-    letter-spacing: -0.06em;
+    letter-spacing: -0.04em;
   }
 }
 
@@ -688,7 +688,7 @@ body.custom-cursor-active * {
 
 @media (min-width: 1280px) {
   .hero-title {
-    font-size: clamp(5rem, 7vw, 7rem);
+    font-size: clamp(5rem, 7vw, 6.5rem);
   }
 }
 

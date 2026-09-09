@@ -1,92 +1,43 @@
-import { motion } from "framer-motion";
-import { fadeUp } from "./shared";
-import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
 const GROUPS = [
   {
     title: "Дизайн",
-    hint: "кто я и куда расту — глаз и композиция",
-    tags: [
-      { label: "Figma", core: true },
-      { label: "Gamma", core: true },
-      { label: "Композиция", core: true },
-      { label: "Визуализация" },
-      { label: "Презентации" },
-      { label: "Веб-UI" },
-    ],
+    tags: ["Figma", "Gamma", "Композиция", "Визуализация", "Презентации", "Веб-UI"],
   },
   {
-    title: "Сборка · vibe-coding",
-    hint: "чтобы макет стал ссылкой, а не остался картинкой",
-    tags: [
-      { label: "Cursor", core: true },
-      { label: "React" },
-      { label: "TypeScript" },
-      { label: "Vercel" },
-    ],
+    title: "Сборка",
+    tags: ["Cursor", "React", "TypeScript", "Vercel"],
   },
   {
-    title: "ИИ и проверка",
-    hint: "ускоряет черновик, вкус и качество — за мной",
-    tags: [
-      { label: "Gemini" },
-      { label: "Claude" },
-      { label: "Тесты с людьми", core: true },
-    ],
+    title: "Проверка",
+    tags: ["Gemini", "Claude", "Тесты с людьми"],
   },
 ] as const;
 
 export function Stack() {
   return (
-    <section
-      id="stack"
-      className="relative pt-16 md:pt-24 pb-24 px-6 lg:px-8 overflow-x-clip scroll-mt-20 isolate"
-    >
+    <section id="stack" className="relative py-20 lg:py-28 px-6 lg:px-8 scroll-mt-20">
       <div className="relative max-w-7xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className="mb-12 max-w-3xl"
-        >
-          <SectionLabel title="Инструменты" />
+        <div className="mb-12 max-w-2xl">
           <SectionHeadline before="Дизайн ведёт," accent="vibe-coding собирает" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            Figma — основной инструмент. Cursor и React — способ быстро довести макет до демо без
-            отдельной команды разработки.
+            Figma — основной инструмент. Cursor — способ быстро довести макет до демо.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-px border border-border bg-border">
-          {GROUPS.map((group, gi) => (
-            <motion.div
-              key={group.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: gi * 0.06, duration: 0.45 }}
-              className="bg-background p-6 md:p-8"
-            >
-              <p className="lab-caption text-foreground mb-1">{group.title}</p>
-              <p className="text-sm text-muted-foreground mb-5">{group.hint}</p>
-              <div className="flex flex-wrap gap-2">
+        <div className="grid md:grid-cols-3 gap-10 border-t border-border pt-10">
+          {GROUPS.map((group) => (
+            <div key={group.title}>
+              <p className="lab-caption text-foreground mb-4">{group.title}</p>
+              <ul className="space-y-2">
                 {group.tags.map((tag) => (
-                  <span
-                    key={tag.label}
-                    className={[
-                      "tag-cloud-pill tag-cloud-pill--md",
-                      "core" in tag && tag.core && "tag-cloud-pill--core",
-                    ]
-                      .filter(Boolean)
-                      .join(" ")}
-                  >
-                    {tag.label}
-                  </span>
+                  <li key={tag} className="text-sm text-foreground/80">
+                    {tag}
+                  </li>
                 ))}
-              </div>
-            </motion.div>
+              </ul>
+            </div>
           ))}
         </div>
       </div>

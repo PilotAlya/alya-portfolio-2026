@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "./shared";
-import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 import { GrainFrame } from "./effects/GrainFrame";
 import { MediaZoom } from "./effects/MediaZoom";
@@ -35,7 +34,6 @@ export function Profile() {
         </motion.div>
 
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}>
-          <SectionLabel title="Обо мне" />
           <SectionHeadline before="Дизайнер," accent="который собирает" className="mb-6" />
           <p className="text-muted-foreground text-sm leading-relaxed mb-10 max-w-xl">
             Альбина Акбарова, Pilot Ali. Расту в лендингах, презентациях и веб-дизайне. Vibe-coding
