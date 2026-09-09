@@ -18,7 +18,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { fadeUp } from "./shared";
-import { MagneticLink } from "./effects/MagneticButton";
 import { MediaZoom } from "./effects/MediaZoom";
 import { ParallaxImage } from "./effects/ParallaxImage";
 import { SectionLabel } from "./effects/SectionLabel";
@@ -197,12 +196,9 @@ export function Nova() {
                   playsInline
                   className="w-full h-full object-contain"
                 />
-                <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/85 backdrop-blur px-3 py-1.5 rounded-full">
-                  <span className="relative flex size-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                    <span className="relative inline-flex size-2 rounded-full bg-accent" />
-                  </span>
-                  <span className="text-xs font-medium text-accent">Walkthrough</span>
+                <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/90 px-3 py-1.5 rounded-md border border-border">
+                  <span className="inline-flex size-2 rounded-full bg-accent" />
+                  <span className="lab-caption text-foreground">Walkthrough</span>
                 </div>
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background/95 via-background/60 to-transparent">
                   <div className="text-sm font-medium text-accent mb-1">
@@ -376,16 +372,16 @@ export function Nova() {
 
               {/* Презентация */}
               <div className="nova-scroll-panel flex justify-start pb-4">
-                <MagneticLink
+                <a
                   href="https://alya-nova-2026.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-spark group items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold"
+                  className="btn-spark group inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-sm font-semibold"
                 >
                   <PlayCircle className="size-4" />
                   Смотреть презентацию NOVA
                   <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </MagneticLink>
+                </a>
               </div>
             </div>
           </div>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "./shared";
-import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 import { GrainFrame } from "./effects/GrainFrame";
@@ -13,7 +12,7 @@ export function Profile() {
     <section id="profile" className="py-32 px-6 lg:px-8 scroll-mt-24">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[360px_1fr] gap-16 items-start">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
@@ -23,16 +22,15 @@ export function Profile() {
             src={portrait}
             alt="Альбина Акбарова — портрет"
             caption="Альбина Акбарова · Pilot Ali"
-            className="relative aspect-[3/5] overflow-hidden ring-1 ring-foreground/10 bg-card rounded-3xl group/portrait"
+            className="relative aspect-[3/5] overflow-hidden border border-border bg-card rounded-md group/portrait"
           >
             <GrainFrame
               src={portrait}
               alt="Альбина Акбарова — портрет"
               duotone
-              className="h-full w-full rounded-3xl pointer-events-none"
+              className="h-full w-full rounded-md pointer-events-none"
               imageClassName="object-top grayscale group-hover/portrait:grayscale-0 transition-all duration-700"
             />
-            <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover/portrait:ring-accent/30 transition-all duration-500 pointer-events-none z-[2]" />
           </MediaZoom>
         </motion.div>
 
@@ -49,7 +47,7 @@ export function Profile() {
               {
                 period: "2021–2024",
                 t: "Дизайнер-проектировщик",
-                d: "ПКПС, «Дизайн (по отраслям)», красный диплом. Профиль — интерьеры коммерческих пространств. Photoshop, чертежи, материалы, работа по ТЗ.",
+                d: "ПКПС, «Дизайн (по отраслям)», красный диплом. Профиль — интерьеры коммерческих пространств: чертежи, материалы, работа по ТЗ.",
                 badge: "Красный диплом",
               },
               {
@@ -60,17 +58,17 @@ export function Profile() {
               {
                 period: "Сейчас",
                 t: "Веб-дизайн + vibe-coding",
-                d: "Figma, Photoshop, Gamma каждый день. Собираю лендинги и интерфейсы через Cursor до демо на Vercel. Учусь на системного аналитика в Нетологии — чтобы лучше раскладывать задачи, не вместо дизайна.",
-                badge: "Figma · Ps · Cursor",
+                d: "Figma каждый день. Собираю лендинги и интерфейсы через Cursor до демо на Vercel. Учусь на системного аналитика в Нетологии — чтобы лучше раскладывать задачи, не вместо дизайна.",
+                badge: "Figma · Cursor",
               },
             ].map((c) => (
-              <div key={c.t} {...spotlightAttrs} className={spotlightClass("cv-row", "subtle")}>
+              <div key={c.t} className="cv-row">
                 <div className="cv-row__period">{c.period}</div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <div className="text-sm font-semibold text-foreground">{c.t}</div>
                     {c.badge && (
-                      <span className="text-[11px] font-medium text-accent border border-accent/40 rounded-full px-2 py-0.5">
+                      <span className="lab-caption text-accent border border-accent/30 rounded-sm px-2 py-0.5">
                         {c.badge}
                       </span>
                     )}
@@ -85,7 +83,7 @@ export function Profile() {
             <a
               href="/resume-ai.pdf"
               download="Albina_Akbarova_AI_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-foreground/25 transition-colors"
             >
               Резюме (PDF)
             </a>

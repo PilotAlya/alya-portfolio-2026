@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HeroObjects } from "./effects/HeroObjects";
-import { MagneticLink } from "./effects/MagneticButton";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,7 +25,7 @@ export function Hero() {
           Pilot Ali · 2026
         </p>
         <p className="lab-caption text-right max-w-[22ch] leading-relaxed">
-          Figma · Photoshop
+          Figma · Cursor
           <br />
           vibe-coding → демо
         </p>
@@ -70,19 +69,19 @@ export function Hero() {
           transition={{ delay: 0.45, duration: 0.55 }}
           className="flex flex-wrap gap-3 pt-2"
         >
-          <MagneticLink
+          <a
             href="#contact"
             className="btn-spark group inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-sm font-semibold"
           >
             Обсудить задачу или роль{" "}
             <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </MagneticLink>
-          <MagneticLink
+          </a>
+          <a
             href="#work"
             className="btn-cta-secondary inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-sm font-medium"
           >
             Смотреть работы
-          </MagneticLink>
+          </a>
         </motion.div>
       </motion.div>
     </section>

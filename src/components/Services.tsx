@@ -1,24 +1,18 @@
 import { motion } from "framer-motion";
-import { Palette, Globe, LayoutDashboard, Presentation } from "lucide-react";
 
-import { fadeUp, staggerContainer, staggerItem } from "./shared";
-import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { fadeUp } from "./shared";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
 const SERVICES = [
   {
-    Icon: Palette,
-    idxClass: "idx-pill--blue",
     idx: "01",
     title: "Дизайн и визуал",
-    desc: "Макеты, визуализации, Photoshop, прототипы в Figma. Композиция — с диплома дизайнера. Подходит и для заказа, и как proof вкуса на вакансии.",
+    desc: "Макеты, визуализации, прототипы в Figma. Композиция — с диплома дизайнера. Подходит и для заказа, и как proof вкуса на вакансии.",
     href: "#work",
     example: "Пример: ванная и музейные витрины",
   },
   {
-    Icon: Presentation,
-    idxClass: "idx-pill--orange",
     idx: "02",
     title: "Презентации",
     desc: "Структура, слайды, «до / после» — презентация, которую можно отправить заказчику или приложить к кейсу. Gamma и Figma.",
@@ -27,8 +21,6 @@ const SERVICES = [
     external: true,
   },
   {
-    Icon: Globe,
-    idxClass: "idx-pill--ink",
     idx: "03",
     title: "Сайты и лендинги",
     desc: "От структуры блоков до живой ссылки: собираю сама через vibe-coding — не жду отдельную команду разработки.",
@@ -36,8 +28,6 @@ const SERVICES = [
     example: "Пример: мини-CRM и это портфолио",
   },
   {
-    Icon: LayoutDashboard,
-    idxClass: "idx-pill--blue",
     idx: "04",
     title: "Интерфейсы продуктов",
     desc: "Экраны, онбординг, канбан — UI + vibe-coding до демо. Проверяю на людях, пока пользоваться станет удобно.",
@@ -65,53 +55,25 @@ export function Services() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px border border-border bg-border">
           {SERVICES.map((s, i) => (
             <motion.a
               key={s.title}
               href={s.href}
               target={"external" in s && s.external ? "_blank" : undefined}
               rel={"external" in s && s.external ? "noopener noreferrer" : undefined}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.6 }}
-              {...spotlightAttrs}
-              className={spotlightClass("lab-card group p-6 flex flex-col")}
+              transition={{ delay: i * 0.06, duration: 0.5 }}
+              className="group flex flex-col bg-background p-6 lg:p-7 transition-colors hover:bg-secondary/60"
             >
-              <motion.div
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="flex flex-col flex-1"
-              >
-                <motion.div
-                  variants={staggerItem}
-                  className="flex items-center justify-between mb-5"
-                >
-                  <span className={`idx-pill ${s.idxClass} mb-0`}>{s.idx}</span>
-                  <s.Icon className="size-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                </motion.div>
-                <motion.h3
-                  variants={staggerItem}
-                  className="text-base font-semibold tracking-tight mb-2"
-                >
-                  {s.title}
-                </motion.h3>
-                <motion.p
-                  variants={staggerItem}
-                  className="text-sm text-muted-foreground leading-relaxed flex-1"
-                >
-                  {s.desc}
-                </motion.p>
-                <motion.span
-                  variants={staggerItem}
-                  className="mt-4 text-xs font-medium text-accent group-hover:underline underline-offset-2"
-                >
-                  {s.example} →
-                </motion.span>
-              </motion.div>
+              <span className="lab-caption text-accent mb-5">{s.idx}</span>
+              <h3 className="text-base font-semibold tracking-tight mb-2 font-display">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
+              <span className="mt-4 text-xs font-medium text-foreground/70 group-hover:text-accent transition-colors">
+                {s.example} →
+              </span>
             </motion.a>
           ))}
         </div>

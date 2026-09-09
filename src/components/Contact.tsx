@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Copy, Check, MessageCircle, Mail } from "lucide-react";
+import { ArrowUpRight, Copy, Check, Mail } from "lucide-react";
 import { useState } from "react";
 
-import { MagneticLink } from "@/components/effects/MagneticButton";
 import { SectionLabel } from "@/components/effects/SectionLabel";
-import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
 const TELEGRAM_URL = "https://t.me/Albinaa_Akbarova";
 const EMAIL = "pilotalya@a-akbarova.ru";
@@ -23,8 +21,6 @@ export function Contact() {
       id="contact"
       className="py-24 lg:py-36 px-6 lg:px-8 border-t border-border relative overflow-hidden scroll-mt-24"
     >
-      <div className="absolute inset-0 contact-spark-glow pointer-events-none" />
-
       <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -33,12 +29,9 @@ export function Contact() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <SectionLabel
-            title="Контакты"
-            className="inline-flex items-center gap-2 text-sm font-medium text-accent mb-6"
-          />
+          <SectionLabel title="Контакты" />
 
-          <h2 className="text-[clamp(2.75rem,8vw,5.75rem)] font-extrabold tracking-tight leading-[0.88] font-display mb-8">
+          <h2 className="mt-4 text-[clamp(2.75rem,8vw,5.75rem)] font-extrabold tracking-tight leading-[0.88] font-display mb-8">
             Задача
             <br />
             или роль —
@@ -52,16 +45,15 @@ export function Contact() {
           </p>
 
           <div className="mb-10">
-            <MagneticLink
+            <a
               href={TELEGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-spark group inline-flex items-center gap-3 px-8 py-4 rounded-md text-base sm:text-lg font-semibold"
             >
-              <MessageCircle className="size-5" />
               Написать в Telegram
               <ArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </MagneticLink>
+            </a>
             <p className="mt-4 lab-caption pl-1">Быстрый ответ · @Albinaa_Akbarova</p>
           </div>
 
@@ -69,11 +61,7 @@ export function Contact() {
             <button
               type="button"
               onClick={copyEmail}
-              {...spotlightAttrs}
-              className={spotlightClass(
-                "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground transition-colors",
-                "subtle",
-              )}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-foreground/25 transition-colors"
             >
               <Mail className="size-3.5 text-accent" />
               {emailCopied ? "Скопировано!" : EMAIL}
@@ -83,7 +71,7 @@ export function Contact() {
             <a
               href="/resume-ai.pdf"
               download="Albina_Akbarova_AI_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-foreground/25 transition-colors"
             >
               Резюме PDF
             </a>

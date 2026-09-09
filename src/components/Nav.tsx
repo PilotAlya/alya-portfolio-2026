@@ -34,7 +34,7 @@ export function Nav() {
 
   return (
     <nav className="fixed top-4 md:top-5 inset-x-4 md:inset-x-8 z-50">
-      <div className="max-w-7xl mx-auto glass-panel rounded-md px-4 lg:px-5 h-12 flex items-center justify-between border border-border/80">
+      <div className="max-w-7xl mx-auto bg-background rounded-md px-4 lg:px-5 h-12 flex items-center justify-between border border-border">
         <a href="#top" className="text-sm font-display font-bold tracking-tight pl-1">
           Pilot Ali
           <span className="hidden sm:inline font-mono font-medium text-[0.65rem] tracking-[0.08em] uppercase text-muted-foreground ml-3">

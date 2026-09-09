@@ -262,66 +262,15 @@ body.custom-cursor-active * {
   background-color: color-mix(in oklab, var(--color-accent) 8%, transparent);
 }
 
+/* Spotlight / lift hover — retired (AI-slop exhibits 18, 24, 26) */
 .spotlight-card {
-  --spotlight-x: 50%;
-  --spotlight-y: 50%;
   position: relative;
-  isolation: isolate;
-  transition:
-    border-color 0.35s ease,
-    box-shadow 0.35s ease,
-    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.35s ease;
 }
 
-.spotlight-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background: radial-gradient(
-    340px circle at var(--spotlight-x) var(--spotlight-y),
-    color-mix(in oklab, var(--color-accent) 6%, transparent),
-    transparent 68%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
+.spotlight-card::before,
 .spotlight-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-foreground) 8%, transparent);
-  pointer-events: none;
-  z-index: 1;
-}
-
-@media (hover: hover) {
-  .spotlight-card:hover {
-    border-color: color-mix(in oklab, var(--color-foreground) 16%, transparent) !important;
-    box-shadow: 0 12px 32px -18px color-mix(in oklab, var(--color-foreground) 18%, transparent);
-    transform: translateY(-2px);
-  }
-
-  .spotlight-card:hover::before,
-  .spotlight-card:hover::after {
-    opacity: 1;
-  }
-
-  .spotlight-card--flat:hover {
-    transform: none;
-  }
-
-  .spotlight-card--subtle:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px -16px color-mix(in oklab, var(--color-foreground) 16%, transparent);
-  }
+  content: none;
+  display: none;
 }
 
 .noise-overlay {
@@ -360,9 +309,9 @@ body.custom-cursor-active * {
 
 @media (hover: hover) {
   .bento-card:hover {
-    border-color: color-mix(in oklab, var(--color-foreground) 18%, transparent);
-    box-shadow: 0 14px 36px -22px color-mix(in oklab, var(--color-foreground) 20%, transparent);
-    transform: perspective(900px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(-2px);
+    border-color: color-mix(in oklab, var(--color-foreground) 14%, transparent);
+    box-shadow: none;
+    transform: none;
   }
 }
 
@@ -544,10 +493,10 @@ body.custom-cursor-active * {
 }
 
 .glass-panel {
-  background: color-mix(in oklab, var(--background) 88%, transparent);
+  background: var(--background);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .glass-pill {
@@ -575,9 +524,9 @@ body.custom-cursor-active * {
 @media (hover: hover) {
   .glass-card:hover,
   .lab-card:hover {
-    transform: translateY(-3px);
-    border-color: color-mix(in oklab, var(--color-foreground) 18%, transparent);
-    box-shadow: 0 16px 40px -24px color-mix(in oklab, var(--color-foreground) 18%, transparent);
+    transform: none;
+    border-color: color-mix(in oklab, var(--color-foreground) 16%, transparent);
+    box-shadow: none;
   }
 }
 
@@ -636,25 +585,7 @@ body.custom-cursor-active * {
   height: 0.55rem;
   border-radius: 50%;
   background: var(--blue);
-  box-shadow: 0 0 0 4px color-mix(in oklab, var(--blue) 18%, transparent);
   vertical-align: middle;
-  animation: lab-dot-pulse 2.8s ease-in-out infinite;
-}
-
-@keyframes lab-dot-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 4px color-mix(in oklab, var(--blue) 16%, transparent);
-  }
-  50% {
-    box-shadow: 0 0 0 7px color-mix(in oklab, var(--blue) 8%, transparent);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lab-dot {
-    animation: none;
-  }
 }
 
 .lab-caption {
@@ -693,11 +624,8 @@ body.custom-cursor-active * {
   background: var(--spark);
   color: var(--spark-foreground);
   font-weight: 600;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    filter 0.25s ease;
-  box-shadow: 0 10px 24px -14px color-mix(in oklab, var(--spark) 40%, transparent);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  box-shadow: none;
 }
 
 .btn-cta-secondary {
@@ -794,9 +722,10 @@ body.custom-cursor-active * {
 
 @media (hover: hover) {
   .btn-spark:hover {
-    filter: brightness(1.08);
-    box-shadow: 0 14px 28px -12px color-mix(in oklab, var(--spark) 45%, transparent);
-    transform: translateY(-1px);
+    filter: none;
+    background: color-mix(in oklab, var(--spark) 88%, white);
+    box-shadow: none;
+    transform: none;
   }
 
   .btn-cta-secondary:hover {
@@ -841,11 +770,7 @@ body.custom-cursor-active * {
 }
 
 .contact-spark-glow {
-  background: radial-gradient(
-    ellipse 60% 45% at 15% 85%,
-    color-mix(in oklab, var(--accent) 8%, transparent),
-    transparent 65%
-  );
+  display: none;
 }
 
 .grain-frame {

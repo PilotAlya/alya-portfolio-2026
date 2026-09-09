@@ -64,15 +64,15 @@ export function CrmLeadCardCase() {
               ))}
             </div>
 
-            <MagneticLink
+            <a
               href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-spark items-center gap-2 text-sm px-5 py-3 rounded-full font-semibold"
+              className="btn-spark inline-flex items-center gap-2 text-sm px-5 py-3 rounded-md font-semibold"
             >
               <ExternalLink className="size-4" />
               Открыть demo
-            </MagneticLink>
+            </a>
           </motion.div>
 
           <motion.div

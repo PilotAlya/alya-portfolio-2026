@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { Nav } from "@/components/Nav";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
-import { HeroStats } from "@/components/HeroStats";
 import { Services } from "@/components/Services";
 import { SelectedWork } from "@/components/SelectedWork";
 import { WhyMe } from "@/components/WhyMe";
@@ -68,7 +67,6 @@ function Index() {
         <ScrollProgress />
         <Nav />
         <Hero />
-        <HeroStats />
         <SectionShell variant="default">
           <Services />
         </SectionShell>

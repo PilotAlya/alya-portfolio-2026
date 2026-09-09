@@ -1,22 +1,21 @@
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, staggerItem } from "./shared";
-import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
+import { fadeUp } from "./shared";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
 const ITEMS = [
   {
-    idx: "01 · Глаз",
-    idxClass: "idx-pill--blue",
+    idx: "01",
+    label: "Глаз",
     problem: "Нужно, чтобы выглядело собранно — лендинг, презентация, интерфейс.",
     solution:
-      "Диплом дизайнера-проектировщика, Figma, Photoshop, Gamma. Композицию считаю так же, как считала витрины для музея: ничего лишнего, всё по задаче.",
+      "Диплом дизайнера-проектировщика и Figma. Композицию считаю так же, как считала витрины для музея: ничего лишнего, всё по задаче.",
     result:
       "В портфолио — интерьер (модель → кадр), музей под ключ и презентация NOVA. Это направление, в котором хочу расти дальше.",
   },
   {
-    idx: "02 · Сборка",
-    idxClass: "idx-pill--orange",
+    idx: "02",
+    label: "Сборка",
     problem: "Макет есть, а живой версии нет — и ждать разработчика некогда.",
     solution:
       "Vibe-coding: Cursor и AI ускоряют код, я проектирую логику, проверяю и деплою. Не «студия на 20 человек» — один понятный результат в срок.",
@@ -24,8 +23,8 @@ const ITEMS = [
       "NOVA Light, это портфолио, мини-CRM — всё можно открыть по ссылке. Для вакансии это proof, что умею довести продукт до демо.",
   },
   {
-    idx: "03 · Проверка",
-    idxClass: "idx-pill--ink",
+    idx: "03",
+    label: "Проверка",
     problem: "Страшно, что «красиво» не значит «понятно людям».",
     solution:
       "Тестирую на реальных людях до сдачи: где спотыкаются, упрощаю, проверяю снова — и в заказе, и в продуктовой роли.",
@@ -53,48 +52,29 @@ export function WhyMe() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-4">
+        <div className="grid lg:grid-cols-3 gap-px border border-border bg-border">
           {ITEMS.map((it, i) => (
             <motion.div
               key={it.idx}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              {...spotlightAttrs}
-              className={spotlightClass("lab-card p-8 flex flex-col")}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              className="flex flex-col bg-background p-8"
             >
-              <motion.div
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="flex flex-col"
-              >
-                <motion.span variants={staggerItem} className={`idx-pill ${it.idxClass} w-fit`}>
-                  {it.idx}
-                </motion.span>
+              <div className="lab-caption mb-5">
+                <span className="text-accent">{it.idx}</span>
+                <span className="text-muted-foreground"> · {it.label}</span>
+              </div>
 
-                <motion.h3
-                  variants={staggerItem}
-                  className="text-lg font-semibold leading-snug tracking-tight mb-3"
-                >
-                  {it.problem}
-                </motion.h3>
-                <motion.p
-                  variants={staggerItem}
-                  className="text-sm text-muted-foreground leading-relaxed"
-                >
-                  {it.solution}
-                </motion.p>
-                <motion.div
-                  variants={staggerItem}
-                  className="border-t border-dashed border-foreground/15 mt-5 pt-4"
-                >
-                  <div className="lab-caption text-accent mb-1">Результат</div>
-                  <p className="text-sm leading-relaxed">{it.result}</p>
-                </motion.div>
-              </motion.div>
+              <h3 className="text-lg font-semibold leading-snug tracking-tight mb-3 font-display">
+                {it.problem}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{it.solution}</p>
+              <div className="border-t border-dashed border-foreground/15 mt-5 pt-4">
+                <div className="lab-caption text-accent mb-1">Результат</div>
+                <p className="text-sm leading-relaxed">{it.result}</p>
+              </div>
             </motion.div>
           ))}
         </div>

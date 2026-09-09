@@ -9,10 +9,8 @@ const GROUPS = [
     hint: "кто я и куда расту — глаз и композиция",
     tags: [
       { label: "Figma", core: true },
-      { label: "Photoshop", core: true },
       { label: "Gamma", core: true },
-      { label: "PRO100" },
-      { label: "Композиция" },
+      { label: "Композиция", core: true },
       { label: "Визуализация" },
       { label: "Презентации" },
       { label: "Веб-UI" },
@@ -26,9 +24,6 @@ const GROUPS = [
       { label: "React" },
       { label: "TypeScript" },
       { label: "Vercel" },
-      { label: "Lovable" },
-      { label: "Bolt" },
-      { label: "OpenCode" },
     ],
   },
   {
@@ -37,9 +32,7 @@ const GROUPS = [
     tags: [
       { label: "Gemini" },
       { label: "Claude" },
-      { label: "Тесты с людьми" },
-      { label: "Python" },
-      { label: "Автоматизация" },
+      { label: "Тесты с людьми", core: true },
     ],
   },
 ] as const;
@@ -61,20 +54,20 @@ export function Stack() {
           <SectionLabel title="Инструменты" />
           <SectionHeadline before="Дизайн ведёт," accent="vibe-coding собирает" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            Figma и Photoshop — не «ещё умею». Cursor и React — способ быстро довести макет до демо
-            без отдельной команды разработки.
+            Figma — основной инструмент. Cursor и React — способ быстро довести макет до демо без
+            отдельной команды разработки.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-px border border-border bg-border">
           {GROUPS.map((group, gi) => (
             <motion.div
               key={group.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: gi * 0.08, duration: 0.5 }}
-              className="glass-card p-6 md:p-8"
+              transition={{ delay: gi * 0.06, duration: 0.45 }}
+              className="bg-background p-6 md:p-8"
             >
               <p className="lab-caption text-foreground mb-1">{group.title}</p>
               <p className="text-sm text-muted-foreground mb-5">{group.hint}</p>

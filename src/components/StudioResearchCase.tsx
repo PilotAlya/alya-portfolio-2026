@@ -144,23 +144,23 @@ export function StudioResearchCase() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <MagneticLink
+              <a
                 href={XLSX_URL}
                 download="studio-research-demo.xlsx"
-                className="btn-spark items-center gap-2 text-sm px-5 py-3 rounded-full font-semibold"
+                className="btn-spark inline-flex items-center gap-2 text-sm px-5 py-3 rounded-md font-semibold"
               >
                 <Download className="size-4" />
                 Скачать Excel
-              </MagneticLink>
-              <MagneticLink
+              </a>
+              <a
                 href={CASE_PAGE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-cta-secondary items-center gap-2 text-sm px-5 py-3 rounded-full font-semibold"
+                className="btn-cta-secondary inline-flex items-center gap-2 text-sm px-5 py-3 rounded-md font-semibold"
               >
                 <ExternalLink className="size-4" />
                 Демо-страница
-              </MagneticLink>
+              </a>
             </div>
           </motion.div>
 

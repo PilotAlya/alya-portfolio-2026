@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { CustomCursor } from "@/components/CustomCursor";
 import { MotionProvider } from "@/components/effects/MotionProvider";
 import { SITE_ORIGIN, SITE_URL } from "@/lib/site";
 
@@ -165,7 +164,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <MotionProvider>
-        <CustomCursor />
         <Outlet />
       </MotionProvider>
     </QueryClientProvider>
