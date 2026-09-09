@@ -1,7 +1,8 @@
 # Сопроводительные письма · Pilot Ali (Альбина Акбарова)
 
-> **Позиционирование:** AI-Native Engineer · Vibe-Coder · Product Builder  
-> QA/SA — бэкграунд и фильтр качества, не основная идентичность в письме.  
+> **Две линейки писем.**  
+> **Заказчикам (дизайн, сайты, презентации):** [cover-letter-clients-design.md](./cover-letter-clients-design.md) — шаблон для рассылки.  
+> **Вакансии / AI-native / QA / SA:** шаблоны ниже. На live `main` портфолио пока ещё в этой роли.  
 > **Портфолио:** https://portfolio-resume-alya-akbarova.vercel.app/
 
 ---
@@ -10,7 +11,8 @@
 
 | Файл | Когда использовать |
 |------|-------------------|
-| [cover-letter-ai-native-engineer.md](./cover-letter-ai-native-engineer.md) | **Основной** — vibe-coding, MVP, AI-native роли |
+| [cover-letter-clients-design.md](./cover-letter-clients-design.md) | **Заказчикам** — дизайн, лендинги, презентации |
+| [cover-letter-ai-native-engineer.md](./cover-letter-ai-native-engineer.md) | Вакансии vibe-coding / MVP / AI-native |
 | [cover-letter-templates.md](./cover-letter-templates.md) | QA / SA / универсальный короткий + шпаргалка фраз |
 | [cover-letter-fl-vibecoder.md](./cover-letter-fl-vibecoder.md) | FL.ru · part-time vibe-coder |
 | [cover-letter-fl-ai-mvp-generic.md](./cover-letter-fl-ai-mvp-generic.md) | FL.ru · generic AI MVP |

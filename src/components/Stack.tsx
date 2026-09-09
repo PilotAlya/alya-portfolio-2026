@@ -3,47 +3,50 @@ import { fadeUp } from "./shared";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
-type TagSize = "sm" | "md" | "lg";
-
-const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
-  { label: "Cursor", size: "lg", core: true },
-  { label: "Сборка с ИИ", size: "lg" },
-  { label: "React", size: "md" },
-  { label: "TypeScript", size: "md" },
-  { label: "TanStack", size: "md" },
-  { label: "Vercel", size: "md" },
-  { label: "OpenCode", size: "md" },
-  { label: "Gemini", size: "md" },
-  { label: "Claude", size: "md" },
-  { label: "Lovable", size: "sm" },
-  { label: "Bolt", size: "sm" },
-  { label: "Replit", size: "sm" },
-  { label: "GitHub Copilot", size: "sm" },
-  { label: "DeepSeek", size: "sm" },
-  { label: "OpenRouter", size: "sm" },
-  { label: "NotebookLM", size: "sm" },
-  { label: "Python", size: "sm" },
-  { label: "Pandas", size: "sm" },
-  { label: "Тестирование", size: "sm" },
-  { label: "Оценка качества ИИ", size: "sm" },
-  { label: "Figma", size: "md" },
-  { label: "Gamma", size: "md" },
-  { label: "PRO100", size: "sm" },
-  { label: "Быстрый запуск", size: "md" },
-  { label: "Автоматизация", size: "md" },
-];
-
-const SIZE_CLASS: Record<TagSize, string> = {
-  sm: "tag-cloud-pill--sm",
-  md: "tag-cloud-pill--md",
-  lg: "tag-cloud-pill--lg",
-};
+const GROUPS = [
+  {
+    title: "Дизайн",
+    hint: "то, с чего начинается любая задача",
+    tags: [
+      { label: "Figma", core: true },
+      { label: "Photoshop", core: true },
+      { label: "Gamma", core: true },
+      { label: "PRO100" },
+      { label: "Композиция" },
+      { label: "Визуализация" },
+      { label: "Презентации" },
+    ],
+  },
+  {
+    title: "Сборка",
+    hint: "чтобы макет стал сайтом, а не остался картинкой",
+    tags: [
+      { label: "Cursor" },
+      { label: "React" },
+      { label: "TypeScript" },
+      { label: "Vercel" },
+      { label: "Lovable" },
+      { label: "Bolt" },
+    ],
+  },
+  {
+    title: "ИИ и проверка",
+    hint: "ускоряет черновик, качество проверяю сама",
+    tags: [
+      { label: "Gemini" },
+      { label: "Claude" },
+      { label: "Тесты с людьми" },
+      { label: "Python" },
+      { label: "Автоматизация" },
+    ],
+  },
+] as const;
 
 export function Stack() {
   return (
     <section
       id="stack"
-      className="relative pt-16 md:pt-24 pb-32 px-6 lg:px-8 overflow-x-clip scroll-mt-20 isolate"
+      className="relative pt-16 md:pt-24 pb-24 px-6 lg:px-8 overflow-x-clip scroll-mt-20 isolate"
     >
       <div className="relative max-w-7xl mx-auto">
         <motion.div
@@ -54,49 +57,45 @@ export function Stack() {
           className="mb-12 max-w-3xl"
         >
           <SectionLabel title="Инструменты" />
-          <SectionHeadline before="С чем я" accent="работаю" />
+          <SectionHeadline before="Figma и Photoshop —" accent="не «ещё умею»" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            Инструменты, которыми пользуюсь каждый день, чтобы быстро собирать сайты, делать
-            презентации и автоматизировать рутину.
+            Сначала дизайн. Потом — сборка, если нужен живой сайт. ИИ помогает быстрее набросать
+            каркас, вкус и финальную картинку оставляю за собой.
           </p>
         </motion.div>
 
-        {/* Tag cloud — SENCE-style */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative glass-panel rounded-2xl p-8 md:p-10 mb-12"
-        >
-          <p className="text-sm text-muted-foreground mb-4">Основной инструмент · Cursor</p>
-
-          <div className="flex flex-wrap gap-2.5 md:gap-3 justify-center md:justify-start">
-            {TAGS.map((tag, i) => (
-              <motion.span
-                key={tag.label}
-                initial={{ opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.02, duration: 0.35 }}
-                className={[
-                  "tag-cloud-pill",
-                  SIZE_CLASS[tag.size],
-                  tag.core && "tag-cloud-pill--core",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                {tag.core && (
-                  <span className="text-spark text-[0.65em]" aria-hidden>
-                    ✦
+        <div className="grid md:grid-cols-3 gap-4">
+          {GROUPS.map((group, gi) => (
+            <motion.div
+              key={group.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: gi * 0.08, duration: 0.5 }}
+              className="glass-card p-6 md:p-8"
+            >
+              <p className="text-xs font-semibold tracking-[0.12em] uppercase text-foreground mb-1">
+                {group.title}
+              </p>
+              <p className="text-sm text-muted-foreground mb-5">{group.hint}</p>
+              <div className="flex flex-wrap gap-2">
+                {group.tags.map((tag) => (
+                  <span
+                    key={tag.label}
+                    className={[
+                      "tag-cloud-pill tag-cloud-pill--md",
+                      "core" in tag && tag.core && "tag-cloud-pill--core",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
+                  >
+                    {tag.label}
                   </span>
-                )}
-                {tag.label}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

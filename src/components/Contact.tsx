@@ -23,9 +23,7 @@ export function Contact() {
       id="contact"
       className="py-24 lg:py-36 px-6 lg:px-8 border-t border-border relative overflow-hidden scroll-mt-24"
     >
-      <div className="absolute inset-0 bg-aurora pointer-events-none" />
       <div className="absolute inset-0 contact-spark-glow pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-glow/12 blur-[100px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         <motion.div
@@ -41,16 +39,16 @@ export function Contact() {
           />
 
           <h2 className="text-[clamp(2.75rem,8vw,5.75rem)] font-extrabold tracking-tight leading-[0.88] font-display mb-8">
-            Связаться
+            Есть задача
             <br />
-            и обсудить
+            на дизайн
             <br />
-            <span className="text-gradient-chrome accent-italic">проект</span>
+            <span className="text-gradient-chrome accent-italic">или сайт?</span>
           </h2>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            Нужен сайт, лендинг, презентация или ИИ-помощник для бизнеса? Напишите — обсудим задачу,
-            и я скажу, как это можно сделать.
+            Напишите коротко, что нужно: презентация, лендинг, визуал, интерфейс. Отвечу, возьмусь
+            ли и как это можно сделать — без «ИИ, который решит всё».
           </p>
 
           <div className="mb-10">
@@ -87,8 +85,8 @@ export function Contact() {
           </div>
 
           <p className="accent-italic text-lg text-muted-foreground max-w-md border-l-2 border-spark/40 pl-4">
-            «Беру задачу, разбираюсь, собираю рабочую версию и довожу до результата, которым можно
-            пользоваться.»
+            «Сначала разберём задачу. Потом — картинка, которую не стыдно показать, и версия,
+            которой можно пользоваться.»
           </p>
         </motion.div>
       </div>

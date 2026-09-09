@@ -6,28 +6,32 @@ import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 export function HeroStats() {
   const stats = [
     {
+      n: 1,
+      suf: "",
+      display: "Диплом",
+      label: "дизайнера-проектировщика, красный · интерьеры коммерческих пространств",
+      color: "text-accent",
+    },
+    {
       n: 2,
-      suf: " года",
-      label: "практики в ритейле + стажировки во время учёбы",
+      suf: "",
+      display: "Музей + ММК",
+      label: "коммерческие проекты под ключ, ноль брака на производстве",
       color: "",
     },
     {
       n: 5,
       suf: "+",
-      label: "рабочих прототипов и демо-сайтов в открытом доступе",
+      display: null,
+      label: "рабочих сайтов и демо, которые можно открыть прямо сейчас",
       color: "text-accent",
     },
     {
-      n: 40,
-      suf: "%",
-      label: "рутинных задач автоматизировано в старом учётном софте",
+      n: 3,
+      suf: "",
+      display: "Figma · Ps · Gamma",
+      label: "ежедневные инструменты плюс сборка живых интерфейсов",
       color: "text-orange-accent",
-    },
-    {
-      n: 12,
-      suf: "+",
-      label: "проблем найдено и исправлено в NOVA до показа пользователям",
-      color: "",
     },
   ];
 
@@ -44,9 +48,17 @@ export function HeroStats() {
             {...spotlightAttrs}
             className={spotlightClass("relative flex flex-col gap-2 p-6 lg:p-8", "subtle")}
           >
-            <div className="font-extrabold text-3xl sm:text-4xl tracking-tight">
-              <CountUp to={s.n} duration={1200} className={s.color} />
-              {s.suf}
+            <div
+              className={`font-extrabold text-2xl sm:text-3xl tracking-tight leading-tight ${s.color}`}
+            >
+              {s.display ? (
+                s.display
+              ) : (
+                <>
+                  <CountUp to={s.n} duration={1200} />
+                  {s.suf}
+                </>
+              )}
             </div>
             <div className="text-sm text-muted-foreground leading-relaxed">{s.label}</div>
           </motion.div>

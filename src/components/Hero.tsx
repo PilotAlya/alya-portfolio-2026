@@ -1,29 +1,26 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { HeroAurora } from "./effects/HeroAurora";
 import { HeroBlob } from "./effects/HeroBlob";
 import { MagneticLink } from "./effects/MagneticButton";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
     <section
       id="top"
       ref={ref}
-      className="corner-ticks relative pt-32 pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24"
+      className="relative pt-32 pb-24 lg:pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24"
     >
-      <HeroAurora />
-      <div className="absolute inset-0 bg-aurora pointer-events-none opacity-80" />
       <HeroBlob />
 
       <div className="relative max-w-7xl mx-auto mb-10 flex items-center justify-between text-xs font-medium tracking-wide text-muted-foreground">
         <span>2026</span>
-        <span>PILOT ALI // ДИЗАЙН · САЙТЫ · ИИ</span>
+        <span>PILOT ALI // ДИЗАЙН · FIGMA · PHOTOSHOP</span>
       </div>
 
       <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto space-y-10">
@@ -44,7 +41,7 @@ export function Hero() {
               />
             </span>
             <span className="text-sm font-medium text-foreground">
-              Беру 1–2 новых проекта в месяц
+              Беру 1–2 новых проекта · дизайн и сборка
             </span>
           </div>
         </motion.div>
@@ -63,12 +60,13 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ delay: 0.35, duration: 0.8 }}
           className="text-lg sm:text-xl text-muted-foreground max-w-2xl font-light leading-relaxed"
         >
-          Помогаю бизнесу быстро получить нужный результат: сайт, лендинг, презентацию, CRM или
-          ИИ-помощника — от идеи до версии, которую можно{" "}
-          <span className="text-foreground italic">показать клиентам и опробовать</span>.
+          Дизайнер-проектировщик. Делаю так, чтобы{" "}
+          <span className="accent-italic text-foreground">выглядело аккуратно и работало</span>:
+          интерьеры, презентации, лендинги и интерфейсы. Figma и Photoshop — и умею довести макет до
+          живого сайта, а не оставить его картинкой.
         </motion.p>
 
         <motion.div
@@ -78,10 +76,10 @@ export function Hero() {
           className="hero-spec-strip"
         >
           {[
-            { label: "Сайты и лендинги", value: "быстрый старт" },
-            { label: "Презентации и дизайн", value: "Gamma, Figma" },
-            { label: "ИИ-помощники", value: "и автоматизация рутины" },
-            { label: "Проверка результата", value: "тестирую перед показом" },
+            { label: "Дизайн", value: "диплом, красный" },
+            { label: "Инструменты", value: "Figma · Photoshop · Gamma" },
+            { label: "Для бизнеса", value: "сайты, презентации, UI" },
+            { label: "Формат", value: "от идеи до рабочей версии" },
           ].map((spec) => (
             <div key={spec.label}>
               <div className="hero-spec-strip__label">{spec.label}</div>
@@ -101,20 +99,20 @@ export function Hero() {
               href="#contact"
               className="btn-spark group items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold"
             >
-              Связаться{" "}
+              Обсудить задачу{" "}
               <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </MagneticLink>
             <MagneticLink
-              href="#index"
+              href="#work"
               className="btn-cta-secondary items-center gap-2 px-6 py-3.5 rounded-full text-sm font-medium"
             >
-              Смотреть примеры работ
+              Смотреть работы
             </MagneticLink>
           </div>
 
           <p className="accent-italic max-w-md text-lg leading-relaxed text-foreground/90 border-l-2 border-spark/40 pl-4">
-            «Я не обещаю "ИИ, который решит всё". Разбираюсь в задаче, собираю рабочий инструмент
-            под неё и проверяю, что он работает — прежде чем показать вам.»
+            «Не рисую картинку в вакууме. Считаю композицию, проверяю на людях и довожу до версии,
+            которой можно пользоваться.»
             <span className="font-sans not-italic block mt-2 text-sm font-medium text-accent">
               — Pilot Ali
             </span>

@@ -113,7 +113,7 @@ function NovaCarousel() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`h-1.5 rounded-full transition-all ${
-              i === current ? "w-5 bg-accent" : "w-1.5 bg-white/20 hover:bg-white/40"
+              i === current ? "w-5 bg-accent" : "w-1.5 bg-foreground/20 hover:bg-foreground/40"
             }`}
             aria-label={`Слайд ${i + 1}`}
           />

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Ruler, CircuitBoard, Bot } from "lucide-react";
+import { PencilRuler, Building2, MonitorSmartphone } from "lucide-react";
 import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
@@ -9,21 +9,21 @@ export function EvolutionPath() {
   const stages = [
     {
       n: "01",
-      title: "Точность и процессы",
-      body: "Ритейл, проекты для музея и завода ММК. Урок на всю жизнь: ошибка в деталях на старте — финансовые потери в конце.",
-      Icon: Ruler,
+      title: "Глаз и точность",
+      body: "Диплом дизайнера-проектировщика. Витрины музея, офис завода ММК: ошибка в миллиметре на старте — брак и деньги на финале.",
+      Icon: PencilRuler,
     },
     {
       n: "02",
-      title: "Порядок в цифрах",
-      body: "Наводила порядок в учёте и автоматизировала рутину в ритейле — подробности в блоке «Опыт» ниже.",
-      Icon: CircuitBoard,
+      title: "Заказчик и процесс",
+      body: "Ритейл научил говорить с бизнесом: ТЗ, сроки, «чтобы работало завтра». Дизайн без этого — картинка в папке.",
+      Icon: Building2,
     },
     {
       n: "03",
-      title: "Помощник на основе ИИ",
-      body: "NOVA — система для бизнеса с ИИ-помощником внутри, от идеи до рабочей версии. Полный кейс — в разделе NOVA ниже.",
-      Icon: Bot,
+      title: "Цифровой продукт",
+      body: "Figma, Photoshop, Gamma — и сборка живых сайтов. NOVA: интерфейс, тесты с людьми, демо, которое можно открыть.",
+      Icon: MonitorSmartphone,
       featured: true,
     },
   ];
@@ -38,10 +38,10 @@ export function EvolutionPath() {
           variants={fadeUp}
           className="mb-16 relative z-10"
         >
-          <SectionLabel title="Мой путь" />
+          <SectionLabel title="Откуда вкус" />
           <SectionHeadline
-            before="От точности на бумаге — до"
-            accent="цифровых решений"
+            before="От чертежа и интерьера — к"
+            accent="цифровому дизайну"
             className="max-w-3xl relative z-10"
           />
         </motion.div>

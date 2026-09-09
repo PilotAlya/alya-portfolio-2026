@@ -14,10 +14,9 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "#services", label: "Услуги" },
-  { href: "#why", label: "Обо мне" },
+  { href: "#work", label: "Работы" },
   { href: "#nova", label: "NOVA" },
-  { href: "#experience", label: "Опыт" },
-  { href: "#portfolio", label: "Портфолио" },
+  { href: "#profile", label: "Обо мне" },
 ];
 
 export function Nav() {
@@ -39,7 +38,7 @@ export function Nav() {
         <a href="#top" className="text-sm font-semibold tracking-tight pl-2">
           Pilot Ali{" "}
           <span className="hidden sm:inline text-muted-foreground font-normal">
-            // дизайн, сайты и ИИ для бизнеса
+            // дизайн, который можно запустить
           </span>
         </a>
 
@@ -50,7 +49,7 @@ export function Nav() {
             </a>
           ))}
           <a href="#contact" className={pillClass("#contact")}>
-            Контакты →
+            Написать →
           </a>
         </div>
 
@@ -98,7 +97,7 @@ export function Nav() {
                       isActive("#contact") ? "is-active" : "bg-foreground text-background",
                     )}
                   >
-                    Контакты →
+                    Написать →
                   </a>
                 </SheetClose>
               </nav>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Presentation, Bot, ShieldCheck } from "lucide-react";
+import { Palette, Globe, LayoutDashboard, Presentation } from "lucide-react";
 
 import { fadeUp, staggerContainer, staggerItem } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
@@ -8,32 +8,41 @@ import { SectionHeadline } from "./effects/SectionHeadline";
 
 const SERVICES = [
   {
-    Icon: Globe,
-    title: "Сайты и лендинги",
-    desc: "Сайт-визитка, лендинг под конкретную задачу или продукт — от идеи до версии, которую можно показать клиентам.",
-    href: "#index",
-    example: "Пример: мини-CRM",
+    Icon: Palette,
+    idxClass: "idx-pill--blue",
+    idx: "01",
+    title: "Дизайн и визуал",
+    desc: "Макеты, визуализации, обработка в Photoshop, прототипы в Figma. Композиция и вкус — с диплома дизайнера, не «на глаз из Pinterest».",
+    href: "#work",
+    example: "Пример: ванная и музейные витрины",
   },
   {
     Icon: Presentation,
-    title: "Презентации и дизайн",
-    desc: "Презентации в Gamma и Figma, визуальные материалы для бизнеса — опираюсь на диплом дизайнера.",
-    href: "#nova",
+    idxClass: "idx-pill--orange",
+    idx: "02",
+    title: "Презентации",
+    desc: "Презентация, которую не стыдно отправить заказчику или инвестору: структура, слайды, «до / после». Gamma и Figma.",
+    href: "https://alya-nova-2026.vercel.app/",
     example: "Пример: презентация NOVA",
+    external: true,
   },
   {
-    Icon: Bot,
-    title: "ИИ-помощники и автоматизация",
-    desc: "Чат-боты и ассистенты для бизнеса, автоматизация рутинных задач вместо ручной работы в Excel.",
-    href: "#experience",
-    example: "Пример: автоматизация в ритейле",
+    Icon: Globe,
+    idxClass: "idx-pill--ink",
+    idx: "03",
+    title: "Сайты и лендинги",
+    desc: "Сайт-визитка или лендинг под задачу — от структуры блоков до версии, которую можно открыть в браузере и показать клиентам.",
+    href: "#case-crm",
+    example: "Пример: мини-CRM и это портфолио",
   },
   {
-    Icon: ShieldCheck,
-    title: "Проверка и тестирование",
-    desc: "Аудит сайта, ИИ-продукта или процесса — нахожу проблемы и слабые места до того, как их найдёт клиент.",
-    href: "#case-b2b",
-    example: "Пример: проверка оттока клиентов",
+    Icon: LayoutDashboard,
+    idxClass: "idx-pill--blue",
+    idx: "04",
+    title: "Интерфейсы продуктов",
+    desc: "Экраны, онбординг, канбан — собираю рабочий интерфейс и проверяю его на людях, пока им не станет удобно пользоваться.",
+    href: "#nova",
+    example: "Пример: NOVA Dashboard",
   },
 ] as const;
 
@@ -48,10 +57,11 @@ export function Services() {
           variants={fadeUp}
           className="mb-14 max-w-3xl"
         >
-          <SectionLabel title="Что я делаю" />
-          <SectionHeadline before="Чем я могу быть" accent="полезна бизнесу" />
+          <SectionLabel title="Что заказать" />
+          <SectionHeadline before="Чем я могу быть" accent="полезна" />
           <p className="text-muted-foreground mt-4 leading-relaxed">
-            Четыре направления, с которыми я работаю чаще всего — коротко о каждом.
+            Беру задачи, где нужен глаз дизайнера — и результат, которым можно пользоваться, а не
+            папка с макетами.
           </p>
         </motion.div>
 
@@ -60,6 +70,8 @@ export function Services() {
             <motion.a
               key={s.title}
               href={s.href}
+              target={"external" in s && s.external ? "_blank" : undefined}
+              rel={"external" in s && s.external ? "noopener noreferrer" : undefined}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -76,9 +88,10 @@ export function Services() {
               >
                 <motion.div
                   variants={staggerItem}
-                  className="mb-5 inline-flex size-11 items-center justify-center rounded-full bg-secondary text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-between mb-5"
                 >
-                  <s.Icon className="size-5" />
+                  <span className={`idx-pill ${s.idxClass} mb-0`}>{s.idx}</span>
+                  <s.Icon className="size-5 text-muted-foreground group-hover:text-accent transition-colors" />
                 </motion.div>
                 <motion.h3
                   variants={staggerItem}

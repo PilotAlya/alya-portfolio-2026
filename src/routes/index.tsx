@@ -6,7 +6,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
 import { HeroStats } from "@/components/HeroStats";
 import { Services } from "@/components/Services";
-import { ProjectIndex } from "@/components/ProjectIndex";
+import { SelectedWork } from "@/components/SelectedWork";
 import { WhyMe } from "@/components/WhyMe";
 import { EvolutionPath } from "@/components/EvolutionPath";
 import { ExperienceSection } from "@/components/ExperienceSection";
@@ -24,20 +24,20 @@ import { SITE_URL } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Альбина Акбарова — дизайн, сайты и ИИ-помощники для бизнеса" },
+      { title: "Альбина Акбарова — дизайнер, который собирает рабочие сайты и презентации" },
       {
         name: "description",
         content:
-          "Помогаю бизнесу быстро получить нужный результат: сайт, лендинг, презентацию или ИИ-помощника — от идеи до запуска. Готовые примеры: NOVA, мини-CRM, автоматизации.",
+          "Дизайнер-проектировщик: интерьеры, презентации, лендинги и интерфейсы. Figma, Photoshop, Gamma — и живые демо, которые можно открыть. Кейсы: музей, NOVA, визуализации.",
       },
       {
         property: "og:title",
-        content: "Альбина Акбарова — дизайн, сайты и ИИ-инструменты для бизнеса",
+        content: "Альбина Акбарова — дизайн, который можно запустить",
       },
       {
         property: "og:description",
         content:
-          "Собираю сайты, презентации и ИИ-помощников, проверяю результат и довожу до запуска.",
+          "Диплом дизайнера, Figma и Photoshop. Делаю презентации, лендинги и интерфейсы — до версии, которой можно пользоваться.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
@@ -58,7 +58,6 @@ function Index() {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    // Wait for layout / fonts so scroll-mt and Lenis settle
     const t = window.setTimeout(scrollToHash, 120);
     return () => window.clearTimeout(t);
   }, []);
@@ -74,27 +73,27 @@ function Index() {
           <Services />
         </SectionShell>
         <SectionShell variant="alt">
-          <ProjectIndex />
+          <SelectedWork />
         </SectionShell>
-        <SectionShell variant="alt">
+        <SectionShell variant="default">
           <WhyMe />
         </SectionShell>
-        <SectionShell variant="default">
+        <SectionShell variant="alt">
           <EvolutionPath />
         </SectionShell>
-        <SectionShell variant="alt">
+        <SectionShell variant="default">
           <Nova />
         </SectionShell>
-        <SectionShell variant="default">
+        <SectionShell variant="alt">
           <ExperienceSection />
         </SectionShell>
-        <SectionShell variant="alt">
+        <SectionShell variant="default">
           <PortfolioSection />
         </SectionShell>
-        <SectionShell variant="default">
+        <SectionShell variant="alt">
           <Stack />
         </SectionShell>
-        <SectionShell variant="alt">
+        <SectionShell variant="default">
           <Guides />
         </SectionShell>
         <SectionShell variant="alt">

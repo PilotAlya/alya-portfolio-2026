@@ -78,11 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Альбина Акбарова — дизайн, сайты и ИИ-помощники для бизнеса" },
+      { title: "Альбина Акбарова — дизайнер, который собирает рабочие сайты и презентации" },
       {
         name: "description",
         content:
-          "Портфолио Альбины Акбаровой (Pilot Ali). Помогаю бизнесу быстро получить сайт, лендинг, презентацию или ИИ-помощника — от идеи до запуска. Кейсы: NOVA Dashboard, мини-CRM, автоматизации.",
+          "Дизайнер-проектировщик: интерьеры, презентации, лендинги и интерфейсы. Figma, Photoshop, Gamma — и живые демо. Кейсы: музей, NOVA, визуализации.",
       },
       { name: "author", content: "Альбина Акбарова" },
       { name: "robots", content: "index, follow" },
@@ -91,12 +91,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "ru_RU" },
       {
         property: "og:title",
-        content: "Альбина Акбарова — дизайн, сайты и ИИ-инструменты для бизнеса",
+        content: "Альбина Акбарова — дизайн, который можно запустить",
       },
       {
         property: "og:description",
         content:
-          "Собираю сайты, презентации и ИИ-помощников, проверяю результат и довожу до запуска.",
+          "Диплом дизайнера, Figma и Photoshop. Презентации, лендинги и интерфейсы — до версии, которой можно пользоваться.",
       },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:type", content: "image/png" },
@@ -104,17 +104,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "Альбина Акбарова — дизайн, сайты и ИИ-помощники для бизнеса · Pilot Ali",
+        content: "Альбина Акбарова — дизайнер-проектировщик · Figma · Photoshop · Pilot Ali",
       },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Альбина Акбарова — дизайн, сайты и ИИ-инструменты для бизнеса",
+        content: "Альбина Акбарова — дизайн, который можно запустить",
       },
       {
         name: "twitter:description",
         content:
-          "Собираю сайты, презентации и ИИ-помощников, проверяю результат и довожу до запуска.",
+          "Диплом дизайнера, Figma и Photoshop. Презентации, лендинги и интерфейсы — до версии, которой можно пользоваться.",
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
