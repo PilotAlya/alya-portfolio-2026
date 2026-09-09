@@ -660,10 +660,25 @@ body.custom-cursor-active * {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-size: clamp(2.75rem, 8.5vw, 6.5rem);
   line-height: 0.86;
   letter-spacing: -0.05em;
   font-weight: 800;
+  max-width: 100%;
+}
+
+/* Syne ExtraBold is very wide — keep AKBAROVA inside the content box */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: min(8.2vw, 2.1rem);
+    letter-spacing: -0.06em;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero-title {
+    font-size: clamp(2.5rem, 7.2vw, 3.75rem);
+  }
 }
 
 @media (min-width: 1280px) {
