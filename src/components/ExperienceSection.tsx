@@ -7,7 +7,7 @@ export function ExperienceSection() {
     <div id="experience" className="scroll-mt-24">
       <SectionIntro
         label="Опыт работы"
-        titleBefore="От бумаги и Excel — до"
+        titleBefore="От бумаги и рутины — до"
         titleAccent="автоматизации"
         description="Ритейл научил говорить с бизнесом. Ниже — как я убираю рутину из учёта и собираю списки студий, если задача не только про картинку."
         meta="2 кейса · автоматизация"
