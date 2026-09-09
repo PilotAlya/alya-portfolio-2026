@@ -39,16 +39,16 @@ export function Contact() {
           />
 
           <h2 className="text-[clamp(2.75rem,8vw,5.75rem)] font-extrabold tracking-tight leading-[0.88] font-display mb-8">
-            Есть задача
+            Задача
             <br />
-            на дизайн
+            или роль —
             <br />
-            <span className="text-gradient-chrome accent-italic">или сайт?</span>
+            <span className="text-gradient-chrome accent-italic">напишите</span>
           </h2>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            Напишите коротко, что нужно: презентация, лендинг, визуал, интерфейс. Отвечу, возьмусь
-            ли и как это можно сделать — без «ИИ, который решит всё».
+            Нужен лендинг, презентация, визуал — или человек с глазом дизайнера и vibe-coding до
+            демо? Коротко опишите задачу или вакансию — отвечу, подходит ли формат.
           </p>
 
           <div className="mb-10">
@@ -82,6 +82,13 @@ export function Contact() {
               {!emailCopied && <Copy className="size-3 opacity-60" />}
               {emailCopied && <Check className="size-3 text-spark" />}
             </button>
+            <a
+              href="/resume-ai.pdf"
+              download="Albina_Akbarova_AI_Resume.pdf"
+              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Резюме PDF
+            </a>
           </div>
 
           <p className="accent-italic text-lg text-muted-foreground max-w-md border-l-2 border-spark/40 pl-4">

@@ -1,8 +1,8 @@
 # Сопроводительные письма · Pilot Ali (Альбина Акбарова)
 
-> **Две линейки писем.**  
-> **Заказчикам (дизайн, сайты, презентации):** [cover-letter-clients-design.md](./cover-letter-clients-design.md) — шаблон для рассылки.  
-> **Вакансии / AI-native / QA / SA:** шаблоны ниже. На live `main` портфолио пока ещё в этой роли.  
+> **Одна ссылка портфолио** (ветка дизайн + vibe-coding): дизайнер, который доводит макет до рабочей версии — и для заказчиков, и для ролей.  
+> **Шаблон одной ссылки:** [cover-letter-clients-design.md](./cover-letter-clients-design.md) (заказ + короткий блок на вакансию).  
+> **Узкие AI/QA/SA шаблоны** — ниже; live `main` пока ещё в AI-native формулировках.  
 > **Портфолио:** https://portfolio-resume-alya-akbarova.vercel.app/
 
 ---
@@ -11,7 +11,7 @@
 
 | Файл | Когда использовать |
 |------|-------------------|
-| [cover-letter-clients-design.md](./cover-letter-clients-design.md) | **Заказчикам** — дизайн, лендинги, презентации |
+| [cover-letter-clients-design.md](./cover-letter-clients-design.md) | **Одна ссылка** — заказчикам и на роли (дизайн + vibe-coding) |
 | [cover-letter-ai-native-engineer.md](./cover-letter-ai-native-engineer.md) | Вакансии vibe-coding / MVP / AI-native |
 | [cover-letter-templates.md](./cover-letter-templates.md) | QA / SA / универсальный короткий + шпаргалка фраз |
 | [cover-letter-fl-vibecoder.md](./cover-letter-fl-vibecoder.md) | FL.ru · part-time vibe-coder |

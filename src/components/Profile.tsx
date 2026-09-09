@@ -40,8 +40,8 @@ export function Profile() {
           <SectionLabel title="Обо мне" />
           <SectionHeadline before="Дизайнер," accent="который собирает" className="mb-6" />
           <p className="text-muted-foreground text-sm leading-relaxed mb-10 max-w-xl">
-            Альбина Акбарова, Pilot Ali. Красный диплом дизайнера-проектировщика — и практика, где
-            макет должен превратиться в вещь, которой пользуются: витрина, офис, сайт, презентация.
+            Альбина Акбарова, Pilot Ali. Расту в лендингах, презентациях и веб-дизайне. Vibe-coding
+            — способ довести макет до живой версии, не отдельная «инженерная» идентичность.
           </p>
 
           <div>
@@ -55,13 +55,13 @@ export function Profile() {
               {
                 period: "Практика",
                 t: "Музей, завод, ритейл",
-                d: "Витрины Лысьвенского музея и офисные модули ММК — под ключ, без брака. В ритейле научилась говорить с бизнесом: сроки, учёт, «чтобы работало завтра».",
+                d: "Витрины Лысьвенского музея и офисные модули ММК — под ключ, без брака. В ритейле — ТЗ, сроки и «чтобы работало завтра».",
               },
               {
                 period: "Сейчас",
-                t: "Цифровой дизайн + сборка",
-                d: "Figma, Photoshop, Gamma каждый день. Собираю лендинги и интерфейсы до рабочей версии. Учусь на системного аналитика в Нетологии — чтобы лучше раскладывать сложные задачи, не вместо дизайна.",
-                badge: "Figma · Ps · Gamma",
+                t: "Веб-дизайн + vibe-coding",
+                d: "Figma, Photoshop, Gamma каждый день. Собираю лендинги и интерфейсы через Cursor до демо на Vercel. Учусь на системного аналитика в Нетологии — чтобы лучше раскладывать задачи, не вместо дизайна.",
+                badge: "Figma · Ps · Cursor",
               },
             ].map((c) => (
               <div key={c.t} {...spotlightAttrs} className={spotlightClass("cv-row", "subtle")}>
@@ -79,6 +79,16 @@ export function Profile() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-2">
+            <a
+              href="/resume-ai.pdf"
+              download="Albina_Akbarova_AI_Resume.pdf"
+              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Резюме (PDF)
+            </a>
           </div>
         </motion.div>
       </div>

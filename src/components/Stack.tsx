@@ -6,7 +6,7 @@ import { SectionHeadline } from "./effects/SectionHeadline";
 const GROUPS = [
   {
     title: "Дизайн",
-    hint: "то, с чего начинается любая задача",
+    hint: "кто я и куда расту — глаз и композиция",
     tags: [
       { label: "Figma", core: true },
       { label: "Photoshop", core: true },
@@ -15,23 +15,25 @@ const GROUPS = [
       { label: "Композиция" },
       { label: "Визуализация" },
       { label: "Презентации" },
+      { label: "Веб-UI" },
     ],
   },
   {
-    title: "Сборка",
-    hint: "чтобы макет стал сайтом, а не остался картинкой",
+    title: "Сборка · vibe-coding",
+    hint: "чтобы макет стал ссылкой, а не остался картинкой",
     tags: [
-      { label: "Cursor" },
+      { label: "Cursor", core: true },
       { label: "React" },
       { label: "TypeScript" },
       { label: "Vercel" },
       { label: "Lovable" },
       { label: "Bolt" },
+      { label: "OpenCode" },
     ],
   },
   {
     title: "ИИ и проверка",
-    hint: "ускоряет черновик, качество проверяю сама",
+    hint: "ускоряет черновик, вкус и качество — за мной",
     tags: [
       { label: "Gemini" },
       { label: "Claude" },
@@ -57,10 +59,10 @@ export function Stack() {
           className="mb-12 max-w-3xl"
         >
           <SectionLabel title="Инструменты" />
-          <SectionHeadline before="Figma и Photoshop —" accent="не «ещё умею»" />
+          <SectionHeadline before="Дизайн ведёт," accent="vibe-coding собирает" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            Сначала дизайн. Потом — сборка, если нужен живой сайт. ИИ помогает быстрее набросать
-            каркас, вкус и финальную картинку оставляю за собой.
+            Figma и Photoshop — не «ещё умею». Cursor и React — способ быстро довести макет до демо
+            без отдельной команды разработки.
           </p>
         </motion.div>
 

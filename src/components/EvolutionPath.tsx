@@ -21,8 +21,8 @@ export function EvolutionPath() {
     },
     {
       n: "03",
-      title: "Цифровой продукт",
-      body: "Figma, Photoshop, Gamma — и сборка живых сайтов. NOVA: интерфейс, тесты с людьми, демо, которое можно открыть.",
+      title: "Веб-дизайн + vibe-coding",
+      body: "Расту в лендингах, презентациях и веб-UI. Figma и Photoshop каждый день; vibe-coding — чтобы макет стал ссылкой. NOVA — proof.",
       Icon: MonitorSmartphone,
       featured: true,
     },
@@ -41,7 +41,7 @@ export function EvolutionPath() {
           <SectionLabel title="Откуда вкус" />
           <SectionHeadline
             before="От чертежа и интерьера — к"
-            accent="цифровому дизайну"
+            accent="веб-дизайну"
             className="max-w-3xl relative z-10"
           />
         </motion.div>

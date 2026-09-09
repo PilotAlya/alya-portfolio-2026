@@ -45,36 +45,36 @@ const INDEX = [
   {
     n: "02",
     title: "Музей и завод ММК",
-    tag: "Коммерческий дизайн",
+    tag: "Дизайн",
     desc: "Витрины и офисные модули по ТЗ, с нулевым браком на производстве.",
     href: "#work-museum",
   },
   {
     n: "03",
     title: "NOVA Dashboard",
-    tag: "Интерфейс",
-    desc: "Продуктовый UI: дашборд, онбординг, команда — и живая демо-версия.",
+    tag: "Продукт",
+    desc: "UI + vibe-coding: дашборд, онбординг — и живая демо-версия на Vercel.",
     href: "#nova",
   },
   {
     n: "04",
     title: "Презентация NOVA",
-    tag: "Gamma",
-    desc: "Кейс, тесты с людьми, «до / после» — презентация, которую можно отправить клиенту.",
+    tag: "Дизайн",
+    desc: "Кейс, тесты с людьми, «до / после» — презентация для клиента или вакансии.",
     href: "https://alya-nova-2026.vercel.app/",
     external: true,
   },
   {
     n: "05",
     title: "Мини-CRM",
-    tag: "Веб",
-    desc: "Форма лида с маской телефона — маленький рабочий интерфейс.",
+    tag: "Продукт",
+    desc: "Форма лида с маской телефона — маленький рабочий интерфейс на vibe-coding.",
     href: "#case-crm",
   },
   {
     n: "06",
     title: "Автоматизация в ритейле",
-    tag: "Процессы",
+    tag: "Продукт",
     desc: "От ручной сверки в Excel — к скриптам, которые проверяют данные сами.",
     href: "#experience",
   },
@@ -94,8 +94,9 @@ export function SelectedWork() {
           <SectionLabel title="Избранные работы" />
           <SectionHeadline before="Сначала глаз," accent="потом продукт" />
           <p className="text-muted-foreground mt-4 leading-relaxed max-w-2xl">
-            Диплом дизайнера-проектировщика, коммерческие интерьеры — и цифровые вещи, которые можно
-            открыть и покликать. Ниже четыре работы, с которых я бы начала разговор с заказчиком.
+            Одна галерея — две дорожки: визуальный дизайн (интерьеры, презентации) и продукт на
+            vibe-coding (NOVA, CRM, автоматизации). Для заказчика и для вакансии — одни и те же
+            доказательства.
           </p>
         </motion.div>
 
@@ -125,7 +126,7 @@ export function SelectedWork() {
 
             <div className="flex flex-col justify-between gap-6 p-1 lg:py-4">
               <div>
-                <span className="idx-pill idx-pill--blue">01 · Интерьер</span>
+                <span className="idx-pill idx-pill--blue">01 · Дизайн</span>
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight font-display mt-1 mb-3">
                   Ванная: модель → картинка → кадр
                 </h3>
@@ -179,7 +180,7 @@ export function SelectedWork() {
               />
             </MediaZoom>
             <div className="p-6 lg:p-8">
-              <span className="idx-pill idx-pill--orange">02 · Коммерческий дизайн</span>
+              <span className="idx-pill idx-pill--orange">02 · Дизайн</span>
               <h3 className="text-xl font-bold tracking-tight font-display mt-1 mb-3">
                 Лысьвенский музей и завод ММК
               </h3>
@@ -216,14 +217,13 @@ export function SelectedWork() {
               />
             </MediaZoom>
             <div className="p-6 lg:p-8">
-              <span className="idx-pill idx-pill--ink">03 · Интерфейс</span>
+              <span className="idx-pill idx-pill--ink">03 · Продукт</span>
               <h3 className="text-xl font-bold tracking-tight font-display mt-1 mb-3">
                 NOVA — дашборд, который можно открыть
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                Не макет в Figma «на потом», а рабочий интерфейс: онбординг, канбан, команда,
-                ИИ-помощник. После тестов с людьми упростила до NOVA Light — 3 из 3 сказали «стало
-                понятнее».
+                Дизайн интерфейса + vibe-coding до деплоя: онбординг, канбан, команда, ИИ-помощник.
+                После тестов с людьми упростила до NOVA Light — 3 из 3 сказали «стало понятнее».
               </p>
               <a
                 href="#nova"

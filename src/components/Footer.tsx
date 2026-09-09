@@ -2,8 +2,8 @@ export function Footer() {
   return (
     <footer className="border-t border-foreground/5 py-10 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-muted-foreground/70">
-        <span>© 2026 · Альбина Акбарова · дизайнер-проектировщик</span>
-        <span className="text-muted-foreground/45">Figma · Photoshop · живые сайты</span>
+        <span>© 2026 · Альбина Акбарова · дизайн + vibe-coding</span>
+        <span className="text-muted-foreground/45">Figma · Photoshop · Cursor · живые демо</span>
       </div>
     </footer>
   );

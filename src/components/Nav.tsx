@@ -38,7 +38,7 @@ export function Nav() {
         <a href="#top" className="text-sm font-semibold tracking-tight pl-2">
           Pilot Ali{" "}
           <span className="hidden sm:inline text-muted-foreground font-normal">
-            // дизайн, который можно запустить
+            // дизайн + vibe-coding до запуска
           </span>
         </a>
 
@@ -49,7 +49,7 @@ export function Nav() {
             </a>
           ))}
           <a href="#contact" className={pillClass("#contact")}>
-            Написать →
+            Задача / роль →
           </a>
         </div>
 
@@ -97,7 +97,7 @@ export function Nav() {
                       isActive("#contact") ? "is-active" : "bg-foreground text-background",
                     )}
                   >
-                    Написать →
+                    Задача / роль →
                   </a>
                 </SheetClose>
               </nav>

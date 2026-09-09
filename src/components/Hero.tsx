@@ -20,7 +20,7 @@ export function Hero() {
 
       <div className="relative max-w-7xl mx-auto mb-10 flex items-center justify-between text-xs font-medium tracking-wide text-muted-foreground">
         <span>2026</span>
-        <span>PILOT ALI // ДИЗАЙН · FIGMA · PHOTOSHOP</span>
+        <span>PILOT ALI // ДИЗАЙН · FIGMA · VIBE-CODING</span>
       </div>
 
       <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto space-y-10">
@@ -41,7 +41,7 @@ export function Hero() {
               />
             </span>
             <span className="text-sm font-medium text-foreground">
-              Беру 1–2 новых проекта · дизайн и сборка
+              Дизайн · лендинги · презентации · сборка до демо
             </span>
           </div>
         </motion.div>
@@ -63,10 +63,10 @@ export function Hero() {
           transition={{ delay: 0.35, duration: 0.8 }}
           className="text-lg sm:text-xl text-muted-foreground max-w-2xl font-light leading-relaxed"
         >
-          Дизайнер-проектировщик. Делаю так, чтобы{" "}
-          <span className="accent-italic text-foreground">выглядело аккуратно и работало</span>:
-          интерьеры, презентации, лендинги и интерфейсы. Figma и Photoshop — и умею довести макет до
-          живого сайта, а не оставить его картинкой.
+          Дизайнер, который{" "}
+          <span className="accent-italic text-foreground">доводит макет до рабочей версии</span>.
+          Лендинги, презентации, веб-интерфейсы — от композиции в Figma и Photoshop до живого демо
+          через vibe-coding. Не оставляю картинкой в папке.
         </motion.p>
 
         <motion.div
@@ -76,9 +76,9 @@ export function Hero() {
           className="hero-spec-strip"
         >
           {[
-            { label: "Дизайн", value: "диплом, красный" },
-            { label: "Инструменты", value: "Figma · Photoshop · Gamma" },
-            { label: "Для бизнеса", value: "сайты, презентации, UI" },
+            { label: "Дизайн", value: "диплом · Figma · Photoshop" },
+            { label: "Сборка", value: "vibe-coding · Cursor" },
+            { label: "Для кого", value: "заказ и роли в продукте" },
             { label: "Формат", value: "от идеи до рабочей версии" },
           ].map((spec) => (
             <div key={spec.label}>
@@ -99,7 +99,7 @@ export function Hero() {
               href="#contact"
               className="btn-spark group items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold"
             >
-              Обсудить задачу{" "}
+              Обсудить задачу или роль{" "}
               <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </MagneticLink>
             <MagneticLink
@@ -111,8 +111,8 @@ export function Hero() {
           </div>
 
           <p className="accent-italic max-w-md text-lg leading-relaxed text-foreground/90 border-l-2 border-spark/40 pl-4">
-            «Не рисую картинку в вакууме. Считаю композицию, проверяю на людях и довожу до версии,
-            которой можно пользоваться.»
+            «Сначала глаз и композиция. Потом vibe-coding, чтобы макет стал ссылкой, которой можно
+            пользоваться — и проверка на людях до сдачи.»
             <span className="font-sans not-italic block mt-2 text-sm font-medium text-accent">
               — Pilot Ali
             </span>
