@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { HeroBlob } from "./effects/HeroBlob";
+import { HeroObjects } from "./effects/HeroObjects";
 import { MagneticLink } from "./effects/MagneticButton";
 
 export function Hero() {
@@ -17,7 +17,7 @@ export function Hero() {
       className="relative min-h-[100svh] pt-28 pb-20 lg:pb-28 px-6 lg:px-8 overflow-hidden scroll-mt-24 corner-ticks"
     >
       <div className="absolute inset-0 bg-blueprint bg-blueprint--fade pointer-events-none" aria-hidden />
-      <HeroBlob />
+      <HeroObjects />
 
       <div className="relative max-w-7xl mx-auto mb-12 flex items-start justify-between gap-6">
         <p className="lab-caption max-w-[14ch] leading-relaxed">

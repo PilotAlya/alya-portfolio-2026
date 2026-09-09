@@ -426,7 +426,84 @@ body.custom-cursor-active * {
   display: none;
 }
 
-/* Floating lab specimen */
+/* Floating clay specimens in hero */
+.hero-objects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-object {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 28px 48px rgb(0 0 0 / 12%));
+  will-change: transform;
+}
+
+.hero-object--flower {
+  right: -4vw;
+  top: 6vh;
+  width: min(42vw, 520px);
+  animation: hero-object-float-a 11s ease-in-out infinite;
+}
+
+.hero-object--spiral {
+  right: 18vw;
+  bottom: 8vh;
+  width: min(22vw, 260px);
+  opacity: 0.95;
+  animation: hero-object-float-b 9s ease-in-out infinite;
+}
+
+@keyframes hero-object-float-a {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(2deg);
+  }
+}
+
+@keyframes hero-object-float-b {
+  0%,
+  100% {
+    transform: translateY(0) rotate(8deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(14deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-object--flower {
+    right: -22vw;
+    top: 2vh;
+    width: 68vw;
+    opacity: 0.55;
+  }
+
+  .hero-object--spiral {
+    right: 4vw;
+    bottom: 12vh;
+    width: 28vw;
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-object--flower,
+  .hero-object--spiral {
+    animation: none;
+  }
+}
+
+/* Legacy SVG blob — kept for optional reuse */
 .hero-blob {
   position: absolute;
   right: -2vw;
