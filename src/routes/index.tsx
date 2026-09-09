@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
 import { HeroStats } from "@/components/HeroStats";
+import { Services } from "@/components/Services";
 import { ProjectIndex } from "@/components/ProjectIndex";
 import { WhyMe } from "@/components/WhyMe";
 import { EvolutionPath } from "@/components/EvolutionPath";
@@ -70,6 +71,9 @@ function Index() {
         <Hero />
         <HeroStats />
         <SectionShell variant="default">
+          <Services />
+        </SectionShell>
+        <SectionShell variant="alt">
           <ProjectIndex />
         </SectionShell>
         <SectionShell variant="alt">

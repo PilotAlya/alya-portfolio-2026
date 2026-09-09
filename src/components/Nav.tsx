@@ -13,6 +13,7 @@ import { NAV_SECTION_MAP, useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
+  { href: "#services", label: "Услуги" },
   { href: "#why", label: "Обо мне" },
   { href: "#nova", label: "NOVA" },
   { href: "#experience", label: "Опыт" },

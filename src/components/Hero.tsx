@@ -55,7 +55,7 @@ export function Hero() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="hero-title font-black tracking-tight font-display max-w-full"
         >
-          ALYA
+          ALBINA
           <br />
           <span className="text-gradient-chrome">AKBAROVA</span>
         </motion.h1>
