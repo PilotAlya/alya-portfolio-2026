@@ -799,3 +799,169 @@ body.custom-cursor-active * {
     display: none;
   }
 }
+
+/* ── Print-index composition: numbered list, poster masthead, CV rows ── */
+
+.index-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.25rem 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .index-row {
+    grid-template-columns: 4.5rem 1fr 1fr 1.5rem;
+    align-items: baseline;
+    gap: 1rem 2rem;
+  }
+}
+
+@media (hover: hover) {
+  .index-row:hover {
+    padding-left: 0.75rem;
+  }
+
+  .index-row:hover .index-row__n,
+  .index-row:hover .index-row__title {
+    color: var(--accent);
+  }
+
+  .index-row:hover .index-row__arrow {
+    transform: translate(2px, -2px);
+    opacity: 1;
+  }
+}
+
+.index-row__n {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: var(--muted-foreground);
+  transition: color 0.25s ease;
+  font-variant-numeric: tabular-nums;
+}
+
+.index-row__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.375rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.index-row__tag {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 16%, transparent);
+  border-radius: 9999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.index-row__desc {
+  grid-column: 2 / -1;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+  max-width: 42ch;
+}
+
+@media (min-width: 768px) {
+  .index-row__desc {
+    grid-column: auto;
+  }
+}
+
+.index-row__arrow {
+  display: none;
+  opacity: 0.5;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .index-row__arrow {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    justify-self: end;
+  }
+}
+
+/* Hero poster masthead — flat spec strip replacing floating pills */
+.hero-spec-strip {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent);
+}
+
+@media (min-width: 768px) {
+  .hero-spec-strip {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .hero-spec-strip > * + * {
+    border-left: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent);
+    padding-left: 1.5rem;
+  }
+}
+
+.hero-spec-strip__label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 0.35rem;
+}
+
+.hero-spec-strip__value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.35;
+}
+
+/* CV-style row list — Profile section */
+.cv-row {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+
+.cv-row:last-child {
+  border-bottom: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+
+@media (min-width: 640px) {
+  .cv-row {
+    grid-template-columns: 9rem 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.cv-row__period {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}

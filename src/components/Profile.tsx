@@ -45,43 +45,42 @@ export function Profile() {
             «Почему именно я» выше.
           </p>
 
-          <div className="border-t border-foreground/10 pt-8 grid sm:grid-cols-3 gap-8">
+          <div>
             {[
               {
+                period: "2021–2024",
                 t: "Профильное образование",
-                d: "ПКПС, «Дизайн (по отраслям)», квалификация Дизайнер-проектировщик (2021–2024), красный диплом. Основной профиль: дизайн интерьера коммерческих пространств.",
+                d: "ПКПС, «Дизайн (по отраслям)», квалификация Дизайнер-проектировщик, красный диплом. Основной профиль: дизайн интерьера коммерческих пространств.",
                 badge: "Красный диплом",
               },
               {
-                t: "Сейчас учусь",
+                period: "Сейчас",
+                t: "Учусь дальше",
                 d: "Учусь на системного аналитика в Нетологии — это про то, как выстраивать логику сложных систем и процессов. Хороший фундамент, но не главная роль.",
                 badge: "В процессе",
                 Icon: GraduationCap,
               },
               {
+                period: "Ежедневно",
                 t: "Работаю с ИИ каждый день",
                 d: "Использую ИИ-инструменты в работе ежедневно — не просто «пробую ChatGPT», а собираю с их помощью реальные рабочие вещи: сайты, помощников, автоматизации.",
                 Icon: Sparkles,
               },
             ].map((c) => (
-              <div
-                key={c.t}
-                {...spotlightAttrs}
-                className={spotlightClass(
-                  "rounded-2xl border border-transparent p-4 -m-4",
-                  "subtle",
-                )}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  {c.Icon && <c.Icon className="size-3.5 text-accent" />}
-                  <div className="text-sm font-semibold text-foreground">{c.t}</div>
-                  {c.badge && (
-                    <span className="text-[11px] font-medium text-accent border border-accent/40 rounded-full px-2 py-0.5">
-                      {c.badge}
-                    </span>
-                  )}
+              <div key={c.t} {...spotlightAttrs} className={spotlightClass("cv-row", "subtle")}>
+                <div className="cv-row__period">{c.period}</div>
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    {c.Icon && <c.Icon className="size-3.5 text-accent" />}
+                    <div className="text-sm font-semibold text-foreground">{c.t}</div>
+                    {c.badge && (
+                      <span className="text-[11px] font-medium text-accent border border-accent/40 rounded-full px-2 py-0.5">
+                        {c.badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
               </div>
             ))}
           </div>
