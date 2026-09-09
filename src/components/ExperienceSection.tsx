@@ -6,12 +6,11 @@ export function ExperienceSection() {
   return (
     <div id="experience" className="scroll-mt-24">
       <SectionIntro
-        chapter={3}
         label="Опыт работы"
-        titleAccent="Legacy"
-        titleAfter="· процессы и автоматизация"
-        description="От Legacy-софта в ритейле — до Python/AI-пайплайнов: парсеры, валидация данных и поиск лидов с LLM-фильтром."
-        meta="2 блока · AI & Automation"
+        titleBefore="От бумаги и Excel — до"
+        titleAccent="автоматизации"
+        description="От устаревших программ учёта в ритейле — до скриптов на Python, которые сами проверяют данные и находят нужную информацию."
+        meta="2 кейса · автоматизация"
       />
       <LegacyCase />
       <StudioResearchCase />

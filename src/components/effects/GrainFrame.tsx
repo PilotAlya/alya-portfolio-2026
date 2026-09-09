@@ -58,7 +58,7 @@ export function GrainFrame({
       {duotone && <div className="grain-frame__duotone pointer-events-none" aria-hidden />}
       <div className="grain-frame__noise pointer-events-none" aria-hidden />
       {caption && (
-        <figcaption className="grain-frame__caption font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] text-spark">
+        <figcaption className="grain-frame__caption text-xs font-medium text-spark">
           {caption}
         </figcaption>
       )}

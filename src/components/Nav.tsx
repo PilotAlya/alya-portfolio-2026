@@ -13,11 +13,11 @@ import { NAV_SECTION_MAP, useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
+  { href: "#services", label: "Услуги" },
   { href: "#why", label: "Обо мне" },
   { href: "#nova", label: "NOVA" },
   { href: "#experience", label: "Опыт" },
   { href: "#portfolio", label: "Портфолио" },
-  { href: "#github", label: "GitHub" },
 ];
 
 export function Nav() {
@@ -28,19 +28,22 @@ export function Nav() {
 
   const pillClass = (href: string, extra?: string) =>
     cn(
-      "nav-pill font-mono text-[10px] tracking-widest uppercase transition-colors",
+      "nav-pill text-sm transition-colors",
       isActive(href) ? "is-active" : "text-muted-foreground",
       extra,
     );
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 border-b border-border glass-panel !rounded-none !border-x-0 !border-t-0">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#top" className="font-mono text-sm tracking-tighter link-spark">
-          Pilot Ali <span className="text-muted-foreground">// AI · Vibe-Coding</span>
+    <nav className="fixed top-4 md:top-6 inset-x-4 md:inset-x-8 z-50">
+      <div className="max-w-7xl mx-auto glass-panel rounded-full px-4 lg:px-5 h-14 flex items-center justify-between shadow-[0_8px_28px_-16px_rgba(0,0,0,0.18)]">
+        <a href="#top" className="text-sm font-semibold tracking-tight pl-2">
+          Pilot Ali{" "}
+          <span className="hidden sm:inline text-muted-foreground font-normal">
+            // дизайн, сайты и ИИ для бизнеса
+          </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
+        <div className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className={pillClass(link.href)}>
               {link.label}
@@ -67,18 +70,20 @@ export function Nav() {
               className="border-border bg-background/95 backdrop-blur-md w-full sm:max-w-xs"
             >
               <SheetHeader className="text-left mb-8">
-                <SheetTitle className="font-mono text-sm tracking-tighter">
+                <SheetTitle className="text-sm font-semibold tracking-tight">
                   Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
                 </SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-2 font-mono text-xs tracking-widest uppercase">
+              <nav className="flex flex-col gap-2 text-sm">
                 {NAV_LINKS.map((link) => (
                   <SheetClose asChild key={link.href}>
                     <a
                       href={link.href}
                       className={cn(
                         "nav-pill px-4 py-3 text-center",
-                        isActive(link.href) ? "is-active" : "text-muted-foreground border border-border",
+                        isActive(link.href)
+                          ? "is-active"
+                          : "text-muted-foreground border border-border",
                       )}
                     >
                       {link.label}

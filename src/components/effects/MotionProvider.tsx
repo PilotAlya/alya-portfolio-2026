@@ -16,9 +16,5 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  return (
-    <MotionConfig reducedMotion={hydrated ? "user" : "always"}>
-      {children}
-    </MotionConfig>
-  );
+  return <MotionConfig reducedMotion={hydrated ? "user" : "always"}>{children}</MotionConfig>;
 }
