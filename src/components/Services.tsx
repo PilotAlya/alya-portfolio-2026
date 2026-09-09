@@ -77,7 +77,7 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.6 }}
               {...spotlightAttrs}
-              className={spotlightClass("glass-card group p-6 flex flex-col")}
+              className={spotlightClass("lab-card group p-6 flex flex-col")}
             >
               <motion.div
                 variants={staggerContainer}

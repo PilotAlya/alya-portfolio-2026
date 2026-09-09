@@ -8,12 +8,10 @@ import { HeroStats } from "@/components/HeroStats";
 import { Services } from "@/components/Services";
 import { SelectedWork } from "@/components/SelectedWork";
 import { WhyMe } from "@/components/WhyMe";
-import { EvolutionPath } from "@/components/EvolutionPath";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { Nova } from "@/components/Nova";
 import { Stack } from "@/components/Stack";
-import { Guides } from "@/components/Guides";
 import { Profile } from "@/components/Profile";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -81,22 +79,16 @@ function Index() {
           <WhyMe />
         </SectionShell>
         <SectionShell variant="alt">
-          <EvolutionPath />
-        </SectionShell>
-        <SectionShell variant="default">
           <Nova />
         </SectionShell>
-        <SectionShell variant="alt">
+        <SectionShell variant="default">
           <ExperienceSection />
         </SectionShell>
-        <SectionShell variant="default">
+        <SectionShell variant="alt">
           <PortfolioSection />
         </SectionShell>
-        <SectionShell variant="alt">
-          <Stack />
-        </SectionShell>
         <SectionShell variant="default">
-          <Guides />
+          <Stack />
         </SectionShell>
         <SectionShell variant="alt">
           <Profile />

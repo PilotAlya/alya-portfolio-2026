@@ -33,22 +33,25 @@ export function Nav() {
     );
 
   return (
-    <nav className="fixed top-4 md:top-6 inset-x-4 md:inset-x-8 z-50">
-      <div className="max-w-7xl mx-auto glass-panel rounded-full px-4 lg:px-5 h-14 flex items-center justify-between shadow-[0_8px_28px_-16px_rgba(0,0,0,0.18)]">
-        <a href="#top" className="text-sm font-semibold tracking-tight pl-2">
-          Pilot Ali{" "}
-          <span className="hidden sm:inline text-muted-foreground font-normal">
-            // дизайн + vibe-coding до запуска
+    <nav className="fixed top-4 md:top-5 inset-x-4 md:inset-x-8 z-50">
+      <div className="max-w-7xl mx-auto glass-panel rounded-md px-4 lg:px-5 h-12 flex items-center justify-between border border-border/80">
+        <a href="#top" className="text-sm font-display font-bold tracking-tight pl-1">
+          Pilot Ali
+          <span className="hidden sm:inline font-mono font-medium text-[0.65rem] tracking-[0.08em] uppercase text-muted-foreground ml-3">
+            Design Lab
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-0.5">
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className={pillClass(link.href)}>
               {link.label}
             </a>
           ))}
-          <a href="#contact" className={pillClass("#contact")}>
+          <a
+            href="#contact"
+            className="ml-2 inline-flex items-center rounded-md bg-foreground px-3.5 py-2 font-mono text-[0.65rem] font-medium uppercase tracking-[0.08em] text-background transition-opacity hover:opacity-85"
+          >
             Задача / роль →
           </a>
         </div>
@@ -59,18 +62,21 @@ export function Nav() {
               <button
                 type="button"
                 aria-label="Открыть меню"
-                className="flex items-center justify-center size-10 -mr-2 rounded-full border border-border hover:border-spark/50 hover:text-spark transition-colors"
+                className="flex items-center justify-center size-9 -mr-1 rounded-md border border-border hover:border-foreground/30 transition-colors"
               >
-                <Menu className="size-5" />
+                <Menu className="size-4" />
               </button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="border-border bg-background/95 backdrop-blur-md w-full sm:max-w-xs"
+              className="border-border bg-background/98 backdrop-blur-md w-full sm:max-w-xs"
             >
               <SheetHeader className="text-left mb-8">
-                <SheetTitle className="text-sm font-semibold tracking-tight">
-                  Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
+                <SheetTitle className="text-sm font-display font-bold tracking-tight">
+                  Pilot Ali{" "}
+                  <span className="font-mono font-medium text-[0.65rem] uppercase tracking-[0.08em] text-muted-foreground">
+                    Menu
+                  </span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-2 text-sm">
@@ -92,10 +98,7 @@ export function Nav() {
                 <SheetClose asChild>
                   <a
                     href="#contact"
-                    className={cn(
-                      "nav-pill mt-2 px-4 py-3 text-center",
-                      isActive("#contact") ? "is-active" : "bg-foreground text-background",
-                    )}
+                    className="mt-2 rounded-md bg-foreground px-4 py-3 text-center font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-background"
                   >
                     Задача / роль →
                   </a>

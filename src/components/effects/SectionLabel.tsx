@@ -8,10 +8,10 @@ export function SectionLabel({ title, className }: SectionLabelProps) {
     <span
       className={
         className ??
-        "inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.12em] uppercase text-foreground/85"
+        "inline-flex items-center gap-2.5 font-mono text-[0.7rem] font-medium tracking-[0.12em] uppercase text-muted-foreground"
       }
     >
-      <span className="inline-block size-[9px] bg-accent" aria-hidden />
+      <span className="lab-dot !size-[7px] !shadow-none" aria-hidden />
       {title}
     </span>
   );

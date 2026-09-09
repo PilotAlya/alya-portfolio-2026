@@ -62,7 +62,7 @@ export function WhyMe() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
               {...spotlightAttrs}
-              className={spotlightClass("glass-card p-8 flex flex-col")}
+              className={spotlightClass("lab-card p-8 flex flex-col")}
             >
               <motion.div
                 variants={staggerContainer}
@@ -91,7 +91,7 @@ export function WhyMe() {
                   variants={staggerItem}
                   className="border-t border-dashed border-foreground/15 mt-5 pt-4"
                 >
-                  <div className="text-xs font-medium text-accent mb-1">Результат</div>
+                  <div className="lab-caption text-accent mb-1">Результат</div>
                   <p className="text-sm leading-relaxed">{it.result}</p>
                 </motion.div>
               </motion.div>

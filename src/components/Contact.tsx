@@ -43,7 +43,7 @@ export function Contact() {
             <br />
             или роль —
             <br />
-            <span className="text-gradient-chrome accent-italic">напишите</span>
+            <span className="text-accent">напишите</span>
           </h2>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
@@ -56,15 +56,13 @@ export function Contact() {
               href={TELEGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-spark group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base sm:text-lg font-semibold"
+              className="btn-spark group inline-flex items-center gap-3 px-8 py-4 rounded-md text-base sm:text-lg font-semibold"
             >
               <MessageCircle className="size-5" />
               Написать в Telegram
               <ArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </MagneticLink>
-            <p className="mt-4 text-sm text-muted-foreground pl-1">
-              Быстрый ответ · @Albinaa_Akbarova
-            </p>
+            <p className="mt-4 lab-caption pl-1">Быстрый ответ · @Albinaa_Akbarova</p>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-8">
@@ -73,25 +71,25 @@ export function Contact() {
               onClick={copyEmail}
               {...spotlightAttrs}
               className={spotlightClass(
-                "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors",
+                "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground transition-colors",
                 "subtle",
               )}
             >
               <Mail className="size-3.5 text-accent" />
               {emailCopied ? "Скопировано!" : EMAIL}
               {!emailCopied && <Copy className="size-3 opacity-60" />}
-              {emailCopied && <Check className="size-3 text-spark" />}
+              {emailCopied && <Check className="size-3 text-accent" />}
             </button>
             <a
               href="/resume-ai.pdf"
               download="Albina_Akbarova_AI_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Резюме PDF
             </a>
           </div>
 
-          <p className="accent-italic text-lg text-muted-foreground max-w-md border-l-2 border-spark/40 pl-4">
+          <p className="text-lg text-muted-foreground max-w-md border-l-2 border-accent/40 pl-4 leading-relaxed">
             «Сначала разберём задачу. Потом — картинка, которую не стыдно показать, и версия,
             которой можно пользоваться.»
           </p>

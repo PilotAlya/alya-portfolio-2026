@@ -76,9 +76,7 @@ export function Stack() {
               transition={{ delay: gi * 0.08, duration: 0.5 }}
               className="glass-card p-6 md:p-8"
             >
-              <p className="text-xs font-semibold tracking-[0.12em] uppercase text-foreground mb-1">
-                {group.title}
-              </p>
+              <p className="lab-caption text-foreground mb-1">{group.title}</p>
               <p className="text-sm text-muted-foreground mb-5">{group.hint}</p>
               <div className="flex flex-wrap gap-2">
                 {group.tags.map((tag) => (

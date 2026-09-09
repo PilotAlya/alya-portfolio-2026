@@ -14,109 +14,75 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-32 pb-24 lg:pb-32 px-6 lg:px-8 overflow-hidden scroll-mt-24"
+      className="relative min-h-[100svh] pt-28 pb-20 lg:pb-28 px-6 lg:px-8 overflow-hidden scroll-mt-24 corner-ticks"
     >
+      <div className="absolute inset-0 bg-blueprint bg-blueprint--fade pointer-events-none" aria-hidden />
       <HeroBlob />
 
-      <div className="relative max-w-7xl mx-auto mb-10 flex items-center justify-between text-xs font-medium tracking-wide text-muted-foreground">
-        <span>2026</span>
-        <span>PILOT ALI // ДИЗАЙН · FIGMA · VIBE-CODING</span>
+      <div className="relative max-w-7xl mx-auto mb-12 flex items-start justify-between gap-6">
+        <p className="lab-caption max-w-[14ch] leading-relaxed">
+          Design Lab
+          <br />
+          Pilot Ali · 2026
+        </p>
+        <p className="lab-caption text-right max-w-[22ch] leading-relaxed">
+          Figma · Photoshop
+          <br />
+          vibe-coding → демо
+        </p>
       </div>
 
-      <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto space-y-10">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
+      <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto space-y-8 lg:space-y-10">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className="lab-caption flex items-center gap-3"
         >
-          <div className="inline-flex items-center gap-3 pl-3 pr-5 py-1.5 rounded-full glass-panel">
-            <span className="relative flex size-2">
-              <span
-                className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                style={{ backgroundColor: "var(--lime)" }}
-              />
-              <span
-                className="relative inline-flex rounded-full size-2"
-                style={{ backgroundColor: "var(--lime)" }}
-              />
-            </span>
-            <span className="text-sm font-medium text-foreground">
-              Дизайн · лендинги · презентации · сборка до демо
-            </span>
-          </div>
-        </motion.div>
+          От макета до рабочей версии
+          <span className="lab-dot" aria-hidden />
+        </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="hero-title font-black tracking-tight font-display max-w-full"
+          className="hero-title font-display max-w-[14ch]"
         >
           ALBINA
           <br />
-          <span className="text-gradient-chrome">AKBAROVA</span>
+          AKBAROVA
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.35, duration: 0.8 }}
-          className="text-lg sm:text-xl text-muted-foreground max-w-2xl font-light leading-relaxed"
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="text-lg sm:text-xl text-muted-foreground max-w-xl font-normal leading-relaxed"
         >
-          Дизайнер, который{" "}
-          <span className="accent-italic text-foreground">доводит макет до рабочей версии</span>.
-          Лендинги, презентации, веб-интерфейсы — от композиции в Figma и Photoshop до живого демо
-          через vibe-coding. Не оставляю картинкой в папке.
+          Дизайнер, который доводит макет до рабочей версии. Лендинги, презентации, веб — глаз в
+          Figma, сборка через vibe-coding.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="hero-spec-strip"
+          transition={{ delay: 0.45, duration: 0.55 }}
+          className="flex flex-wrap gap-3 pt-2"
         >
-          {[
-            { label: "Дизайн", value: "диплом · Figma · Photoshop" },
-            { label: "Сборка", value: "vibe-coding · Cursor" },
-            { label: "Для кого", value: "заказ и роли в продукте" },
-            { label: "Формат", value: "от идеи до рабочей версии" },
-          ].map((spec) => (
-            <div key={spec.label}>
-              <div className="hero-spec-strip__label">{spec.label}</div>
-              <div className="hero-spec-strip__value">{spec.value}</div>
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="flex flex-wrap items-center justify-between gap-8"
-        >
-          <div className="flex flex-wrap gap-3">
-            <MagneticLink
-              href="#contact"
-              className="btn-spark group items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold"
-            >
-              Обсудить задачу или роль{" "}
-              <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </MagneticLink>
-            <MagneticLink
-              href="#work"
-              className="btn-cta-secondary items-center gap-2 px-6 py-3.5 rounded-full text-sm font-medium"
-            >
-              Смотреть работы
-            </MagneticLink>
-          </div>
-
-          <p className="accent-italic max-w-md text-lg leading-relaxed text-foreground/90 border-l-2 border-spark/40 pl-4">
-            «Сначала глаз и композиция. Потом vibe-coding, чтобы макет стал ссылкой, которой можно
-            пользоваться — и проверка на людях до сдачи.»
-            <span className="font-sans not-italic block mt-2 text-sm font-medium text-accent">
-              — Pilot Ali
-            </span>
-          </p>
+          <MagneticLink
+            href="#contact"
+            className="btn-spark group inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-sm font-semibold"
+          >
+            Обсудить задачу или роль{" "}
+            <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </MagneticLink>
+          <MagneticLink
+            href="#work"
+            className="btn-cta-secondary inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-sm font-medium"
+          >
+            Смотреть работы
+          </MagneticLink>
         </motion.div>
       </motion.div>
     </section>

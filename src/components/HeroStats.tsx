@@ -9,21 +9,21 @@ export function HeroStats() {
       n: 1,
       suf: "",
       display: "Диплом",
-      label: "дизайнера-проектировщика, красный · глаз и композиция",
+      label: "дизайнера-проектировщика · глаз и композиция",
       color: "text-accent",
     },
     {
       n: 2,
       suf: "",
       display: "Музей + ММК",
-      label: "коммерческий дизайн под ключ, ноль брака на производстве",
+      label: "коммерческий дизайн под ключ, ноль брака",
       color: "",
     },
     {
       n: 5,
       suf: "+",
       display: null,
-      label: "живых демо на vibe-coding — можно открыть по ссылке",
+      label: "живых демо на vibe-coding — открыть по ссылке",
       color: "text-accent",
     },
     {
@@ -31,12 +31,12 @@ export function HeroStats() {
       suf: "",
       display: "Figma · Ps · Cursor",
       label: "дизайн каждый день + сборка до рабочей версии",
-      color: "text-orange-accent",
+      color: "text-accent",
     },
   ];
 
   return (
-    <section className="border-y border-border bg-card/30 relative">
+    <section className="border-y border-border relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-border">
         {stats.map((s, i) => (
           <motion.div
@@ -49,7 +49,7 @@ export function HeroStats() {
             className={spotlightClass("relative flex flex-col gap-2 p-6 lg:p-8", "subtle")}
           >
             <div
-              className={`font-extrabold text-2xl sm:text-3xl tracking-tight leading-tight ${s.color}`}
+              className={`font-display font-extrabold text-2xl sm:text-3xl tracking-tight leading-tight ${s.color}`}
             >
               {s.display ? (
                 s.display
