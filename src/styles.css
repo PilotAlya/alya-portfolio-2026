@@ -965,3 +965,69 @@ body.custom-cursor-active * {
   letter-spacing: 0.01em;
   color: var(--accent);
 }
+
+/* Why-me — flat numbered rows, spec-sheet columns */
+.why-row {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+
+.why-row:last-child {
+  border-bottom: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+}
+
+@media (min-width: 1024px) {
+  .why-row {
+    grid-template-columns: 4.5rem repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+.why-row__label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 0.35rem;
+}
+
+.why-row__label--accent {
+  color: var(--accent);
+}
+
+/* Evolution path — flat milestone strip, vertical rules instead of cards */
+.milestone-strip {
+  display: grid;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent);
+}
+
+@media (min-width: 1024px) {
+  .milestone-strip {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .milestone-strip > * + * {
+    border-left: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent);
+    padding-left: 2.5rem;
+  }
+}
+
+.milestone__n {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-foreground);
+}
+
+.milestone__n--featured {
+  color: var(--accent);
+}

@@ -46,31 +46,26 @@ export function EvolutionPath() {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-4">
+        <div className="milestone-strip">
           {stages.map((s, i) => (
             <motion.div
               key={s.n}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.7 }}
               {...spotlightAttrs}
-              className={spotlightClass(
-                `rounded-2xl border p-10 lg:p-12 group ${s.featured ? "bg-accent/5 border-accent/20" : "bg-card border-foreground/8"}`,
-                "flat",
-              )}
+              className={spotlightClass("group", "subtle")}
             >
-              <div className="flex items-center justify-between mb-8">
-                <span
-                  className={`inline-flex size-9 items-center justify-center rounded-full text-sm font-semibold ${s.featured ? "bg-spark text-spark-foreground" : "bg-secondary text-muted-foreground"}`}
-                >
+              <div className="flex items-center justify-between mb-6">
+                <span className={`milestone__n ${s.featured ? "milestone__n--featured" : ""}`}>
                   {s.n}
                 </span>
                 <s.Icon
                   className={`size-5 ${s.featured ? "text-accent" : "text-muted-foreground"} group-hover:text-accent transition-colors`}
                 />
               </div>
-              <h3 className="text-2xl font-semibold mb-4 tracking-tight">{s.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 tracking-tight">{s.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{s.body}</p>
             </motion.div>
           ))}

@@ -52,45 +52,70 @@ export function WhyMe() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-4">
+        <div>
           {items.map((it, i) => (
             <motion.div
               key={it.n}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
+              transition={{ delay: i * 0.08, duration: 0.6 }}
               {...spotlightAttrs}
-              className={spotlightClass(
-                "rounded-2xl border border-foreground/10 bg-card p-7 flex flex-col gap-5",
-              )}
+              className={spotlightClass("why-row", "subtle")}
             >
+              <div className="flex items-center gap-3 lg:flex-col lg:items-start lg:gap-2">
+                <span className="font-display text-2xl font-extrabold text-muted-foreground tabular-nums">
+                  {it.n}
+                </span>
+                <it.Icon className="size-4 text-accent" />
+              </div>
+
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex flex-col gap-5"
               >
-                <motion.div variants={staggerItem} className="flex items-center justify-between">
-                  <span className="inline-flex size-9 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-muted-foreground">
-                    {it.n}
-                  </span>
-                  <it.Icon className="size-4 text-accent" />
+                <motion.div variants={staggerItem} className="why-row__label">
+                  Проблема
                 </motion.div>
+                <motion.p variants={staggerItem} className="text-sm font-semibold leading-snug">
+                  {it.problem}
+                </motion.p>
+              </motion.div>
 
-                <motion.div variants={staggerItem}>
-                  <div className="text-xs font-medium text-muted-foreground mb-1">Проблема</div>
-                  <p className="text-sm font-semibold leading-snug">{it.problem}</p>
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
+                <motion.div variants={staggerItem} className="why-row__label">
+                  Что делаю
                 </motion.div>
-                <motion.div variants={staggerItem}>
-                  <div className="text-xs font-medium text-muted-foreground mb-1">Что делаю</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{it.solution}</p>
+                <motion.p
+                  variants={staggerItem}
+                  className="text-sm text-muted-foreground leading-relaxed"
+                >
+                  {it.solution}
+                </motion.p>
+              </motion.div>
+
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  variants={staggerItem}
+                  className="why-row__label why-row__label--accent"
+                >
+                  Результат
                 </motion.div>
-                <motion.div variants={staggerItem} className="border-t border-foreground/10 pt-4">
-                  <div className="text-xs font-medium text-accent mb-1">Результат</div>
-                  <p className="text-sm leading-relaxed">{it.result}</p>
-                </motion.div>
+                <motion.p variants={staggerItem} className="text-sm leading-relaxed">
+                  {it.result}
+                </motion.p>
               </motion.div>
             </motion.div>
           ))}
