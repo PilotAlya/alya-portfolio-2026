@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { UserPlus, ExternalLink, Phone, Database, Kanban } from "lucide-react";
 import { fadeUp } from "./shared";
 import { GrainOverlay } from "./effects/GrainFrame";
-import { MagneticLink } from "./effects/MagneticButton";
 import { SectionLabel } from "./effects/SectionLabel";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 

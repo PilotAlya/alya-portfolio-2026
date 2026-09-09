@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Search, Download, ExternalLink, Sparkles, Filter } from "lucide-react";
 import { fadeUp } from "./shared";
 import { GrainOverlay } from "./effects/GrainFrame";
-import { MagneticLink } from "./effects/MagneticButton";
 import { SectionLabel } from "./effects/SectionLabel";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 
