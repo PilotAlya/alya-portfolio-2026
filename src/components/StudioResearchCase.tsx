@@ -64,7 +64,7 @@ const PIPELINE = [
   { n: "01", t: "Поиск", d: "Сайты по запросу и городу" },
   { n: "02", t: "Разбор сайта", d: "Главная · О нас · Команда" },
   { n: "03", t: "Проверка ИИ", d: "Команда или фрилансер" },
-  { n: "04", t: "Excel", d: "Только нужные строки" },
+  { n: "04", t: "Таблица", d: "Только нужные строки" },
 ] as const;
 
 export function StudioResearchCase() {
@@ -84,7 +84,7 @@ export function StudioResearchCase() {
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <SectionLabel title="Опыт · Автоматизация" />
               <span className="text-xs text-muted-foreground bg-foreground/5 border border-foreground/10 px-2.5 py-1 rounded-full flex items-center gap-1">
-                <Search className="size-3 text-accent" /> Python · Gemini · Excel
+                <Search className="size-3 text-accent" /> Python · Gemini
               </span>
             </div>
 
@@ -95,7 +95,7 @@ export function StudioResearchCase() {
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-6">
               Программа сама находит дизайн-студии по городу, заходит на их сайты и с помощью ИИ
               отсеивает одиночных фрилансеров, оставляя только настоящие команды. На выходе —
-              готовая таблица Excel со ссылками и объяснением, почему это команда.
+              готовая таблица со ссылками и объяснением, почему это команда.
             </p>
 
             <ul className="space-y-3 mb-6 text-sm text-muted-foreground">
@@ -149,7 +149,7 @@ export function StudioResearchCase() {
                 className="btn-spark inline-flex items-center gap-2 text-sm px-5 py-3 rounded-md font-semibold"
               >
                 <Download className="size-4" />
-                Скачать Excel
+                Скачать таблицу
               </a>
               <a
                 href={CASE_PAGE}
@@ -179,8 +179,8 @@ export function StudioResearchCase() {
                 <Filter className="size-5" />
               </div>
               <div>
-                <div className="text-sm font-semibold text-foreground">Столбцы Excel</div>
-                <div className="text-xs text-muted-foreground">как в demo-results.xlsx</div>
+                <div className="text-sm font-semibold text-foreground">Столбцы таблицы</div>
+                <div className="text-xs text-muted-foreground">как в демо-файле</div>
               </div>
             </div>
             <ol className="relative z-[2] space-y-2.5 text-sm text-muted-foreground list-none">
@@ -201,7 +201,7 @@ export function StudioResearchCase() {
               ))}
             </ol>
             <p className="relative z-[2] text-[11px] text-muted-foreground leading-relaxed border-t border-foreground/10 pt-3">
-              Ниже — фрагмент таблицы из того же Excel. Полный файл — кнопка «Скачать Excel».
+              Ниже — фрагмент той же таблицы. Полный файл — кнопка «Скачать таблицу».
             </p>
           </motion.div>
         </div>
@@ -221,7 +221,7 @@ export function StudioResearchCase() {
               className="text-sm text-accent hover:text-spark transition-colors inline-flex items-center gap-1.5"
             >
               <Download className="size-3" />
-              Excel
+              Скачать
             </a>
           </div>
           <div className="overflow-x-auto">
