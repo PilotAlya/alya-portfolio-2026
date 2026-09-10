@@ -1,4 +1,3 @@
-import field from "@/assets/lab-clay-field.webp";
 import flower from "@/assets/lab-clay-flower.webp";
 import star from "@/assets/lab-clay-star.webp";
 import lime from "@/assets/lab-clay-lime.webp";
@@ -7,17 +6,15 @@ import spiral from "@/assets/lab-clay-spiral.webp";
 
 /**
  * GIF-style organic wave ribbon.
- * Soft mask via CSS mask-image (reliable) — specimens live inside, never
- * hard-cropped by the viewport box.
+ * Soft SVG mask + warm clay wash. Specimens are full uncropped assets
+ * inset inside the ribbon so nothing is hard-cut by the viewport or a
+ * pre-cropped field photo.
  */
 export function HeroMask() {
   return (
     <div className="hero-wave" aria-hidden>
       <div className="hero-wave__band">
-        <div
-          className="hero-wave__texture"
-          style={{ backgroundImage: `url(${field})` }}
-        />
+        <div className="hero-wave__wash" />
         <div className="hero-wave__specimens">
           <img
             src={flower}
