@@ -18,7 +18,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-blueprint bg-blueprint--fade pointer-events-none" aria-hidden />
       <HeroMask />
 
-      <div className="relative z-[1] max-w-7xl mx-auto mb-10 flex items-start justify-between gap-6">
+      <div className="relative z-[2] max-w-7xl mx-auto mb-10 flex items-start justify-between gap-6">
         <p className="lab-caption max-w-[14ch] leading-relaxed">
           Design Lab
           <br />
@@ -31,9 +31,10 @@ export function Hero() {
         </p>
       </div>
 
+      {/* z-[2] between back specimens and front cluster — objects weave past type */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-[1] max-w-7xl mx-auto space-y-7 lg:space-y-9"
+        className="relative z-[2] max-w-7xl mx-auto space-y-7 lg:space-y-9"
       >
         <h1 className="hero-title font-display">
           ALBINA

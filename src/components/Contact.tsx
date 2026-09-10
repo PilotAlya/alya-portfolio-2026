@@ -1,5 +1,6 @@
 import { ArrowUpRight, Copy, Check, Mail } from "lucide-react";
 import { useState } from "react";
+import { AiryAccent } from "./effects/AiryAccent";
 
 const TELEGRAM_URL = "https://t.me/Albinaa_Akbarova";
 const EMAIL = "pilotalya@a-akbarova.ru";
@@ -16,9 +17,11 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 lg:py-32 px-6 lg:px-8 border-t border-border relative scroll-mt-24"
+      className="py-24 lg:py-32 px-6 lg:px-8 border-t border-border relative scroll-mt-24 overflow-x-clip"
     >
-      <div className="relative max-w-7xl mx-auto">
+      <AiryAccent kind="flower" className="airy-accent--contact" />
+      <AiryAccent kind="coil" className="airy-accent--contact-coil" />
+      <div className="relative z-[1] max-w-7xl mx-auto">
         <div className="max-w-3xl">
           <h2 className="text-[clamp(2.75rem,8vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] font-display mb-8">
             Задача
