@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HeroMask } from "./effects/HeroMask";
-import { HeroObjects } from "./effects/HeroObjects";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -14,11 +13,10 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative min-h-[100dvh] pt-28 pb-16 lg:pb-24 px-6 lg:px-8 overflow-hidden scroll-mt-24 corner-ticks"
+      className="relative min-h-[100dvh] pt-28 pb-16 lg:pb-24 px-6 lg:px-8 overflow-x-clip overflow-y-visible scroll-mt-24 corner-ticks"
     >
       <div className="absolute inset-0 bg-blueprint bg-blueprint--fade pointer-events-none" aria-hidden />
       <HeroMask />
-      <HeroObjects />
 
       <div className="relative z-[1] max-w-7xl mx-auto mb-10 flex items-start justify-between gap-6">
         <p className="lab-caption max-w-[14ch] leading-relaxed">

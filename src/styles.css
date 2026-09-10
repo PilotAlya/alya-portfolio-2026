@@ -378,74 +378,13 @@ body.custom-cursor-active * {
   display: none;
 }
 
-/* Floating clay specimens in hero */
-.hero-objects {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.hero-object {
-  position: absolute;
-  display: block;
-  object-fit: contain;
-  user-select: none;
-  -webkit-user-drag: none;
-  filter: drop-shadow(0 24px 40px rgb(0 0 0 / 12%));
-  will-change: transform;
-}
-
-.hero-object--flower {
-  right: 2vw;
-  top: 18vh;
-  width: min(28vw, 340px);
-  z-index: 2;
-  animation: hero-object-float-a 12s ease-in-out infinite;
-}
-
-.hero-object--star {
-  right: 22vw;
-  top: 8vh;
-  width: min(18vw, 220px);
-  z-index: 3;
-  animation: hero-object-float-b 9s ease-in-out infinite;
-}
-
-.hero-object--lime {
-  right: 8vw;
-  bottom: 14vh;
-  width: min(16vw, 190px);
-  z-index: 2;
-  animation: hero-object-float-a 10s ease-in-out infinite reverse;
-}
-
-.hero-object--coil {
-  right: 28vw;
-  bottom: 22vh;
-  width: min(14vw, 160px);
-  z-index: 1;
-  opacity: 0.92;
-  animation: hero-object-float-b 11s ease-in-out infinite;
-}
-
-.hero-object--spiral {
-  right: -2vw;
-  bottom: 28vh;
-  width: min(15vw, 180px);
-  opacity: 0.85;
-  z-index: 1;
-  animation: hero-object-float-b 13s ease-in-out infinite reverse;
-}
-
 @keyframes hero-object-float-a {
   0%,
   100% {
     transform: translateY(0) rotate(-4deg);
   }
   50% {
-    transform: translateY(-16px) rotate(2deg);
+    transform: translateY(-10px) rotate(3deg);
   }
 }
 
@@ -455,157 +394,163 @@ body.custom-cursor-active * {
     transform: translateY(0) rotate(6deg);
   }
   50% {
-    transform: translateY(-12px) rotate(12deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-object--flower {
-    right: -18vw;
-    top: 8vh;
-    width: 48vw;
-    opacity: 0.35;
-  }
-
-  .hero-object--star {
-    right: 8vw;
-    top: 4vh;
-    width: 28vw;
-    opacity: 0.4;
-  }
-
-  .hero-object--lime {
-    right: -6vw;
-    bottom: 18vh;
-    width: 26vw;
-    opacity: 0.3;
-  }
-
-  .hero-object--coil,
-  .hero-object--spiral {
-    display: none;
+    transform: translateY(-8px) rotate(12deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-object--flower,
-  .hero-object--star,
-  .hero-object--lime,
-  .hero-object--coil,
-  .hero-object--spiral,
-  .hero-mask__ribbon,
-  .hero-mask__texture {
+  .hero-wave__band,
+  .hero-wave__texture,
+  .hero-wave__obj {
     animation: none;
   }
 }
 
-/* Organic ribbon mask — clay field under paper */
-.hero-mask {
+/* GIF-style floating organic wave — clay lives inside soft edges */
+.hero-wave {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  overflow: visible;
+}
+
+.hero-wave__defs {
+  position: absolute;
+  width: 0;
+  height: 0;
   overflow: hidden;
 }
 
-.hero-mask__ribbon {
+.hero-wave__band {
   position: absolute;
-  left: -8%;
-  right: -8%;
+  /* Island ribbon: inset from viewport so soft edges are fully visible */
+  left: 3%;
+  width: 94%;
   top: 42%;
-  height: min(38vh, 340px);
-  background: color-mix(in oklab, var(--orange) 8%, transparent);
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 240' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 120 C 80 40, 160 200, 240 110 C 320 20, 400 190, 480 100 C 560 20, 640 180, 720 90 C 800 10, 880 170, 960 100 C 1040 40, 1120 160, 1200 90 L1200 240 L0 240 Z'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 240' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 120 C 80 40, 160 200, 240 110 C 320 20, 400 190, 480 100 C 560 20, 640 180, 720 90 C 800 10, 880 170, 960 100 C 1040 40, 1120 160, 1200 90 L1200 240 L0 240 Z'/%3E%3C/svg%3E");
-  -webkit-mask-size: 140% 100%;
-  mask-size: 140% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: 0% center;
-  mask-position: 0% center;
-  animation: hero-mask-drift 14s ease-in-out infinite alternate;
-  filter: drop-shadow(0 12px 28px color-mix(in oklab, var(--orange) 18%, transparent));
+  height: min(38vh, 360px);
+  clip-path: url(#hero-wave-clip);
+  -webkit-clip-path: url(#hero-wave-clip);
+  animation: hero-wave-drift 9s ease-in-out infinite alternate;
+  filter: drop-shadow(0 22px 48px color-mix(in oklab, var(--orange) 18%, transparent));
 }
 
-.hero-mask__texture {
-  width: 100%;
-  height: 100%;
+.hero-wave__texture {
+  position: absolute;
+  inset: -12%;
   background-size: cover;
-  background-position: 60% center;
-  animation: hero-mask-pan 18s ease-in-out infinite alternate;
-  opacity: 0.92;
+  background-position: 55% center;
+  background-color: color-mix(in oklab, var(--orange) 14%, white);
+  animation: hero-wave-pan 18s ease-in-out infinite alternate;
+  opacity: 0.97;
 }
 
-@keyframes hero-mask-drift {
+.hero-wave__specimens {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-wave__obj {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 14px 24px rgb(0 0 0 / 14%));
+  will-change: transform;
+}
+
+/* Specimens inset from soft clip — organic fade at wave edge, never viewport crop */
+.hero-wave__obj--flower {
+  right: 8%;
+  top: 14%;
+  width: min(28%, 300px);
+  animation: hero-object-float-a 12s ease-in-out infinite;
+}
+
+.hero-wave__obj--star {
+  right: 32%;
+  top: 22%;
+  width: min(15%, 170px);
+  animation: hero-object-float-b 10s ease-in-out infinite;
+}
+
+.hero-wave__obj--lime {
+  right: 18%;
+  bottom: 18%;
+  width: min(13%, 150px);
+  animation: hero-object-float-a 9s ease-in-out infinite reverse;
+}
+
+.hero-wave__obj--coil {
+  left: 34%;
+  top: 26%;
+  width: min(12%, 140px);
+  animation: hero-object-float-b 11s ease-in-out infinite;
+}
+
+.hero-wave__obj--spiral {
+  left: 48%;
+  bottom: 20%;
+  width: min(13%, 150px);
+  animation: hero-object-float-b 13s ease-in-out infinite reverse;
+}
+
+@keyframes hero-wave-drift {
   from {
-    -webkit-mask-position: 0% center;
-    mask-position: 0% center;
-    transform: translateY(0);
+    transform: translateY(0) translateX(0) scaleY(1);
   }
   to {
-    -webkit-mask-position: 100% center;
-    mask-position: 100% center;
-    transform: translateY(-10px);
+    transform: translateY(-18px) translateX(-1.2%) scaleY(1.04);
   }
 }
 
-@keyframes hero-mask-pan {
+@keyframes hero-wave-pan {
   from {
-    background-position: 45% center;
-    transform: scale(1.02);
+    background-position: 38% center;
+    transform: scale(1.05);
   }
   to {
-    background-position: 75% center;
-    transform: scale(1.08);
+    background-position: 68% center;
+    transform: scale(1.12);
   }
 }
 
 @media (max-width: 768px) {
-  .hero-mask__ribbon {
-    top: 48%;
-    height: 28vh;
-    opacity: 0.55;
+  .hero-wave__band {
+    left: 2%;
+    width: 96%;
+    top: 52%;
+    height: 30vh;
+  }
+
+  .hero-wave__obj--coil,
+  .hero-wave__obj--spiral {
+    display: none;
+  }
+
+  .hero-wave__obj--flower {
+    right: 6%;
+    top: 12%;
+    width: 42%;
+  }
+
+  .hero-wave__obj--star {
+    right: 44%;
+    top: 20%;
+    width: 24%;
+  }
+
+  .hero-wave__obj--lime {
+    right: 12%;
+    bottom: 16%;
+    width: 22%;
   }
 }
 
 /* Legacy SVG blob — kept for optional reuse */
 .hero-blob {
-  position: absolute;
-  right: -2vw;
-  top: 8vh;
-  width: min(46vw, 560px);
-  height: min(46vw, 560px);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.95;
-  animation: hero-blob-float 10s ease-in-out infinite;
-  filter: drop-shadow(0 28px 48px color-mix(in oklab, var(--orange) 22%, transparent));
-}
-
-@keyframes hero-blob-float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-22px) rotate(1.5deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-blob {
-    opacity: 0.4;
-    width: 78vw;
-    height: 78vw;
-    right: -28vw;
-    top: 2vh;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-blob {
-    animation: none;
-  }
+  display: none;
 }
 
 .glass-panel {
