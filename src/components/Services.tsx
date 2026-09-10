@@ -1,5 +1,4 @@
 import { SectionHeadline } from "./effects/SectionHeadline";
-import { AiryAccent } from "./effects/AiryAccent";
 
 const SERVICES = [
   {
@@ -32,7 +31,6 @@ const SERVICES = [
 export function Services() {
   return (
     <section id="services" className="py-20 lg:py-28 px-6 lg:px-8 relative scroll-mt-24">
-      <AiryAccent kind="lime" className="airy-accent--services" />
       <div className="relative z-[1] max-w-7xl mx-auto">
         <div className="mb-12 max-w-2xl">
           <SectionHeadline before="Дизайн снаружи," accent="сборка внутри" />
