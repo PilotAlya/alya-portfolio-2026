@@ -403,9 +403,7 @@ body.custom-cursor-active * {
   .hero-wave__wash,
   .hero-wave__obj,
   .hero-wave__thread,
-  .airy-accent,
-  .lab-bridge__specimen,
-  .lab-bridge__wash {
+  .airy-accent {
     animation: none;
   }
 }
@@ -656,85 +654,6 @@ body.custom-cursor-active * {
 
   .airy-accent--contact-coil {
     display: none;
-  }
-}
-
-/* Hero → Services handoff: one specimen + thread remnant */
-.lab-bridge {
-  position: relative;
-  z-index: 2;
-  height: 0;
-  pointer-events: none;
-  overflow: visible;
-}
-
-.lab-bridge__wash {
-  position: absolute;
-  left: 12%;
-  right: 18%;
-  top: -4.5rem;
-  height: 9rem;
-  border-radius: 50% / 60%;
-  background: radial-gradient(
-    70% 80% at 55% 40%,
-    color-mix(in oklab, var(--orange) 22%, transparent) 0%,
-    color-mix(in oklab, var(--lime) 12%, transparent) 45%,
-    transparent 72%
-  );
-  filter: blur(2px);
-  animation: hero-wave-pan 18s ease-in-out infinite alternate;
-}
-
-.lab-bridge__thread {
-  position: absolute;
-  left: 8%;
-  width: 84%;
-  top: -5.5rem;
-  height: 11rem;
-  overflow: visible;
-}
-
-.lab-bridge__thread-path {
-  stroke: var(--orange);
-  stroke-width: 2;
-  stroke-linecap: round;
-  fill: none;
-  opacity: 0.7;
-}
-
-.lab-bridge__thread-path--fade {
-  stroke-width: 1.25;
-  opacity: 0.28;
-}
-
-.lab-bridge__specimen {
-  position: absolute;
-  right: max(8vw, 3rem);
-  top: -3.25rem;
-  width: min(12vw, 130px);
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 16px 28px rgb(0 0 0 / 12%));
-  animation: hero-object-float-a 13s ease-in-out infinite;
-}
-
-@media (max-width: 768px) {
-  .lab-bridge__wash {
-    left: 6%;
-    right: 10%;
-    top: -3.5rem;
-    height: 7rem;
-  }
-
-  .lab-bridge__thread {
-    top: -4rem;
-    height: 8rem;
-  }
-
-  .lab-bridge__specimen {
-    right: 1.5rem;
-    top: -2.5rem;
-    width: 22vw;
   }
 }
 
