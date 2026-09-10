@@ -533,16 +533,16 @@ body.custom-cursor-active * {
   .hero-wave__band {
     left: 18%;
     width: 80%;
-    top: 62%;
-    height: 26vh;
+    top: 72%;
+    height: 22vh;
   }
 
   .hero-wave__specimens,
   .hero-wave__thread {
     left: 20%;
     width: 76%;
-    top: 58%;
-    height: 28vh;
+    top: 68%;
+    height: 26vh;
   }
 
   .hero-wave__obj--flower {
