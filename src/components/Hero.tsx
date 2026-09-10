@@ -31,7 +31,6 @@ export function Hero() {
         </p>
       </div>
 
-      {/* z-[2] between back specimens and front cluster — objects weave past type */}
       <motion.div
         style={{ y, opacity }}
         className="relative z-[2] max-w-7xl mx-auto space-y-7 lg:space-y-9"
