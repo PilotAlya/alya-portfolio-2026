@@ -13,7 +13,6 @@ import { Profile } from "@/components/Profile";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { SectionShell } from "@/components/effects/SectionShell";
-import { LabBridge } from "@/components/effects/LabBridge";
 import { SmoothScroll } from "@/components/effects/SmoothScroll";
 import { SITE_URL } from "@/lib/site";
 
@@ -66,7 +65,6 @@ function Index() {
         <ScrollProgress />
         <Nav />
         <Hero />
-        <LabBridge />
         <SectionShell variant="default">
           <Services />
         </SectionShell>
