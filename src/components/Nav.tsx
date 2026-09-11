@@ -13,11 +13,9 @@ import { NAV_SECTION_MAP, useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { href: "#why", label: "Обо мне" },
-  { href: "#nova", label: "NOVA" },
-  { href: "#experience", label: "Опыт" },
-  { href: "#portfolio", label: "Портфолио" },
-  { href: "#github", label: "GitHub" },
+  { href: "#why", label: "Чем полезна" },
+  { href: "#work", label: "Работы" },
+  { href: "#stack", label: "Как работаю" },
 ];
 
 export function Nav() {
@@ -28,26 +26,32 @@ export function Nav() {
 
   const pillClass = (href: string, extra?: string) =>
     cn(
-      "nav-pill font-mono text-[10px] tracking-widest uppercase transition-colors",
+      "nav-pill text-sm transition-colors",
       isActive(href) ? "is-active" : "text-muted-foreground",
       extra,
     );
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 border-b border-border glass-panel !rounded-none !border-x-0 !border-t-0">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#top" className="font-mono text-sm tracking-tighter link-spark">
-          Pilot Ali <span className="text-muted-foreground">// AI · Vibe-Coding</span>
+    <nav className="fixed top-4 md:top-5 inset-x-4 md:inset-x-8 z-50">
+      <div className="max-w-7xl mx-auto bg-background rounded-md px-4 lg:px-5 h-12 flex items-center justify-between border border-border">
+        <a href="#top" className="text-sm font-display font-bold tracking-tight pl-1">
+          Pilot Ali
+          <span className="hidden sm:inline font-mono font-medium text-[0.65rem] tracking-[0.08em] uppercase text-muted-foreground ml-3">
+            Design Lab
+          </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
+        <div className="hidden md:flex items-center gap-0.5">
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className={pillClass(link.href)}>
               {link.label}
             </a>
           ))}
-          <a href="#contact" className={pillClass("#contact")}>
-            Контакты →
+          <a
+            href="#contact"
+            className="ml-2 inline-flex items-center rounded-md bg-foreground px-3.5 py-2 font-mono text-[0.65rem] font-medium uppercase tracking-[0.08em] text-background transition-opacity hover:opacity-85"
+          >
+            Задача / роль →
           </a>
         </div>
 
@@ -57,28 +61,33 @@ export function Nav() {
               <button
                 type="button"
                 aria-label="Открыть меню"
-                className="flex items-center justify-center size-10 -mr-2 rounded-full border border-border hover:border-spark/50 hover:text-spark transition-colors"
+                className="flex items-center justify-center size-9 -mr-1 rounded-md border border-border hover:border-foreground/30 transition-colors"
               >
-                <Menu className="size-5" />
+                <Menu className="size-4" />
               </button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="border-border bg-background/95 backdrop-blur-md w-full sm:max-w-xs"
+              className="border-border bg-background/98 backdrop-blur-md w-full sm:max-w-xs"
             >
               <SheetHeader className="text-left mb-8">
-                <SheetTitle className="font-mono text-sm tracking-tighter">
-                  Pilot Ali <span className="text-muted-foreground font-normal">// Меню</span>
+                <SheetTitle className="text-sm font-display font-bold tracking-tight">
+                  Pilot Ali{" "}
+                  <span className="font-mono font-medium text-[0.65rem] uppercase tracking-[0.08em] text-muted-foreground">
+                    Menu
+                  </span>
                 </SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-2 font-mono text-xs tracking-widest uppercase">
+              <nav className="flex flex-col gap-2 text-sm">
                 {NAV_LINKS.map((link) => (
                   <SheetClose asChild key={link.href}>
                     <a
                       href={link.href}
                       className={cn(
                         "nav-pill px-4 py-3 text-center",
-                        isActive(link.href) ? "is-active" : "text-muted-foreground border border-border",
+                        isActive(link.href)
+                          ? "is-active"
+                          : "text-muted-foreground border border-border",
                       )}
                     >
                       {link.label}
@@ -88,12 +97,9 @@ export function Nav() {
                 <SheetClose asChild>
                   <a
                     href="#contact"
-                    className={cn(
-                      "nav-pill mt-2 px-4 py-3 text-center",
-                      isActive("#contact") ? "is-active" : "bg-foreground text-background",
-                    )}
+                    className="mt-2 rounded-md bg-foreground px-4 py-3 text-center font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-background"
                   >
-                    Контакты →
+                    Задача / роль →
                   </a>
                 </SheetClose>
               </nav>

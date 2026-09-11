@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Ruler, CircuitBoard, Bot } from "lucide-react";
-import { fadeUp, SectionCodeDecor, EVOLUTION_CODE_LINES } from "./shared";
+import { PencilRuler, Building2, MonitorSmartphone } from "lucide-react";
+import { fadeUp } from "./shared";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
@@ -9,31 +9,27 @@ export function EvolutionPath() {
   const stages = [
     {
       n: "01",
-      title: "Точность и процессы",
-      body: "Ритейл, проекты для музея и завода ММК. Урок: ошибка в деталях на старте — финансовые потери на финале.",
-      Icon: Ruler,
+      title: "Глаз и точность",
+      body: "Диплом дизайнера-проектировщика. Витрины музея, офис завода ММК: ошибка в миллиметре на старте — брак и деньги на финале.",
+      Icon: PencilRuler,
     },
     {
       n: "02",
-      title: "Оцифровка процессов",
-      body: "Реинжиниринг процессов и автоматизация рутины в ритейле — детали в блоке «Опыт».",
-      Icon: CircuitBoard,
+      title: "Заказчик и процесс",
+      body: "Ритейл научил говорить с бизнесом: ТЗ, сроки, «чтобы работало завтра». Дизайн без этого — картинка в папке.",
+      Icon: Building2,
     },
     {
       n: "03",
-      title: "Интеллектуальный штурман",
-      body: "NOVA и AI-пайплайны через vibe-coding — от идеи до деплоя. Полный кейс — в разделе NOVA ниже.",
-      Icon: Bot,
+      title: "Веб-дизайн + vibe-coding",
+      body: "Расту в лендингах, презентациях и веб-UI. Figma и Photoshop каждый день; vibe-coding — чтобы макет стал ссылкой. NOVA — proof.",
+      Icon: MonitorSmartphone,
       featured: true,
     },
   ];
 
   return (
-    <section
-      id="path"
-      className="relative py-24 px-6 lg:px-8 overflow-hidden scroll-mt-24"
-    >
-      <SectionCodeDecor lines={EVOLUTION_CODE_LINES} side="left" speed={70} />
+    <section id="path" className="relative py-24 px-6 lg:px-8 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -42,39 +38,34 @@ export function EvolutionPath() {
           variants={fadeUp}
           className="mb-16 relative z-10"
         >
-          <SectionLabel chapter={2} title="Эволюция системности" className="font-mono text-xs text-accent uppercase tracking-widest bg-background/70 backdrop-blur-sm px-2 py-1 rounded-sm inline-block" />
+          <SectionLabel title="Откуда вкус" />
           <SectionHeadline
-            before="От Legacy-хаоса — до"
-            accent="AI-архитектуры"
+            before="От чертежа и интерьера — к"
+            accent="веб-дизайну"
             className="max-w-3xl relative z-10"
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 border border-white/10">
+        <div className="milestone-strip">
           {stages.map((s, i) => (
             <motion.div
               key={s.n}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.7 }}
               {...spotlightAttrs}
-              className={spotlightClass(
-                `p-10 lg:p-12 group ${i < stages.length - 1 ? "lg:border-r border-b lg:border-b-0 border-white/10" : ""} ${s.featured ? "bg-accent/5" : ""}`,
-                "flat",
-              )}
+              className={spotlightClass("group", "subtle")}
             >
-              <div className="flex items-center justify-between mb-8">
-                <span
-                  className={`font-mono text-xs ${s.featured ? "text-accent" : "text-muted-foreground"}`}
-                >
-                  STAGE {s.n}
+              <div className="flex items-center justify-between mb-6">
+                <span className={`milestone__n ${s.featured ? "milestone__n--featured" : ""}`}>
+                  {s.n}
                 </span>
                 <s.Icon
                   className={`size-5 ${s.featured ? "text-accent" : "text-muted-foreground"} group-hover:text-accent transition-colors`}
                 />
               </div>
-              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{s.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 tracking-tight">{s.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{s.body}</p>
             </motion.div>
           ))}

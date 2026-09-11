@@ -9,9 +9,9 @@ import { fadeUp } from "./shared";
 const TILES = [
   {
     id: "case-crm",
-    title: "CRM Lead Card",
-    subtitle: "React · Vite · localStorage · маска телефона",
-    tag: "Pet project",
+    title: "Мини-CRM для клиентов",
+    subtitle: "Форма лида, маска телефона, сохранение данных",
+    tag: "Личный проект",
     Icon: Kanban,
     span: "md:col-span-2",
     href: "#case-crm",
@@ -20,15 +20,15 @@ const TILES = [
   },
   {
     id: "case-b2b",
-    title: "B2B Churn Audit",
-    subtitle: "Data audit · Python · executive dashboard",
-    tag: "Background",
+    title: "Проверка оттока клиентов",
+    subtitle: "Аудит данных и дашборд для руководства",
+    tag: "Проверка данных",
     Icon: BarChart3,
     span: "",
     href: "#case-b2b",
     accent: "from-spark/15 via-transparent to-transparent",
     image: churnDashboard,
-    grainCaption: "Data audit",
+    grainCaption: "Дашборд",
   },
 ] as const;
 
@@ -41,7 +41,7 @@ export function PortfolioBento() {
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
           variants={fadeUp}
-          className="mb-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground"
+          className="mb-6 text-sm text-muted-foreground"
         >
           Навигация по кейсам ниже · NOVA — в разделе выше
         </motion.p>
@@ -80,9 +80,7 @@ export function PortfolioBento() {
               )}
               <div className="relative z-[1] flex items-start justify-between gap-3">
                 <div>
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-accent/90">
-                    {tile.tag}
-                  </span>
+                  <span className="text-xs font-medium text-accent/90">{tile.tag}</span>
                   <h3 className="font-display text-lg font-semibold tracking-tight mt-1.5 group-hover:text-accent transition-colors">
                     {tile.title}
                   </h3>
@@ -90,11 +88,11 @@ export function PortfolioBento() {
                     {tile.subtitle}
                   </p>
                 </div>
-                <div className="shrink-0 p-2 rounded-md border border-white/10 bg-background/40 text-accent group-hover:border-accent/40 transition-colors">
+                <div className="shrink-0 p-2 rounded-full border border-foreground/10 bg-background/60 text-accent group-hover:border-accent/40 transition-colors">
                   <tile.Icon className="size-4" />
                 </div>
               </div>
-              <div className="relative z-[1] mt-4 flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground group-hover:text-accent transition-colors">
+              <div className="relative z-[1] mt-4 flex items-center gap-1 text-sm text-muted-foreground group-hover:text-accent transition-colors">
                 К кейсу
                 <ArrowUpRight className="size-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>

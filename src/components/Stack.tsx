@@ -1,121 +1,49 @@
-import { motion } from "framer-motion";
-import { fadeUp } from "./shared";
-import { SectionLabel } from "./effects/SectionLabel";
 import { SectionHeadline } from "./effects/SectionHeadline";
 
-import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
-
-type TagSize = "sm" | "md" | "lg";
-
-const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
-  { label: "Cursor", size: "lg", core: true },
-  { label: "Vibe-coding", size: "lg" },
-  { label: "React", size: "md" },
-  { label: "TypeScript", size: "md" },
-  { label: "TanStack", size: "md" },
-  { label: "Vercel", size: "md" },
-  { label: "OpenCode", size: "md" },
-  { label: "Gemini", size: "md" },
-  { label: "Claude", size: "md" },
-  { label: "Lovable", size: "sm" },
-  { label: "Bolt", size: "sm" },
-  { label: "Replit", size: "sm" },
-  { label: "GitHub Copilot", size: "sm" },
-  { label: "DeepSeek", size: "sm" },
-  { label: "OpenRouter", size: "sm" },
-  { label: "NotebookLM", size: "sm" },
-  { label: "RAG", size: "sm" },
-  { label: "OCR", size: "sm" },
-  { label: "Python", size: "sm" },
-  { label: "Pandas", size: "sm" },
-  { label: "UX Testing", size: "sm" },
-  { label: "AI Evaluation", size: "sm" },
-  { label: "DevTools", size: "sm" },
-  { label: "Figma", size: "sm" },
-  { label: "PRO100", size: "sm" },
-  { label: "MVP Shipping", size: "md" },
-  { label: "Automation", size: "md" },
-];
-
-const SIZE_CLASS: Record<TagSize, string> = {
-  sm: "tag-cloud-pill--sm",
-  md: "tag-cloud-pill--md",
-  lg: "tag-cloud-pill--lg",
-};
+const GROUPS = [
+  {
+    title: "Дизайн",
+    lead: "Веду инструмент",
+    tags: ["Figma", "Композиция", "Презентации", "Веб-UI"],
+  },
+  {
+    title: "Сборка",
+    lead: "Довожу до демо",
+    tags: ["Cursor", "vibe-coding", "React", "Vercel"],
+  },
+  {
+    title: "Ускорители",
+    lead: "Не замена глазу",
+    tags: ["Claude", "Gemini", "тесты с людьми"],
+  },
+] as const;
 
 export function Stack() {
   return (
-    <section
-      id="stack"
-      className="relative pt-16 md:pt-24 pb-32 px-6 lg:px-8 overflow-x-clip scroll-mt-20 isolate"
-    >
+    <section id="stack" className="relative py-20 lg:py-28 px-6 lg:px-8 scroll-mt-24">
       <div className="relative max-w-7xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className="mb-12 max-w-3xl"
-        >
-          <SectionLabel chapter={5} title="Технологический стек" />
-          <SectionHeadline before="Стек технологий и" accent="автоматизации" />
+        <div className="mb-12 max-w-2xl">
+          <SectionHeadline before="Как" accent="работаю" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            AI-native инструменты, фреймворки и практики — всё, что использую при сборке MVP и
-            автоматизации.
+            Figma — основа. Cursor и AI — ускорители сборки. Навык не в списке инструментов, а в
+            том, что макет доходит до рабочей версии.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Tag cloud — SENCE-style */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative glass-panel rounded-2xl p-8 md:p-10 mb-12"
-        >
-          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">
-            core · Cursor · ежедневный стек
-          </p>
-
-          <div className="flex flex-wrap gap-2.5 md:gap-3 justify-center md:justify-start">
-            {TAGS.map((tag, i) => (
-              <motion.span
-                key={tag.label}
-                initial={{ opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.02, duration: 0.35 }}
-                className={[
-                  "tag-cloud-pill",
-                  SIZE_CLASS[tag.size],
-                  tag.core && "tag-cloud-pill--core",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                {tag.core && (
-                  <span className="text-spark text-[0.65em]" aria-hidden>
-                    ✦
-                  </span>
-                )}
-                {tag.label}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Boris walks on top of section content (z-30) */}
-      <div className="boris-walk-strip pointer-events-none" aria-hidden>
-        <div className="boris-walk-strip__track">
-          <video
-            src={borisWalkStableVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="boris-walk-strip__video select-none block"
-          />
+        <div className="grid md:grid-cols-3 gap-10 border-t border-border pt-10">
+          {GROUPS.map((group) => (
+            <div key={group.title}>
+              <p className="lab-caption text-foreground mb-1">{group.title}</p>
+              <p className="text-xs text-muted-foreground mb-4">{group.lead}</p>
+              <ul className="space-y-2">
+                {group.tags.map((tag) => (
+                  <li key={tag} className="text-sm text-foreground/80">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

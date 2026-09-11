@@ -1,25 +1,17 @@
-import { CountUp } from "./CountUp";
-
 type SectionLabelProps = {
-  chapter: number;
   title: string;
   className?: string;
 };
 
-export function SectionLabel({ chapter, title, className }: SectionLabelProps) {
-  const isDecimal = !Number.isInteger(chapter);
-
+export function SectionLabel({ title, className }: SectionLabelProps) {
   return (
-    <span className={className ?? "font-mono text-xs text-accent uppercase tracking-widest"}>
-      Глава{" "}
-      <CountUp
-        to={chapter}
-        decimals={isDecimal ? 1 : 0}
-        padZero={isDecimal ? undefined : 2}
-        duration={1100}
-        className="inline text-accent"
-      />
-      {" · "}
+    <span
+      className={
+        className ??
+        "inline-flex items-center gap-2.5 font-mono text-[0.7rem] font-medium tracking-[0.12em] uppercase text-muted-foreground"
+      }
+    >
+      <span className="lab-dot !size-[7px] !shadow-none" aria-hidden />
       {title}
     </span>
   );

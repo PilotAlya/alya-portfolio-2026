@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { CustomCursor } from "@/components/CustomCursor";
 import { MotionProvider } from "@/components/effects/MotionProvider";
 import { SITE_ORIGIN, SITE_URL } from "@/lib/site";
 
@@ -78,22 +77,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Альбина Акбарова — AI-Native Engineer · Vibe-Coder" },
+      {
+        title: "Альбина Акбарова — дизайнер, который доводит макет до рабочей версии",
+      },
       {
         name: "description",
         content:
-          "Портфолио Альбины Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
+          "Лендинги, презентации, веб-интерфейсы: Figma и Photoshop + vibe-coding до живого демо. Для заказчиков и продуктовых ролей. Кейсы: NOVA, музей, визуализации.",
       },
       { name: "author", content: "Альбина Акбарова" },
       { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:locale", content: "ru_RU" },
-      { property: "og:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
+      {
+        property: "og:title",
+        content: "Альбина Акбарова — дизайн + vibe-coding до запуска",
+      },
       {
         property: "og:description",
         content:
-          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
+          "Дизайнер-проектировщик: от композиции в Figma до рабочей версии через vibe-coding. Презентации, лендинги, интерфейсы.",
       },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:type", content: "image/png" },
@@ -101,14 +105,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "ALYA AKBAROVA — AI-Native Engineer · Vibe-Coder · Pilot Ali",
+        content: "Альбина Акбарова — дизайн · Figma · vibe-coding · Pilot Ali",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
+      {
+        name: "twitter:title",
+        content: "Альбина Акбарова — дизайн + vibe-coding до запуска",
+      },
       {
         name: "twitter:description",
         content:
-          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
+          "Дизайнер-проектировщик: от композиции в Figma до рабочей версии через vibe-coding. Презентации, лендинги, интерфейсы.",
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
@@ -120,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
       },
     ],
   }),
@@ -132,14 +139,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className="dark" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
         <noscript>
           <style>
-            {"[style*='opacity:0'],[style*='opacity: 0']{opacity:1!important;transform:none!important}"}
+            {
+              "[style*='opacity:0'],[style*='opacity: 0']{opacity:1!important;transform:none!important}"
+            }
           </style>
         </noscript>
         {children}
@@ -155,7 +164,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <MotionProvider>
-        <CustomCursor />
         <Outlet />
       </MotionProvider>
     </QueryClientProvider>
