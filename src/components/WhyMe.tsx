@@ -1,58 +1,44 @@
 import { SectionHeadline } from "./effects/SectionHeadline";
-import { AiryAccent } from "./effects/AiryAccent";
 
 const ITEMS = [
   {
-    label: "Глаз",
-    problem: "Нужно, чтобы выглядело собранно — лендинг, презентация, интерфейс.",
-    solution:
-      "Диплом дизайнера-проектировщика и Figma. Композицию считаю так же, как витрины для музея: ничего лишнего, всё по задаче.",
-    result: "Интерьер (модель → кадр), музей под ключ, презентация NOVA.",
+    label: "01 · Глаз",
+    title: "Чтобы выглядело собранно",
+    body: "Диплом дизайнера-проектировщика и Figma. Лендинг, презентация, интерфейс — композиция под задачу, без лишнего.",
   },
   {
-    label: "Сборка",
-    problem: "Макет есть, а живой версии нет — и ждать разработчика некогда.",
-    solution:
-      "Vibe-coding: Cursor и AI ускоряют код, я проектирую логику, проверяю и деплою. Один понятный результат в срок.",
-    result: "NOVA Light, это портфолио, мини-CRM — открыть по ссылке.",
+    label: "02 · Сборка",
+    title: "Чтобы макет стал рабочей версией",
+    body: "Vibe-coding в Cursor: проектирую, собираю и деплою сама. Один понятный результат — ссылка, которой можно пользоваться.",
   },
   {
-    label: "Проверка",
-    problem: "Страшно, что «красиво» не значит «понятно людям».",
-    solution:
-      "Тестирую на реальных людях до сдачи: где спотыкаются, упрощаю, проверяю снова.",
-    result: "В NOVA — две итерации после тестов. «Стало понятнее. Сами бы таким пользовались».",
+    label: "03 · Проверка",
+    title: "Чтобы было понятно людям",
+    body: "До сдачи тестирую на реальных людях: где спотыкаются — упрощаю и проверяю снова.",
   },
 ] as const;
 
 export function WhyMe() {
   return (
     <section id="why" className="py-20 lg:py-28 px-6 lg:px-8 relative scroll-mt-24">
-      <AiryAccent kind="star" className="airy-accent--why" />
-      <div className="relative z-[1] max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
         <div className="mb-12 max-w-2xl">
-          <SectionHeadline before="Глаз, сборка," accent="проверка" />
-          <p className="text-muted-foreground mt-4 leading-relaxed max-w-[42rem]">
-            Три опоры одной ссылки: для заказчика — результат без посредников; для команды —
-            дизайнер с vibe-coding до демо.
+          <SectionHeadline before="Чем я" accent="полезна" />
+          <p className="text-muted-foreground mt-4 leading-relaxed max-w-[40rem]">
+            Одна роль: дизайнер, который доводит макет до рабочей версии. Для заказчика — результат
+            без посредников. Для команды — глаз дизайнера и vibe-coding до демо.
           </p>
         </div>
 
-        <div className="border-t border-border">
+        <div className="grid md:grid-cols-3 gap-0 border-t border-border">
           {ITEMS.map((it) => (
             <div
               key={it.label}
-              className="grid lg:grid-cols-[8rem_1fr_1fr] gap-4 lg:gap-10 py-8 border-b border-border"
+              className="border-b md:border-b-0 md:border-r border-border last:md:border-r-0 py-8 md:pr-8 md:pl-0 md:first:pl-0 md:[&:nth-child(2)]:pl-8 md:[&:nth-child(3)]:pl-8"
             >
-              <div className="lab-caption text-accent pt-1">{it.label}</div>
-              <div>
-                <h3 className="font-display font-bold tracking-tight text-base mb-2">{it.problem}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{it.solution}</p>
-              </div>
-              <div>
-                <p className="lab-caption text-foreground/50 mb-2">Результат</p>
-                <p className="text-sm leading-relaxed text-foreground/85">{it.result}</p>
-              </div>
+              <p className="lab-caption text-accent mb-4">{it.label}</p>
+              <h3 className="font-display font-bold tracking-tight text-lg mb-3">{it.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-[28rem]">{it.body}</p>
             </div>
           ))}
         </div>

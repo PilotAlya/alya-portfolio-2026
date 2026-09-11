@@ -41,10 +41,10 @@ export function Hero() {
           AKBAROVA
         </h1>
 
-        <p className="text-lg sm:text-xl text-foreground/80 max-w-[36rem] font-normal leading-relaxed">
+        <p className="text-lg sm:text-xl text-foreground/80 max-w-[34rem] font-normal leading-relaxed">
           Дизайнер, который доводит макет до{" "}
-          <span className="spot-orange font-semibold">рабочей версии</span>. Лендинги, презентации,
-          веб — глаз в Figma, сборка через{" "}
+          <span className="spot-orange font-semibold">рабочей версии</span>.
+          <br className="hidden sm:block" /> Глаз в Figma, сборка через{" "}
           <span className="spot-lime font-semibold">vibe-coding</span>.
         </p>
 

@@ -1,6 +1,5 @@
 import { ArrowUpRight, Copy, Check, Mail } from "lucide-react";
 import { useState } from "react";
-import { AiryAccent } from "./effects/AiryAccent";
 
 const TELEGRAM_URL = "https://t.me/Albinaa_Akbarova";
 const EMAIL = "pilotalya@a-akbarova.ru";
@@ -17,11 +16,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 lg:py-32 px-6 lg:px-8 border-t border-border relative scroll-mt-24 overflow-x-clip"
+      className="py-24 lg:py-32 px-6 lg:px-8 border-t border-border relative scroll-mt-24"
     >
-      <AiryAccent kind="flower" className="airy-accent--contact" />
-      <AiryAccent kind="coil" className="airy-accent--contact-coil" />
-      <div className="relative z-[1] max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
         <div className="max-w-3xl">
           <h2 className="text-[clamp(2.75rem,8vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] font-display mb-8">
             Задача
@@ -32,8 +29,8 @@ export function Contact() {
           </h2>
 
           <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            Нужен лендинг, презентация, визуал — или человек с глазом дизайнера и vibe-coding до
-            демо? Коротко опишите задачу или вакансию.
+            Нужен лендинг, презентация, визуал — или дизайнер с vibe-coding до демо? Коротко опишите
+            задачу или вакансию.
           </p>
 
           <div className="mb-10">
@@ -62,7 +59,7 @@ export function Contact() {
             </button>
             <a
               href="/resume-ai.pdf"
-              download="Albina_Akbarova_AI_Resume.pdf"
+              download="Albina_Akbarova_Resume.pdf"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border text-sm text-muted-foreground hover:text-foreground hover:border-foreground/25 transition-colors"
             >
               Резюме PDF
@@ -70,8 +67,7 @@ export function Contact() {
           </div>
 
           <p className="text-base text-muted-foreground max-w-md leading-relaxed">
-            Сначала разберём задачу. Потом — картинка, которую не стыдно показать, и версия,
-            которой можно пользоваться.
+            Сначала разберём задачу. Потом — картинка и версия, которой можно пользоваться.
           </p>
         </div>
       </div>

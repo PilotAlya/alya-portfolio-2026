@@ -4,12 +4,9 @@ import { useEffect } from "react";
 import { Nav } from "@/components/Nav";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
-import { Services } from "@/components/Services";
-import { SelectedWork } from "@/components/SelectedWork";
 import { WhyMe } from "@/components/WhyMe";
-import { Nova } from "@/components/Nova";
+import { SelectedWork } from "@/components/SelectedWork";
 import { Stack } from "@/components/Stack";
-import { Profile } from "@/components/Profile";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { SectionShell } from "@/components/effects/SectionShell";
@@ -25,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Лендинги, презентации, веб-интерфейсы: Figma + vibe-coding до живого демо. Для заказчиков и продуктовых ролей. Кейсы: NOVA, музей, визуализации.",
+          "Лендинги, презентации, веб: глаз в Figma, сборка через vibe-coding до живого демо. Для заказчиков и продуктовых ролей.",
       },
       {
         property: "og:title",
@@ -34,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Дизайнер-проектировщик: от композиции в Figma до рабочей версии через vibe-coding. Презентации, лендинги, интерфейсы.",
+          "Дизайнер-проектировщик: от композиции в Figma до рабочей версии. Презентации, лендинги, интерфейсы.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
@@ -66,22 +63,13 @@ function Index() {
         <Nav />
         <Hero />
         <SectionShell variant="default">
-          <Services />
+          <WhyMe />
         </SectionShell>
         <SectionShell variant="alt">
           <SelectedWork />
         </SectionShell>
         <SectionShell variant="default">
-          <WhyMe />
-        </SectionShell>
-        <SectionShell variant="alt">
-          <Nova />
-        </SectionShell>
-        <SectionShell variant="default">
           <Stack />
-        </SectionShell>
-        <SectionShell variant="alt">
-          <Profile />
         </SectionShell>
         <Contact />
         <Footer />

@@ -3,33 +3,38 @@ import { SectionHeadline } from "./effects/SectionHeadline";
 const GROUPS = [
   {
     title: "Дизайн",
-    tags: ["Figma", "Gamma", "Композиция", "Визуализация", "Презентации", "Веб-UI"],
+    lead: "Веду инструмент",
+    tags: ["Figma", "Композиция", "Презентации", "Веб-UI"],
   },
   {
     title: "Сборка",
-    tags: ["Cursor", "React", "TypeScript", "Vercel"],
+    lead: "Довожу до демо",
+    tags: ["Cursor", "vibe-coding", "React", "Vercel"],
   },
   {
-    title: "Проверка",
-    tags: ["Gemini", "Claude", "Тесты с людьми"],
+    title: "Ускорители",
+    lead: "Не замена глазу",
+    tags: ["Claude", "Gemini", "тесты с людьми"],
   },
 ] as const;
 
 export function Stack() {
   return (
-    <section id="stack" className="relative py-20 lg:py-28 px-6 lg:px-8 scroll-mt-20">
+    <section id="stack" className="relative py-20 lg:py-28 px-6 lg:px-8 scroll-mt-24">
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-12 max-w-2xl">
-          <SectionHeadline before="Дизайн ведёт," accent="vibe-coding собирает" />
+          <SectionHeadline before="Как" accent="работаю" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            Figma — основной инструмент. Cursor — способ быстро довести макет до демо.
+            Figma — основа. Cursor и AI — ускорители сборки. Навык не в списке инструментов, а в
+            том, что макет доходит до рабочей версии.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-10 border-t border-border pt-10">
           {GROUPS.map((group) => (
             <div key={group.title}>
-              <p className="lab-caption text-foreground mb-4">{group.title}</p>
+              <p className="lab-caption text-foreground mb-1">{group.title}</p>
+              <p className="text-xs text-muted-foreground mb-4">{group.lead}</p>
               <ul className="space-y-2">
                 {group.tags.map((tag) => (
                   <li key={tag} className="text-sm text-foreground/80">
