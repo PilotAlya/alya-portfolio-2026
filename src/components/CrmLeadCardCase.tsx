@@ -28,12 +28,12 @@ export function CrmLeadCardCase() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-              CRM Lead Card — мини-форма лида на React
+              CRM Lead Card — форма лида с продуманным UX
             </h2>
 
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base mb-6">
-              Веб-приложение для добавления лида в CRM: форма с валидацией, маской телефона, списком
-              карточек и сохранением данных в localStorage. Собрано на vibe-coding, деплой на Vercel.
+              UI-решение для добавления лида в CRM: понятные состояния валидации, маска телефона,
+              список карточек. Спроектировала и собрала на vibe-coding, деплой на Vercel.
             </p>
 
             <ul className="space-y-3 mb-6 text-sm text-muted-foreground">

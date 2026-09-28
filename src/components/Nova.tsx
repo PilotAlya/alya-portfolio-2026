@@ -152,7 +152,7 @@ export function Nova() {
   return (
     <section
       id="nova"
-      className="pt-16 pb-6 px-6 lg:px-8 relative overflow-hidden scroll-mt-24"
+      className="pt-6 pb-6 px-6 lg:px-8 relative overflow-hidden scroll-mt-24"
     >
       <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
       <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-3xl pointer-events-none" />

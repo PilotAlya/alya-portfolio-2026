@@ -8,8 +8,11 @@ import borisWalkStableVideo from "@/assets/boris-walk-stable-hd.webm";
 type TagSize = "sm" | "md" | "lg";
 
 const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
+  { label: "Figma", size: "lg", core: true },
   { label: "Cursor", size: "lg", core: true },
   { label: "Vibe-coding", size: "lg" },
+  { label: "Photoshop", size: "md" },
+  { label: "Canva", size: "md" },
   { label: "React", size: "md" },
   { label: "TypeScript", size: "md" },
   { label: "TanStack", size: "md" },
@@ -31,7 +34,6 @@ const TAGS: { label: string; size: TagSize; core?: boolean }[] = [
   { label: "UX Testing", size: "sm" },
   { label: "AI Evaluation", size: "sm" },
   { label: "DevTools", size: "sm" },
-  { label: "Figma", size: "sm" },
   { label: "PRO100", size: "sm" },
   { label: "MVP Shipping", size: "md" },
   { label: "Automation", size: "md" },
@@ -58,10 +60,10 @@ export function Stack() {
           className="mb-12 max-w-3xl"
         >
           <SectionLabel chapter={5} title="Технологический стек" />
-          <SectionHeadline before="Стек технологий и" accent="автоматизации" />
+          <SectionHeadline before="Дизайн, сборка и" accent="автоматизация" />
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
-            AI-native инструменты, фреймворки и практики — всё, что использую при сборке MVP и
-            автоматизации.
+            Дизайн-инструменты, AI-native стек и практики автоматизации — всё, что использую от
+            макета до деплоя.
           </p>
         </motion.div>
 

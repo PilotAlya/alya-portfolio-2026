@@ -16,7 +16,7 @@
 ```
 Здравствуйте, [Имя рекрутера / команда Компании]!
 
-Меня зовут Альбина Акбарова (Pilot Ali). Откликаюсь на вакансию [название].
+Меня зовут Альбина Акбарова (на проектах подписываюсь как Аля). Откликаюсь на вакансию [название].
 
 Я AI-native инженер и vibe-coder: проектирую логику продукта, собираю MVP с помощью Cursor / OpenCode / Gemini, проверяю результат руками и довожу до деплоя — без классической команды разработки.
 
@@ -56,7 +56,7 @@ pilotalya@a-akbarova.ru · Telegram: @Albinaa_Akbarova
 ## Короткая версия (hh.ru / форма до 2000 символов)
 
 ```
-Здравствуйте! Альбина Акбарова (Pilot Ali), AI-Native Engineer · vibe-coder.
+Здравствуйте! Альбина Акбарова (на проектах подписываюсь как Аля), AI-Native Engineer · vibe-coder.
 
 Собираю MVP через Cursor/OpenCode/Gemini, проверяю AI-вывод руками (QA mindset), деплою на Vercel. Флагман — NOVA Dashboard (React, AI «Борис», 2 цикла UX → NOVA Light). Ещё: CRM pet-project, Telegram→Sheets automation, B2B churn dashboard.
 

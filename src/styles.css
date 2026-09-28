@@ -843,7 +843,7 @@ body.custom-cursor-active * {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 4.5vw + 1.25rem, 4.75rem);
+  font-size: clamp(1.8rem, 11vw - 0.3rem, 4.75rem);
   line-height: 0.92;
   letter-spacing: -0.03em;
 }
