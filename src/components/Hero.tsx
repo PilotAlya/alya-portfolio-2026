@@ -82,7 +82,7 @@ export function Hero() {
                     <span className="relative inline-flex rounded-full size-2 bg-accent" />
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                    Открыта к предложениям · AI & Vibe-coding
+                    Открыта к предложениям · Design & AI Build
                   </span>
                 </div>
               </div>
@@ -104,10 +104,10 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-xl font-light leading-relaxed"
             >
-              AI-Native Engineer · Vibe-Coder · Product Builder.
-              С ИИ на «ты»: быстро осваиваю новый контекст, проектирую логику, собираю MVP и
-              проверяю результат —{" "}
-              <span className="text-foreground italic">от Legacy-хаоса до AI-агентов</span>.
+              Product/UI-дизайнер · AI-сборка · Автоматизация.
+              Проектирую интерфейс, сама довожу его до рабочего продукта через AI-инструменты и
+              автоматизирую рутину вокруг него —{" "}
+              <span className="text-foreground italic">от макета до деплоя</span>.
             </motion.p>
 
             <motion.p
@@ -117,11 +117,11 @@ export function Hero() {
               className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
             >
               Целевые роли ·{" "}
+              <span className="text-foreground/90">UI/UX-дизайнер</span>
+              {" · "}
+              <span className="text-foreground/90">product designer</span>
+              {" · "}
               <span className="text-foreground/90">vibe-coder</span>
-              {" · "}
-              <span className="text-foreground/90">AI assessor</span>
-              {" · "}
-              <span className="text-foreground/90">AI product builder</span>
             </motion.p>
 
             <motion.div
@@ -131,9 +131,9 @@ export function Hero() {
               className="flex flex-wrap gap-2"
             >
               {[
-                { label: "Vibe-coding", sub: "Cursor · OpenCode" },
-                { label: "AI-native", sub: "LLM · validation" },
-                { label: "MVP & прототипы", sub: "React" },
+                { label: "UI/UX дизайн", sub: "Figma" },
+                { label: "Vibe-coding", sub: "сборка · Cursor" },
+                { label: "Автоматизация", sub: "Python" },
                 { label: "Валидация", sub: "QA mindset" },
               ].map((pill) => (
                 <div

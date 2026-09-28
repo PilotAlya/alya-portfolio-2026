@@ -24,17 +24,17 @@ import { SITE_URL } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Альбина Акбарова — AI-Native Engineer · Vibe-Coder" },
+      { title: "Альбина Акбарова — Product/UI-дизайнер · AI-сборка · Автоматизация" },
       {
         name: "description",
         content:
-          "Портфолио Альбины Акбаровой (Pilot Ali). AI-native, vibe-coding, MVP и валидация AI-продуктов. Кейсы: NOVA Dashboard, B2B-дашборд, автоматизации.",
+          "Портфолио Альбины Акбаровой (Pilot Ali). Продуктовый дизайн, AI-сборка MVP и автоматизация рутины. Кейсы: NOVA Dashboard, Rocket Rush, автоматизации.",
       },
-      { property: "og:title", content: "Альбина Акбарова — AI-Native · Vibe-Coder" },
+      { property: "og:title", content: "Альбина Акбарова — Product/UI-дизайнер · AI-сборка" },
       {
         property: "og:description",
         content:
-          "AI-Native Engineer · Vibe-Coder. Собираю MVP через AI, проверяю результат, довожу до деплоя.",
+          "Product/UI-дизайнер с AI-сборкой. Проектирую интерфейс, собираю рабочий продукт, автоматизирую рутину вокруг него.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },

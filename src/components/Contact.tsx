@@ -58,8 +58,8 @@ export function Contact() {
           </h2>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            MVP, vibe-coding, AI-валидация — напиши, если нужен человек, который собирает,
-            проверяет и доводит до деплоя.
+            Дизайн, AI-сборка, автоматизация — напиши, если нужен человек, который придумывает
+            интерфейс, собирает рабочий продукт и доводит до деплоя.
           </p>
 
           <div className="mb-10">
@@ -80,45 +80,53 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2 mb-8">
-            <button
-              type="button"
-              onClick={copyEmail}
-              {...spotlightAttrs}
-              className={spotlightClass(
-                "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors",
-                "subtle",
-              )}
-            >
-              <Mail className="size-3.5 text-accent" />
-              {emailCopied ? "Скопировано!" : EMAIL}
-              {!emailCopied && <Copy className="size-3 opacity-60" />}
-              {emailCopied && <Check className="size-3 text-spark" />}
-            </button>
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-2 mb-4">
+              <button
+                type="button"
+                onClick={copyEmail}
+                {...spotlightAttrs}
+                className={spotlightClass(
+                  "glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors",
+                  "subtle",
+                )}
+              >
+                <Mail className="size-3.5 text-accent" />
+                {emailCopied ? "Скопировано!" : EMAIL}
+                {!emailCopied && <Copy className="size-3 opacity-60" />}
+                {emailCopied && <Check className="size-3 text-spark" />}
+              </button>
 
-            <MagneticLink
-              href="/resume-ai.pdf"
-              download="Albina_Akbarova_AI_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
-            >
-              <Download className="size-3.5" />
-              Резюме AI
-            </MagneticLink>
+              <MagneticLink
+                href="/resume-ai.pdf"
+                download="Albina_Akbarova_AI_Resume.pdf"
+                title="Для AI-native, vibe-coding, LLM-ориентированных ролей"
+                className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
+              >
+                <Download className="size-3.5" />
+                Резюме AI
+              </MagneticLink>
 
-            <a
-              href="/resume-qa.pdf"
-              download="Albina_Akbarova_QA_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
-            >
-              Резюме QA
-            </a>
-            <a
-              href="/resume-sa.pdf"
-              download="Albina_Akbarova_SA_Resume.pdf"
-              className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
-            >
-              Резюме SA
-            </a>
+              <a
+                href="/resume-qa.pdf"
+                download="Albina_Akbarova_QA_Resume.pdf"
+                title="Для тестирования, валидации, QA-ролей"
+                className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
+              >
+                Резюме QA
+              </a>
+              <a
+                href="/resume-sa.pdf"
+                download="Albina_Akbarova_SA_Resume.pdf"
+                title="Для системного анализа, архитектуры, процессного инжиниринга"
+                className="glass-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
+              >
+                Резюме SA
+              </a>
+            </div>
+            <p className="text-xs text-muted-foreground/70 font-mono">
+              ↪ Наведите на резюме, чтобы увидеть, для каких ролей оно подходит
+            </p>
           </div>
 
           <p className="text-sm text-muted-foreground/80 italic max-w-md border-l-2 border-spark/40 pl-4">

@@ -1,34 +1,34 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Kanban, BarChart3 } from "lucide-react";
+import { ArrowUpRight, Kanban, Smartphone } from "lucide-react";
 
-import churnDashboard from "@/assets/churn-dashboard.png";
+import rocketBot from "@/assets/rocket-rush/01-bot-welcome.png";
 import { GrainFrame } from "./effects/GrainFrame";
 import { spotlightAttrs, spotlightClass } from "./SpotlightCard";
 import { fadeUp } from "./shared";
 
 const TILES = [
   {
+    id: "case-rocket-rush",
+    title: "Rocket Rush",
+    subtitle: "Telegram Mini App · UX-прототип · свайп-аркада",
+    tag: "Pet project",
+    Icon: Smartphone,
+    span: "md:col-span-2",
+    href: "#case-rocket-rush",
+    accent: "from-accent/20 via-transparent to-transparent",
+    image: rocketBot,
+    grainCaption: "Mini App",
+  },
+  {
     id: "case-crm",
     title: "CRM Lead Card",
     subtitle: "React · Vite · localStorage · маска телефона",
     tag: "Pet project",
     Icon: Kanban,
-    span: "md:col-span-2",
-    href: "#case-crm",
-    accent: "from-accent/20 via-transparent to-transparent",
-    grainOnly: true as const,
-  },
-  {
-    id: "case-b2b",
-    title: "B2B Churn Audit",
-    subtitle: "Data audit · Python · executive dashboard",
-    tag: "Background",
-    Icon: BarChart3,
     span: "",
-    href: "#case-b2b",
-    accent: "from-spark/15 via-transparent to-transparent",
-    image: churnDashboard,
-    grainCaption: "Data audit",
+    href: "#case-crm",
+    accent: "from-accent/15 via-transparent to-transparent",
+    grainOnly: true as const,
   },
 ] as const;
 

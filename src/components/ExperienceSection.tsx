@@ -10,7 +10,7 @@ export function ExperienceSection() {
         label="Опыт работы"
         titleAccent="Legacy"
         titleAfter="· процессы и автоматизация"
-        description="От Legacy-софта в ритейле — до Python/AI-пайплайнов: парсеры, валидация данных и поиск лидов с LLM-фильтром."
+        description="Дизайн — не только интерфейс. От Legacy-софта в ритейле — до Python/AI-пайплайнов: парсеры, валидация данных и поиск лидов с LLM-фильтром, которые снимают рутину вокруг продукта."
         meta="2 блока · AI & Automation"
       />
       <LegacyCase />

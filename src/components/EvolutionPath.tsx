@@ -22,7 +22,7 @@ export function EvolutionPath() {
     {
       n: "03",
       title: "Интеллектуальный штурман",
-      body: "NOVA и AI-пайплайны через vibe-coding — от идеи до деплоя. Полный кейс — в разделе NOVA ниже.",
+      body: "NOVA и Rocket Rush — от дизайна интерфейса до деплоя через vibe-coding. Полный кейс — в разделе NOVA ниже.",
       Icon: Bot,
       featured: true,
     },
